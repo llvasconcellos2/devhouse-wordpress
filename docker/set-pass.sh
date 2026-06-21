@@ -1,0 +1,1 @@
+docker compose exec -T db mysql -u root -pRootPassword devhouse_site -e "UPDATE ab3f44oy3_users SET user_pass = MD5('NewPassword') WHERE user_login = 'leonardo';"

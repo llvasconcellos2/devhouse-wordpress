@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: devhouse-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "G0d!s777"
+      MYSQL_DATABASE: devhouse_site
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/devhouse.sql:/docker-entrypoint-initdb.d/01-devhouse.sql:ro
+    ports:
+      - "3306:3306"
+
+  wordpress:
+    build:
+      context: ./docker/wordpress
+    container_name: devhouse-wordpress
+    restart: unless-stopped
+    depends_on:
+      - db
+    volumes:
+      - ./www:/var/www/html
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:
