@@ -1,0 +1,161 @@
+/*******************************************************************************
+ * 01. Common
+ *
+*******************************************************************************/ 
+body { 
+		background: url(../images/deepblue/bg.png) no-repeat 50% 0 #1F2730;
+}
+
+a,
+.slogan h2 { 
+	color: #172B40;
+}
+
+a:hover { 
+	color: #071227;
+}
+
+
+/*******************************************************************************
+ * 02. Header
+ *
+*******************************************************************************/ 
+header nav ul li a,
+header .site-name h2 a,
+header .site-name p,
+#topmedia .tooltip,
+#topsearch input[type="text"],
+.nivo-caption h6 a,
+.nivo-controlNav a,
+.kwicks li .heading-text h6 a,
+.feature-services-widgets h4,
+.feature-services-widgets h4 a,
+.page-header,
+.page-header a,
+footer a { 
+	color: #CBD6E3;
+}
+
+header nav ul li a .downarrowclass {
+	background: url(../images/deepblue/downarrow.png) no-repeat 0 0;
+}
+
+header nav ul li a .rightarrowclass {
+	background: url(../images/deepblue/rightarrow.png) no-repeat 0 0;
+}
+
+header nav ul li a:hover, 
+header nav ul li a.selected,
+header nav ul li a:hover span, 
+header nav ul li a.selected span {
+	background-image: url(../images/deepblue/menubg.png);
+	background-repeat: no-repeat;
+}
+
+header nav ul li a:hover, 
+header nav ul li a.selected {
+	background-position: 0 0;
+}
+
+header nav ul li a:hover span, 
+header nav ul li a.selected span {
+	background-position:100% 100%;
+}
+
+header nav ul li ul {
+	background: #1A232D;
+	border-right: 1px solid #141A20;
+	border-bottom: 1px solid #141A20;
+}
+
+header nav ul li ul li ul {
+	border-left: 1px solid #141A20;
+}
+
+header nav ul li ul li a:hover, 
+header nav ul li ul li a.selected,
+header nav ul li ul li a:hover span, 
+header nav ul li ul li a.selected span {
+	background: #161E27;
+}
+
+#topmedia li a { background-image: url(../images/deepblue/topmedia.png); }
+
+#topsearch {
+	background-image: url(../images/deepblue/topsearch.png);
+}
+
+/*******************************************************************************
+ * 03. Slogan
+ *
+*******************************************************************************/
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+.page-contact input[type="submit"],
+.post-lists .button-wrap a {
+	border-top: 1px solid #121E2A;
+	border-right: 1px solid #16212D;
+	border-bottom: 1px solid #1F2731;
+	border-left: 1px solid #16212D;
+	background-color: #202B36;
+}
+
+
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span:hover,
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"]:hover,
+.post-lists .button-wrap a:hover {
+	border-top: 1px solid #0E151D;
+	border-right: 1px solid #141B22;
+	border-bottom: 1px solid #0E151D;
+	border-left: 1px solid #141B22;
+	background-color: #141D28;
+}
+
+
+
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"],
+.page-contact input[type="submit"]:hover {
+	background-image: url(../images/deepblue/middle-button.png);
+}
+
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+.page-contact input[type="submit"] {
+	background-position: 0 0;
+}
+
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span:hover,
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"]:hover {
+	background-position: 0 -38px;
+}
+
+
+
+/*******************************************************************************
+ * 04. Button Wrap
+ *
+*******************************************************************************/
+.post-lists .button-wrap a, 
+.post-lists .button-wrap a:hover
+{
+	background-image: url(../images/deepblue/small-button.png);
+}
+
+.post-lists .button-wrap a {
+	background-position: 0 0;
+}
+
+.post-lists .button-wrap a:hover {
+	background-position: 0 -24px;
+}

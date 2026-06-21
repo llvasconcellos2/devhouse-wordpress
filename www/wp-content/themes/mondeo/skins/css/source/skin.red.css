@@ -1,0 +1,161 @@
+/*******************************************************************************
+ * 01. Common
+ *
+*******************************************************************************/ 
+body { 
+		background: url(../images/red/bg.png) no-repeat 50% 0 #531313;
+}
+
+a,
+.slogan h2 { 
+	color: #7C1310;
+}
+
+a:hover { 
+	color: #4B0D09;
+}
+
+
+/*******************************************************************************
+ * 02. Header
+ *
+*******************************************************************************/ 
+header nav ul li a,
+header .site-name h2 a,
+header .site-name p,
+#topmedia .tooltip,
+#topsearch input[type="text"],
+.nivo-caption h6 a,
+.nivo-controlNav a,
+.kwicks li .heading-text h6 a,
+.feature-services-widgets h4,
+.feature-services-widgets h4 a,
+.page-header,
+.page-header a,
+footer a { 
+	color: #E9D0D0;
+}
+
+header nav ul li a .downarrowclass {
+	background: url(../images/red/downarrow.png) no-repeat 0 0;
+}
+
+header nav ul li a .rightarrowclass {
+	background: url(../images/red/rightarrow.png) no-repeat 0 0;
+}
+
+header nav ul li a:hover, 
+header nav ul li a.selected,
+header nav ul li a:hover span, 
+header nav ul li a.selected span {
+	background-image: url(../images/red/menubg.png);
+	background-repeat: no-repeat;
+}
+
+header nav ul li a:hover, 
+header nav ul li a.selected {
+	background-position: 0 0;
+}
+
+header nav ul li a:hover span, 
+header nav ul li a.selected span {
+	background-position:100% 100%;
+}
+
+header nav ul li ul {
+	background: #561414;
+	border-right: 1px solid #4E1212;
+	border-bottom: 1px solid #4E1212;
+}
+
+header nav ul li ul li ul {
+	border-left: 1px solid #4E1212;
+}
+
+header nav ul li ul li a:hover, 
+header nav ul li ul li a.selected,
+header nav ul li ul li a:hover span, 
+header nav ul li ul li a.selected span {
+	background: #2F0909;
+}
+
+#topmedia li a { background-image: url(../images/red/topmedia.png); }
+
+#topsearch {
+	background-image: url(../images/red/topsearch.png);
+}
+
+/*******************************************************************************
+ * 03. Slogan
+ *
+*******************************************************************************/
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+.page-contact input[type="submit"],
+.post-lists .button-wrap a {
+	border-top: 1px solid #530A0A;
+	border-right: 1px solid #5A0F0F;
+	border-bottom: 1px solid #530A0A;
+	border-left: 1px solid #5A0F0F;
+	background-color: #811410;
+}
+
+
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span:hover,
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"]:hover,
+.post-lists .button-wrap a:hover {
+	border-top: 1px solid #330404;
+	border-right: 1px solid #3B0909;
+	border-bottom: 1px solid #330404;
+	border-left: 1px solid #3B0909;
+	background-color: #5F0D0A;
+}
+
+
+
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"],
+.page-contact input[type="submit"]:hover {
+	background-image: url(../images/red/middle-button.png);
+}
+
+.slogan-button .button-wrap a,
+.slogan-button .button-wrap span,
+#respond input[type="submit"],
+.page-contact input[type="submit"] {
+	background-position: 0 0;
+}
+
+.slogan-button .button-wrap a:hover,
+.slogan-button .button-wrap span:hover,
+#respond input[type="submit"]:hover,
+.page-contact input[type="submit"]:hover {
+	background-position: 0 -38px;
+}
+
+
+
+/*******************************************************************************
+ * 04. Button Wrap
+ *
+*******************************************************************************/
+.post-lists .button-wrap a, 
+.post-lists .button-wrap a:hover
+{
+	background-image: url(../images/red/small-button.png);
+}
+
+.post-lists .button-wrap a {
+	background-position: 0 0;
+}
+
+.post-lists .button-wrap a:hover {
+	background-position: 0 -24px;
+}

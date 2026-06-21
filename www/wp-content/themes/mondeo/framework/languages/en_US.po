@@ -1,0 +1,1338 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mondeo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-13 15:23+0800\n"
+"PO-Revision-Date: 2011-06-13 15:24+0800\n"
+"Last-Translator: yofox <yofox2008@163.com>\n"
+"Language-Team: HawkTheme.COM <hawktheme@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: AMERICAN SAMOA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\mondeo.themedownloaded.com\\wp-content\\themes\\mondeo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "404"
+msgstr ""
+
+#: 404.php:14
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:15
+msgid "Sorry, but the page you are looking for does not exist. You can try to go to the Homepage and find your way."
+msgstr ""
+
+#: comments.php:11
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:26
+msgid "Comments"
+msgstr ""
+
+#: comments.php:44
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:58
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:59
+msgid "&raquo; Cancel reply"
+msgstr ""
+
+#: framework/options/option.framework.php:19
+msgid "Theme Panel"
+msgstr ""
+
+#: framework/options/option.framework.php:20
+msgid "http://hawktheme.com/"
+msgstr ""
+
+#: framework/options/option.framework.php:20
+msgid "HawkTheme"
+msgstr ""
+
+#: framework/options/option.framework.php:26
+msgid "Global"
+msgstr ""
+
+#: framework/options/option.framework.php:27
+msgid "Fonts"
+msgstr ""
+
+#: framework/options/option.framework.php:28
+msgid "Style"
+msgstr ""
+
+#: framework/options/option.framework.php:29
+msgid "Header"
+msgstr ""
+
+#: framework/options/option.framework.php:30
+msgid "Homepage"
+msgstr ""
+
+#: framework/options/option.framework.php:31
+msgid "Slides"
+msgstr ""
+
+#: framework/options/option.framework.php:32
+msgid "Portfolio"
+msgstr ""
+
+#: framework/options/option.framework.php:33
+msgid "Blog"
+msgstr ""
+
+#: framework/options/option.framework.php:34
+msgid "News"
+msgstr ""
+
+#: framework/options/option.framework.php:35
+msgid "Gallery"
+msgstr ""
+
+#: framework/options/option.framework.php:36
+msgid "Footer"
+msgstr ""
+
+#: framework/options/option.framework.php:37
+msgid "SEO"
+msgstr ""
+
+#: framework/options/option.framework.php:65
+#: framework/options/option.framework.php:76
+#: framework/options/option.framework.php:87
+#: framework/options/option.framework.php:98
+#: framework/options/option.framework.php:109
+#: framework/options/option.framework.php:120
+#: framework/options/option.framework.php:131
+#: framework/options/option.framework.php:142
+#: framework/options/option.framework.php:194
+#: framework/options/option.framework.php:205
+#: framework/options/option.framework.php:227
+#: framework/options/option.framework.php:254
+#: framework/options/option.framework.php:287
+msgid "Notice"
+msgstr ""
+
+#: framework/options/option.framework.php:184
+msgid "&mdash;SELECT&mdash;"
+msgstr ""
+
+#: framework/types/type.gallery.php:22
+#: framework/types/type.gallery.php:102
+msgid "Galleries"
+msgstr ""
+
+#: framework/types/type.gallery.php:23
+msgid "Gallery Item"
+msgstr ""
+
+#: framework/types/type.gallery.php:24
+#: framework/types/type.news.php:24
+msgid "Add New"
+msgstr ""
+
+#: framework/types/type.gallery.php:25
+#: framework/types/type.gallery.php:27
+msgid "Add New Gallery Item"
+msgstr ""
+
+#: framework/types/type.gallery.php:26
+msgid "Edit Gallery Item"
+msgstr ""
+
+#: framework/types/type.gallery.php:28
+msgid "View Gallery Item"
+msgstr ""
+
+#: framework/types/type.gallery.php:29
+msgid "Search Gallery Item"
+msgstr ""
+
+#: framework/types/type.gallery.php:30
+msgid "No gallery item found"
+msgstr ""
+
+#: framework/types/type.gallery.php:31
+msgid "No gallery item found in trash"
+msgstr ""
+
+#: framework/types/type.gallery.php:54
+msgid "Gallery Categories"
+msgstr ""
+
+#: framework/types/type.gallery.php:56
+msgid "Search Gallery"
+msgstr ""
+
+#: framework/types/type.gallery.php:57
+msgid "All Galleries"
+msgstr ""
+
+#: framework/types/type.gallery.php:58
+msgid "Parent Gallery"
+msgstr ""
+
+#: framework/types/type.gallery.php:59
+msgid "Parent Gallery:"
+msgstr ""
+
+#: framework/types/type.gallery.php:60
+msgid "Edit Gallery"
+msgstr ""
+
+#: framework/types/type.gallery.php:61
+msgid "Update Gallery"
+msgstr ""
+
+#: framework/types/type.gallery.php:62
+msgid "Add New Gallery"
+msgstr ""
+
+#: framework/types/type.gallery.php:63
+msgid "New Gallery Name"
+msgstr ""
+
+#: framework/types/type.gallery.php:79
+msgid "Gallery Tags"
+msgstr ""
+
+#: framework/types/type.gallery.php:80
+msgid "All Gallery Tags"
+msgstr ""
+
+#: framework/types/type.gallery.php:81
+#: framework/types/type.news.php:81
+msgid "Add New Tag"
+msgstr ""
+
+#: framework/types/type.gallery.php:82
+#: framework/types/type.news.php:82
+msgid "New Tag Name"
+msgstr ""
+
+#: framework/types/type.gallery.php:101
+#: framework/types/type.news.php:101
+msgid "Thumbnail"
+msgstr ""
+
+#: framework/types/type.gallery.php:103
+#: framework/types/type.news.php:103
+msgid "Tags"
+msgstr ""
+
+#: framework/types/type.gallery.php:104
+#: framework/types/type.news.php:104
+msgid "Date"
+msgstr ""
+
+#: framework/types/type.gallery.php:124
+#: framework/types/type.gallery.php:132
+#: framework/types/type.news.php:124
+#: framework/types/type.news.php:132
+msgid "None"
+msgstr ""
+
+#: framework/types/type.news.php:23
+msgid "News Item"
+msgstr ""
+
+#: framework/types/type.news.php:25
+#: framework/types/type.news.php:27
+msgid "Add News Item"
+msgstr ""
+
+#: framework/types/type.news.php:26
+msgid "Edit News Item"
+msgstr ""
+
+#: framework/types/type.news.php:28
+msgid "View News Item"
+msgstr ""
+
+#: framework/types/type.news.php:29
+msgid "Search News Item"
+msgstr ""
+
+#: framework/types/type.news.php:30
+msgid "No news item found"
+msgstr ""
+
+#: framework/types/type.news.php:31
+msgid "No news item found in trash"
+msgstr ""
+
+#: framework/types/type.news.php:54
+msgid "News Categories"
+msgstr ""
+
+#: framework/types/type.news.php:56
+msgid "Search News"
+msgstr ""
+
+#: framework/types/type.news.php:57
+msgid "All News"
+msgstr ""
+
+#: framework/types/type.news.php:58
+msgid "Parent News"
+msgstr ""
+
+#: framework/types/type.news.php:59
+msgid "Parent News:"
+msgstr ""
+
+#: framework/types/type.news.php:60
+msgid "Edit News"
+msgstr ""
+
+#: framework/types/type.news.php:61
+msgid "Update News"
+msgstr ""
+
+#: framework/types/type.news.php:62
+msgid "Add News"
+msgstr ""
+
+#: framework/types/type.news.php:63
+msgid "News Name"
+msgstr ""
+
+#: framework/types/type.news.php:79
+msgid "News Tags"
+msgstr ""
+
+#: framework/types/type.news.php:80
+msgid "All News Tags"
+msgstr ""
+
+#: framework/types/type.portfolio.php:22
+#: framework/types/type.portfolio.php:102
+msgid "Portfolios"
+msgstr ""
+
+#: framework/types/type.portfolio.php:23
+msgid "Portfolio Item"
+msgstr ""
+
+#: framework/types/type.portfolio.php:25
+#: framework/types/type.portfolio.php:27
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: framework/types/type.portfolio.php:26
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: framework/types/type.portfolio.php:28
+msgid "View Portfolio Item"
+msgstr ""
+
+#: framework/types/type.portfolio.php:29
+msgid "Search Portfolio Item"
+msgstr ""
+
+#: framework/types/type.portfolio.php:30
+msgid "No portfolio item found"
+msgstr ""
+
+#: framework/types/type.portfolio.php:31
+msgid "No portfolio item found in trash"
+msgstr ""
+
+#: framework/types/type.portfolio.php:54
+msgid "Portfolio Categories"
+msgstr ""
+
+#: framework/types/type.portfolio.php:56
+msgid "Search Portfolio"
+msgstr ""
+
+#: framework/types/type.portfolio.php:57
+msgid "All Portfolios"
+msgstr ""
+
+#: framework/types/type.portfolio.php:58
+msgid "Parent Portfolio"
+msgstr ""
+
+#: framework/types/type.portfolio.php:59
+msgid "Parent Portfolio:"
+msgstr ""
+
+#: framework/types/type.portfolio.php:60
+msgid "Edit Portfolio"
+msgstr ""
+
+#: framework/types/type.portfolio.php:61
+msgid "Update Portfolio"
+msgstr ""
+
+#: framework/types/type.portfolio.php:62
+msgid "Add New Portfolio"
+msgstr ""
+
+#: framework/types/type.portfolio.php:63
+msgid "New Portfolio Name"
+msgstr ""
+
+#: framework/types/type.portfolio.php:79
+msgid "Portfolio Tags"
+msgstr ""
+
+#: framework/types/type.portfolio.php:80
+msgid "All Portfolio Tags"
+msgstr ""
+
+#: framework/types/type.slider.php:22
+#: framework/types/type.slider.php:102
+msgid "Sliders"
+msgstr ""
+
+#: framework/types/type.slider.php:23
+msgid "Slider Item"
+msgstr ""
+
+#: framework/types/type.slider.php:25
+#: framework/types/type.slider.php:27
+msgid "Add New Slider Item"
+msgstr ""
+
+#: framework/types/type.slider.php:26
+msgid "Edit Slider Item"
+msgstr ""
+
+#: framework/types/type.slider.php:28
+msgid "View Slider Item"
+msgstr ""
+
+#: framework/types/type.slider.php:29
+msgid "Search Slider Item"
+msgstr ""
+
+#: framework/types/type.slider.php:30
+msgid "No slider item found"
+msgstr ""
+
+#: framework/types/type.slider.php:31
+msgid "No slider item found in trash"
+msgstr ""
+
+#: framework/types/type.slider.php:54
+msgid "Slider Categories"
+msgstr ""
+
+#: framework/types/type.slider.php:55
+#: framework/widgets/widget.post.mostview.php:58
+#: framework/widgets/widget.post.random.php:58
+#: framework/widgets/widget.post.recent.php:58
+msgid "Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:56
+msgid "Search Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:57
+msgid "All Sliders"
+msgstr ""
+
+#: framework/types/type.slider.php:58
+msgid "Parent Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:59
+msgid "Parent Slider:"
+msgstr ""
+
+#: framework/types/type.slider.php:60
+msgid "Edit Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:61
+msgid "Update Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:62
+msgid "Add New Slider"
+msgstr ""
+
+#: framework/types/type.slider.php:63
+msgid "New Slider Name"
+msgstr ""
+
+#: framework/types/type.slider.php:78
+msgid "Slider Tags"
+msgstr ""
+
+#: framework/types/type.slider.php:79
+msgid "All Slider Tags"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:19
+msgid "&raquo; Ads 125*125"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:20
+msgid "This widget will display a advertise section."
+msgstr ""
+
+#: framework/widgets/widget.ads.php:54
+#: framework/widgets/widget.ads.php:61
+#: framework/widgets/widget.ads.php:77
+#: framework/widgets/widget.ads.php:93
+#: framework/widgets/widget.ads.php:109
+#: framework/widgets/widget.contact.php:38
+#: framework/widgets/widget.feature.services.php:46
+#: framework/widgets/widget.flickr.php:41
+#: framework/widgets/widget.post.mostview.php:43
+#: framework/widgets/widget.post.random.php:43
+#: framework/widgets/widget.post.recent.php:43
+#: framework/widgets/widget.socialmedia.php:55
+#: framework/widgets/widget.tweets.php:47
+msgid "Title:"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:58
+msgid "Ads One"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:65
+#: framework/widgets/widget.ads.php:81
+#: framework/widgets/widget.ads.php:97
+#: framework/widgets/widget.ads.php:113
+msgid "Image url :"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:69
+#: framework/widgets/widget.ads.php:85
+#: framework/widgets/widget.ads.php:101
+#: framework/widgets/widget.ads.php:117
+#: framework/widgets/widget.feature.services.php:50
+msgid "Link:"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:74
+msgid "Ads Two"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:90
+msgid "Ads Three"
+msgstr ""
+
+#: framework/widgets/widget.ads.php:106
+msgid "Ads Four"
+msgstr ""
+
+#: framework/widgets/widget.contact.php:19
+msgid "&raquo; Contact Form"
+msgstr ""
+
+#: framework/widgets/widget.contact.php:20
+msgid "This widget will display a contact form section."
+msgstr ""
+
+#: framework/widgets/widget.contact.php:29
+msgid "Contact US"
+msgstr ""
+
+#: framework/widgets/widget.contact.php:43
+msgid "Form ID:"
+msgstr ""
+
+#: framework/widgets/widget.contact.php:45
+msgid "Such as 1, 2, 3 or other name. This must be different name."
+msgstr ""
+
+#: framework/widgets/widget.contact.php:49
+msgid "Email:"
+msgstr ""
+
+#: framework/widgets/widget.demo.php:19
+#: framework/widgets/widget.feature.services.php:19
+msgid "&raquo; Feature Services"
+msgstr ""
+
+#: framework/widgets/widget.demo.php:20
+msgid "This widget will display a feature service section."
+msgstr ""
+
+#: framework/widgets/widget.feature.services.php:20
+msgid "This is a feature service section. Just use for feature service widget area."
+msgstr ""
+
+#: framework/widgets/widget.feature.services.php:42
+msgid "Icon:"
+msgstr ""
+
+#: framework/widgets/widget.feature.services.php:54
+msgid "Description:"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:19
+msgid "&raquo; Flickr"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:20
+msgid "This widget will display a flickr section. The image can be form flickr."
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:29
+msgid "Flickr"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:46
+#: framework/widgets/widget.tweets.php:52
+msgid "Account:"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:51
+#: framework/widgets/widget.post.mostview.php:48
+#: framework/widgets/widget.post.random.php:48
+#: framework/widgets/widget.post.recent.php:48
+#: framework/widgets/widget.tweets.php:57
+msgid "Showposts:"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:56
+msgid "Orderby:"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:58
+msgid "Latest"
+msgstr ""
+
+#: framework/widgets/widget.flickr.php:59
+msgid "Random"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:19
+msgid "&raquo; Mostview Posts"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:20
+msgid "This is a mostview posts list."
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:29
+msgid "Mostview Posts"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:53
+#: framework/widgets/widget.post.random.php:53
+#: framework/widgets/widget.post.recent.php:53
+msgid "Type:"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:64
+#: framework/widgets/widget.post.random.php:64
+#: framework/widgets/widget.post.recent.php:64
+msgid "Categories:"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:67
+#: framework/widgets/widget.post.random.php:67
+#: framework/widgets/widget.post.recent.php:67
+msgid "If you display all the categories, leave it blank. If you want to display some category, you can enter the name of category here. And the categories must be in this type. Separate categories with commas. Ex: Answers, News"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:77
+#: framework/widgets/widget.post.random.php:77
+#: framework/widgets/widget.post.recent.php:77
+msgid "Display with thumbnail."
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:154
+#: framework/widgets/widget.post.random.php:154
+#: framework/widgets/widget.post.recent.php:154
+msgid "No Comment"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:154
+#: framework/widgets/widget.post.random.php:154
+#: framework/widgets/widget.post.recent.php:154
+msgid "1Comment"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:154
+#: framework/widgets/widget.post.random.php:154
+#: framework/widgets/widget.post.recent.php:154
+msgid "%Comment"
+msgstr ""
+
+#: framework/widgets/widget.post.mostview.php:154
+#: framework/widgets/widget.post.random.php:154
+#: framework/widgets/widget.post.recent.php:154
+msgid "Comment Off"
+msgstr ""
+
+#: framework/widgets/widget.post.random.php:19
+msgid "&raquo; Random Posts"
+msgstr ""
+
+#: framework/widgets/widget.post.random.php:20
+msgid "This is a random posts list."
+msgstr ""
+
+#: framework/widgets/widget.post.random.php:29
+msgid "Random Posts"
+msgstr ""
+
+#: framework/widgets/widget.post.recent.php:19
+msgid "&raquo; Recent Posts"
+msgstr ""
+
+#: framework/widgets/widget.post.recent.php:20
+msgid "This widget will display a recent posts list."
+msgstr ""
+
+#: framework/widgets/widget.post.recent.php:29
+msgid "Recent Posts"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:19
+msgid "&raquo; Social Media"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:20
+msgid "This is a social media section."
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:30
+msgid "Social Media"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:60
+msgid "Rss:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:65
+msgid "Twitter:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:70
+msgid "Iinkedin:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:75
+msgid "Facebook:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:80
+msgid "Digg:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:85
+msgid "Flickr:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:90
+msgid "Delicious:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:95
+msgid "Stumble:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:100
+msgid "Youtube:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:105
+msgid "Myspace:"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:150
+msgid "rss"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:151
+msgid "twitter"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:152
+msgid "linkedin"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:153
+msgid "facebook"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:154
+msgid "digg"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:155
+msgid "flickr"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:156
+msgid "delicious"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:157
+msgid "stumble"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:158
+msgid "youtube"
+msgstr ""
+
+#: framework/widgets/widget.socialmedia.php:159
+msgid "myspace"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:19
+msgid "&raquo; Tweets"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:20
+msgid "This widget will display a tweets section."
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:29
+msgid "Twitter"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:62
+msgid "Refresh:"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:72
+msgid "Convert URLs to links"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:79
+msgid "Convert @users to links"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:86
+msgid "Show the date/time"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:143
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:145
+msgid "F j, Y"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:148
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: framework/widgets/widget.tweets.php:148
+msgid "h:i A F j, Y"
+msgstr ""
+
+#: includes/inc.common.php:53
+msgid "Header Navigation"
+msgstr ""
+
+#: includes/inc.common.php:54
+msgid "Portfolio Navigation"
+msgstr ""
+
+#: includes/inc.common.php:55
+msgid "Gallery Navigation"
+msgstr ""
+
+#: includes/inc.common.php:63
+msgid "Home Feature Services"
+msgstr ""
+
+#: includes/inc.common.php:65
+msgid "This widget area is used to store feature services section, it will appear in the top of homepage."
+msgstr ""
+
+#: includes/inc.common.php:72
+msgid "Footer Widget Area"
+msgstr ""
+
+#: includes/inc.common.php:74
+msgid "This widget area is used to store footer custom widgets, it will appear in the footer of your page."
+msgstr ""
+
+#: includes/inc.common.php:83
+msgid "Page Sidebar"
+msgstr ""
+
+#: includes/inc.common.php:85
+msgid "This is your main sidebar that gets shown on most of your pages."
+msgstr ""
+
+#: includes/inc.common.php:94
+msgid "Blog Sidebar"
+msgstr ""
+
+#: includes/inc.common.php:96
+msgid "This is the sidebar that gets shown on your Blog Page template, blog posts, and pretty much anything else 'blog' related."
+msgstr ""
+
+#: includes/inc.common.php:104
+msgid "Portfolio Sidebar"
+msgstr ""
+
+#: includes/inc.common.php:106
+msgid "This is the sidebar that gets shown on your Portfolio Page template, portfolio posts, and pretty much anything else 'portfolio' related."
+msgstr ""
+
+#: includes/inc.common.php:114
+msgid "News Sidebar"
+msgstr ""
+
+#: includes/inc.common.php:116
+msgid "This is the sidebar that gets shown on your News Page template, news posts, and pretty much anything else 'news' related."
+msgstr ""
+
+#: includes/inc.common.php:124
+msgid "Contact Sidebar"
+msgstr ""
+
+#: includes/inc.common.php:126
+msgid "This is the sidebar that gets shown on your Contact Page template."
+msgstr ""
+
+#: includes/inc.helpers/help.author.php:16
+msgid "About the author"
+msgstr ""
+
+#: includes/inc.helpers/help.comment.php:20
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/inc.helpers/help.comment.php:21
+msgid "Edit"
+msgstr ""
+
+#: includes/inc.helpers/help.comment.php:25
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/inc.helpers/help.contact.php:10
+msgid "Your email has been sent! Thank you!"
+msgstr ""
+
+#: includes/inc.helpers/help.contact.php:14
+msgid "Please enter your name, a valid email address and content!"
+msgstr ""
+
+#: includes/inc.helpers/help.contact.php:18
+msgid "Your email failed. Try again later."
+msgstr ""
+
+#: includes/inc.helpers/help.contact.php:25
+msgid "sendmail"
+msgstr ""
+
+#: includes/inc.helpers/help.menus.php:23
+#: includes/inc.helpers/help.menus.php:25
+msgid "Home"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:32
+msgid "Tagged with: "
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:35
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:37
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:39
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:41
+msgid "Author Archive"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:43
+msgid "Archives"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:46
+msgid "404 Error"
+msgstr ""
+
+#: includes/inc.helpers/help.pageheader.php:48
+msgid "Search Results"
+msgstr ""
+
+#: includes/inc.helpers/help.pagination.php:13
+msgid "Previous"
+msgstr ""
+
+#: includes/inc.helpers/help.pagination.php:15
+msgid "Next"
+msgstr ""
+
+#: includes/inc.helpers/help.related.php:15
+msgid "Related Posts"
+msgstr ""
+
+#: includes/inc.helpers/help.related.php:104
+msgid "You do not have any related posts to display yet."
+msgstr ""
+
+#: includes/inc.helpers/help.sidebar.php:17
+msgid "This is your Blog Sidebar, and no widgets have been placed here yet!"
+msgstr ""
+
+#: includes/inc.helpers/help.sidebar.php:38
+msgid "This is your Portfolio Sidebar, and no widgets have been placed here yet!"
+msgstr ""
+
+#: includes/inc.helpers/help.sidebar.php:58
+msgid "This is your News Sidebar, and no widgets have been placed here yet!"
+msgstr ""
+
+#: includes/inc.helpers/help.sidebar.php:77
+msgid "This is your Page Sidebar, and no widgets have been placed here yet!"
+msgstr ""
+
+#: includes/inc.helpers/help.sidebar.php:96
+msgid "This is your Contact Sidebar, and no widgets have been placed here yet!"
+msgstr ""
+
+#: includes/inc.helpers/help.slider.kwicks.php:39
+#: includes/inc.helpers/help.slider.nivo.php:52
+msgid "Read More"
+msgstr ""
+
+#: includes/inc.helpers/help.slider.kwicks.php:54
+#: includes/inc.helpers/help.slider.nivo.php:63
+#: includes/inc.helpers/help.slider.roundabout.php:50
+msgid "You do not have any sliders to display."
+msgstr ""
+
+#: includes/inc.helpers/help.slider.piecemaker.php:13
+msgid "You need to upgrade your Flash Player to version 10 or newer."
+msgstr ""
+
+#: includes/inc.helpers/help.slider.piecemaker.php:15
+msgid "http://www.adobe.com/go/getflashplayer"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:33
+msgid "MySpace"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:43
+msgid "Stumble"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:53
+msgid "Linkedin"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:63
+msgid "Delicious"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:73
+msgid "FeedRSS"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:83
+msgid "Digg"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:93
+msgid "FaceBook"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:121
+msgid "gtalk"
+msgstr ""
+
+#: includes/inc.helpers/help.socialMedia.php:123
+msgid "Gtalk"
+msgstr ""
+
+#: templates/template.blog.list.php:47
+#: templates/template.blog.single.php:38
+msgid "By"
+msgstr ""
+
+#: templates/template.blog.list.php:48
+#: templates/template.blog.single.php:39
+msgid "On"
+msgstr ""
+
+#: templates/template.blog.list.php:48
+#: templates/template.blog.single.php:39
+msgid "F j. Y"
+msgstr ""
+
+#: templates/template.blog.list.php:49
+#: templates/template.blog.single.php:40
+msgid "In"
+msgstr ""
+
+#: templates/template.blog.list.php:50
+#: templates/template.blog.single.php:41
+msgid "With"
+msgstr ""
+
+#: templates/template.blog.list.php:83
+msgid "Read more"
+msgstr ""
+
+#: templates/template.blog.list.php:92
+#: templates/template.blog.single.php:68
+msgid "You do not have any posts to display."
+msgstr ""
+
+#: templates/template.blog.single.php:45
+msgid "Pages:"
+msgstr ""
+
+#: templates/template.contact.php:24
+msgid "You do not have any content to display."
+msgstr ""
+
+#: templates/template.gallery.jquery.list.php:49
+#: templates/template.portfolio.jquery.list.php:55
+msgid "All"
+msgstr ""
+
+#: templates/template.gallery.single.php:167
+msgid "You do not have any pictures to display."
+msgstr ""
+
+#: templates/template.sitemap.php:17
+msgid "Pages"
+msgstr ""
+
+#: templates/template.sitemap.php:23
+msgid "Categories"
+msgstr ""
+
+#: templates/template.sitemap.php:112
+msgid "Authors"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Copyright"
+#~ msgstr "&copy; "
+
+#~ msgid "RSS 2.0 - all posts"
+#~ msgstr "RSS 2.0 - всі публікації"
+
+#~ msgid "RSS 2.0 - all comments"
+#~ msgstr "RSS 2.0 - всі коментарі"
+
+#~ msgid "Welcome to 404 error page!"
+#~ msgstr "Ласкаво просимо до 404-ї сторінки!"
+
+#~ msgid ""
+#~ "Welcome to this customized error page. You've reached this page because "
+#~ "you've clicked on a link that does not exist. This is probably our "
+#~ "fault... but instead of showing you the basic '404 Error' page that is "
+#~ "confusing and doesn't really explain anything, we've created this page to "
+#~ "explain what went wrong."
+#~ msgstr ""
+#~ "Вітаємо Вас!<br />Невідомо як Ви сюди потрапили, але такої сторінки, яка "
+#~ "вам потрібна або таку як Ви набрали в адресному рядку нажаль не існує."
+#~ "<p><b>Є такі варіанти виходу із ситуації:</b><br />1) Перейти на головну "
+#~ "сторінку.<br />2) Перевірити адресу, яку Ви ввели.<br />3) Скористатися "
+#~ "пошуком.</p>"
+
+#~ msgid ""
+#~ "You can either (a) click on the 'back' button in your browser and try to "
+#~ "navigate through our site in a different direction, or (b) click on the "
+#~ "following link to go to homepage."
+#~ msgstr " "
+
+#~ msgid "Back to homepage &raquo;"
+#~ msgstr "Повернутися на головну &raquo;"
+
+#~ msgid "Keyword: &#8216;%1$s&#8217;"
+#~ msgstr "Ключові слова: &#8216;%1$s&#8217;"
+
+#~ msgid "Archive for the &#8216;%1$s&#8217; Category"
+#~ msgstr "Архів для категорії &#8216;%1$s&#8217;"
+
+#~ msgid "Posts Tagged &#8216;%1$s&#8217;"
+#~ msgstr "Публікації із теґом &#8216;%1$s&#8217;"
+
+#~ msgid "Archive for %1$s"
+#~ msgstr "Архів за  %1$s"
+
+#~ msgid "F, Y"
+#~ msgstr "F, Y"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "Blog Archives"
+#~ msgstr "Архів блоґу"
+
+#~ msgid "Sorry, no posts matched your criteria."
+#~ msgstr "Вибачте, не знайдено нічого."
+
+#~ msgid "Go to comments"
+#~ msgstr "До коментарів"
+
+#~ msgid "Trackbacks"
+#~ msgstr "Трекбеки"
+
+#~ msgid "Trackback"
+#~ msgstr "Трекбек"
+
+#~ msgid "No comments yet."
+#~ msgstr "Ще немає коментарів."
+
+#~ msgid "H:i"
+#~ msgstr "H:i"
+
+#~ msgid "No trackbacks yet."
+#~ msgstr "Немає ще трекбеків."
+
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+#~ msgstr "Вам потрібно <a href=\"%s\">увійти</a>, для коментування"
+
+#~ msgid "Logged in as"
+#~ msgstr "Ви уійшли як"
+
+#~ msgid "Log out of this account"
+#~ msgstr "Вийти"
+
+#~ msgid "Logout &raquo;"
+#~ msgstr "Вийти &raquo;"
+
+#~ msgid "Welcome back <strong>%s</strong>."
+#~ msgstr "Повернутися назад <strong>%s</strong>."
+
+#~ msgid "Change &raquo;"
+#~ msgstr "Змінити &raquo;"
+
+#~ msgid "(required)"
+#~ msgstr "(Обов'язково)"
+
+#~ msgid "E-Mail (will not be published)"
+#~ msgstr "E-Mail (не публікується)"
+
+#~ msgid "Website"
+#~ msgstr "Блоґ(сайт)"
+
+#~ msgid "Subscribe to comments feed"
+#~ msgstr "Підписатися на коментарі"
+
+#~ msgid "Top"
+#~ msgstr "Вгору"
+
+#~ msgid ""
+#~ "Theme by <a href=\"%1$s\">NeoEase</a>. Valid <a href=\"%2$s\">XHTML 1.1</"
+#~ "a> and <a href=\"%3$s\">CSS 3</a>."
+#~ msgstr ""
+#~ "Тема від <a href=\"%1$s\">NeoEase</a>. Правильний <a href=\"%2$s\">XHTML "
+#~ "1.1</a> та <a href=\"%3$s\">CSS 3</a>."
+
+#~ msgid "Current Theme Options"
+#~ msgstr "Налаштування вигляду"
+
+#~ msgid "Using google custom search engine."
+#~ msgstr "За допомогою системи користувацького пошуку Google."
+
+#~ msgid "CX:"
+#~ msgstr "CX:"
+
+#~ msgid ""
+#~ "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of "
+#~ "<a href=\"%1$s\">Google Custom Search Engine</a>, and type the "
+#~ "<code>value</code> here.<br/>For example: "
+#~ "<code>014782006753236413342:1ltfrybsbz4</code>"
+#~ msgstr ""
+#~ "Знайдіть <code>name=\"cx\"</code> у <strong>Search box code</strong> of "
+#~ "<a href=\"%1$s\">Google Custom Search Engine</a>, and type the "
+#~ "<code>value</code> here.<br/>Для прикладу: "
+#~ "<code>014782006753236413342:1ltfrybsbz4</code>"
+
+#~ msgid "Menubar"
+#~ msgstr "Стрічка меню"
+
+#~ msgid "Show pages as menu."
+#~ msgstr "Показати сторінки в меню"
+
+#~ msgid "Show categories as menu."
+#~ msgstr "Показати категорії в меню"
+
+#~ msgid "HTML enabled"
+#~ msgstr "HTML дозволено"
+
+#~ msgid "Who can see?"
+#~ msgstr "Хто бачитиме?"
+
+#~ msgid "Registered Users"
+#~ msgstr "Зареєстовані користувачі"
+
+#~ msgid "Visitors"
+#~ msgstr "Відвідувачі"
+
+#~ msgid "Show categories on posts."
+#~ msgstr "Показувати категорію в публікаціях"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "Email feed."
+#~ msgstr "Email feed."
+
+#~ msgid "Save Changes"
+#~ msgstr "Зберегти зміни"
+
+#~ msgid "Quote"
+#~ msgstr "Цитата"
+
+#~ msgid "Subscribe to this blog..."
+#~ msgstr "Підписатися на цей блоґ"
+
+#~ msgid "Subscribe with "
+#~ msgstr "Додати до"
+
+#~ msgid "Google"
+#~ msgstr "Google"
+
+#~ msgid "Youdao"
+#~ msgstr "Youdao"
+
+#~ msgid "Xian Guo"
+#~ msgstr "Xian Guo"
+
+#~ msgid "Zhua Xia"
+#~ msgstr "Zhua Xia"
+
+#~ msgid "My Yahoo!"
+#~ msgstr "My Yahoo!"
+
+#~ msgid "newsgator"
+#~ msgstr "newsgator"
+
+#~ msgid "iNezha"
+#~ msgstr "iNezha"
+
+#~ msgid "Subscribe to this blog via email..."
+#~ msgstr "RSS2Email"

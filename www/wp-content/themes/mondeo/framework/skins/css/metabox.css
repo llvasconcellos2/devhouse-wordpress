@@ -1,0 +1,27 @@
+.ht-metabox-form-field {
+	 padding: 10px;
+}
+
+.ht-metabox-form-field label {
+	display: block; 
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-family: Georgia, Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+
+.ht-metabox-form-field input[type="text"], .ht-metabox-form-field textarea {
+	width: 98%;
+}
+
+.ht-metabox-form-field textarea {
+	height: 80px;
+}
+
+.ht-metabox-form-field select {
+	width: 200px;
+}
+
+.ht-description {
+	color: #999999;
+}

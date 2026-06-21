@@ -1,0 +1,80 @@
+.clear { clear: both;}
+
+.ht-widget-wrap {
+	 padding: 10px;
+}
+
+.ht-widget-wrap label {
+	display: block; 
+	margin-bottom: 10px;
+	font-size: 12px;
+	font-family: Georgia, Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+
+.ht-widget-wrap input[type="text"], .ht-widget-wrap textarea {
+	width: 98%;
+}
+
+.ht-widget-wrap select {
+	width: 200px;
+}
+
+.ht-widget-upload img {
+	margin-top: 15px;
+	border: 1px solid #E1E1E1;
+	background: #F9F9F9;
+	padding: 3px;
+}
+
+.ht-shorttext input[type="text"] {
+	width: 150px;
+}
+
+.ht-description {
+	color: #999999;
+	font-style: italic;
+	font-size: 11px;
+	padding: 20px 0 0;
+	margin: 0;
+}
+
+.ht-ads-title {
+	font-size: 14px;
+	font-family: Georgia, Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+
+.ht-ads-wrap {
+	border: 1px solid #E1E1E1;
+	padding: 10px 180px 10px 10px;
+	position: relative;
+	margin: 5px 0 20px;
+}
+
+.ht-upload-button,
+.ht-uploaded-image{
+	padding-bottom: 15px;
+}
+
+.ht-ads-wrap .ht-uploaded-image {
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	width: 125px;
+	height: 125px;
+	border: 1px solid #E1E1E1;
+	background: url(../images/ads-125.png) no-repeat 50% 50% #F7F7F7;
+	padding: 5px;
+}
+
+.ht-ads-wrap .ht-uploaded-image img {
+	padding: 0; 
+	margin: 0;
+	border: none;
+}
+
+.ht-widget-ads {
+	padding: 0;
+	margin-bottom: 20px;
+}

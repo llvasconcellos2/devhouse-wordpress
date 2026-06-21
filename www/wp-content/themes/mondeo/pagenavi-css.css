@@ -1,0 +1,35 @@
+/*
+Default style for WP-PageNavi plugin
+*/
+.wp-pagenavi {
+	height: 100%;
+	overflow: hidden;
+	float: right; 
+	display: block; 
+	padding: 20px 0 50px;
+}
+
+.wp-pagenavi a, .wp-pagenavi span { 
+	 display: block;
+	 float: left;
+	 height: 20px;
+	 line-height: 20px;
+	 padding: 0 8px;
+	 margin-right: 5px;
+	 border: 1px solid #C2C2C2;
+	 background: url(skins/images/pagination.png) repeat-x 0 0;
+	 border-radius: 3px;
+	 -moz-border-radius: 3px;
+	 -webkit-border-radius: 3px;
+}
+
+.wp-pagenavi .pages {
+     margin-left: 0;
+}
+
+.wp-pagenavi span.current, 
+.wp-pagenavi a:hover {
+	 background: url(skins/images/pagination.png) repeat-x 0 100%;
+	 border: 1px solid #5C5C5C;
+	 color: #FFFFFF;
+}
