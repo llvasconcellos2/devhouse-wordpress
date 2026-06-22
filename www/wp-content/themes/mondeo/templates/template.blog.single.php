@@ -42,27 +42,7 @@ get_header();
 	</div><!--#end entry meta-->
 </section>
 <div style="width:604px">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0425795233850496";
-/* Cabecalho Pq */
-google_ad_slot = "2931334000";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script><script type="text/javascript"><!--
-google_ad_client = "ca-pub-0425795233850496";
-/* Cabecalho Pq */
-google_ad_slot = "2931334000";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+
 </div>
 <div class="post-text"><?php the_content(); ?></div>
 <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'hawktheme' ), 'after' => '</div>' ) ); ?><!--end link page-->
@@ -95,17 +75,6 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <div class="clear"></div>
 
 <p></p>
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0425795233850496";
-/* Bloco 1 */
-google_ad_slot = "2841024870";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
 
 </div><!--#end content wrap-->
 </div><!--# container-->

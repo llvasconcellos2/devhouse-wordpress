@@ -51,7 +51,7 @@ get_header();
 	<div class="entry-meta">
 		<?php  /*if($author): ?><p><?php _e('By','hawktheme'); ?> <?php the_author_posts_link(); ?></p><?php endif;*/ ?>
 			
-		<?php  if($author): ?><p><?php _e('By','hawktheme'); ?> <span class="vcard author"><a href="https://www.devhouse.com.br/leonardo" title="Posts de Leonardo Lima de Vasconcellos" rel="author" class="fn">Leonardo Lima de Vasconcellos</a></span></p><?php endif; ?>
+		<?php  if($author): ?><p><?php _e('By','hawktheme'); ?> <span class="vcard author"><a href="https://leonardo-vasconcellos.vercel.app/" title="Posts de Leonardo Lima de Vasconcellos" rel="author" class="fn">Leonardo Lima de Vasconcellos</a></span></p><?php endif; ?>
 			
 		<?php if($date): ?><p class="updated"><?php _e('On','hawktheme'); ?> <?php echo get_the_time(__('F j. Y', 'hawktheme')); ?></p><?php endif; ?>
 		<?php if($categories): ?><p><?php _e('In','hawktheme'); ?> <?php the_category(', '); ?></p><?php endif; ?>
@@ -97,17 +97,7 @@ get_header();
 	?>
 	<p></p>
 	<div style="text-align: right">
-		<script type="text/javascript"><!--
-		google_ad_client = "ca-pub-0425795233850496";
-		/* Cabecalho */
-		google_ad_slot = "8977867600";
-		google_ad_width = 468;
-		google_ad_height = 60;
-		//-->
-		</script>
-		<script type="text/javascript"
-		src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
+
 	</div>
 	<?php } ?>
 </li>

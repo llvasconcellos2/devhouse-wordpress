@@ -4,7 +4,7 @@ services:
     container_name: devhouse-db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: "G0d!s777"
+      MYSQL_ROOT_PASSWORD: "password"
       MYSQL_DATABASE: devhouse_site
     volumes:
       - db_data:/var/lib/mysql

@@ -166,11 +166,17 @@ function cpto_get_previous_post_where($where)
                 
         if (count($results) > 0)
             {
-                $where = $wpdb->prepare("WHERE p.menu_order < '".$current_menu_order."' AND p.post_type = '". $post->post_type ."' AND p.post_status = 'publish' $posts_in_ex_cats_sql");        
+                $where = $wpdb->prepare(
+                    "WHERE p.menu_order < %d AND p.post_type = %s AND p.post_status = 'publish' $posts_in_ex_cats_sql",
+                    $current_menu_order, $post->post_type
+                );
             }
             else
                 {
-                    $where = $wpdb->prepare("WHERE p.post_date < '".$current_post_date."' AND p.post_type = '". $post->post_type ."' AND p.post_status = 'publish' AND p.ID != '". $post->ID ."' $posts_in_ex_cats_sql");            
+                    $where = $wpdb->prepare(
+                        "WHERE p.post_date < %s AND p.post_type = %s AND p.post_status = 'publish' AND p.ID != %d $posts_in_ex_cats_sql",
+                        $current_post_date, $post->post_type, $post->ID
+                    );
                 }
         
         return $where;
@@ -244,11 +250,17 @@ function cpto_get_next_post_where($where)
         
         if (count($results) > 0)
             {
-                $where = $wpdb->prepare("WHERE p.menu_order > '".$current_menu_order."' AND p.post_type = '". $post->post_type ."' AND p.post_status = 'publish' $posts_in_ex_cats_sql");        
+                $where = $wpdb->prepare(
+                    "WHERE p.menu_order > %d AND p.post_type = %s AND p.post_status = 'publish' $posts_in_ex_cats_sql",
+                    $current_menu_order, $post->post_type
+                );
             }
             else
                 {
-                    $where = $wpdb->prepare("WHERE p.post_date > '".$current_post_date."' AND p.post_type = '". $post->post_type ."' AND p.post_status = 'publish' AND p.ID != '". $post->ID ."' $posts_in_ex_cats_sql");            
+                    $where = $wpdb->prepare(
+                        "WHERE p.post_date > %s AND p.post_type = %s AND p.post_status = 'publish' AND p.ID != %d $posts_in_ex_cats_sql",
+                        $current_post_date, $post->post_type, $post->ID
+                    );
                 }
         
         return $where;
