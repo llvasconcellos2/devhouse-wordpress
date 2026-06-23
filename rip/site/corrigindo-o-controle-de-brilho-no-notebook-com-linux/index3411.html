@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" prefix="" lang="pt-BR">
+
+<!-- Mirrored from localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/?replytocom=232 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:58:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Corrigindo o controle de brilho no notebook com Linux &#8211; DevHouse Internet Software Development House</title>
+<meta name="keywords" content="controle, brilho, samsung, x420, intel, gs45, ich9ms, acpi, linux, mint, debian, grub, boot, fedora, ubuntu, kernel, bios, windows, chipset" />
+<meta name="description" content="Este artigo ensina como corrigir o problema com controle de brilho em laptops com chipset intel." />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.core1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.deepblue1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/video-js1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/prettyphoto1717.css?ver=2.0.6" />
+<link href="../../fonts.googleapis.com/cssb69f.css?family=Droid+Sans:regular,bold" rel="stylesheet" type="text/css" />
+
+<link rel="shortcut icon" href="../wp-content/uploads/2012/11/devhouse-favicon.html" />
+<link href="../../fonts.googleapis.com/css5ba9.css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+<style type="text/css">h1, h2, h3, h4, h5, h6 {  font-family: Yanone Kaffeesatz; }</style>
+<link rel="pingback" href="../xmlrpc.php" />
+
+<!-- BEGIN Metadata added by the Add-Meta-Tags WordPress plugin -->
+<meta name="description" content="Possuo o ultrabook Samsung X420. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia." />
+<meta name="keywords" content="linux, linux mint debian edition, acpi, bios, boot, brilho, chipset, controle, debian, fedora, grub, gs45, ich9ms, intel, kernel, linux, mint, samsung, ubuntu, windows, x420" />
+<meta property="og:site_name" content="DevHouse Internet Software Development House" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Corrigindo o controle de brilho no notebook com Linux" />
+<meta property="og:url" content="https://leonardo-vasconcellos.vercel.app/portfolio/devhouse-wordpress/site/corrigindo-o-controle-de-brilho-no-notebook-com-linux/" />
+<meta property="og:description" content="Possuo o ultrabook Samsung X420. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia." />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:updated_time" content="2026-06-23T05:58:43+00:00" />
+<meta property="og:image" content="http://localhost:8080/wp-content/uploads/2012/06/controle_de_brilho.jpg" />
+<meta property="og:image:width" content="1059" />
+<meta property="og:image:height" content="519" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2012-06-03T01:51:44+00:00" />
+<meta property="article:modified_time" content="2026-06-23T05:58:43+00:00" />
+<meta property="article:author" content="http://localhost:8080/author/leonardo/" />
+<meta property="article:publisher" content="http://localhost:8080/" />
+<meta property="article:section" content="Linux" />
+<meta property="article:section" content="Linux Mint Debian Edition" />
+<meta property="article:tag" content="linux" />
+<meta property="article:tag" content="linux mint debian edition" />
+<meta property="article:tag" content="acpi" />
+<meta property="article:tag" content="bios" />
+<meta property="article:tag" content="boot" />
+<meta property="article:tag" content="brilho" />
+<meta property="article:tag" content="chipset" />
+<meta property="article:tag" content="controle" />
+<meta property="article:tag" content="debian" />
+<meta property="article:tag" content="fedora" />
+<meta property="article:tag" content="grub" />
+<meta property="article:tag" content="gs45" />
+<meta property="article:tag" content="ich9ms" />
+<meta property="article:tag" content="intel" />
+<meta property="article:tag" content="kernel" />
+<meta property="article:tag" content="linux" />
+<meta property="article:tag" content="mint" />
+<meta property="article:tag" content="samsung" />
+<meta property="article:tag" content="ubuntu" />
+<meta property="article:tag" content="windows" />
+<meta property="article:tag" content="x420" />
+<!-- END Metadata added by the Add-Meta-Tags WordPress plugin -->
+
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Feed para DevHouse Internet Software Development House &raquo;" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo;" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo; Corrigindo o controle de brilho no notebook com Linux" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8080\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.14"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='../wp-content/plugins/captcha/css/front_end_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='../wp-content/plugins/captcha/css/desktop_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='sharedaddy-css'  href='../wp-content/plugins/jetpack/modules/sharedaddy/sharing7923.css?ver=5.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min68b3.css?ver=1' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/plugins1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/custom1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/video1717.js?ver=2.0.6'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.html" /> 
+<link rel='prev' title='Como traduzir um template do WordPress' href='../como-traduzir-um-template-do-wordpress/index.html' />
+<link rel='next' title='eXtplorer, um gerenciador de arquivos em PHP' href='../extplorer-um-gerenciador-de-arquivos-em-php/index.html' />
+<meta name="generator" content="WordPress 4.8.14" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index905c.html?p=212' />
+<meta name='robots' content='noindex,follow' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed7a15.json?url=http%3A%2F%2Flocalhost%3A8080%2Fcorrigindo-o-controle-de-brilho-no-notebook-com-linux%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed501d?url=http%3A%2F%2Flocalhost%3A8080%2Fcorrigindo-o-controle-de-brilho-no-notebook-com-linux%2F&amp;format=xml" />
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/html5.js?ver=2.0.6"></script>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/css3.js?ver=2.0.6"></script>
+<![endif]-->
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<body class="post-template-default single single-post postid-212 single-format-standard deepblue">
+<div id="wrap">
+<header>
+<section class="header-style-two layout-width">
+<div class="site-logo"><h3><a href="../index.html" title="DevHouse Internet Software Development House"><img src="../wp-content/uploads/2012/10/devhouse_logo_pq-2.html" alt="DevHouse Internet Software Development House" /></a></h3></div><nav id="header-menu" class="ddsmoothmenu"><ul id="menu-menu-principal" class="drop-menu"><li id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-362"><a href="https://leonardo-vasconcellos.vercel.app/"><span>Portfólio</span></a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="../blog/index.html"><span>Blog</span></a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="../leonardo/index.html"><span>Sobre</span></a></li>
+<li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-678"><a href="../client-side-image-resize/index.html"><span>Client Side Image Resize</span></a></li>
+<li id="menu-item-563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-563"><a href="../contato/index.html"><span>Contato</span></a></li>
+</ul></nav><div id="topmedia">
+<ul>
+<li class="facebook"><a href="https://www.facebook.com/devhousesoftware" rel="external">facebook</a><p class="tooltip">FaceBook</p></li>
+</ul>
+</div>
+<div id="topsearch">
+<form action="http://localhost:8080/" method="get">
+<input type="text" id="topsearch-input" class="cleardefault" name="s" size="24" value="Procurar..."  /><input type="submit"  id="topsearch-button" name="topsearch-button" value="" />
+</form>
+</div>
+<div class="clear"></div></section>
+<div class="page-header">
+<div class="layout-width page-header-wrap"><h2 class="breadcrumbs"><a href="../category/linux/index.html" rel="category tag">Linux</a>&nbsp;&middot;&nbsp;<a href="../category/linux/linux-mint-debian-edition/index.html" rel="category tag">Linux Mint Debian Edition</a></h2>
+<div class="clear"></div>
+<div class="topshadow"></div>
+</div>
+</div>
+</header>
+<!-- header --><div id="container">
+<div class="wrap layout-width right-side">
+<article id="content">
+<div class="post-single" id="post-212">
+
+<section class="post-header">
+	<h2>Corrigindo o controle de brilho no notebook com Linux</h2>
+	<div class="entry-meta">
+		<span>Por <a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></span>		<span>Em 3 jun. 2012</span>		<span>Em <a href="../category/linux/index.html" rel="category tag">Linux</a>, <a href="../category/linux/linux-mint-debian-edition/index.html" rel="category tag">Linux Mint Debian Edition</a></span>		<span>Possui <a href="index.html#comments">28 Comentários</a></span>	</div><!--#end entry meta-->
+</section>
+<div style="width:604px">
+<figure class="type-image">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb7257.jpg?src=http://localhost:8080/wp-content/uploads/2012/06/controle_de_brilho.jpg&amp;h=227&amp;w=600&amp;zc=1" alt="Corrigindo o controle de brilho no notebook com Linux" title="Corrigindo o controle de brilho no notebook com Linux" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></figure>
+</div>
+<div class="post-text"><p>Possuo o ultrabook <a title="Samguns X420" href="http://www.samsung.com/br/consumer/it-products/notebooks-netbooks/ultra-portable/NP-X420-JA01BR" target="_blank">Samsung X420</a>. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia.</p>
+<p>As teclas de atalho padrão neste notebook para o funcionamento do controle de brilho são fn (function) + seta para cima ou seta para baixo. Logo após a instalação do Linux Mint 12 Debian Edition eu tentei ajustar o brilho e nada. O problema é igual para todas as distribuições que testei: Ubuntu 11.10, Ubuntu 12.04 e Fedora 16. Ao teclar fn + seta para cima aparecia o ícone de brilho na tela mas nada acontecia e ao teclar fn + seta para baixo o brilho era ajustado ao máximo e o ícone mostrava que estava um pouco abaixo do máximo, o que era estranho.</p>
+<p>Pesquisando na net encontrei a solução do problema e parece ser comum entre notebooks com chipset <strong>Intel GS45 + ICH9MS</strong>, por isso se o seu notebook posui este chipset ou se está tendo o mesmo problema tente a correção a seguir:</p>
+<p>A correção consiste em adicionar um parâmetro de configuração do Kernel do Linux no boot. Para testá-lo tecle &#8220;e&#8221; na tela de boot do linux para editar os comandos de boot e insira <strong>acpi_osi= </strong>no final da linha &#8220;linux /boot/&#8230;&#8221;. O do meu computador ficou assim (linha 9):</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate" title="">setparams 'LinuxMint GNU/Linux, with Linux 3.3.0-6.dmz.1-liquorix-amd64
+
+insmod gzio
+insmod part_msdos
+insmod ext2
+set root='(/dev/sda, msdos1) '
+search --no-floppy --fs-uuid --set=root 321e9577-ad48-4370-9276-06399e26b6da
+echo 'Loading Linux 3.3.0-6.dmz.1-liquorix-amd64 ... '
+linux /boot/vmlinuz-3.3.0-6.dmz.1-liquoriz-amd64 root=UUID=321e9577-ad48-4370-9276-06399e26b6da ro quiet acpi_osi=
+echo 'Loading initial ramdisk ...'
+initrd /boot/initrd.img-3.3.0-6.dmz.1-liquorix-amd64</pre>
+<p>Segundo informações, o kernel do Linux por padrão se idenditifica como sendo qualquer versão do Windows para a BIOS e o problema é que algumas BIOS tem desvios de código para resolver bugs do Windows Vista e por isso acaba impactando no Linux.</p>
+<p>Outra alternativa é usar o parâmetro abaixo caso a sua BIOS tiver suporte ao Linux:</p>
+<p><strong>acpi_osi=&#8221;Linux&#8221;</strong></p>
+<p>Ou usar o seguinte parâmetro para fazer com que o Linux se identifique como Windows Vista e executar comandos de compatibilidade com o mesmo:</p>
+<p><strong>acpi_osi=&#8221;Windows 2006&#8243;<br />
+</strong></p>
+<p>Para usar o parâmetro de forma permanente</p>
+<p>Conforme dito acima, para testar o parâmetro você pode teclar &#8220;e&#8221; no menu de boot do Grub2 e inserir o parâmetro, mas isso só vai funcionar até o próximo boot. Para deixar o parâmetro de forma permanente você precisa editar um arquivo de configuração do grub conforme asseguir:</p>
+<pre class="brush: bash; title: ; notranslate" title="">$ sudo nano /etc/default/grub</pre>
+<p>O editor nano vai abrir o arquivo e seu conteúdo será parecido com esse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate" title=""># If you change this file, run 'update-grub' afterwards to update
+ # /boot/grub/grub.cfg.
+ # For full documentation of the options in this file, see:
+ #   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM=&quot;0x01234567,0xfefefefe,0x89abcdef,0xefefefef&quot;
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass &quot;root=UUID=xxx&quot; parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY=&quot;true&quot;
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE=&quot;480 440 1&quot;
+</pre>
+<p>Adicione o parâmetro na linha GRUB_CMDLINE_LINUX_DEFAULT conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=&quot;
+</pre>
+<p>Se você precisar usar parâmetros que contém aspas (&#8220;) você precisa fazer o escape das aspas conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=\&quot;Linux\&quot;&quot;
+</pre>
+<p>Salve o arquivo e entre com o comando a seguir para atualizar as configurações do grub:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+$ sudo update-grub
+</pre>
+<p>That&#8217;s all folks!</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compartilhe isso:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-212" class="share-twitter sd-button share-icon no-text" href="index9a7b.html?share=twitter" target="_blank" title="Clique para compartilhar no Twitter"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Twitter(abre em nova janela)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-212" class="share-facebook sd-button share-icon no-text" href="index5a58.html?share=facebook" target="_blank" title="Clique para compartilhar no Facebook"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Facebook(abre em nova janela)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-212" class="share-google-plus-1 sd-button share-icon no-text" href="index386f.html?share=google-plus-1" target="_blank" title="Compartilhe no Google+"><span></span><span class="sharing-screen-reader-text">Compartilhe no Google+(abre em nova janela)</span></a></li><li class="share-end"></li></ul></div></div></div></div>
+<!--end link page-->
+<div class="tags">Tags: <a href="../tag/acpi/index.html" rel="tag">acpi</a> , <a href="../tag/bios/index.html" rel="tag">bios</a> , <a href="../tag/boot/index.html" rel="tag">boot</a> , <a href="../tag/brilho/index.html" rel="tag">brilho</a> , <a href="../tag/chipset/index.html" rel="tag">chipset</a> , <a href="../tag/controle/index.html" rel="tag">controle</a> , <a href="../tag/debian/index.html" rel="tag">debian</a> , <a href="../tag/fedora/index.html" rel="tag">fedora</a> , <a href="../tag/grub/index.html" rel="tag">grub</a> , <a href="../tag/gs45/index.html" rel="tag">gs45</a> , <a href="../tag/ich9ms/index.html" rel="tag">ich9ms</a> , <a href="../tag/intel/index.html" rel="tag">intel</a> , <a href="../tag/kernel/index.html" rel="tag">kernel</a> , <a href="../tag/linux/index.html" rel="tag">Linux</a> , <a href="../tag/mint/index.html" rel="tag">mint</a> , <a href="../tag/samsung/index.html" rel="tag">samsung</a> , <a href="../tag/ubuntu/index.html" rel="tag">ubuntu</a> , <a href="../tag/windows/index.html" rel="tag">windows</a> , <a href="../tag/x420/index.html" rel="tag">x420</a></div><div class="author-info">
+<h3>Sobre o autor</h3>
+<dl class="fixed radius-5">
+<dt><img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' /></dt>
+<dd>
+<h5><a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></h5>
+<p>Um desenvolvedor web veterano que está sempre a procura de novas tecnologias que facilitem o desenvolvimento de aplicativos ricos para a internet. Louco por tecnologia, games e Linux.</p>
+</dd>
+</dl>
+</div>
+<div class="related-posts">
+<h3>Posts Relacionados</h3>
+<ul class="side thumb-preloader thumb-fade thumb-move">
+<li>
+<figure class="type-image">
+<a href="../wp-content/uploads/2015/08/skype-logo-open-graph.html" class="preloader" rel="tag[RelatedPosts]" title="[Dica] Ícone do Skype não aparece no Ubuntu"><img src="../wp-content/themes/mondeo/framework/plugins/timthumbb641.png?src=http://localhost:8080/wp-content/uploads/2015/08/skype-logo-open-graph.png&amp;h=120&amp;w=260&amp;zc=1" alt="[Dica] Ícone do Skype não aparece no Ubuntu" title="[Dica] Ícone do Skype não aparece no Ubuntu" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></a></figure>
+<section>
+<h5><a href="../dica-icone-do-skype-nao-aparece-no-ubuntu/index.html" rel="bookmark" title="[Dica] Ícone do Skype não aparece no Ubuntu">[Dica] Ícone do Skype não aparece no Ubuntu</a></h5>
+<p>Para fazer o ícone do Skype aparecer no systray do Unity no Ubuntu adicione o pacote sni-qt com o seguinte comando:
+sudo...</p>
+</section>
+</li>
+<li>
+<figure class="type-image">
+<a href="../wp-content/uploads/2012/06/binbash.html" class="preloader" rel="tag[RelatedPosts]" title="Copiar / Download de um site inteiro com WGET [ripar]"><img src="../wp-content/themes/mondeo/framework/plugins/timthumb9390.jpg?src=http://localhost:8080/wp-content/uploads/2012/06/binbash.jpg&amp;h=120&amp;w=260&amp;zc=1" alt="Copiar / Download de um site inteiro com WGET [ripar]" title="Copiar / Download de um site inteiro com WGET [ripar]" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></a></figure>
+<section>
+<h5><a href="../copiar-download-de-um-site-inteiro-com-wget-ripar/index.html" rel="bookmark" title="Copiar / Download de um site inteiro com WGET [ripar]">Copiar / Download de um site inteiro com WGET [ripar]</a></h5>
+<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:
+&nbsp;
+$...</p>
+</section>
+</li>
+<div class="clear"></div></ul>
+</div>
+</div><!--end post single-->
+
+
+
+<div id="comments">
+	<h3 id="comments-title">26 Comentários</h3>
+	<ol class="commentlist">	<li class="comment even thread-even depth-1" id="li-comment-4">
+		<dl id="comment-4" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/88ddd92dc931d51912101a763b3e7212?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/88ddd92dc931d51912101a763b3e7212?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index21b4.html?replytocom=4#respond' onclick='return addComment.moveForm( "comment-4", "4", "respond", "212" )' aria-label='Responder para Vinicius'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://website/' rel='external nofollow' class='url'>Vinicius</a></cite>9 de agosto de 2012 at 14:25</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Sensacional! Super simples! Funcionou perfeitamente aqui! O meu é um samsung SF410 e estou usando ubuntu 12.04.</p>
+<p>Obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-13">
+		<dl id="comment-13" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfa40.html?replytocom=13#respond' onclick='return addComment.moveForm( "comment-13", "13", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>11 de outubro de 2012 at 18:19</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>De nada! O site ainda está em construção mas fico feliz de ajudar!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-99">
+		<dl id="comment-99" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f8ca205e1dbdedccaff961f2ef114e38?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f8ca205e1dbdedccaff961f2ef114e38?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6c56.html?replytocom=99#respond' onclick='return addComment.moveForm( "comment-99", "99", "respond", "212" )' aria-label='Responder para Roger Trancozo'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://www.facebook.com/roger.trancozo' rel='external nofollow' class='url'>Roger Trancozo</a></cite>4 de maio de 2013 at 19:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Funcionou de primeira. Muito Obrigado.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-102">
+		<dl id="comment-102" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/3cdea5cb7a1b86bf4d4643ff05dc8101?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/3cdea5cb7a1b86bf4d4643ff05dc8101?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index34f9.html?replytocom=102#respond' onclick='return addComment.moveForm( "comment-102", "102", "respond", "212" )' aria-label='Responder para greysonsilva'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://gravatar.com/greysonsilva' rel='external nofollow' class='url'>greysonsilva</a></cite>16 de maio de 2013 at 20:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Muito obrigado eu estou de ubuntu 13.04 e funcionou perfeitamente!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-109">
+		<dl id="comment-109" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/d7db2dcdd17292448b2ca5c711bd408f?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/d7db2dcdd17292448b2ca5c711bd408f?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexffb9.html?replytocom=109#respond' onclick='return addComment.moveForm( "comment-109", "109", "respond", "212" )' aria-label='Responder para marxluz'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">marxluz</cite>8 de junho de 2013 at 21:41</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Muito obrigado fera, resolveu meu problema</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-even depth-1" id="li-comment-214">
+		<dl id="comment-214" class="fixed radius-5">
+		<dt class="comment-auther">
+						<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8477.html?replytocom=214#respond' onclick='return addComment.moveForm( "comment-214", "214", "respond", "212" )' aria-label='Responder para +1 &amp; share (#1) | Um Panda na Garagem'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://umpandanagaragem.wordpress.com/2014/03/08/1-share-1/' rel='external nofollow' class='url'>+1 &amp; share (#1) | Um Panda na Garagem</a></cite>8 de março de 2014 at 11:16</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>[&#8230;] Corrigindo o controle de brilho no notebook com Linux [&#8230;]</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-227">
+		<dl id="comment-227" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/4a537ec6d9508dfe38699eb02e0c1d03?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/4a537ec6d9508dfe38699eb02e0c1d03?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexe953.html?replytocom=227#respond' onclick='return addComment.moveForm( "comment-227", "227", "respond", "212" )' aria-label='Responder para Marcos André'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Marcos André</cite>15 de março de 2014 at 20:46</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Muito obrigado Leonardo resolveu também meu problema meu distro é Debian 7.4</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-232">
+		<dl id="comment-232" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index3411.html?replytocom=232#respond' onclick='return addComment.moveForm( "comment-232", "232", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>19 de março de 2014 at 19:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Debian é show! Valeu!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-263">
+		<dl id="comment-263" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/27f605565d4e67b5da9c47aba70025a5?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/27f605565d4e67b5da9c47aba70025a5?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfd0a.html?replytocom=263#respond' onclick='return addComment.moveForm( "comment-263", "263", "respond", "212" )' aria-label='Responder para Raphael'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Raphael</cite>27 de abril de 2014 at 17:12</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bem legal! Funciona mesmo! Estou iniciando no mundo Linux com o Ubuntu, pois acho que é a distribuição mais simples de se usar. Estou batendo cabeça ainda, mas encontrando tutoriais como esse, estou vendo que o nível da galera está bem alto! Valeu mesmo!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-264">
+		<dl id="comment-264" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0800.html?replytocom=264#respond' onclick='return addComment.moveForm( "comment-264", "264", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de abril de 2014 at 12:23</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Que bom que funcionou!<br />
+Quanto a distro eu sugiro você usar o Linux Mint que é baseado no Ubuntu mas tem uma interface gráfica diferente, mais parecida com o Windows e melhor ainda: BEM menos bugs.<br />
+O primeiro passo você já deu, continua usando Linux que o conhecimento vai vindo gradativamente.<br />
+Abraço e boa sorte!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-odd thread-alt depth-1" id="li-comment-280">
+		<dl id="comment-280" class="fixed radius-5">
+		<dt class="comment-auther">
+						<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb600.html?replytocom=280#respond' onclick='return addComment.moveForm( "comment-280", "280", "respond", "212" )' aria-label='Responder para Links (UPNG) | duarthiago&#039;s logbook'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://duarthiago.wordpress.com/2014/05/23/links-upng/' rel='external nofollow' class='url'>Links (UPNG) | duarthiago&#039;s logbook</a></cite>23 de maio de 2014 at 21:28</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>[&#8230;] Corrigindo o controle de brilho no notebook com Linux [&#8230;]</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-281">
+		<dl id="comment-281" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b2474068b64fba8052de6eb9c2cc7a00?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b2474068b64fba8052de6eb9c2cc7a00?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index00b2.html?replytocom=281#respond' onclick='return addComment.moveForm( "comment-281", "281", "respond", "212" )' aria-label='Responder para Felipe Augusto Marques'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://plus.google.com/117774716136524268439' rel='external nofollow' class='url'>Felipe Augusto Marques</a></cite>25 de maio de 2014 at 8:57</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Funcionou certinho, muito obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-328">
+		<dl id="comment-328" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfd52.html?replytocom=328#respond' onclick='return addComment.moveForm( "comment-328", "328", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de junho de 2014 at 17:10</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>🙂</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-483">
+		<dl id="comment-483" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/e7346709e5c36ff35ebc6c3cca951d76?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/e7346709e5c36ff35ebc6c3cca951d76?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc155.html?replytocom=483#respond' onclick='return addComment.moveForm( "comment-483", "483", "respond", "212" )' aria-label='Responder para Vinicus Ovile'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Vinicus Ovile</cite>10 de outubro de 2014 at 19:59</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa noite, estou com este problema em um notebook 5060m, já tentei as formas que você passou mas não deu certo. Tem alguma sugestão? Obrigado</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-488">
+		<dl id="comment-488" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2e27.html?replytocom=488#respond' onclick='return addComment.moveForm( "comment-488", "488", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>11 de outubro de 2014 at 4:55</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Uma breve pesquisa na net percebi que o seu note é da Positivo. Desculpa falar isso mas são os piores. O colégio é bom mas os computadores não. Mas nesse caso, pelo que percebi, seu notebook é bem mais novo que o meu. O problema deve ter a mesma raiz mas a solução deve ser um pouco diferente. Procure no google por &#8220;5060 positivo brilho linux&#8221; ou para ser mais preciso, tente saber o modelo do chipset, bios e placa mãe e procure em inglês como &#8220;brightness control&#8221;. Tente usar algum software como o everest para detectar seu chipset. Boa sorte!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-489">
+		<dl id="comment-489" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index33d3.html?replytocom=489#respond' onclick='return addComment.moveForm( "comment-489", "489", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>11 de outubro de 2014 at 4:56</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Esqueci de perguntar: qual distribuição/versão do Linux você está tentando instalar?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-742">
+		<dl id="comment-742" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/2f9e574f49a130ce8c17c45a68de8efe?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/2f9e574f49a130ce8c17c45a68de8efe?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexaee4.html?replytocom=742#respond' onclick='return addComment.moveForm( "comment-742", "742", "respond", "212" )' aria-label='Responder para Deyves'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://website/' rel='external nofollow' class='url'>Deyves</a></cite>13 de agosto de 2015 at 22:03</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Obrigado funcionou perfeitamente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-743">
+		<dl id="comment-743" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index9d6a.html?replytocom=743#respond' onclick='return addComment.moveForm( "comment-743", "743", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>17 de agosto de 2015 at 15:06</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Que bom!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-758">
+		<dl id="comment-758" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/e21d8088a8671578d7da4000c37c9c6e?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/e21d8088a8671578d7da4000c37c9c6e?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index3989.html?replytocom=758#respond' onclick='return addComment.moveForm( "comment-758", "758", "respond", "212" )' aria-label='Responder para vinicius'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">vinicius</cite>20 de fevereiro de 2016 at 20:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>mint 17 not samsung rv 415 funcionou teclas fn e setas</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-773">
+		<dl id="comment-773" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6e4e.html?replytocom=773#respond' onclick='return addComment.moveForm( "comment-773", "773", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de abril de 2016 at 9:16</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bom saber. Obrigado por compartilhar!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-763">
+		<dl id="comment-763" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/78cf3314b62af2d78f9475d9acec5f43?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/78cf3314b62af2d78f9475d9acec5f43?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa71d.html?replytocom=763#respond' onclick='return addComment.moveForm( "comment-763", "763", "respond", "212" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>17 de março de 2016 at 20:55</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Amigo, por favor, eu imploro, me ajude! Tou morto de dor de cabeça, olhos lacrimejando e não consigo resolver no meu. Eu sou leigo e não entendi bem sua matéria, onde devo colocar este &#8220;e&#8221;? e os códigos após? Agradeço se responder!!!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-770">
+		<dl id="comment-770" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd2a7.html?replytocom=770#respond' onclick='return addComment.moveForm( "comment-770", "770", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de abril de 2016 at 9:07</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Desculpa, eu só li agora. Fiquei um tempo sem dar atenção ao meu site. Prometo ficar mais atento!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-764">
+		<dl id="comment-764" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/78cf3314b62af2d78f9475d9acec5f43?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/78cf3314b62af2d78f9475d9acec5f43?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa950.html?replytocom=764#respond' onclick='return addComment.moveForm( "comment-764", "764", "respond", "212" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>18 de março de 2016 at 7:16</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá! cara, você merece Marte de presente. Já faziam duas semanas que eu tentava resolver e nada! Já tinha visto essa sua matéria e não havia entendido como fazer os procedimentos, estava desesperado e decidido a desinstalar o Zorin OS 11 do meu notebook Positivo Master. Passei uma noite procurando entender sobre Grub, Grub2, Setup, Bios, Boot, root, vaaarias coisas pra poder descobrir como fazer, hahah<br />
+Mas enfim, está tudo resolvido. Meus sinceros agradecimentos!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-769">
+		<dl id="comment-769" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index818a.html?replytocom=769#respond' onclick='return addComment.moveForm( "comment-769", "769", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de abril de 2016 at 9:06</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>🙂</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-796">
+		<dl id="comment-796" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/9c341d7788c2df0973d8e4b54531e957?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/9c341d7788c2df0973d8e4b54531e957?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfd12.html?replytocom=796#respond' onclick='return addComment.moveForm( "comment-796", "796", "respond", "212" )' aria-label='Responder para Wandaymo Gomes'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://plus.google.com/113770018595754367685' rel='external nofollow' class='url'>Wandaymo Gomes</a></cite>9 de novembro de 2016 at 22:24</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Muito obrigado por sua dica!!!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-797">
+		<dl id="comment-797" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc46f.html?replytocom=797#respond' onclick='return addComment.moveForm( "comment-797", "797", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>9 de novembro de 2016 at 22:31</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>De nada! 🙂</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-807">
+		<dl id="comment-807" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/903cb759a63cd36e72f4f1178f5f3f29?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/903cb759a63cd36e72f4f1178f5f3f29?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2913.html?replytocom=807#respond' onclick='return addComment.moveForm( "comment-807", "807", "respond", "212" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>19 de maio de 2017 at 12:43</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ola! esse foi o unico metodo que funcionou aqui, muito obrigado!<br />
+eu instalei 3 distros linux e funcionou perfeitamente, porem tenho tambem o android x86 instalado e com ele ja rodei a internet e não achei uma solução&#8230; nos arquivos dele tambem tem o grub (grub/menu.lst) e tem as seguintes informações:</p>
+<p>default=0<br />
+timeout=6<br />
+splashimage=/grub/android-x86.xpm.gz<br />
+root (hd0,4)</p>
+<p>title Android-x86 4.4-r1<br />
+	kernel /android-4.4-r1/kernel quiet root=/dev/ram0 androidboot.hardware=android_x86 video=-16 SRC=/android-4.4-r1<br />
+	initrd /android-4.4-r1/initrd.img</p>
+<p>title Android-x86 4.4-r1 (Debug mode)<br />
+	kernel /android-4.4-r1/kernel root=/dev/ram0 androidboot.hardware=android_x86 video=-16 DEBUG=2 SRC=/android-4.4-r1<br />
+	initrd /android-4.4-r1/initrd.img</p>
+<p>title Android-x86 4.4-r1 (Debug nomodeset)<br />
+	kernel /android-4.4-r1/kernel nomodeset root=/dev/ram0 androidboot.hardware=android_x86 video=-16 DEBUG=2 SRC=/android-4.4-r1<br />
+	initrd /android-4.4-r1/initrd.img</p>
+<p>title Android-x86 4.4-r1 (Debug video=LVDS-1:d)<br />
+	kernel /android-4.4-r1/kernel video=LVDS-1:d root=/dev/ram0 androidboot.hardware=android_x86 video=-16 DEBUG=2 SRC=/android-4.4-r1<br />
+	initrd /android-4.4-r1/<br />
+initrd.img</p>
+<p>tem alguma dica do que fazer nesse caso??</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-808">
+		<dl id="comment-808" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8a17.html?replytocom=808#respond' onclick='return addComment.moveForm( "comment-808", "808", "respond", "212" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>26 de maio de 2017 at 8:53</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Obrigado por compartilhar as informações. Realmente não sei dizer pois no Android pode ser um pouco diferente esta questão.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol>
+<!--comments pages-->
+</div><!-- #comments -->
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta para <a href="#comment-232">Leonardo Lima de Vasconcellos</a> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond">&raquo; Cancel reply</a></small></h3>			<form action="http://localhost:8080/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p><p class="comment-form-author"><label for="author"><input id="author"  name="author" type="text" value="Name" size="30" class="cleardefault" /></label></p>
+<p class="comment-form-email"><label for="email"><input id="email" name="email" type="text" value="Email" size="30" class="cleardefault" /></label></p>
+<p class="comment-form-url"><label for="url"><input id="url" name="url" type="text" value="Website" size="30" class="cleardefault"  /></label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentário" /> <input type='hidden' name='comment_post_ID' value='212' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='232' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5e48802532" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="22"/></p>			</form>
+			</div><!-- #respond -->
+	</article>
+<aside id="sidebar">
+<div class="widget_text widget  widget_custom_html"><div class="textwidget custom-html-widget"><div class="author-info" style="margin-top:0px;">
+<h3>Sobre o autor</h3>
+<dl class="fixed radius-5">
+<dt><img alt="" src="https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g" srcset="http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo wp-hovercard-attachment grav-hashed grav-hijack" height="60" width="60"></dt>
+<dd>
+<h5><a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></h5>
+<p>Um desenvolvedor web veterano que está sempre a procura de novas tecnologias que facilitem o desenvolvimento de aplicativos ricos para a internet. Louco por tecnologia, games e Linux.</p>
+</dd>
+</dl>
+</div><br/><br/></div></div><div class="widget_text widget  widget_custom_html"><h3>Te ajudei? Me paga uma cerveja?</h3><div class="textwidget custom-html-widget"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHTwYJKoZIhvcNAQcEoIIHQDCCBzwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCxzECnh/0QFQb7g+wHC6un6SSh48M4txMgPYyIs5RZYPo4/ASpDVU3oqQTDOiE6x4hdKT06HOEU92smMwvOJjVgsNRR9CJtQ3ax2Hu6Qo/hU2axQQjVjp0o29q+elfed1EmqxuLypJhAfl8JiqHQdkEq2Q0Jxl6bDd5scIkqUkOjELMAkGBSsOAwIaBQAwgcwGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI3+URWKVI3iKAgagCExi7IyhWD9ArVNsGzvNMmqPBLcfKUZilMa5fV4s22Imwq6O4VVWjt6ET+v8xKVNdFWVOudVsizVn5AzPcSBuLVnEB/Ppr48H0teWhZ8rK/N6MYq4PnTFFeRYhMC8+mB7q1AMun8OWQgJAocMyV1i7gJ+NQmUDS9Y6pvfKRwePOX52NHWGKMBSaf7W40araMO2JlSx2VQoQ6IFCk+WZCW+hb9kA5lhhSgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNDA1MDEyMjM5MTNaMCMGCSqGSIb3DQEJBDEWBBSg3nNzblIIRs9i6dbtjkZK3kphVzANBgkqhkiG9w0BAQEFAASBgH/cZT3Q1WIqIDy2lJuXcrcESsUE4mkh8FN3sxsnV/GBgxIIcfdaBQGqixuPAMldFCfZ1i31NnEXz9RIvNKCV29VISBGj4cOV6lqbdg4DZjqiGWhKLXmnDOQXJ5fX8lQaS9j4Rt0FSkTZPJcLQgQo9RTikoDTRHrV/3grCCqFI/G-----END PKCS7-----
+">
+<input type="image" src="../../www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="../../www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<p>&nbsp;</p></div></div><div class="widget  widget_categories"><h3>Categorias</h3>		<ul>
+	<li class="cat-item cat-item-88"><a href="../category/android/index.html" >Android</a> (6)
+</li>
+	<li class="cat-item cat-item-233"><a href="../category/bando-de-dados/index.html" >Bando de Dados</a> (5)
+</li>
+	<li class="cat-item cat-item-145"><a href="../category/linux/debian-linux/index.html" >Debian</a> (9)
+</li>
+	<li class="cat-item cat-item-134"><a href="../category/linux/desenvolvimento-linux/index.html" >Desenvolvimento</a> (4)
+</li>
+	<li class="cat-item cat-item-39"><a href="../category/desenvolvimento-web/index.html" >Desenvolvimento Web</a> (11)
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/desenvolvimento-web/ria-com-javascript/extjs/index.html" >ExtJS</a> (1)
+</li>
+	<li class="cat-item cat-item-133"><a href="../category/android/hacks/galaxy-tab/index.html" >Galaxy Tab</a> (1)
+</li>
+	<li class="cat-item cat-item-91"><a href="../category/android/games/index.html" >Games</a> (1)
+</li>
+	<li class="cat-item cat-item-268"><a href="../category/google/index.html" >Google</a> (1)
+</li>
+	<li class="cat-item cat-item-132"><a href="../category/android/hacks/index.html" >Hacks</a> (5)
+</li>
+	<li class="cat-item cat-item-158"><a href="../category/hardware/index.html" >Hardware</a> (2)
+</li>
+	<li class="cat-item cat-item-41"><a href="../category/desenvolvimento-web/html/index.html" >HTML</a> (1)
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/desenvolvimento-web/java-desenvolvimento-web/index.html" >Java</a> (1)
+</li>
+	<li class="cat-item cat-item-87"><a href="../category/java-2/index.html" >Java</a> (1)
+</li>
+	<li class="cat-item cat-item-5"><a href="../category/linux/index.html" >Linux</a> (22)
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/linux/linux-mint-linux/index.html" >Linux Mint</a> (3)
+</li>
+	<li class="cat-item cat-item-6"><a href="../category/linux/linux-mint-debian-edition/index.html" >Linux Mint Debian Edition</a> (15)
+</li>
+	<li class="cat-item cat-item-267"><a href="../category/microsoft/index.html" >Microsoft</a> (1)
+</li>
+	<li class="cat-item cat-item-234"><a href="../category/bando-de-dados/microsoft-sql-server/index.html" >Microsoft SQL Server</a> (2)
+</li>
+	<li class="cat-item cat-item-189"><a href="../category/android/hacks/motorola-razr-xt910/index.html" >Motorola Razr XT910</a> (3)
+</li>
+	<li class="cat-item cat-item-242"><a href="../category/bando-de-dados/mysql-bando-de-dados/index.html" >MySQL</a> (3)
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/desenvolvimento-web/php/index.html" >PHP</a> (5)
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/desenvolvimento-web/ria-com-javascript/index.html" >RIA com Javascript</a> (1)
+</li>
+	<li class="cat-item cat-item-1"><a href="../category/sem-categoria/index.html" >Sem categoria</a> (1)
+</li>
+	<li class="cat-item cat-item-224"><a href="../category/linux/ubuntu-linux/index.html" >Ubuntu</a> (4)
+</li>
+	<li class="cat-item cat-item-218"><a href="../category/windows-2/index.html" >Windows</a> (1)
+</li>
+	<li class="cat-item cat-item-219"><a href="../category/windows-2/windows-8/index.html" >Windows 8</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="../category/desenvolvimento-web/wordpress/index.html" >WordPress</a> (4)
+</li>
+	<li class="cat-item cat-item-257"><a href="../category/desenvolvimento-web/php/zend-framework-1/index.html" >Zend Framework 1</a> (1)
+</li>
+		</ul>
+</div></aside>
+<div class="clear"></div>
+
+<p></p>
+
+</div><!--#end content wrap-->
+</div><!--# container-->
+<footer>
+<div id="footer-wrap">
+	<div class="footer-widgets">
+<div class="footer-widgets-area layout-width fixed three-column">
+<div class="one-third">
+<div class="widget  widget_tag_cloud"><h3>Nuvem de tags</h3><div class="tagcloud"><a href="../tag/desktop/index.html" class="tag-cloud-link tag-link-122 tag-link-position-1" style="font-size: 8pt;" aria-label=".desktop (2 itens)">.desktop</a>
+<a href="../tag/android-2/index.html" class="tag-cloud-link tag-link-179 tag-link-position-2" style="font-size: 12.666666666667pt;" aria-label="android (5 itens)">android</a>
+<a href="../tag/bash/index.html" class="tag-cloud-link tag-link-127 tag-link-position-3" style="font-size: 9.8666666666667pt;" aria-label="bash (3 itens)">bash</a>
+<a href="../tag/chrome/index.html" class="tag-cloud-link tag-link-118 tag-link-position-4" style="font-size: 8pt;" aria-label="chrome (2 itens)">chrome</a>
+<a href="../tag/coluna/index.html" class="tag-cloud-link tag-link-240 tag-link-position-5" style="font-size: 9.8666666666667pt;" aria-label="coluna (3 itens)">coluna</a>
+<a href="../tag/debian/index.html" class="tag-cloud-link tag-link-28 tag-link-position-6" style="font-size: 20.444444444444pt;" aria-label="debian (18 itens)">debian</a>
+<a href="../tag/droid/index.html" class="tag-cloud-link tag-link-192 tag-link-position-7" style="font-size: 9.8666666666667pt;" aria-label="droid (3 itens)">droid</a>
+<a href="../tag/fedora/index.html" class="tag-cloud-link tag-link-79 tag-link-position-8" style="font-size: 8pt;" aria-label="fedora (2 itens)">fedora</a>
+<a href="../tag/firefox/index.html" class="tag-cloud-link tag-link-123 tag-link-position-9" style="font-size: 8pt;" aria-label="firefox (2 itens)">firefox</a>
+<a href="../tag/gerenciador-de-arquivos/index.html" class="tag-cloud-link tag-link-101 tag-link-position-10" style="font-size: 8pt;" aria-label="gerenciador de arquivos (2 itens)">gerenciador de arquivos</a>
+<a href="../tag/gnome/index.html" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 8pt;" aria-label="gnome (2 itens)">gnome</a>
+<a href="../tag/google/index.html" class="tag-cloud-link tag-link-117 tag-link-position-12" style="font-size: 11.422222222222pt;" aria-label="google (4 itens)">google</a>
+<a href="../tag/grub/index.html" class="tag-cloud-link tag-link-34 tag-link-position-13" style="font-size: 8pt;" aria-label="grub (2 itens)">grub</a>
+<a href="../tag/java/index.html" class="tag-cloud-link tag-link-17 tag-link-position-14" style="font-size: 8pt;" aria-label="java (2 itens)">java</a>
+<a href="../tag/jboss/index.html" class="tag-cloud-link tag-link-19 tag-link-position-15" style="font-size: 8pt;" aria-label="jboss (2 itens)">jboss</a>
+<a href="../tag/joomla/index.html" class="tag-cloud-link tag-link-49 tag-link-position-16" style="font-size: 8pt;" aria-label="joomla (2 itens)">joomla</a>
+<a href="../tag/json/index.html" class="tag-cloud-link tag-link-109 tag-link-position-17" style="font-size: 9.8666666666667pt;" aria-label="json (3 itens)">json</a>
+<a href="../tag/linux/index.html" class="tag-cloud-link tag-link-281 tag-link-position-18" style="font-size: 22pt;" aria-label="Linux (23 itens)">Linux</a>
+<a href="../tag/linux-mint/index.html" class="tag-cloud-link tag-link-30 tag-link-position-19" style="font-size: 8pt;" aria-label="linux mint (2 itens)">linux mint</a>
+<a href="../tag/linux-mint-debian-edition-2/index.html" class="tag-cloud-link tag-link-26 tag-link-position-20" style="font-size: 9.8666666666667pt;" aria-label="linux mint debian edition (3 itens)">linux mint debian edition</a>
+<a href="../tag/lmde/index.html" class="tag-cloud-link tag-link-27 tag-link-position-21" style="font-size: 15.311111111111pt;" aria-label="lmde (8 itens)">lmde</a>
+<a href="../tag/microsoft/index.html" class="tag-cloud-link tag-link-238 tag-link-position-22" style="font-size: 9.8666666666667pt;" aria-label="microsoft (3 itens)">microsoft</a>
+<a href="../tag/mint/index.html" class="tag-cloud-link tag-link-77 tag-link-position-23" style="font-size: 16.711111111111pt;" aria-label="mint (10 itens)">mint</a>
+<a href="../tag/motorola/index.html" class="tag-cloud-link tag-link-193 tag-link-position-24" style="font-size: 9.8666666666667pt;" aria-label="motorola (3 itens)">motorola</a>
+<a href="../tag/mozilla/index.html" class="tag-cloud-link tag-link-97 tag-link-position-25" style="font-size: 9.8666666666667pt;" aria-label="mozilla (3 itens)">mozilla</a>
+<a href="../tag/mysql/index.html" class="tag-cloud-link tag-link-56 tag-link-position-26" style="font-size: 11.422222222222pt;" aria-label="mysql (4 itens)">mysql</a>
+<a href="../tag/nano/index.html" class="tag-cloud-link tag-link-129 tag-link-position-27" style="font-size: 8pt;" aria-label="nano (2 itens)">nano</a>
+<a href="../tag/oracle/index.html" class="tag-cloud-link tag-link-23 tag-link-position-28" style="font-size: 8pt;" aria-label="oracle (2 itens)">oracle</a>
+<a href="../tag/path/index.html" class="tag-cloud-link tag-link-60 tag-link-position-29" style="font-size: 8pt;" aria-label="path (2 itens)">path</a>
+<a href="../tag/php-2/index.html" class="tag-cloud-link tag-link-94 tag-link-position-30" style="font-size: 12.666666666667pt;" aria-label="php (5 itens)">php</a>
+<a href="../tag/razr/index.html" class="tag-cloud-link tag-link-191 tag-link-position-31" style="font-size: 9.8666666666667pt;" aria-label="razr (3 itens)">razr</a>
+<a href="../tag/root/index.html" class="tag-cloud-link tag-link-116 tag-link-position-32" style="font-size: 9.8666666666667pt;" aria-label="root (3 itens)">root</a>
+<a href="../tag/samsung/index.html" class="tag-cloud-link tag-link-71 tag-link-position-33" style="font-size: 8pt;" aria-label="samsung (2 itens)">samsung</a>
+<a href="../tag/script/index.html" class="tag-cloud-link tag-link-138 tag-link-position-34" style="font-size: 8pt;" aria-label="script (2 itens)">script</a>
+<a href="../tag/shell/index.html" class="tag-cloud-link tag-link-115 tag-link-position-35" style="font-size: 9.8666666666667pt;" aria-label="shell (3 itens)">shell</a>
+<a href="../tag/sql/index.html" class="tag-cloud-link tag-link-55 tag-link-position-36" style="font-size: 13.755555555556pt;" aria-label="sql (6 itens)">sql</a>
+<a href="../tag/squeeze/index.html" class="tag-cloud-link tag-link-148 tag-link-position-37" style="font-size: 12.666666666667pt;" aria-label="squeeze (5 itens)">squeeze</a>
+<a href="../tag/ssh/index.html" class="tag-cloud-link tag-link-168 tag-link-position-38" style="font-size: 9.8666666666667pt;" aria-label="ssh (3 itens)">ssh</a>
+<a href="../tag/tabela/index.html" class="tag-cloud-link tag-link-239 tag-link-position-39" style="font-size: 9.8666666666667pt;" aria-label="tabela (3 itens)">tabela</a>
+<a href="../tag/ubuntu/index.html" class="tag-cloud-link tag-link-16 tag-link-position-40" style="font-size: 14.533333333333pt;" aria-label="ubuntu (7 itens)">ubuntu</a>
+<a href="../tag/update/index.html" class="tag-cloud-link tag-link-220 tag-link-position-41" style="font-size: 9.8666666666667pt;" aria-label="update (3 itens)">update</a>
+<a href="../tag/wget/index.html" class="tag-cloud-link tag-link-135 tag-link-position-42" style="font-size: 8pt;" aria-label="wget (2 itens)">wget</a>
+<a href="../tag/wheezy/index.html" class="tag-cloud-link tag-link-146 tag-link-position-43" style="font-size: 11.422222222222pt;" aria-label="wheezy (4 itens)">wheezy</a>
+<a href="../tag/windows/index.html" class="tag-cloud-link tag-link-18 tag-link-position-44" style="font-size: 11.422222222222pt;" aria-label="windows (4 itens)">windows</a>
+<a href="../tag/wordpress-2/index.html" class="tag-cloud-link tag-link-47 tag-link-position-45" style="font-size: 9.8666666666667pt;" aria-label="wordpress (3 itens)">wordpress</a></div>
+</div></div>
+<div class="one-third">
+<div class="widget  widget-mostview-posts"><h3>Posts mais visitados</h3><ul class="thumb-preloader thumb-fade">
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.html" class="preloader" rel="tag" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb61ff.png?src=http://localhost:8080/wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.png&amp;h=50&amp;w=50&amp;zc=1" alt="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html" rel="bookmark" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]</a>
+<p><em>7 de January de 2014</em><em><a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html#comments">152 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/cm11-kit-kat.html" class="preloader" rel="tag" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb9457.jpg?src=http://localhost:8080/wp-content/uploads/2014/01/cm11-kit-kat.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html" rel="bookmark" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]</a>
+<p><em>9 de January de 2014</em><em><a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html#comments">129 Comentários</a></em></p>
+</section>
+</li>
+</ul>
+</div></div>
+<div class="one-third last">
+<div class="widget  widget_media_video"><h3>Canal no Youtube</h3><div style="width:100%;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
+<video class="wp-video-shortcode" id="video-212-1" preload="metadata" controls="controls"><source type="video/youtube" src="https://www.youtube.com/watch?v=iZ9bBGy1-o8&amp;_=1" /><a href="https://www.youtube.com/watch?v=iZ9bBGy1-o8">https://www.youtube.com/watch?v=iZ9bBGy1-o8</a></video></div></div></div>
+</div>
+</div>
+	<div class="footer-copyright layout-width fixed">
+	<div class="one-third"><h3>Contato</h3><div class="info">Rua Xiniquá, 150 - Florianópolis - Santa Catarina</div></div><div class="one-third"></div>	<div class="one-third last">
+	<div class="footer-social-media"><div class="social-wrap social-facebook"><a href="https://www.facebook.com/devhousesoftware" class="social-small social-square-small" rel="external" title="facebook">facebook</a></div></div><div class="clear"></div><p class="text info">Copyright © <a href="https://leonardo-vasconcellos.vercel.app/">Leonardo Lima de Vasconcellos</a><!--, Privacy Statement Terms and Conditions.--></p>	</div>
+	</div><!--#copyright-->
+</div><!--#footer wrap-->
+</footer><!--#footer-->
+</div><!-- #wrap -->
+
+
+
+	<div style="display:none">
+	<div class="grofile-hash-map-99fe9aca45a0ff67168e243fd583ef02">
+	</div>
+	<div class="grofile-hash-map-88ddd92dc931d51912101a763b3e7212">
+	</div>
+	<div class="grofile-hash-map-99fe9aca45a0ff67168e243fd583ef02">
+	</div>
+	<div class="grofile-hash-map-f8ca205e1dbdedccaff961f2ef114e38">
+	</div>
+	<div class="grofile-hash-map-3cdea5cb7a1b86bf4d4643ff05dc8101">
+	</div>
+	<div class="grofile-hash-map-d7db2dcdd17292448b2ca5c711bd408f">
+	</div>
+	<div class="grofile-hash-map-4a537ec6d9508dfe38699eb02e0c1d03">
+	</div>
+	<div class="grofile-hash-map-27f605565d4e67b5da9c47aba70025a5">
+	</div>
+	<div class="grofile-hash-map-b2474068b64fba8052de6eb9c2cc7a00">
+	</div>
+	<div class="grofile-hash-map-e7346709e5c36ff35ebc6c3cca951d76">
+	</div>
+	<div class="grofile-hash-map-2f9e574f49a130ce8c17c45a68de8efe">
+	</div>
+	<div class="grofile-hash-map-e21d8088a8671578d7da4000c37c9c6e">
+	</div>
+	<div class="grofile-hash-map-78cf3314b62af2d78f9475d9acec5f43">
+	</div>
+	<div class="grofile-hash-map-9c341d7788c2df0973d8e4b54531e957">
+	</div>
+	<div class="grofile-hash-map-903cb759a63cd36e72f4f1178f5f3f29">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/localhost:8080\/corrigindo-o-controle-de-brilho-no-notebook-com-linux\/":212};
+	</script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore09b1.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash09b1.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore09b1.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeMidnight09b1.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<link rel='stylesheet' id='mediaelement-css'  href='../wp-includes/js/mediaelement/mediaelementplayer.min51cd.css?ver=2.22.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='../wp-includes/js/mediaelement/wp-mediaelement.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../../s0.wp.com/wp-content/js/devicepx-jetpackc30a.js?ver=202626'></script>
+<script type='text/javascript' src='../../s.gravatar.com/js/gprofilesb9b9.js?ver=2026Junaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/wpgroho0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-content/plugins/akismet/_inc/formf9b8.js?ver=4.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mejsL10n = {"language":"pt-BR","strings":{"Close":"Fechar","Fullscreen":"Tela inteira","Turn off Fullscreen":"Desativar tela cheia","Go Fullscreen":"Tela cheia","Download File":"Fazer download do arquivo","Download Video":"Fazer download do v\u00eddeo","Play":"Reproduzir","Pause":"Pausar","Captions\/Subtitles":"Transcri\u00e7\u00f5es\/Legendas","None":"Nenhum","Time Slider":"Tempo do slider","Skip back %1 seconds":"Retroceder %1 segundos","Video Player":"Tocador de v\u00eddeo","Audio Player":"Tocador de \u00e1udio","Volume Slider":"Controle de volume","Mute Toggle":"Alternar mudo","Unmute":"Desativar mudo","Mute":"Mudo","Use Up\/Down Arrow keys to increase or decrease volume.":"Use as setas para cima ou para baixo para aumentar ou diminuir o volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use as setas esquerda e direita para avan\u00e7ar um segundo. Acima e abaixo para avan\u00e7ar dez segundos."}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js?ver=2.22.0'></script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/wp-mediaelement.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/sharedaddy/sharing7923.js?ver=5.3.1'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+</body>
+
+<!-- Mirrored from localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/?replytocom=232 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:58:48 GMT -->
+</html>

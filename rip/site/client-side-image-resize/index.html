@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" prefix="" lang="pt-BR">
+
+<!-- Mirrored from localhost:8080/client-side-image-resize/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:29:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Client Side Image Resize &#8211; DevHouse Internet Software Development House</title>
+<meta name="keywords" content="wordpress, 3.9, html5, image, resize, browser" />
+<meta name="description" content="Com este plugin você pode usar diretamente as imagens em alta resolução diretamente da sua câmera digital diretamente para o WordPress sem a necessidade de passar por softwares adicionais para redimensioná-las. Basta ter um browser atualizado." />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.core1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.deepblue1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/video-js1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/prettyphoto1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/galleriffic1717.css?ver=2.0.6" />
+<link href="../../fonts.googleapis.com/cssb69f.css?family=Droid+Sans:regular,bold" rel="stylesheet" type="text/css" />
+
+<link rel="shortcut icon" href="../wp-content/uploads/2012/11/devhouse-favicon.html" />
+<link href="../../fonts.googleapis.com/css5ba9.css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+<style type="text/css">h1, h2, h3, h4, h5, h6 {  font-family: Yanone Kaffeesatz; }</style>
+<link rel="pingback" href="../xmlrpc.php" />
+
+<!-- BEGIN Metadata added by the Add-Meta-Tags WordPress plugin -->
+<meta name="description" content="Client Side Image Resize Resize large images in the browser before uploading to WordPress — save time and bandwidth. Legacy plugin — kept here for reference Example: a high-resolution camera photo resized client-side before upload." />
+<meta property="og:site_name" content="DevHouse Internet Software Development House" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Client Side Image Resize" />
+<meta property="og:url" content="https://leonardo-vasconcellos.vercel.app/portfolio/devhouse-wordpress/site/client-side-image-resize/" />
+<meta property="og:description" content="Client Side Image Resize Resize large images in the browser before uploading to WordPress — save time and bandwidth. Legacy plugin — kept here for reference Example: a high-resolution camera photo resized client-side before upload." />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:updated_time" content="2026-06-22T11:01:03+00:00" />
+<meta property="article:published_time" content="2014-05-01T20:00:09+00:00" />
+<meta property="article:modified_time" content="2026-06-22T11:01:03+00:00" />
+<meta property="article:author" content="http://localhost:8080/author/leonardo/" />
+<meta property="article:publisher" content="http://localhost:8080/" />
+<!-- END Metadata added by the Add-Meta-Tags WordPress plugin -->
+
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Feed para DevHouse Internet Software Development House &raquo;" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo;" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo; Client Side Image Resize" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8080\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.14"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='../wp-content/plugins/captcha/css/front_end_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='../wp-content/plugins/captcha/css/desktop_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/plugins1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/custom1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/video1717.js?ver=2.0.6'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.html" /> 
+<meta name="generator" content="WordPress 4.8.14" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index54f6.html?p=676' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed2afd.json?url=http%3A%2F%2Flocalhost%3A8080%2Fclient-side-image-resize%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed3090?url=http%3A%2F%2Flocalhost%3A8080%2Fclient-side-image-resize%2F&amp;format=xml" />
+
+
+<script type="text/javascript" src="../wp-content/themes/mondeo/skins/js/jquery.history1717.js?ver=2.0.6"></script>
+<script type="text/javascript" src="../wp-content/themes/mondeo/skins/js/jquery.galleriffic1717.js?ver=2.0.6"></script>
+<script type="text/javascript" src="../wp-content/themes/mondeo/skins/js/jquery.opacityrollover1717.js?ver=2.0.6"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/html5.js?ver=2.0.6"></script>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/css3.js?ver=2.0.6"></script>
+<![endif]-->
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<body class="page-template-default page page-id-676 deepblue">
+<div id="wrap">
+<header>
+<section class="header-style-two layout-width">
+<div class="site-logo"><h3><a href="../index.html" title="DevHouse Internet Software Development House"><img src="../wp-content/uploads/2012/10/devhouse_logo_pq-2.html" alt="DevHouse Internet Software Development House" /></a></h3></div><nav id="header-menu" class="ddsmoothmenu"><ul id="menu-menu-principal" class="drop-menu"><li id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-362"><a href="https://leonardo-vasconcellos.vercel.app/"><span>Portfólio</span></a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="../blog/index.html"><span>Blog</span></a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="../leonardo/index.html"><span>Sobre</span></a></li>
+<li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-676 current_page_item menu-item-678"><a href="index.html"><span>Client Side Image Resize</span></a></li>
+<li id="menu-item-563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-563"><a href="../contato/index.html"><span>Contato</span></a></li>
+</ul></nav><div id="topmedia">
+<ul>
+<li class="facebook"><a href="https://www.facebook.com/devhousesoftware" rel="external">facebook</a><p class="tooltip">FaceBook</p></li>
+</ul>
+</div>
+<div id="topsearch">
+<form action="http://localhost:8080/" method="get">
+<input type="text" id="topsearch-input" class="cleardefault" name="s" size="24" value="Procurar..."  /><input type="submit"  id="topsearch-button" name="topsearch-button" value="" />
+</form>
+</div>
+<div class="clear"></div></section>
+<div class="page-header">
+<div class="layout-width page-header-wrap"><h2 class="breadcrumbs">Client Side Image Resize</h2>
+<div class="clear"></div>
+<div class="topshadow"></div>
+</div>
+</div>
+</header>
+<!-- header --><div id="container">
+<div class="wrap layout-width right-side">
+<article id="content">
+<div class="post-single-page" id="post-676">
+<div style="width:604px">
+
+</div>
+<div class="post-text"><div class="csir-plugin-page" style="max-width:860px;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#2c2c2c;">
+<header style="text-align:center;margin-bottom:2rem;background:none;">
+<h1 style="font-size:2rem;margin-bottom:.25rem;">Client Side Image Resize</h1>
+<p style="font-size:1.1rem;color:#666;margin-top:0;">Resize large images in the browser before uploading to WordPress — save time and bandwidth.</p>
+<p>    <span style="display:inline-block;background:#eef6ff;color:#1d6fb8;padding:.25rem .75rem;border-radius:999px;font-size:.85rem;">Legacy plugin — kept here for reference</span><br />
+  </header>
+<figure style="text-align:center;margin:0 0 2rem;">
+    <a href="../wp-content/uploads/2014/05/1270466_47559248-e1399258805773.html"><br />
+      <img src="../wp-content/uploads/2014/05/1270466_47559248-e1399258805773-600x227.html" alt="Lente de Câmera" width="600" height="227" style="max-width:100%;border-radius:8px;" /><br />
+    </a><figcaption style="font-size:.85rem;color:#888;margin-top:.5rem;">Example: a high-resolution camera photo resized client-side before upload.</figcaption></figure>
+<section style="margin-bottom:2rem;">
+<h2 style="border-bottom:2px solid #eee;padding-bottom:.4rem;">What it does</h2>
+<p>This plugin uses HTML5 to resize large images directly in the browser <strong>before</strong> they&#8217;re uploaded to WordPress — no extra software needed, even for high-resolution camera photos.</p>
+<ul>
+<li>✅ First plugin compatible with WordPress 3.9</li>
+<li>✅ Works with drag &amp; drop uploads</li>
+<li>✅ Adds settings under <strong>Settings → Media</strong> to control resized JPG quality, max width and max height</li>
+</ul>
+<p style="color:#666;font-size:.9rem;">Compatible browsers: Chrome, Firefox, Opera, iOS and Android.</p>
+</section>
+<section style="margin-bottom:2rem;">
+<h2 style="border-bottom:2px solid #eee;padding-bottom:.4rem;">Installation</h2>
+<ol>
+<li>Upload the <code>client-side-image-resize</code> folder to <code>/wp-content/plugins/</code>.</li>
+<li>Activate the plugin from the <strong>Plugins</strong> menu in WordPress.</li>
+</ol>
+</section>
+<section style="margin-bottom:2rem;">
+<h2 style="border-bottom:2px solid #eee;padding-bottom:.4rem;">Changelog</h2>
+<p><strong>1.0</strong> — Initial release.</p>
+</section>
+<section style="text-align:center;margin-bottom:2rem;padding:1.5rem;background:#f7f7f7;border-radius:8px;">
+<h2 style="margin-top:0;">Download</h2>
+<p>Get the plugin straight from the link below:</p>
+<p>    <a href="../../www.devhouse.com.br/wordpress-plugins/client-side-image-resize.zip" style="display:inline-block;background:#2271b1;color:#fff;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;">Download client-side-image-resize.zip</a><br />
+  </section>
+<section style="text-align:center;margin-bottom:2rem;">
+<h3>Did this plugin help you? Buy me a beer 🍺</h3>
+<p>    <a href="#" style="display:inline-block;background:#ffc439;color:#111;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;">Donate via PayPal</a></p>
+<p style="font-size:.8rem;color:#999;">(replace the # above with your PayPal.me or donate link)</p>
+</section>
+<hr style="margin:2.5rem 0;border:none;border-top:1px solid #eee;" />
+<section style="margin-bottom:1rem;">
+<h1 style="font-size:1.6rem;">Client Side Image Resize <span style="font-size:1rem;color:#888;">(Português)</span></h1>
+<p>Com este plugin você pode usar diretamente as imagens em alta resolução da sua câmera digital no WordPress, sem precisar de softwares adicionais para redimensioná-las. Basta ter um navegador atualizado.</p>
+<ul>
+<li>✅ Primeiro plugin compatível com WordPress 3.9</li>
+<li>✅ Funciona com arrastar e soltar (drag &amp; drop)</li>
+<li>✅ Adiciona configurações em <strong>Configurações → Mídia</strong> para qualidade do JPG e largura/altura máximas</li>
+</ul>
+<p style="color:#666;font-size:.9rem;">Navegadores compatíveis: Chrome, Firefox, Opera, iOS e Android.</p>
+<h3>Instalação</h3>
+<ol>
+<li>Faça o upload da pasta <code>client-side-image-resize</code> para <code>/wp-content/plugins/</code>.</li>
+<li>Ative o plugin pelo menu <strong>Plugins</strong> do WordPress.</li>
+</ol>
+</section>
+</div>
+</div>
+<!--end link page-->
+</div><!--end post single-->
+</article>
+<aside id="sidebar">
+<div class="widget_text widget  widget_custom_html"><div class="textwidget custom-html-widget"><div class="author-info" style="margin-top:0px;">
+<h3>Sobre o autor</h3>
+<dl class="fixed radius-5">
+<dt><img alt="" src="https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g" srcset="http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo wp-hovercard-attachment grav-hashed grav-hijack" height="60" width="60"></dt>
+<dd>
+<h5><a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></h5>
+<p>Um desenvolvedor web veterano que está sempre a procura de novas tecnologias que facilitem o desenvolvimento de aplicativos ricos para a internet. Louco por tecnologia, games e Linux.</p>
+</dd>
+</dl>
+</div><br/><br/></div></div><div class="widget_text widget  widget_custom_html"><h3>Te ajudei? Me paga uma cerveja?</h3><div class="textwidget custom-html-widget"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="../../www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="../../www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<p>&nbsp;</p></div></div><div class="widget  widget-mostview-posts"><h3>Posts mais visitados</h3><ul class="thumb-preloader thumb-fade">
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.html" class="preloader" rel="tag" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb61ff.png?src=http://localhost:8080/wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.png&amp;h=50&amp;w=50&amp;zc=1" alt="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html" rel="bookmark" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]</a>
+<p><em>7 de January de 2014</em><em><a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html#comments">152 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/cm11-kit-kat.html" class="preloader" rel="tag" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb9457.jpg?src=http://localhost:8080/wp-content/uploads/2014/01/cm11-kit-kat.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html" rel="bookmark" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]</a>
+<p><em>9 de January de 2014</em><em><a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html#comments">129 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2012/10/DNS-320_NAS_debian.html" class="preloader" rel="tag" title="Instalando o Debian Squeeze no NAS D-Link DNS-320">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb2922.jpg?src=http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS_debian.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="Instalando o Debian Squeeze no NAS D-Link DNS-320" title="Instalando o Debian Squeeze no NAS D-Link DNS-320" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../instalando-o-debian-squeeze-no-nas-d-link-dns-320/index.html" rel="bookmark" title="Instalando o Debian Squeeze no NAS D-Link DNS-320">Instalando o Debian Squeeze no NAS D-Link DNS-320</a>
+<p><em>21 de October de 2012</em><em><a href="../instalando-o-debian-squeeze-no-nas-d-link-dns-320/index.html#comments">102 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2012/10/DNS-320_NAS.html" class="preloader" rel="tag" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb22eb.jpg?src=http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="Instalando o fonz fun_plug no D-Link DNS-320 NAS" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html" rel="bookmark" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS">Instalando o fonz fun_plug no D-Link DNS-320 NAS</a>
+<p><em>21 de October de 2012</em><em><a href="../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html#comments">96 Comentários</a></em></p>
+</section>
+</li>
+</ul>
+</div></aside>
+<div class="clear"></div>
+<div style="width:604px">
+
+</div>
+</div><!--#end content wrap-->
+</div><!--# container-->
+<footer>
+<div id="footer-wrap">
+	<div class="footer-widgets">
+<div class="footer-widgets-area layout-width fixed three-column">
+<div class="one-third">
+<div class="widget  widget_tag_cloud"><h3>Nuvem de tags</h3><div class="tagcloud"><a href="../tag/desktop/index.html" class="tag-cloud-link tag-link-122 tag-link-position-1" style="font-size: 8pt;" aria-label=".desktop (2 itens)">.desktop</a>
+<a href="../tag/android-2/index.html" class="tag-cloud-link tag-link-179 tag-link-position-2" style="font-size: 12.666666666667pt;" aria-label="android (5 itens)">android</a>
+<a href="../tag/bash/index.html" class="tag-cloud-link tag-link-127 tag-link-position-3" style="font-size: 9.8666666666667pt;" aria-label="bash (3 itens)">bash</a>
+<a href="../tag/chrome/index.html" class="tag-cloud-link tag-link-118 tag-link-position-4" style="font-size: 8pt;" aria-label="chrome (2 itens)">chrome</a>
+<a href="../tag/coluna/index.html" class="tag-cloud-link tag-link-240 tag-link-position-5" style="font-size: 9.8666666666667pt;" aria-label="coluna (3 itens)">coluna</a>
+<a href="../tag/debian/index.html" class="tag-cloud-link tag-link-28 tag-link-position-6" style="font-size: 20.444444444444pt;" aria-label="debian (18 itens)">debian</a>
+<a href="../tag/droid/index.html" class="tag-cloud-link tag-link-192 tag-link-position-7" style="font-size: 9.8666666666667pt;" aria-label="droid (3 itens)">droid</a>
+<a href="../tag/fedora/index.html" class="tag-cloud-link tag-link-79 tag-link-position-8" style="font-size: 8pt;" aria-label="fedora (2 itens)">fedora</a>
+<a href="../tag/firefox/index.html" class="tag-cloud-link tag-link-123 tag-link-position-9" style="font-size: 8pt;" aria-label="firefox (2 itens)">firefox</a>
+<a href="../tag/gerenciador-de-arquivos/index.html" class="tag-cloud-link tag-link-101 tag-link-position-10" style="font-size: 8pt;" aria-label="gerenciador de arquivos (2 itens)">gerenciador de arquivos</a>
+<a href="../tag/gnome/index.html" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 8pt;" aria-label="gnome (2 itens)">gnome</a>
+<a href="../tag/google/index.html" class="tag-cloud-link tag-link-117 tag-link-position-12" style="font-size: 11.422222222222pt;" aria-label="google (4 itens)">google</a>
+<a href="../tag/grub/index.html" class="tag-cloud-link tag-link-34 tag-link-position-13" style="font-size: 8pt;" aria-label="grub (2 itens)">grub</a>
+<a href="../tag/java/index.html" class="tag-cloud-link tag-link-17 tag-link-position-14" style="font-size: 8pt;" aria-label="java (2 itens)">java</a>
+<a href="../tag/jboss/index.html" class="tag-cloud-link tag-link-19 tag-link-position-15" style="font-size: 8pt;" aria-label="jboss (2 itens)">jboss</a>
+<a href="../tag/joomla/index.html" class="tag-cloud-link tag-link-49 tag-link-position-16" style="font-size: 8pt;" aria-label="joomla (2 itens)">joomla</a>
+<a href="../tag/json/index.html" class="tag-cloud-link tag-link-109 tag-link-position-17" style="font-size: 9.8666666666667pt;" aria-label="json (3 itens)">json</a>
+<a href="../tag/linux/index.html" class="tag-cloud-link tag-link-281 tag-link-position-18" style="font-size: 22pt;" aria-label="Linux (23 itens)">Linux</a>
+<a href="../tag/linux-mint/index.html" class="tag-cloud-link tag-link-30 tag-link-position-19" style="font-size: 8pt;" aria-label="linux mint (2 itens)">linux mint</a>
+<a href="../tag/linux-mint-debian-edition-2/index.html" class="tag-cloud-link tag-link-26 tag-link-position-20" style="font-size: 9.8666666666667pt;" aria-label="linux mint debian edition (3 itens)">linux mint debian edition</a>
+<a href="../tag/lmde/index.html" class="tag-cloud-link tag-link-27 tag-link-position-21" style="font-size: 15.311111111111pt;" aria-label="lmde (8 itens)">lmde</a>
+<a href="../tag/microsoft/index.html" class="tag-cloud-link tag-link-238 tag-link-position-22" style="font-size: 9.8666666666667pt;" aria-label="microsoft (3 itens)">microsoft</a>
+<a href="../tag/mint/index.html" class="tag-cloud-link tag-link-77 tag-link-position-23" style="font-size: 16.711111111111pt;" aria-label="mint (10 itens)">mint</a>
+<a href="../tag/motorola/index.html" class="tag-cloud-link tag-link-193 tag-link-position-24" style="font-size: 9.8666666666667pt;" aria-label="motorola (3 itens)">motorola</a>
+<a href="../tag/mozilla/index.html" class="tag-cloud-link tag-link-97 tag-link-position-25" style="font-size: 9.8666666666667pt;" aria-label="mozilla (3 itens)">mozilla</a>
+<a href="../tag/mysql/index.html" class="tag-cloud-link tag-link-56 tag-link-position-26" style="font-size: 11.422222222222pt;" aria-label="mysql (4 itens)">mysql</a>
+<a href="../tag/nano/index.html" class="tag-cloud-link tag-link-129 tag-link-position-27" style="font-size: 8pt;" aria-label="nano (2 itens)">nano</a>
+<a href="../tag/oracle/index.html" class="tag-cloud-link tag-link-23 tag-link-position-28" style="font-size: 8pt;" aria-label="oracle (2 itens)">oracle</a>
+<a href="../tag/path/index.html" class="tag-cloud-link tag-link-60 tag-link-position-29" style="font-size: 8pt;" aria-label="path (2 itens)">path</a>
+<a href="../tag/php-2/index.html" class="tag-cloud-link tag-link-94 tag-link-position-30" style="font-size: 12.666666666667pt;" aria-label="php (5 itens)">php</a>
+<a href="../tag/razr/index.html" class="tag-cloud-link tag-link-191 tag-link-position-31" style="font-size: 9.8666666666667pt;" aria-label="razr (3 itens)">razr</a>
+<a href="../tag/root/index.html" class="tag-cloud-link tag-link-116 tag-link-position-32" style="font-size: 9.8666666666667pt;" aria-label="root (3 itens)">root</a>
+<a href="../tag/samsung/index.html" class="tag-cloud-link tag-link-71 tag-link-position-33" style="font-size: 8pt;" aria-label="samsung (2 itens)">samsung</a>
+<a href="../tag/script/index.html" class="tag-cloud-link tag-link-138 tag-link-position-34" style="font-size: 8pt;" aria-label="script (2 itens)">script</a>
+<a href="../tag/shell/index.html" class="tag-cloud-link tag-link-115 tag-link-position-35" style="font-size: 9.8666666666667pt;" aria-label="shell (3 itens)">shell</a>
+<a href="../tag/sql/index.html" class="tag-cloud-link tag-link-55 tag-link-position-36" style="font-size: 13.755555555556pt;" aria-label="sql (6 itens)">sql</a>
+<a href="../tag/squeeze/index.html" class="tag-cloud-link tag-link-148 tag-link-position-37" style="font-size: 12.666666666667pt;" aria-label="squeeze (5 itens)">squeeze</a>
+<a href="../tag/ssh/index.html" class="tag-cloud-link tag-link-168 tag-link-position-38" style="font-size: 9.8666666666667pt;" aria-label="ssh (3 itens)">ssh</a>
+<a href="../tag/tabela/index.html" class="tag-cloud-link tag-link-239 tag-link-position-39" style="font-size: 9.8666666666667pt;" aria-label="tabela (3 itens)">tabela</a>
+<a href="../tag/ubuntu/index.html" class="tag-cloud-link tag-link-16 tag-link-position-40" style="font-size: 14.533333333333pt;" aria-label="ubuntu (7 itens)">ubuntu</a>
+<a href="../tag/update/index.html" class="tag-cloud-link tag-link-220 tag-link-position-41" style="font-size: 9.8666666666667pt;" aria-label="update (3 itens)">update</a>
+<a href="../tag/wget/index.html" class="tag-cloud-link tag-link-135 tag-link-position-42" style="font-size: 8pt;" aria-label="wget (2 itens)">wget</a>
+<a href="../tag/wheezy/index.html" class="tag-cloud-link tag-link-146 tag-link-position-43" style="font-size: 11.422222222222pt;" aria-label="wheezy (4 itens)">wheezy</a>
+<a href="../tag/windows/index.html" class="tag-cloud-link tag-link-18 tag-link-position-44" style="font-size: 11.422222222222pt;" aria-label="windows (4 itens)">windows</a>
+<a href="../tag/wordpress-2/index.html" class="tag-cloud-link tag-link-47 tag-link-position-45" style="font-size: 9.8666666666667pt;" aria-label="wordpress (3 itens)">wordpress</a></div>
+</div></div>
+<div class="one-third">
+<div class="widget  widget-mostview-posts"><h3>Posts mais visitados</h3><ul class="thumb-preloader thumb-fade">
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.html" class="preloader" rel="tag" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb61ff.png?src=http://localhost:8080/wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.png&amp;h=50&amp;w=50&amp;zc=1" alt="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html" rel="bookmark" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]</a>
+<p><em>7 de January de 2014</em><em><a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html#comments">152 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/cm11-kit-kat.html" class="preloader" rel="tag" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb9457.jpg?src=http://localhost:8080/wp-content/uploads/2014/01/cm11-kit-kat.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html" rel="bookmark" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]</a>
+<p><em>9 de January de 2014</em><em><a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html#comments">129 Comentários</a></em></p>
+</section>
+</li>
+</ul>
+</div></div>
+<div class="one-third last">
+<div class="widget  widget_media_video"><h3>Canal no Youtube</h3><div style="width:100%;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
+<video class="wp-video-shortcode" id="video-676-1" preload="metadata" controls="controls"><source type="video/youtube" src="https://www.youtube.com/watch?v=iZ9bBGy1-o8&amp;_=1" /><a href="https://www.youtube.com/watch?v=iZ9bBGy1-o8">https://www.youtube.com/watch?v=iZ9bBGy1-o8</a></video></div></div></div>
+</div>
+</div>
+	<div class="footer-copyright layout-width fixed">
+	<div class="one-third"><h3>Contato</h3><div class="info">Rua Xiniquá, 150 - Florianópolis - Santa Catarina</div></div><div class="one-third"></div>	<div class="one-third last">
+	<div class="footer-social-media"><div class="social-wrap social-facebook"><a href="https://www.facebook.com/devhousesoftware" class="social-small social-square-small" rel="external" title="facebook">facebook</a></div></div><div class="clear"></div><p class="text info">Copyright © <a href="https://leonardo-vasconcellos.vercel.app/">Leonardo Lima de Vasconcellos</a><!--, Privacy Statement Terms and Conditions.--></p>	</div>
+	</div><!--#copyright-->
+</div><!--#footer wrap-->
+</footer><!--#footer-->
+</div><!-- #wrap -->
+
+
+
+	<div style="display:none">
+	</div>
+<link rel='stylesheet' id='jetpack-carousel-css'  href='../wp-content/plugins/jetpack/modules/carousel/jetpack-carouselb40f.css?ver=20120629' type='text/css' media='all' />
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='http://localhost:8080/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel-ie8fix.css?ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='mediaelement-css'  href='../wp-includes/js/mediaelement/mediaelementplayer.min51cd.css?ver=2.22.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='../wp-includes/js/mediaelement/wp-mediaelement.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../../s0.wp.com/wp-content/js/devicepx-jetpackc30a.js?ver=202626'></script>
+<script type='text/javascript' src='../../s.gravatar.com/js/gprofilesb9b9.js?ver=2026Junaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/wpgroho0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/_inc/spin4e44.js?ver=1.3'></script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/_inc/jquery.spin4e44.js?ver=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"pt","ajaxurl":"http:\/\/localhost:8080\/wp-admin\/admin-ajax.php","nonce":"5bf68d44e2","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Coment\u00e1rio","post_comment":"Publicar coment\u00e1rio","write_comment":"Escreva um Coment\u00e1rio","loading_comments":"Carregando coment\u00e1rios...","download_original":"Visualizar tamanho original <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Certifique-se de enviar algum texto com o seu coment\u00e1rio.","no_comment_email":"Informe um endere\u00e7o de e-mail para comentar.","no_comment_author":"Forne\u00e7a seu nome para comentar.","comment_post_error":"Desculpe, mas ocorreu um erro ao postar seu coment\u00e1rio. Tente novamente mais tarde.","comment_approved":"Seu coment\u00e1rio foi aprovado.","comment_unapproved":"Seu coment\u00e1rio est\u00e1 aguardando modera\u00e7\u00e3o.","camera":"C\u00e2mera","aperture":"Abertura","shutter_speed":"Velocidade do Obturador","focal_length":"Comprimento Focal","copyright":"Direito autoral","comment_registration":"0","require_name_email":"1","login_url":"http:\/\/localhost:8080\/wp-login.php?redirect_to=http%3A%2F%2Flocalhost%3A8080%2Fclient-side-image-resize%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">E-mail (obrigat\u00f3rio)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Nome (obrigat\u00f3rio)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Site<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/carousel/jetpack-carousela4d5.js?ver=20170209'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mejsL10n = {"language":"pt-BR","strings":{"Close":"Fechar","Fullscreen":"Tela inteira","Turn off Fullscreen":"Desativar tela cheia","Go Fullscreen":"Tela cheia","Download File":"Fazer download do arquivo","Download Video":"Fazer download do v\u00eddeo","Play":"Reproduzir","Pause":"Pausar","Captions\/Subtitles":"Transcri\u00e7\u00f5es\/Legendas","None":"Nenhum","Time Slider":"Tempo do slider","Skip back %1 seconds":"Retroceder %1 segundos","Video Player":"Tocador de v\u00eddeo","Audio Player":"Tocador de \u00e1udio","Volume Slider":"Controle de volume","Mute Toggle":"Alternar mudo","Unmute":"Desativar mudo","Mute":"Mudo","Use Up\/Down Arrow keys to increase or decrease volume.":"Use as setas para cima ou para baixo para aumentar ou diminuir o volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use as setas esquerda e direita para avan\u00e7ar um segundo. Acima e abaixo para avan\u00e7ar dez segundos."}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js?ver=2.22.0'></script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/wp-mediaelement.min0822.js?ver=4.8.14'></script>
+</body>
+
+<!-- Mirrored from localhost:8080/client-side-image-resize/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:29:44 GMT -->
+</html>

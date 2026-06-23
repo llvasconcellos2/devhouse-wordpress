@@ -1,0 +1,2578 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" prefix="" lang="pt-BR">
+
+<!-- Mirrored from localhost:8080/instalando-o-debian-squeeze-no-nas-d-link-dns-320/?replytocom=186 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:56:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Instalando o Debian Squeeze no NAS D-Link DNS-320 &#8211; DevHouse Internet Software Development House</title>
+<meta name="keywords" content="linux, debian, squeeze, fonz, fun_plug, nas, network attached storage, d-link, dns-320, dlink, dns320, dns 320, telnet, ssh" />
+<meta name="description" content="Tutorial de instalação do Debian Linux Squeeze para o NAS D-Link DNS-320." />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.core1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/skin.deepblue1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/video-js1717.css?ver=2.0.6" />
+<link rel="stylesheet" type="text/css" media="screen" href="../wp-content/themes/mondeo/skins/css/prettyphoto1717.css?ver=2.0.6" />
+<link href="../../fonts.googleapis.com/cssb69f.css?family=Droid+Sans:regular,bold" rel="stylesheet" type="text/css" />
+
+<link rel="shortcut icon" href="../wp-content/uploads/2012/11/devhouse-favicon.html" />
+<link href="../../fonts.googleapis.com/css5ba9.css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
+<style type="text/css">h1, h2, h3, h4, h5, h6 {  font-family: Yanone Kaffeesatz; }</style>
+<link rel="pingback" href="../xmlrpc.php" />
+
+<!-- BEGIN Metadata added by the Add-Meta-Tags WordPress plugin -->
+<meta name="description" content="Esta é a segunda parte do guia de configuração do Debian Linux para o NAS D-Link DNS-320. Estou considerando que você já possui uma instalação funcionando do fonz fun_plug no seu NAS, caso contrário consulte a primeira parte deste guia: Já existe um pacote do Debian Squeeze preparado para..." />
+<meta name="keywords" content="debian, hardware, linux, d-link, debian, dlink, dns-320, dns320, fonz, fun_plug, linux, nas, network attached storage, squeeze, ssh, telnet" />
+<meta property="og:site_name" content="DevHouse Internet Software Development House" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Instalando o Debian Squeeze no NAS D-Link DNS-320" />
+<meta property="og:url" content="https://leonardo-vasconcellos.vercel.app/portfolio/devhouse-wordpress/site/instalando-o-debian-squeeze-no-nas-d-link-dns-320/" />
+<meta property="og:description" content="Esta é a segunda parte do guia de configuração do Debian Linux para o NAS D-Link DNS-320. Estou considerando que você já possui uma instalação funcionando do fonz fun_plug no seu NAS, caso contrário consulte a primeira parte deste guia: Já existe um pacote do Debian Squeeze preparado para..." />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:updated_time" content="2016-04-25T09:04:02+00:00" />
+<meta property="og:image" content="http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS_debian.jpg" />
+<meta property="og:image:width" content="1199" />
+<meta property="og:image:height" content="674" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2012-10-21T21:45:25+00:00" />
+<meta property="article:modified_time" content="2016-04-25T09:04:02+00:00" />
+<meta property="article:author" content="http://localhost:8080/author/leonardo/" />
+<meta property="article:publisher" content="http://localhost:8080/" />
+<meta property="article:section" content="Debian" />
+<meta property="article:section" content="Hardware" />
+<meta property="article:section" content="Linux" />
+<meta property="article:tag" content="debian" />
+<meta property="article:tag" content="hardware" />
+<meta property="article:tag" content="linux" />
+<meta property="article:tag" content="d-link" />
+<meta property="article:tag" content="debian" />
+<meta property="article:tag" content="dlink" />
+<meta property="article:tag" content="dns-320" />
+<meta property="article:tag" content="dns320" />
+<meta property="article:tag" content="fonz" />
+<meta property="article:tag" content="fun_plug" />
+<meta property="article:tag" content="linux" />
+<meta property="article:tag" content="nas" />
+<meta property="article:tag" content="network attached storage" />
+<meta property="article:tag" content="squeeze" />
+<meta property="article:tag" content="ssh" />
+<meta property="article:tag" content="telnet" />
+<!-- END Metadata added by the Add-Meta-Tags WordPress plugin -->
+
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Feed para DevHouse Internet Software Development House &raquo;" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo;" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para DevHouse Internet Software Development House &raquo; Instalando o Debian Squeeze no NAS D-Link DNS-320" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8080\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.14"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='../wp-content/plugins/captcha/css/front_end_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='../wp-content/plugins/captcha/css/desktop_style4235.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='sharedaddy-css'  href='../wp-content/plugins/jetpack/modules/sharedaddy/sharing7923.css?ver=5.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='../wp-content/plugins/jetpack/_inc/social-logos/social-logos.min68b3.css?ver=1' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/plugins1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/custom1717.js?ver=2.0.6'></script>
+<script type='text/javascript' src='../wp-content/themes/mondeo/skins/js/video1717.js?ver=2.0.6'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.html" /> 
+<link rel='prev' title='Instalando o fonz fun_plug no D-Link DNS-320 NAS' href='../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html' />
+<link rel='next' title='Desabilitando o ipv6 no Debian' href='../desabilitando-o-ipv6-no-debian/index.html' />
+<meta name="generator" content="WordPress 4.8.14" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../index3dea.html?p=513' />
+<meta name='robots' content='noindex,follow' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed534c.json?url=http%3A%2F%2Flocalhost%3A8080%2Finstalando-o-debian-squeeze-no-nas-d-link-dns-320%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embedc025?url=http%3A%2F%2Flocalhost%3A8080%2Finstalando-o-debian-squeeze-no-nas-d-link-dns-320%2F&amp;format=xml" />
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/html5.js?ver=2.0.6"></script>
+<script type="text/javascript" src="http://localhost:8080/wp-content/themes/mondeo/skins/js/css3.js?ver=2.0.6"></script>
+<![endif]-->
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<body class="post-template-default single single-post postid-513 single-format-standard deepblue">
+<div id="wrap">
+<header>
+<section class="header-style-two layout-width">
+<div class="site-logo"><h3><a href="../index.html" title="DevHouse Internet Software Development House"><img src="../wp-content/uploads/2012/10/devhouse_logo_pq-2.html" alt="DevHouse Internet Software Development House" /></a></h3></div><nav id="header-menu" class="ddsmoothmenu"><ul id="menu-menu-principal" class="drop-menu"><li id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-362"><a href="https://leonardo-vasconcellos.vercel.app/"><span>Portfólio</span></a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="../blog/index.html"><span>Blog</span></a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="../leonardo/index.html"><span>Sobre</span></a></li>
+<li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-678"><a href="../client-side-image-resize/index.html"><span>Client Side Image Resize</span></a></li>
+<li id="menu-item-563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-563"><a href="../contato/index.html"><span>Contato</span></a></li>
+</ul></nav><div id="topmedia">
+<ul>
+<li class="facebook"><a href="https://www.facebook.com/devhousesoftware" rel="external">facebook</a><p class="tooltip">FaceBook</p></li>
+</ul>
+</div>
+<div id="topsearch">
+<form action="http://localhost:8080/" method="get">
+<input type="text" id="topsearch-input" class="cleardefault" name="s" size="24" value="Procurar..."  /><input type="submit"  id="topsearch-button" name="topsearch-button" value="" />
+</form>
+</div>
+<div class="clear"></div></section>
+<div class="page-header">
+<div class="layout-width page-header-wrap"><h2 class="breadcrumbs"><a href="../category/linux/debian-linux/index.html" rel="category tag">Debian</a>&nbsp;&middot;&nbsp;<a href="../category/hardware/index.html" rel="category tag">Hardware</a>&nbsp;&middot;&nbsp;<a href="../category/linux/index.html" rel="category tag">Linux</a></h2>
+<div class="clear"></div>
+<div class="topshadow"></div>
+</div>
+</div>
+</header>
+<!-- header --><div id="container">
+<div class="wrap layout-width right-side">
+<article id="content">
+<div class="post-single" id="post-513">
+
+<section class="post-header">
+	<h2>Instalando o Debian Squeeze no NAS D-Link DNS-320</h2>
+	<div class="entry-meta">
+		<span>Por <a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></span>		<span>Em 21 out. 2012</span>		<span>Em <a href="../category/linux/debian-linux/index.html" rel="category tag">Debian</a>, <a href="../category/hardware/index.html" rel="category tag">Hardware</a>, <a href="../category/linux/index.html" rel="category tag">Linux</a></span>		<span>Possui <a href="index.html#comments">102 Comentários</a></span>	</div><!--#end entry meta-->
+</section>
+<div style="width:604px">
+<figure class="type-image">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb580c.jpg?src=http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS_debian.jpg&amp;h=227&amp;w=600&amp;zc=1" alt="Instalando o Debian Squeeze no NAS D-Link DNS-320" title="Instalando o Debian Squeeze no NAS D-Link DNS-320" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></figure>
+</div>
+<div class="post-text"><p>Esta é a segunda parte do guia de configuração do Debian Linux para o NAS D-Link DNS-320. Estou considerando que você já possui uma instalação funcionando do <em>fonz fun_plug</em> no seu NAS, caso contrário consulte a primeira parte deste guia:</p>
+<p><div class="hr"></div><div class="portfolio-lists post-lists shortcode-portfolio-lists shortcode-blog-lists">
+<ul class="thumb-preloader thumb-fade thumb-move two-column">
+<li><figure class="type-more">
+<a href="../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html" class="preloader" rel="bookmark" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS"><img src="../wp-content/themes/mondeo/framework/plugins/timthumbe730.jpg?src=http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS.jpg&amp;h=190&amp;w=430&amp;zc=1" alt="Instalando o fonz fun_plug no D-Link DNS-320 NAS" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS"><div class="fade-hover hide"></div><div class="overlay"></div><div class="shadow"></div></a>
+</figure>
+<h3><a href="../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html" rel="bookmark"  title="Instalando o fonz fun_plug no D-Link DNS-320 NAS">Instalando o fonz fun_plug no D-Link DNS-320 NAS</a></h3>
+<p><span>outubro 21. 2012</span><span><a href="../instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/index.html#comments">96Comment</a></span></p><p>O NAS ou Network Attached Storage DNS-320 da D-Link é um servidor de arquivos muito bom e barato que me ajuda a sincronizar...</p></li>
+<div class="clear"></div></ul></div><!--#end blog lists--><div class="hr"></div></p>
+<p><span class="dropcap radius-5">Primeiro Passo: Download do Debian Squeeze</span><div class="clear"></div></p>
+<p>Já existe um pacote do Debian Squeeze preparado para o NAS. Faça o download neste link:</p>
+<p><a title="Debian Squeeze DNS-320" href="ftp://ftp.dlink.pl/dns/dns-320/driver_software/DNS-320%26325_linuxDebian_revA_Squeeze_all_en_20110111.zip" target="_blank">ftp://ftp.dlink.pl/dns/dns-320/driver_software/DNS-320&amp;325_linuxDebian_revA_Squeeze_all_en_20110111.zip</a></p>
+<p>Aproveitei e criei um mirror para o caso deste link sair do ar:</p>
+<p><a href="http://www.4shared.com/zip/NzsLLdDt/DNS-320325_linuxDebian_revA_Sq.html" title="DNS-320 Debian Linux Squeeze" target="_blank">http://www.4shared.com/zip/NzsLLdDt/DNS-320325_linuxDebian_revA_Sq.html</a></p>
+<p>Após o download, descompacte o arquivo. Dentro estão 3 arquivos:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+total 154324
+-rw-r--r-- 1      2254 Jan 11  2011 DNS-320&amp;325_howto_Linux-Debian-in-chroot.txt
+-rw-r--r-- 1       569 Sep 21  2010 fun_plug.debian
+-rw-r--r-- 1 158011675 Sep 22  2010 squeeze.tar.gz
+</pre>
+<p><span class="dropcap radius-5">Segundo Passo: Instalando o Debian Squeeze</span><div class="clear"></div></p>
+<p>Copie os arquivos <em>fun_plug.debian</em> e <em>squeeze.tar.gz</em> para o Volume_1 no NAS. Renomeie o arquivo <em>fun_plug</em> que já estava no NAS para <em>fun_plug.old</em> e renomeie o arquivo <em>fun_plug.debian</em> para <em>fun_plug</em>.</p>
+<p>Não reinicie o NAS ainda. Vamos precisar do fun_plug que já está rodando para configurar o Linux. Conecte via ssh ao seu NAS.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+# Substitua 192.168.0.2 pelo IP do seu NAS.
+ssh root@192.168.0.2
+</pre>
+<p>Agora execute os seguintes comandos:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+cd /mnt/HD/HD_a2
+gunzip squeeze.tar.gz
+tar -xf squeeze.tar
+rm squeeze.tar
+</pre>
+<p>Reinicie o NAS.</p>
+<p><span class="dropcap radius-5">Terceiro Passo: Configurando o Debian</span><div class="clear"></div></p>
+<p>Conecte via ssh ao seu NAS. Usuario <em>root</em> e senha <em>dlink</em>.</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+# Substitua 192.168.0.2 pelo IP do seu NAS.
+ssh root@192.168.0.2
+</pre>
+<p>Caso não consiga se conectar em rasão da chave de criptografia ter mudado apague o arquivo ~/.ssh/known_hosts e tente novamente.</p>
+<p>Edite o arquivo /etc/apt/sources.list.</p>
+<pre class="brush: bash; title: ; notranslate" title="">nano /etc/apt/sources.list</pre>
+<p>Remova o repositório que já se encontra listado e insira os seguintes:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+deb http://ftp.debian.org/debian/ squeeze main contrib non-free
+deb-src http://ftp.debian.org/debian/ squeeze main contrib non-free
+
+deb http://backports.debian.org/debian-backports squeeze-backports main contrib non-free
+deb-src http://backports.debian.org/debian-backports squeeze-backports main contrib non-free
+
+deb http://security.debian.org/ squeeze/updates main contrib non-free
+deb-src http://security.debian.org/ squeeze/updates main contrib non-free
+</pre>
+<p>Salve o arquivo e execute os comandos:</p>
+<pre class="brush: bash; title: ; notranslate" title="">
+apt-get update
+
+# Instalar sudo
+apt-get install sudo
+
+# Instalar locales
+apt-get install locales
+
+# Selecione a sua locale. Eu uso en_US.UTF-8
+dpkg-reconfigure locales
+
+# Atualizar o sistema
+apt-get upgrade
+
+# Alterar a senha de root
+passwd
+
+# Configure seu Timezone
+dpkg-reconfigure tzdata
+
+# Adicionar um usuário para não usar o root.
+adduser leonardo
+adduser leonardo sudo
+</pre>
+<p>Pronto! Agora vocé tem um Debian completo rodando no seu NAS.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compartilhe isso:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-513" class="share-twitter sd-button share-icon no-text" href="index9a7b.html?share=twitter" target="_blank" title="Clique para compartilhar no Twitter"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Twitter(abre em nova janela)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-513" class="share-facebook sd-button share-icon no-text" href="index5a58.html?share=facebook" target="_blank" title="Clique para compartilhar no Facebook"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Facebook(abre em nova janela)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-513" class="share-google-plus-1 sd-button share-icon no-text" href="index386f.html?share=google-plus-1" target="_blank" title="Compartilhe no Google+"><span></span><span class="sharing-screen-reader-text">Compartilhe no Google+(abre em nova janela)</span></a></li><li class="share-end"></li></ul></div></div></div></div>
+<!--end link page-->
+<div class="tags">Tags: <a href="../tag/d-link/index.html" rel="tag">d-link</a> , <a href="../tag/debian/index.html" rel="tag">debian</a> , <a href="../tag/dlink/index.html" rel="tag">dlink</a> , <a href="../tag/dns-320/index.html" rel="tag">dns-320</a> , <a href="../tag/dns320/index.html" rel="tag">dns320</a> , <a href="../tag/fonz/index.html" rel="tag">fonz</a> , <a href="../tag/fun_plug/index.html" rel="tag">fun_plug</a> , <a href="../tag/linux/index.html" rel="tag">Linux</a> , <a href="../tag/nas/index.html" rel="tag">nas</a> , <a href="../tag/network-attached-storage/index.html" rel="tag">network attached storage</a> , <a href="../tag/squeeze/index.html" rel="tag">squeeze</a> , <a href="../tag/ssh/index.html" rel="tag">ssh</a> , <a href="../tag/telnet/index.html" rel="tag">telnet</a></div><div class="author-info">
+<h3>Sobre o autor</h3>
+<dl class="fixed radius-5">
+<dt><img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' /></dt>
+<dd>
+<h5><a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></h5>
+<p>Um desenvolvedor web veterano que está sempre a procura de novas tecnologias que facilitem o desenvolvimento de aplicativos ricos para a internet. Louco por tecnologia, games e Linux.</p>
+</dd>
+</dl>
+</div>
+<div class="related-posts">
+<h3>Posts Relacionados</h3>
+<ul class="side thumb-preloader thumb-fade thumb-move">
+<li>
+<figure class="type-image">
+<a href="../wp-content/uploads/2015/08/skype-logo-open-graph.html" class="preloader" rel="tag[RelatedPosts]" title="[Dica] Ícone do Skype não aparece no Ubuntu"><img src="../wp-content/themes/mondeo/framework/plugins/timthumbb641.png?src=http://localhost:8080/wp-content/uploads/2015/08/skype-logo-open-graph.png&amp;h=120&amp;w=260&amp;zc=1" alt="[Dica] Ícone do Skype não aparece no Ubuntu" title="[Dica] Ícone do Skype não aparece no Ubuntu" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></a></figure>
+<section>
+<h5><a href="../dica-icone-do-skype-nao-aparece-no-ubuntu/index.html" rel="bookmark" title="[Dica] Ícone do Skype não aparece no Ubuntu">[Dica] Ícone do Skype não aparece no Ubuntu</a></h5>
+<p>Para fazer o ícone do Skype aparecer no systray do Unity no Ubuntu adicione o pacote sni-qt com o seguinte comando:
+sudo...</p>
+</section>
+</li>
+<li>
+<figure class="type-image">
+<a href="../wp-content/uploads/2012/06/binbash.html" class="preloader" rel="tag[RelatedPosts]" title="Copiar / Download de um site inteiro com WGET [ripar]"><img src="../wp-content/themes/mondeo/framework/plugins/timthumb9390.jpg?src=http://localhost:8080/wp-content/uploads/2012/06/binbash.jpg&amp;h=120&amp;w=260&amp;zc=1" alt="Copiar / Download de um site inteiro com WGET [ripar]" title="Copiar / Download de um site inteiro com WGET [ripar]" /><div class="fade-hover"></div><div class="overlay"></div><div class="shadow"></div></a></figure>
+<section>
+<h5><a href="../copiar-download-de-um-site-inteiro-com-wget-ripar/index.html" rel="bookmark" title="Copiar / Download de um site inteiro com WGET [ripar]">Copiar / Download de um site inteiro com WGET [ripar]</a></h5>
+<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:
+&nbsp;
+$...</p>
+</section>
+</li>
+<div class="clear"></div></ul>
+</div>
+</div><!--end post single-->
+
+
+
+<div id="comments">
+	<h3 id="comments-title">102 Comentários</h3>
+	<ol class="commentlist">	<li class="comment even thread-even depth-1" id="li-comment-18">
+		<dl id="comment-18" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/22d046fdc117658d5b99eaf0f5cdf8e7?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/22d046fdc117658d5b99eaf0f5cdf8e7?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb951.html?replytocom=18#respond' onclick='return addComment.moveForm( "comment-18", "18", "respond", "513" )' aria-label='Responder para Ricardo Fiamoncini'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Ricardo Fiamoncini</cite>25 de novembro de 2012 at 23:40</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa noite Leonardo,</p>
+<p>Também tenho um Dlink DNS320 e queria aproveitá-lo melhor com novas aplicações. Foi aí que encontrei seu site e o POST para instalação do FONZ FUN_PLUG.</p>
+<p>Segui o passo a passo e deu tudo certo. Tenho acesso liberado ao meu servidor via telnet.</p>
+<p>Percebi que após a atualização do FIRMWARE para a versão 2.03 a aplicação AjaXplorer desapareceu e foi incluído o item AMAZON S3. Apesar de não utilizar o AjaXplorer porque causa da pasta raiz que não era a &#8220;volume_1&#8221; e também era acessível a todos usuários do servidor, eu prefiro um layout mais amigável para gerenciar meus arquivos quando acesso remotamente pela internet meu servidor. O &#8220;Servidor de Arquivos web&#8221; que a DLINK disponibilizou é muito ruim e pouco prático.</p>
+<p>Minha pergunta é: Como instalo novas aplicações no menu servidor Sharecenter? Começando por um bom gerenciador de arquivos para WEB&#8230;</p>
+<p>Obrigado e parabéns pela iniciativa de compartilhar conhecimentos e informações.</p>
+<p>Ricardo<br />
+Florianópolis-SC</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-20">
+		<dl id="comment-20" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa82a.html?replytocom=20#respond' onclick='return addComment.moveForm( "comment-20", "20", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>26 de novembro de 2012 at 0:34</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Fico feliz que tenha ajudado! Quanto ao AjaXplorer eu também senti falta dele. Lí em algum lugar que me parece que foi tirado pois comprometia a estabilidade ou segurança do NAS. Talvez uma boa alternativa ao AjaXplorer seja o Extplorer, um gerenciador de arquivos web mais completo do que o AjaXplorer.<br />
+Sobre instalar mais programas na página de administração do NAS eu não saberia dizer, mas você pode instalar qualquer outro software no seu NAS agora que ele está rodando o Debian. Procure instruções de como instalar seu software preferido no Debian e pronto. Dê preferência por softwares que possuem interfaces de administração web, assim você pode acessá-lo usando o browser e não o shell.</p>
+<p>Estou fazendo umas instalações no meu NAS e logo vou postar aqui as descobertas. Fique ligado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-49">
+		<dl id="comment-49" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index21e4.html?replytocom=49#respond' onclick='return addComment.moveForm( "comment-49", "49", "respond", "513" )' aria-label='Responder para Tiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Tiago</cite>3 de janeiro de 2013 at 0:29</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ótima iniciativa amigo. Pena eu estar usando o Windows neste momento, entendo nada de Linux. Pelo oq percebi com a instalação do Debian melhora em muito a gama de aplicativos. Alías gostei muito do aparelho, unico problema é que não existe a possibilidade de copiar arquivos do DNS 320 para um Pen Drive, pra mim é muito util, mas não achei nada a respeito na internet. Se souber de algo seria de grande ajudar. Abração&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-51">
+		<dl id="comment-51" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index740f.html?replytocom=51#respond' onclick='return addComment.moveForm( "comment-51", "51", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>15 de janeiro de 2013 at 13:52</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Quando você insere o pendrive ele monta a partição em /mnt, não me engano, então você pode fazer a copa por ssh ou pode instalar um gerenciador d arquivos com interface web como por exemplo o extplorer. Aqui no blog você encontra um artigo sobre ele.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-72">
+		<dl id="comment-72" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexdb9d.html?replytocom=72#respond' onclick='return addComment.moveForm( "comment-72", "72", "respond", "513" )' aria-label='Responder para TIago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">TIago</cite>27 de fevereiro de 2013 at 0:18</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Dae cara, bom parei no Terceiro Passo, fui acessar via ssh e deu este erro&gt;&gt;&gt;<br />
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br />
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br />
+It is also possible that the RSA host key has just been changed.<br />
+The fingerprint for the RSA key sent by the remote host is<br />
+cf:b4:88:f9:0a:3b:98:9f:e8:7e:c3:2e:9e:0d:74:f8.<br />
+Please contact your system administrator.<br />
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.<br />
+Offending key in /root/.ssh/known_hosts:1<br />
+RSA host key for 192.168.1.101 has changed and you have requested strict checking.<br />
+Host key verification failed.</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>Se caso não desce certo era pra deletar o ~/.ssh/known_hosts correto? Mas não achei este arquivo, não como proceder. </p>
+<p>E obrigado pelo tuto cara. Abração ae e no aguardo de uma luz&#8230;hehe</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-89">
+		<dl id="comment-89" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexbde5.html?replytocom=89#respond' onclick='return addComment.moveForm( "comment-89", "89", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>22 de abril de 2013 at 14:16</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>O que você fez para resolver? Lembra?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-73">
+		<dl id="comment-73" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd61b.html?replytocom=73#respond' onclick='return addComment.moveForm( "comment-73", "73", "respond", "513" )' aria-label='Responder para Tiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Tiago</cite>28 de fevereiro de 2013 at 3:00</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bom já resolvi este problema ali, instalei o Webmin e o Transmission e está uma maravilha, Muito obrigado pelo tuto cara, impossivel ninguem entender, eu que não sei nada de Linux consegui me virar e tals..hehe Consegui até configurar o no-ip tb, melhor impossivel&#8230;hehe</p>
+<p>Abração cara&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-88">
+		<dl id="comment-88" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0843.html?replytocom=88#respond' onclick='return addComment.moveForm( "comment-88", "88", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>22 de abril de 2013 at 14:14</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Que bom Tiago. Fico feliz!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-78">
+		<dl id="comment-78" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b0dccb89e4bbc7915de4d37fa9df6e9b?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b0dccb89e4bbc7915de4d37fa9df6e9b?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8410.html?replytocom=78#respond' onclick='return addComment.moveForm( "comment-78", "78", "respond", "513" )' aria-label='Responder para Rafael Frinhane'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Rafael Frinhane</cite>13 de abril de 2013 at 21:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Prezado, já tenho dois Hd&#8217;s com arquivos importantes salvos, se eu fizer a instalação do DEBIAN perco os arquivos. Como devo proceder para que tenha a configuração RAID mantida?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-79">
+		<dl id="comment-79" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index3ed4.html?replytocom=79#respond' onclick='return addComment.moveForm( "comment-79", "79", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>13 de abril de 2013 at 22:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Esta instalação do Debian não vai influenciar no seu RAID e você não perderá arquivos.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-80">
+		<dl id="comment-80" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f6f81edbdec45361c3bdd0d92c8295af?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2e08.html?replytocom=80#respond' onclick='return addComment.moveForm( "comment-80", "80", "respond", "513" )' aria-label='Responder para Tiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Tiago</cite>18 de abril de 2013 at 20:22</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá amigo, formatei o windows aq e acabei esquecendo os dados para acesso SSH, to usando o programa SSH Secure Shell Client para ter acesso ao terminar, so que não consigo mais logar via SSH, como que eu passo pra ver o login e senha correto? Digo se tiver alguma informação nos arquivos aonde fica a instalação do Debian&#8230;Abraço</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-83">
+		<dl id="comment-83" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index118b.html?replytocom=83#respond' onclick='return addComment.moveForm( "comment-83", "83", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>22 de abril de 2013 at 13:59</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Sugiro refazer novamente o tutorial de instalação do fun_plug (<a href="http://www.devhouse.com.br/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/" rel="nofollow">http://www.devhouse.com.br/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/</a>) pois é pré-requisito para a instalação do debian.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-81">
+		<dl id="comment-81" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/4abd5dcf44bec707ce93e539dec7c042?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/4abd5dcf44bec707ce93e539dec7c042?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexdb5d.html?replytocom=81#respond' onclick='return addComment.moveForm( "comment-81", "81", "respond", "513" )' aria-label='Responder para Márcio'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Márcio</cite>19 de abril de 2013 at 17:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá Leonardo,<br />
+Estou pensando em comprar o DNS-320 para centralizar os meus backups e arquivos&#8230; seu post abriu ainda mais a gama de possibilidades que imaginava. Pergunto: a RAM de 128MB (peguei nas especificações) não é uma barreira?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-82">
+		<dl id="comment-82" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexf0f0.html?replytocom=82#respond' onclick='return addComment.moveForm( "comment-82", "82", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>22 de abril de 2013 at 13:54</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>128 MB é o suficiente para rodar a maioria das distros linux em modo texto. Com 128 MB é possível instalar um servidor apache + php + mysql. Só vai dar problema se você resolver instalar algum servidor java. 🙂</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-119">
+		<dl id="comment-119" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/675acfc949b952e0c4e75a371f55bb15?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/675acfc949b952e0c4e75a371f55bb15?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index57d3.html?replytocom=119#respond' onclick='return addComment.moveForm( "comment-119", "119", "respond", "513" )' aria-label='Responder para Alexandre'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Alexandre</cite>28 de junho de 2013 at 16:36</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Leonardo, pesquisando pelo google sobre o DNS-320 acabei achando o seu site que me ajudou muito a entender algumas coisas e parabéns continue assim.. o meu DNS-320l está pra chegar, será que a instalação do Fun plug e essa do Squeeze vai rodar no 320l? e qual a vantagem de instalar o Squeeze?<br />
+Obrigado.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-120">
+		<dl id="comment-120" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8b90.html?replytocom=120#respond' onclick='return addComment.moveForm( "comment-120", "120", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de junho de 2013 at 18:59</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Talvez funcione. Não posso dizer com certeza mas sei que vale a pena tentar pois a instalação padrão dos dois não influencia no funcionamento padrão do NAS, ou seja, você pode tentar seguir o tutorial e caso tenha algum problema reverta o que foi feito que o NAS voltará ao comportamento padrão. Quanto a vantagem do Squeeze: que tal ter uma distro Linux completa rodando no seu NAS? Imagina que com o Linux rodando você pode instalar qualquer programa linux no seu NAS. Dê asas a sua imaginação.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-121">
+		<dl id="comment-121" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/675acfc949b952e0c4e75a371f55bb15?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/675acfc949b952e0c4e75a371f55bb15?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index786f.html?replytocom=121#respond' onclick='return addComment.moveForm( "comment-121", "121", "respond", "513" )' aria-label='Responder para Alexandre'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Alexandre</cite>28 de junho de 2013 at 19:39</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Obrigado pela resposta.. assim que chegar e depois que ver como funciona farei alguns teste na instalação do fun_plug&#8230; sobre o debian eu imaginava mais ou menos como vc disse um linux completo rodando no nas.. vai aumentar ainda mais as funções do nas.podendo instala varios programas e substituir alguns que vem por padrão&#8230;<br />
+Obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-132">
+		<dl id="comment-132" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/9bd59c20f3f3b4b1e482b52023813f00?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/9bd59c20f3f3b4b1e482b52023813f00?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index640a.html?replytocom=132#respond' onclick='return addComment.moveForm( "comment-132", "132", "respond", "513" )' aria-label='Responder para Anselmo Reis'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Anselmo Reis</cite>17 de agosto de 2013 at 6:45</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bom dia, nesse debian tem iscsi, rsync e transmission?<br />
+Preciso formar os disco que já estão com dados do 320? grato</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-133">
+		<dl id="comment-133" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index032b.html?replytocom=133#respond' onclick='return addComment.moveForm( "comment-133", "133", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>17 de agosto de 2013 at 12:36</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá Anselmo. O Debian é o Squeeze (Debian 6) e nele, a princípio, roda tudo o que rodaria em qualquer PC. Mas claro se os programas estiverem disponíveis para a arquitetura ARM. Você também pode sempre tentar compilar o fonte diretamente no NAS caso algum programa não esteja disponível via apt ou pacotes deb.<br />
+Você tem que se lembrar que o NAS não tem placa de vídeo e por isso não vai existir interface gráfica, ou seja, você precisará instalar os pacotes cli e web do transmission ou usar o rtorrent.<br />
+Quanto a tecnologia ISCSI eu não tenho certeza pois o Debian vai estar usando o kernel que vem com o NAS e não sei se o ISCSI precisaria de alguma coisa que nele falta. Mas é questão te tentar. Por favor, compartilhe conosco o resultado. Ah e não, não precisa formatar o 320. Você não vai perder nenhuma informação.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-134">
+		<dl id="comment-134" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/fbaf57efe974202dbdbf7be320a24644?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/fbaf57efe974202dbdbf7be320a24644?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6f76.html?replytocom=134#respond' onclick='return addComment.moveForm( "comment-134", "134", "respond", "513" )' aria-label='Responder para Cidney'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Cidney</cite>23 de agosto de 2013 at 21:19</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá Leonardo, me retira uma dúvida, se instalar o debian, minha interface original do dns-320l será substituida? caso não goste, terei como reverter? é complicado reverter? (Não entendo nada de Linux).</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-135">
+		<dl id="comment-135" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfec0.html?replytocom=135#respond' onclick='return addComment.moveForm( "comment-135", "135", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>23 de agosto de 2013 at 21:33</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Dá uma lida nos comentários. Essa dúvida já foi respondida.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-136">
+		<dl id="comment-136" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/fbaf57efe974202dbdbf7be320a24644?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/fbaf57efe974202dbdbf7be320a24644?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb908.html?replytocom=136#respond' onclick='return addComment.moveForm( "comment-136", "136", "respond", "513" )' aria-label='Responder para Cidney'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Cidney</cite>23 de agosto de 2013 at 21:36</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ok, localizei a resposta sobre a influencia, ele na realidade agrega, e a desinstalação do mesmo que não localizei (a reversão citada, seria a reinicialização do NAS?)</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-4" id="li-comment-138">
+		<dl id="comment-138" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index816f.html?replytocom=138#respond' onclick='return addComment.moveForm( "comment-138", "138", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>29 de agosto de 2013 at 11:15</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Para desinstalar basta apagar a pasta e os arquivos adicionados.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-140">
+		<dl id="comment-140" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/5ff2aefb66e6cf44913ef064dc250219?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/5ff2aefb66e6cf44913ef064dc250219?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index3db2.html?replytocom=140#respond' onclick='return addComment.moveForm( "comment-140", "140", "respond", "513" )' aria-label='Responder para Domenico'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://n/A' rel='external nofollow' class='url'>Domenico</a></cite>31 de agosto de 2013 at 8:40</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bom dia Leonardo.</p>
+<p>Eu instalei o debian porém não consegui mais me conectar via ssh no NAS.<br />
+Eu não encontrei aquele arquivo que você comentou, pois esta dando problema de RSA.</p>
+<p>Tem como me ajudar</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-153">
+		<dl id="comment-153" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6994.html?replytocom=153#respond' onclick='return addComment.moveForm( "comment-153", "153", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>2 de janeiro de 2014 at 18:00</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Conseguiu resolver?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-159">
+		<dl id="comment-159" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/074bc811679287ffb859b929712e709f?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/074bc811679287ffb859b929712e709f?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd732.html?replytocom=159#respond' onclick='return addComment.moveForm( "comment-159", "159", "respond", "513" )' aria-label='Responder para Heinz'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Heinz</cite>6 de janeiro de 2014 at 21:07</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa noite, eu queria acessar a pagina web do share center sem estar em um pc da minha rede. Criei contas DDNS, mas não obtive sucesso. O que você aconselha?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-160">
+		<dl id="comment-160" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexeb13.html?replytocom=160#respond' onclick='return addComment.moveForm( "comment-160", "160", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>7 de janeiro de 2014 at 13:59</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Altere a porta da administração web do NAS de 80 para 8080 e mapeie a porta no roteador para o IP do NAS. Assim você acessa a administração usando: <a href="http://seuendereco.dyndns.com:8080/" rel="nofollow">http://seuendereco.dyndns.com:8080</a></p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-174">
+		<dl id="comment-174" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/891283384a65fc68b60f7666e41983e1?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/891283384a65fc68b60f7666e41983e1?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa68c.html?replytocom=174#respond' onclick='return addComment.moveForm( "comment-174", "174", "respond", "513" )' aria-label='Responder para Marcos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Marcos</cite>26 de janeiro de 2014 at 13:39</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa Tarde, todas essas configurações funcionam para o modelo 320L que é o mais novo da Dlink. Obrigado.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-175">
+		<dl id="comment-175" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index1bd8.html?replytocom=175#respond' onclick='return addComment.moveForm( "comment-175", "175", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>26 de janeiro de 2014 at 15:30</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Se a sua frase é uma afirmação é uma ótima notícia, mas se você quis fazer uma pergunta (cuidado com a pontuação), acredito que a resposta é não tendo em vista os comentários anteriores.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-176">
+		<dl id="comment-176" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/865094245f13d1839c079e89e5b897de?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/865094245f13d1839c079e89e5b897de?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index823b.html?replytocom=176#respond' onclick='return addComment.moveForm( "comment-176", "176", "respond", "513" )' aria-label='Responder para Victor'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Victor</cite>27 de janeiro de 2014 at 23:51</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa noite,<br />
+Segui o tutorial e instalei quase tudo o que queria ehehe<br />
+Sera que podia me passar um passo a passo para instalar o transmission pelo debian squeeze dentro do DNS 320L ???<br />
+Instalei pelo apt-get mas por nada que eu faca funciona.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-177">
+		<dl id="comment-177" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexbb12.html?replytocom=177#respond' onclick='return addComment.moveForm( "comment-177", "177", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>27 de janeiro de 2014 at 23:58</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Vou escrever um ainda este mês. Responda esse comentário clicando em &#8220;Avise-me sobre novas publicações por e-mail.&#8221; e fique por dentro!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-178">
+		<dl id="comment-178" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/865094245f13d1839c079e89e5b897de?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/865094245f13d1839c079e89e5b897de?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index28d0.html?replytocom=178#respond' onclick='return addComment.moveForm( "comment-178", "178", "respond", "513" )' aria-label='Responder para victor'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">victor</cite>28 de janeiro de 2014 at 14:14</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Opa beleza.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-364">
+		<dl id="comment-364" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/6989767b22b91bdee2e58737aabe87f1?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/6989767b22b91bdee2e58737aabe87f1?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index1eec.html?replytocom=364#respond' onclick='return addComment.moveForm( "comment-364", "364", "respond", "513" )' aria-label='Responder para Anderson Ruas'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Anderson Ruas</cite>13 de julho de 2014 at 2:49</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Avise-me sobre novas publicações por email Gostaria de instalar o plex, transmission no debian squezze meu nas 320L</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-4" id="li-comment-371">
+		<dl id="comment-371" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa0fd.html?replytocom=371#respond' onclick='return addComment.moveForm( "comment-371", "371", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>11 de agosto de 2014 at 0:08</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Eu estou para escrever novos artigos, só não fiz ainda pois queimou a fonte do meu NAS. Ao escrever um comentário aqui no site há uma opção para receber novas atualizações por email. Você selecionou a opção?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-179">
+		<dl id="comment-179" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index21fc.html?replytocom=179#respond' onclick='return addComment.moveForm( "comment-179", "179", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 16:37</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Parabéns pela iniciativa cara, consegui instalar tranquilamente&#8230;<br />
+Sabe me dizer se tem como transferir arquivos pelo pen drive? Até instalei o webmin e tals, mas não achei nada referente a transferência de arquivos pelo pen drive no DNS 320, dei uma mexida no webmin e parece que o aparelho nem reconhece o pen drive..</p>
+<p>Abraço.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-180">
+		<dl id="comment-180" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index4106.html?replytocom=180#respond' onclick='return addComment.moveForm( "comment-180", "180", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de janeiro de 2014 at 16:56</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Tenta montar o pendrive via linha de comando pelo ssh ou telnet.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-181">
+		<dl id="comment-181" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index32cf.html?replytocom=181#respond' onclick='return addComment.moveForm( "comment-181", "181", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 17:10</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Quando chegar em casa vou dar uma pesquisada, não manjo muito de linux&#8230;Vlww</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-4" id="li-comment-182">
+		<dl id="comment-182" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexcc4b.html?replytocom=182#respond' onclick='return addComment.moveForm( "comment-182", "182", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 17:14</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Será que teria q instalar alguma coisa pra reconhecimentos de partições NTFS? Lembro que tinha q instalar algum complemento para montagem de partições NTFS&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-5" id="li-comment-183">
+		<dl id="comment-183" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+						</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de janeiro de 2014 at 17:18</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Precisa ter um módulo de kernel mas acredito que já tenha. Eu não vou poder te ajudar nisso agora mas estou pretendendo dar uma geral no meu NAS e vou publicar novos tutoriais. Vou incluir esse assunto na pauta. Valeu!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-184">
+		<dl id="comment-184" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexa3d0.html?replytocom=184#respond' onclick='return addComment.moveForm( "comment-184", "184", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 17:33</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Legal cara, teu blog é muito legal, só ta faltando mais conteúdos e tals. E novamente parabéns pl tutorial, é de fácil entendimento e vai ajudar muita gente&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-186">
+		<dl id="comment-186" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index544e.html?replytocom=186#respond' onclick='return addComment.moveForm( "comment-186", "186", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de janeiro de 2014 at 21:15</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Obrigado pelos elogios. É o que me anima a continuar&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-185">
+		<dl id="comment-185" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index71ce.html?replytocom=185#respond' onclick='return addComment.moveForm( "comment-185", "185", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 21:13</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Consegui montar o pen drive, mas pela interface do dlink não está copiando. Seleciono o o pen drive a ser copiado, mas simplesmente não acontece nada</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-187">
+		<dl id="comment-187" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index5eb7.html?replytocom=187#respond' onclick='return addComment.moveForm( "comment-187", "187", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de janeiro de 2014 at 21:19</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Talvez seja problema de permissão. Dá uma olhada (ls -l) para ver que permissões que o NAS usa quando você cria uma pasta no Volume_1. Qualquer coisa um chmod 777 pode resolver&#8230; Depois me conta se funcionou.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-188">
+		<dl id="comment-188" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc7ee.html?replytocom=188#respond' onclick='return addComment.moveForm( "comment-188", "188", "respond", "513" )' aria-label='Responder para Thiago'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>28 de janeiro de 2014 at 21:58</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Bixi, não ta fácil, meio que desmonto o HD do NAS  do nada, reiniciei o NAS e reconheceu de boa, agora tento montar o pen drive e diz que ele já foi montado&#8230;Aq aparece o pen drive montado (Pelo menos é oq o NAS diz)&gt;&gt;&gt;\squeeze\mnt\root\mnt\USB\HD_c1</p>
+<p>E parece que o pen drive é reconhecido normalmente&gt;&gt;</p>
+<p>Device Boot      Start         End      Blocks   Id  System<br />
+/dev/sdc1   *           1         976     7834592+   7  HPFS/NTFS</p>
+<p>Mas dentro desta pasta não tem nada, no pen drive tem uns arquivos txt, pasta e tudo mais&#8230;</p>
+<p>Só q eh meio tenso, tenho HD externo, e é chato ter que ficar montado manualmente, é uma pena ele não montar automaticamente..</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-4" id="li-comment-191">
+		<dl id="comment-191" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index77c0.html?replytocom=191#respond' onclick='return addComment.moveForm( "comment-191", "191", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>29 de janeiro de 2014 at 8:36</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Thiago. Segura um pouco ai que eu já te ajudo. Estou fazendo um site para entregar para hoje e já escrevo um novo tutorial. Responde esse comentário clicando em “Avise-me sobre novas publicações por e-mail.” para você ficar sabendo quando eu publicar o novo tutorial. Vou ver se consigo fazer isso amanha ou sexta. Valeu!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-5" id="li-comment-192">
+		<dl id="comment-192" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b9d5de4a9dab14653562ad2816f6113a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+						</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Thiago</cite>29 de janeiro de 2014 at 12:11</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Que show cara, serei o primeiro a testar&#8230;hehe<br />
+Abraço e ficarei no aguardo&#8230;</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-278">
+		<dl id="comment-278" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/48ebacdf0b98ea98c1957464d8dad2cc?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/48ebacdf0b98ea98c1957464d8dad2cc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8a4a.html?replytocom=278#respond' onclick='return addComment.moveForm( "comment-278", "278", "respond", "513" )' aria-label='Responder para Nuno'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Nuno</cite>18 de maio de 2014 at 16:05</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Leonardo, obrigado pelo seu tutorial.<br />
+Estou com um problema:<br />
+Quando executo &#8220;apt-get update&#8221; obtenho o seguinte erro:</p>
+<p>E: Type &#8221; is not known on line 1 in source list /etc/apt/sources.list</p>
+<p>Não sei o que fazer&#8230;<br />
+Obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-330">
+		<dl id="comment-330" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index17a4.html?replytocom=330#respond' onclick='return addComment.moveForm( "comment-330", "330", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de junho de 2014 at 17:13</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Verifique o conteúdo do sources.list. Provavelmente há algo de errado lá.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-338">
+		<dl id="comment-338" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexcd4a.html?replytocom=338#respond' onclick='return addComment.moveForm( "comment-338", "338", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>27 de junho de 2014 at 12:23</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ola Leonardo. ainda não comprei nenhum unidade e estou pesquisando. A minha necessidade é sincronizar toda a pasta \home de um servidor fedora para uma unidade NAS pela rede. Eu já faço para um outro servidor fedora usando rsync, porem queria usar uma unidade NAS. Este Dlink atenderia minha necessidade</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-353">
+		<dl id="comment-353" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8190.html?replytocom=353#respond' onclick='return addComment.moveForm( "comment-353", "353", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de julho de 2014 at 0:11</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Sim, tranquilamente. Vai fundo!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-436">
+		<dl id="comment-436" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index4138.html?replytocom=436#respond' onclick='return addComment.moveForm( "comment-436", "436", "respond", "513" )' aria-label='Responder para pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">pedrosa</cite>8 de setembro de 2014 at 0:01</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ola Leonardo, comprei o DNS-320L ver A3, instalei squeeze. tudo beleza. gostaria de configurar uma placa rede virtual. porem não achei nada. instalei o Webmin porem não carrega no boot. com o webmin ele cria uma rede egiga0:1 porem quando reinicio ela desaparece. pode me ajudar</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-4" id="li-comment-437">
+		<dl id="comment-437" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index9b41.html?replytocom=437#respond' onclick='return addComment.moveForm( "comment-437", "437", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>8 de setembro de 2014 at 8:18</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Talvez seja uma questão mais de Linux do que propriamente do NAS. Procure ver o dmesg do Linux para ver se aparece mensagens de erro e coloque o webmin no init do Linux (busca no google como fazer). Qualquer coisa volta ai.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-464">
+		<dl id="comment-464" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index02d2.html?replytocom=464#respond' onclick='return addComment.moveForm( "comment-464", "464", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>27 de setembro de 2014 at 15:31</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ola Leonardo, por mais que procure não encontro solução para meus problemas. carregar Postfix no boot, Webmin no boot. e carregar tun do Openvpn.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-465">
+		<dl id="comment-465" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb39e.html?replytocom=465#respond' onclick='return addComment.moveForm( "comment-465", "465", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>28 de setembro de 2014 at 11:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Se você já instalou todos esses pacotes e apenas quer que eles executem ao iniciar, veja se editando o arquivo /boot/linuxrc e adicionando ao final do script o seu comando de start resolve. Senão volta comenta aqui de novo que te ajudo. É que meu NAS não está funcionando e não tenho como testar.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-466">
+		<dl id="comment-466" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc833.html?replytocom=466#respond' onclick='return addComment.moveForm( "comment-466", "466", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>28 de setembro de 2014 at 15:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá Leonardo, muito obrigado. funcionou o Webmin e o Postifx. colocando no /boot/linuxrc.<br />
+Só me falta ainda o Openvpn pois verifico que não acha interface tun (Note: Cannot open TUN/TAP dev /dev/net/tun: No such device (errno=19), vc teria alguma ideia. alguém já conseguiu fazer funcionar, lembrando que meu NAS DNS-320L squeeze.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-4" id="li-comment-469">
+		<dl id="comment-469" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd6d3.html?replytocom=469#respond' onclick='return addComment.moveForm( "comment-469", "469", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>29 de setembro de 2014 at 8:08</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Então, uma vez tentei instalar o openvpn e até funcionou mas não gostei de ter que usar um cliente específico. Então instalei o pptpd e foi bem mais fácil e, apesar de não ser a opção mais segura de todas, supriu as minhas necessidades. Quanto ao problema de tun/tap é porque você precisa de alguns módulos do kernel. Como o hardware do NAS é limitado a D-Link compilou o Kernel do Linux com apenas o necessário para rodar os programas que vem de fábrica mas é possível carregar funcionalidades adicionais através de módulos. Você pode baixar os módulos pré-compilados nesse link:<br />
+<a href="http://nas-tweaks.net/257/precompiled-kernel-modules-for-the-d-link-dns-320-and-dns-325/" title="Módulos de Kernel pré-compilados para NAS DNS 320 e 325" target="_blank" rel="nofollow">http://nas-tweaks.net/257/precompiled-kernel-modules-for-the-d-link-dns-320-and-dns-325/</a></p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-474">
+		<dl id="comment-474" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexcd0b.html?replytocom=474#respond' onclick='return addComment.moveForm( "comment-474", "474", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>7 de outubro de 2014 at 22:55</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Finalmente consegui instalar o Openvpn, o tal tun.ko que não carregava, fica a dica pra quem não esta conseguindo, insmod /usr/loca/modules/driver/tun.ko.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-475">
+		<dl id="comment-475" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb927.html?replytocom=475#respond' onclick='return addComment.moveForm( "comment-475", "475", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>8 de outubro de 2014 at 8:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Obrigado pela contribuição. O módulo tun.ko já estava no sistema de arquivos ou você teve que baixar ele?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-477">
+		<dl id="comment-477" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexb2ad.html?replytocom=477#respond' onclick='return addComment.moveForm( "comment-477", "477", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>8 de outubro de 2014 at 22:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>já estava, como não vem compilado no kernel, o que fiz foi só o insmod, coloquei no sh do Openvpn, quando vai carregar carrega o tun.ko</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-4" id="li-comment-481">
+		<dl id="comment-481" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexfd85.html?replytocom=481#respond' onclick='return addComment.moveForm( "comment-481", "481", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>9 de outubro de 2014 at 22:28</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Show.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-3" id="li-comment-478">
+		<dl id="comment-478" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6561.html?replytocom=478#respond' onclick='return addComment.moveForm( "comment-478", "478", "respond", "513" )' aria-label='Responder para Eduardo Pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>8 de outubro de 2014 at 22:20</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Minha ideia principal, foi criar vpn, e com o rsync, manter uma copia de um Servidor Fedora Samba de um cliente. copia na casa do diretor da empresa.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-4" id="li-comment-482">
+		<dl id="comment-482" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd469.html?replytocom=482#respond' onclick='return addComment.moveForm( "comment-482", "482", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>9 de outubro de 2014 at 22:29</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ótima solução! Simples, barato e seguro.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-5" id="li-comment-527">
+		<dl id="comment-527" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+						</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Eduardo Pedrosa</cite>1 de novembro de 2014 at 8:48</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Existe alguma forma de desligar o dns-320l por linha de comando.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-5" id="li-comment-528">
+		<dl id="comment-528" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+						</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>1 de novembro de 2014 at 15:36</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Tem sim. Veja o link que o botão de desligar o aparelho chama dentro da interface web e chame esse link usando wget dentro do shell. Funciona. Será que tem falha de segurança? hehe.<br />
+Meu NAS queimou a fonte e por isso não consigo confirmar exatamente o link mas se você fizer funcionar depois compartilha aqui.<br />
+Valeu!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-511">
+		<dl id="comment-511" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc523.html?replytocom=511#respond' onclick='return addComment.moveForm( "comment-511", "511", "respond", "513" )' aria-label='Responder para André Santana'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">André Santana</cite>25 de outubro de 2014 at 15:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Excelente tutorial cara, estava querendo rodar freeradius no nas e agora conseguirei 🙂<br />
+Galera o meu NAS é um DNS 320-L Funcionou perfeitamente e não afetou a interface original da Dlink.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-512">
+		<dl id="comment-512" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index6e7f.html?replytocom=512#respond' onclick='return addComment.moveForm( "comment-512", "512", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>25 de outubro de 2014 at 17:35</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>André, desculpe a ignorância. Eu nunca tinha ouvido valar de servidores RADIUS. Dei uma pesquisada na web e é interessante. Para que você vai usá-lo?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-3" id="li-comment-530">
+		<dl id="comment-530" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0bd0.html?replytocom=530#respond' onclick='return addComment.moveForm( "comment-530", "530", "respond", "513" )' aria-label='Responder para André Santana'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">André Santana</cite>5 de novembro de 2014 at 10:31</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>É que sou meio loco e vou utilizar pra autenticar os usuários do meu Wifi rs.<br />
+Só que depois que instalei o debian e todos os serviços que precisava, funcionou perfeitamente até eu rebootar o NAS, depois disso o debian não sobe mais me ajuda ai pf rs.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-4" id="li-comment-586">
+		<dl id="comment-586" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/be6b09cc36219ac4af52846888b45966?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index5547.html?replytocom=586#respond' onclick='return addComment.moveForm( "comment-586", "586", "respond", "513" )' aria-label='Responder para André Santana'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">André Santana</cite>9 de janeiro de 2015 at 22:48</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Cara eu to tentando instalar o minidlna nesta versão, mas não rola, ele pede pra fazer upgrade e quando faço o linux não inicia mais, consegue dar uma força?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-5" id="li-comment-587">
+		<dl id="comment-587" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+						</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>11 de janeiro de 2015 at 11:12</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Você não vai conseguir fazer um upgrade do Linux no NAS de por causa do kernel. Melhor encontrar um software que funcione na versão Squeeze.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-546">
+		<dl id="comment-546" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/2fd0c7606838fb25c7ecc79c93b2faa3?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/2fd0c7606838fb25c7ecc79c93b2faa3?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index109d.html?replytocom=546#respond' onclick='return addComment.moveForm( "comment-546", "546", "respond", "513" )' aria-label='Responder para Bruno Luiz'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Bruno Luiz</cite>25 de novembro de 2014 at 11:14</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ótima idéia&#8230; Vou comprar um essa semana e usar para teste, espero conseguir alcanças resultados! brigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-549">
+		<dl id="comment-549" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexe42e.html?replytocom=549#respond' onclick='return addComment.moveForm( "comment-549", "549", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>1 de dezembro de 2014 at 11:40</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Vai fundo!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-562">
+		<dl id="comment-562" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index80c7.html?replytocom=562#respond' onclick='return addComment.moveForm( "comment-562", "562", "respond", "513" )' aria-label='Responder para deivid3g'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://gravatar.com/deivid3g' rel='external nofollow' class='url'>deivid3g</a></cite>22 de dezembro de 2014 at 7:44</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Olá. Fiz esse tutorial pra arrumar o bug(Shellshock) do bash no nosso DNS320L e gerar novas KEYs pro SSH quem tiver interesse segue o link:<br />
+<a href="http://www.htforum.com/forum/threads/clube-do-nas-dlink-dns-320-sharecenter.211763/page-93#post-5974691" rel="nofollow">http://www.htforum.com/forum/threads/clube-do-nas-dlink-dns-320-sharecenter.211763/page-93#post-5974691</a></p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-565">
+		<dl id="comment-565" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0e28.html?replytocom=565#respond' onclick='return addComment.moveForm( "comment-565", "565", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>22 de dezembro de 2014 at 11:44</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Legal Deivid. Posso incluir o seu tutorial aqui no site também? Com os devidos créditos, é claro.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-566">
+		<dl id="comment-566" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index1cf9.html?replytocom=566#respond' onclick='return addComment.moveForm( "comment-566", "566", "respond", "513" )' aria-label='Responder para deivid3g'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://gravatar.com/deivid3g' rel='external nofollow' class='url'>deivid3g</a></cite>22 de dezembro de 2014 at 12:34</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Sim, claro que pode.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-4" id="li-comment-571">
+		<dl id="comment-571" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexd879.html?replytocom=571#respond' onclick='return addComment.moveForm( "comment-571", "571", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>23 de dezembro de 2014 at 9:30</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Cool!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-567">
+		<dl id="comment-567" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0705.html?replytocom=567#respond' onclick='return addComment.moveForm( "comment-567", "567", "respond", "513" )' aria-label='Responder para pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">pedrosa</cite>22 de dezembro de 2014 at 23:58</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ola Leonardo, ainda não consegui desligar por linha de comando.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-2" id="li-comment-568">
+		<dl id="comment-568" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2c65.html?replytocom=568#respond' onclick='return addComment.moveForm( "comment-568", "568", "respond", "513" )' aria-label='Responder para deivid3g'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://gravatar.com/deivid3g' rel='external nofollow' class='url'>deivid3g</a></cite>23 de dezembro de 2014 at 6:47</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Tente o seguinte! sudo apt-get install busybox depois que instalado tente busybox poweroff</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-3" id="li-comment-569">
+		<dl id="comment-569" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/52ae9caa3165bd892aeb343c09e9b0fc?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8683.html?replytocom=569#respond' onclick='return addComment.moveForm( "comment-569", "569", "respond", "513" )' aria-label='Responder para pedrosa'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">pedrosa</cite>23 de dezembro de 2014 at 7:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Estou usando o ffp.7</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment even depth-4" id="li-comment-570">
+		<dl id="comment-570" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/dd85470bd09b8b8d5ecf3c9835400b17?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexefb1.html?replytocom=570#respond' onclick='return addComment.moveForm( "comment-570", "570", "respond", "513" )' aria-label='Responder para deivid3g'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://gravatar.com/deivid3g' rel='external nofollow' class='url'>deivid3g</a></cite>23 de dezembro de 2014 at 7:47</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>slacker -i busybox</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-leonardo bypostauthor odd alt depth-2" id="li-comment-572">
+		<dl id="comment-572" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexe327.html?replytocom=572#respond' onclick='return addComment.moveForm( "comment-572", "572", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>23 de dezembro de 2014 at 9:34</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Eu fazia isso via wget. Tente as seguintes urls:</p>
+<p>Restart the device: http://<device IP address>/cgi-bin/system_mgr.cgi?cmd=cgi_restart<br />
+Shutdown the device: http://</device><device IP address>/cgi-bin/system_mgr.cgi?cmd=cgi_shutdown</p>
+<p>Pode fazer um script para facilitar.</p>
+<p>Referência:<br />
+<a href="http://forums.dlink.com/index.php?topic=54898.0" rel="nofollow">http://forums.dlink.com/index.php?topic=54898.0</a></p>
+<p>Só não dou certeza que é essa a url pois meu NAS continua com a fonte queimada. Mas basta verificar qual a URL acessada quando você pede para desligar via a interface web.</device></p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-623">
+		<dl id="comment-623" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/fe77e9d782e3d22da14fdc3950afd167?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/fe77e9d782e3d22da14fdc3950afd167?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0761.html?replytocom=623#respond' onclick='return addComment.moveForm( "comment-623", "623", "respond", "513" )' aria-label='Responder para Felipe Dutra'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://plus.google.com/104400357321705426379' rel='external nofollow' class='url'>Felipe Dutra</a></cite>14 de fevereiro de 2015 at 19:17</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Boa Noite!</p>
+<p>Acabei de instalar o fun_plug, porem estou preso no passo 2, coloco a senha que cadastrei na instalação do fun_plug e não da acesso. Existe alguma senha padrão?<br />
+Como zerar a senha?</p>
+<p>ATT</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment odd alt depth-2" id="li-comment-624">
+		<dl id="comment-624" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/fe77e9d782e3d22da14fdc3950afd167?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/fe77e9d782e3d22da14fdc3950afd167?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index4538.html?replytocom=624#respond' onclick='return addComment.moveForm( "comment-624", "624", "respond", "513" )' aria-label='Responder para Felipe Dutra'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://plus.google.com/104400357321705426379' rel='external nofollow' class='url'>Felipe Dutra</a></cite>14 de fevereiro de 2015 at 22:12</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Depois de testar tudo que era senha, inclusive &#8220;dlink&#8221;, e nada dar certo, reinstalei o fun_plug, apaguei as pastas e comecei de novo, sem formatar o HD.</p>
+<p>Felizmente deu certo!!!</p>
+<p>Uma briga de 4h, PC(NAS) x Felipe!</p>
+<p>Att.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-3" id="li-comment-629">
+		<dl id="comment-629" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexdeae.html?replytocom=629#respond' onclick='return addComment.moveForm( "comment-629", "629", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>23 de fevereiro de 2015 at 16:50</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>\o/</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-750">
+		<dl id="comment-750" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/677a00d06ceb49598f27f3b93531b08c?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/677a00d06ceb49598f27f3b93531b08c?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index39eb.html?replytocom=750#respond' onclick='return addComment.moveForm( "comment-750", "750", "respond", "513" )' aria-label='Responder para tmo'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">tmo</cite>23 de janeiro de 2016 at 20:43</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ambos os links para o Debian Squeeze estão quebrados.<br />
+Existe algum outro mirror?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-787">
+		<dl id="comment-787" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexea97.html?replytocom=787#respond' onclick='return addComment.moveForm( "comment-787", "787", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:33</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-762">
+		<dl id="comment-762" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/f9d9905899e21ac5d4a2a17c63cb6b16?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/f9d9905899e21ac5d4a2a17c63cb6b16?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index79fd.html?replytocom=762#respond' onclick='return addComment.moveForm( "comment-762", "762", "respond", "513" )' aria-label='Responder para Ricardo Orleans'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Ricardo Orleans</cite>11 de março de 2016 at 23:44</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ressuscitando!</p>
+<p>Hermanos,<br />
+não consigo encontrar em lugar nenhum o arquivo<br />
+&#8220;DNS-320&amp;325_linuxDebian_revA_Squeeze_all_en_20110111.zip&#8221;<br />
+Se alguém por aí ainda o tiver, me dê uma força ai.<br />
+Valeu pela força rapaziada!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-785">
+		<dl id="comment-785" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index9874.html?replytocom=785#respond' onclick='return addComment.moveForm( "comment-785", "785", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:32</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-765">
+		<dl id="comment-765" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/9ac38bc064beff773f3bb59cb9eeef75?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/9ac38bc064beff773f3bb59cb9eeef75?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index9d95.html?replytocom=765#respond' onclick='return addComment.moveForm( "comment-765", "765", "respond", "513" )' aria-label='Responder para Navat'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Navat</cite>24 de março de 2016 at 10:57</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Ambos os links estão quebrados.<br />
+Existe alguma alternativa?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-784">
+		<dl id="comment-784" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexf65f.html?replytocom=784#respond' onclick='return addComment.moveForm( "comment-784", "784", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:32</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-766">
+		<dl id="comment-766" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/cda30a20a98d54b084fe1da230136de4?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/cda30a20a98d54b084fe1da230136de4?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index4c83.html?replytocom=766#respond' onclick='return addComment.moveForm( "comment-766", "766", "respond", "513" )' aria-label='Responder para Jony Partos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Jony Partos</cite>26 de março de 2016 at 13:18</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Tudo bem Leonardo! Encontrei o seu site para dar uma turbinada no DNS-320. Mas os links para baixar o Debian Squeeze estão OFF! Tens como indicar algum repositório, ou atualizar os links? Muito obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-786">
+		<dl id="comment-786" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexc9f7.html?replytocom=786#respond' onclick='return addComment.moveForm( "comment-786", "786", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:33</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-775">
+		<dl id="comment-775" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/ca512a7028810cb89ef587870707d7d2?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/ca512a7028810cb89ef587870707d7d2?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index1202.html?replytocom=775#respond' onclick='return addComment.moveForm( "comment-775", "775", "respond", "513" )' aria-label='Responder para ouglas'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://facebook.com/douglimars' rel='external nofollow' class='url'>ouglas</a></cite>5 de maio de 2016 at 17:56</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Opa, consegui instalar o fun_plug.. mas ta dificil de achar um link para download do linuxDebianSqueeze. Você tem um cópia ai para disponibilizar para download, já vasculhei o google e nada de link valido.. todos off.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-783">
+		<dl id="comment-783" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2cc1.html?replytocom=783#respond' onclick='return addComment.moveForm( "comment-783", "783", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:31</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-776">
+		<dl id="comment-776" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/b789cb59dc891036753190e783f83e70?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/b789cb59dc891036753190e783f83e70?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index2825.html?replytocom=776#respond' onclick='return addComment.moveForm( "comment-776", "776", "respond", "513" )' aria-label='Responder para Bruno Ferreira'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://www.facebook.com/app_scoped_user_id/10208694258450310/' rel='external nofollow' class='url'>Bruno Ferreira</a></cite>29 de maio de 2016 at 18:02</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Alguem tem o link para os arquivos do Debian?</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-782">
+		<dl id="comment-782" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index611b.html?replytocom=782#respond' onclick='return addComment.moveForm( "comment-782", "782", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:29</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Não consegui mais achar os arquivos do Debian Squeeze (eu apaguei, que burro!!). Mas seguinte, aqui tem instruções para a instalação do Weezy: <a href="http://forums.dlink.com/index.php?topic=60807.0" rel="nofollow">http://forums.dlink.com/index.php?topic=60807.0</a><br />
+Eu não uso mais o Debian no meu NAS, somente os pacotes do fun_plug já resolvem. Tenho o MINIDLNA, BubbleUPNP e o Transmission instalados nele. Pretendo compartilhar o meu fun_plug já configurado mais pra frente.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-778">
+		<dl id="comment-778" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/53aa0cd0e7f7f6bbe1b8afdd2d7750ef?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/53aa0cd0e7f7f6bbe1b8afdd2d7750ef?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index0e08.html?replytocom=778#respond' onclick='return addComment.moveForm( "comment-778", "778", "respond", "513" )' aria-label='Responder para Téo Alenquer'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='http://www.facebook.com/100000044419446' rel='external nofollow' class='url'>Téo Alenquer</a></cite>2 de agosto de 2016 at 19:41</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Amigo, comprei um nas desses. Acontece que uso linux a 15 anos e a droga do gerenciador da nuvem da dlink não roda no linux. O que posso fazer? Comprei essa coisa somente pensando em ter acesso remoto aos arquivos, pois mesmo sem ter ip válido eu teria acesso via cloud da dlink. Tem solução pra mim? Obrigado</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-781">
+		<dl id="comment-781" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexad20.html?replytocom=781#respond' onclick='return addComment.moveForm( "comment-781", "781", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>6 de setembro de 2016 at 20:25</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Você consegue acessar seus arquivos remotamente instalando o fun_plug no seu NAS (<a href="http://www.devhouse.com.br/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/" rel="nofollow">http://www.devhouse.com.br/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/</a>) e redirecionando uma porta do roteador para o ssh. Aconselho usar outra porta ao invés da 22 e fazer autenticação por chave de segurança senão você será hackeado.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-803">
+		<dl id="comment-803" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/883e98ee4dde14d5d88edce999d2a95a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/883e98ee4dde14d5d88edce999d2a95a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index8897.html?replytocom=803#respond' onclick='return addComment.moveForm( "comment-803", "803", "respond", "513" )' aria-label='Responder para carlos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">carlos</cite>8 de fevereiro de 2017 at 23:38</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p><a href="https://code.google.com/archive/p/funplug-dns320-dns325/downloads" rel="nofollow">https://code.google.com/archive/p/funplug-dns320-dns325/downloads</a> link para download</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+<ul class="children">
+	<li class="comment byuser comment-author-leonardo bypostauthor even depth-2" id="li-comment-804">
+		<dl id="comment-804" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g' srcset='http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index5ec8.html?replytocom=804#respond' onclick='return addComment.moveForm( "comment-804", "804", "respond", "513" )' aria-label='Responder para Leonardo Lima de Vasconcellos'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn"><a href='https://leonardo-vasconcellos.vercel.app/' rel='external nofollow' class='url'>Leonardo Lima de Vasconcellos</a></cite>8 de fevereiro de 2017 at 23:53</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Isso é ótimo! Obrigado!</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-830">
+		<dl id="comment-830" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://1.gravatar.com/avatar/d4c6401f151b8b430446bfc68518cf42?s=60&amp;d=retro&amp;r=g' srcset='http://1.gravatar.com/avatar/d4c6401f151b8b430446bfc68518cf42?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index3346.html?replytocom=830#respond' onclick='return addComment.moveForm( "comment-830", "830", "respond", "513" )' aria-label='Responder para Fernando Corsico'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Fernando Corsico</cite>1 de maio de 2019 at 22:30</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Show de bola, o link <a href="https://code.google.com/archive/p/funplug-dns320-dns325/downloads" rel="nofollow">https://code.google.com/archive/p/funplug-dns320-dns325/downloads</a> contem todos os aquivos funcionando.</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-833">
+		<dl id="comment-833" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/5760c1030f6d5128eb775afdd52b350a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/5760c1030f6d5128eb775afdd52b350a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='index50e7.html?replytocom=833#respond' onclick='return addComment.moveForm( "comment-833", "833", "respond", "513" )' aria-label='Responder para Volber Costa volbercosta'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Volber Costa volbercosta</cite>14 de junho de 2020 at 16:05</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Fui usar esse tutorial pra instalar esse Linux pra tentar instalar o Pi-Hole no DNS 320L, porém passei trabalho com esses sites do sources.list, falam tanto mal do Windows mas Linux também não fica atrás, deixa de suportar as versões antigas do sistema e o usuário que se dane, os únicos repositórios que funcionaram foram esses:<br />
+deb <a href="http://archive.debian.org/debian-archive/debian/" rel="nofollow">http://archive.debian.org/debian-archive/debian/</a> squeeze main contrib non-free<br />
+deb <a href="http://archive.debian.org/debian-archive/debian/" rel="nofollow">http://archive.debian.org/debian-archive/debian/</a> squeeze-lts main contrib non-free</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-834">
+		<dl id="comment-834" class="fixed radius-5">
+		<dt class="comment-auther">
+			<img alt='' src='https://2.gravatar.com/avatar/5760c1030f6d5128eb775afdd52b350a?s=60&amp;d=retro&amp;r=g' srcset='http://2.gravatar.com/avatar/5760c1030f6d5128eb775afdd52b350a?s=120&amp;d=retro&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			<div class="reply">
+			<a rel='nofollow' class='comment-reply-link' href='indexf488.html?replytocom=834#respond' onclick='return addComment.moveForm( "comment-834", "834", "respond", "513" )' aria-label='Responder para Volber Costa volbercosta'>Responder</a>			</div><!-- .reply -->
+		</dt>
+		<dd class="comment-content">
+			<div class="comment-meta fixed">
+			<span><cite class="fn">Volber Costa volbercosta</cite>14 de junho de 2020 at 16:06</span>
+			<small></small>
+			</div>
+			<div class="comment-body">
+						<p>Depois de muita luta atrás de repositórios válidos achei esses:<br />
+deb <a href="http://archive.debian.org/debian-archive/debian/" rel="nofollow">http://archive.debian.org/debian-archive/debian/</a> squeeze main contrib non-free<br />
+deb <a href="http://archive.debian.org/debian-archive/debian/" rel="nofollow">http://archive.debian.org/debian-archive/debian/</a> squeeze-lts main contrib non-free</p>
+			</div>
+		</dd>
+		</dl><!-- #comment  -->
+</li><!-- #comment-## -->
+</ol>
+<!--comments pages-->
+</div><!-- #comments -->
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta para <a href="#comment-186">Leonardo Lima de Vasconcellos</a> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond">&raquo; Cancel reply</a></small></h3>			<form action="http://localhost:8080/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p><p class="comment-form-author"><label for="author"><input id="author"  name="author" type="text" value="Name" size="30" class="cleardefault" /></label></p>
+<p class="comment-form-email"><label for="email"><input id="email" name="email" type="text" value="Email" size="30" class="cleardefault" /></label></p>
+<p class="comment-form-url"><label for="url"><input id="url" name="url" type="text" value="Website" size="30" class="cleardefault"  /></label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar comentário" /> <input type='hidden' name='comment_post_ID' value='513' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='186' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8fda7fddaf" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="148"/></p>			</form>
+			</div><!-- #respond -->
+	</article>
+<aside id="sidebar">
+<div class="widget_text widget  widget_custom_html"><div class="textwidget custom-html-widget"><div class="author-info" style="margin-top:0px;">
+<h3>Sobre o autor</h3>
+<dl class="fixed radius-5">
+<dt><img alt="" src="https://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=60&amp;d=retro&amp;r=g" srcset="http://0.gravatar.com/avatar/99fe9aca45a0ff67168e243fd583ef02?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo wp-hovercard-attachment grav-hashed grav-hijack" height="60" width="60"></dt>
+<dd>
+<h5><a href="../author/leonardo/index.html" title="Posts de Leonardo Lima de Vasconcellos" rel="author">Leonardo Lima de Vasconcellos</a></h5>
+<p>Um desenvolvedor web veterano que está sempre a procura de novas tecnologias que facilitem o desenvolvimento de aplicativos ricos para a internet. Louco por tecnologia, games e Linux.</p>
+</dd>
+</dl>
+</div><br/><br/></div></div><div class="widget_text widget  widget_custom_html"><h3>Te ajudei? Me paga uma cerveja?</h3><div class="textwidget custom-html-widget"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHTwYJKoZIhvcNAQcEoIIHQDCCBzwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCxzECnh/0QFQb7g+wHC6un6SSh48M4txMgPYyIs5RZYPo4/ASpDVU3oqQTDOiE6x4hdKT06HOEU92smMwvOJjVgsNRR9CJtQ3ax2Hu6Qo/hU2axQQjVjp0o29q+elfed1EmqxuLypJhAfl8JiqHQdkEq2Q0Jxl6bDd5scIkqUkOjELMAkGBSsOAwIaBQAwgcwGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI3+URWKVI3iKAgagCExi7IyhWD9ArVNsGzvNMmqPBLcfKUZilMa5fV4s22Imwq6O4VVWjt6ET+v8xKVNdFWVOudVsizVn5AzPcSBuLVnEB/Ppr48H0teWhZ8rK/N6MYq4PnTFFeRYhMC8+mB7q1AMun8OWQgJAocMyV1i7gJ+NQmUDS9Y6pvfKRwePOX52NHWGKMBSaf7W40araMO2JlSx2VQoQ6IFCk+WZCW+hb9kA5lhhSgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNDA1MDEyMjM5MTNaMCMGCSqGSIb3DQEJBDEWBBSg3nNzblIIRs9i6dbtjkZK3kphVzANBgkqhkiG9w0BAQEFAASBgH/cZT3Q1WIqIDy2lJuXcrcESsUE4mkh8FN3sxsnV/GBgxIIcfdaBQGqixuPAMldFCfZ1i31NnEXz9RIvNKCV29VISBGj4cOV6lqbdg4DZjqiGWhKLXmnDOQXJ5fX8lQaS9j4Rt0FSkTZPJcLQgQo9RTikoDTRHrV/3grCCqFI/G-----END PKCS7-----
+">
+<input type="image" src="../../www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="../../www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<p>&nbsp;</p></div></div><div class="widget  widget_categories"><h3>Categorias</h3>		<ul>
+	<li class="cat-item cat-item-88"><a href="../category/android/index.html" >Android</a> (6)
+</li>
+	<li class="cat-item cat-item-233"><a href="../category/bando-de-dados/index.html" >Bando de Dados</a> (5)
+</li>
+	<li class="cat-item cat-item-145"><a href="../category/linux/debian-linux/index.html" >Debian</a> (9)
+</li>
+	<li class="cat-item cat-item-134"><a href="../category/linux/desenvolvimento-linux/index.html" >Desenvolvimento</a> (4)
+</li>
+	<li class="cat-item cat-item-39"><a href="../category/desenvolvimento-web/index.html" >Desenvolvimento Web</a> (11)
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/desenvolvimento-web/ria-com-javascript/extjs/index.html" >ExtJS</a> (1)
+</li>
+	<li class="cat-item cat-item-133"><a href="../category/android/hacks/galaxy-tab/index.html" >Galaxy Tab</a> (1)
+</li>
+	<li class="cat-item cat-item-91"><a href="../category/android/games/index.html" >Games</a> (1)
+</li>
+	<li class="cat-item cat-item-268"><a href="../category/google/index.html" >Google</a> (1)
+</li>
+	<li class="cat-item cat-item-132"><a href="../category/android/hacks/index.html" >Hacks</a> (5)
+</li>
+	<li class="cat-item cat-item-158"><a href="../category/hardware/index.html" >Hardware</a> (2)
+</li>
+	<li class="cat-item cat-item-41"><a href="../category/desenvolvimento-web/html/index.html" >HTML</a> (1)
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/desenvolvimento-web/java-desenvolvimento-web/index.html" >Java</a> (1)
+</li>
+	<li class="cat-item cat-item-87"><a href="../category/java-2/index.html" >Java</a> (1)
+</li>
+	<li class="cat-item cat-item-5"><a href="../category/linux/index.html" >Linux</a> (22)
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/linux/linux-mint-linux/index.html" >Linux Mint</a> (3)
+</li>
+	<li class="cat-item cat-item-6"><a href="../category/linux/linux-mint-debian-edition/index.html" >Linux Mint Debian Edition</a> (15)
+</li>
+	<li class="cat-item cat-item-267"><a href="../category/microsoft/index.html" >Microsoft</a> (1)
+</li>
+	<li class="cat-item cat-item-234"><a href="../category/bando-de-dados/microsoft-sql-server/index.html" >Microsoft SQL Server</a> (2)
+</li>
+	<li class="cat-item cat-item-189"><a href="../category/android/hacks/motorola-razr-xt910/index.html" >Motorola Razr XT910</a> (3)
+</li>
+	<li class="cat-item cat-item-242"><a href="../category/bando-de-dados/mysql-bando-de-dados/index.html" >MySQL</a> (3)
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/desenvolvimento-web/php/index.html" >PHP</a> (5)
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/desenvolvimento-web/ria-com-javascript/index.html" >RIA com Javascript</a> (1)
+</li>
+	<li class="cat-item cat-item-1"><a href="../category/sem-categoria/index.html" >Sem categoria</a> (1)
+</li>
+	<li class="cat-item cat-item-224"><a href="../category/linux/ubuntu-linux/index.html" >Ubuntu</a> (4)
+</li>
+	<li class="cat-item cat-item-218"><a href="../category/windows-2/index.html" >Windows</a> (1)
+</li>
+	<li class="cat-item cat-item-219"><a href="../category/windows-2/windows-8/index.html" >Windows 8</a> (1)
+</li>
+	<li class="cat-item cat-item-40"><a href="../category/desenvolvimento-web/wordpress/index.html" >WordPress</a> (4)
+</li>
+	<li class="cat-item cat-item-257"><a href="../category/desenvolvimento-web/php/zend-framework-1/index.html" >Zend Framework 1</a> (1)
+</li>
+		</ul>
+</div></aside>
+<div class="clear"></div>
+
+<p></p>
+
+</div><!--#end content wrap-->
+</div><!--# container-->
+<footer>
+<div id="footer-wrap">
+	<div class="footer-widgets">
+<div class="footer-widgets-area layout-width fixed three-column">
+<div class="one-third">
+<div class="widget  widget_tag_cloud"><h3>Nuvem de tags</h3><div class="tagcloud"><a href="../tag/desktop/index.html" class="tag-cloud-link tag-link-122 tag-link-position-1" style="font-size: 8pt;" aria-label=".desktop (2 itens)">.desktop</a>
+<a href="../tag/android-2/index.html" class="tag-cloud-link tag-link-179 tag-link-position-2" style="font-size: 12.666666666667pt;" aria-label="android (5 itens)">android</a>
+<a href="../tag/bash/index.html" class="tag-cloud-link tag-link-127 tag-link-position-3" style="font-size: 9.8666666666667pt;" aria-label="bash (3 itens)">bash</a>
+<a href="../tag/chrome/index.html" class="tag-cloud-link tag-link-118 tag-link-position-4" style="font-size: 8pt;" aria-label="chrome (2 itens)">chrome</a>
+<a href="../tag/coluna/index.html" class="tag-cloud-link tag-link-240 tag-link-position-5" style="font-size: 9.8666666666667pt;" aria-label="coluna (3 itens)">coluna</a>
+<a href="../tag/debian/index.html" class="tag-cloud-link tag-link-28 tag-link-position-6" style="font-size: 20.444444444444pt;" aria-label="debian (18 itens)">debian</a>
+<a href="../tag/droid/index.html" class="tag-cloud-link tag-link-192 tag-link-position-7" style="font-size: 9.8666666666667pt;" aria-label="droid (3 itens)">droid</a>
+<a href="../tag/fedora/index.html" class="tag-cloud-link tag-link-79 tag-link-position-8" style="font-size: 8pt;" aria-label="fedora (2 itens)">fedora</a>
+<a href="../tag/firefox/index.html" class="tag-cloud-link tag-link-123 tag-link-position-9" style="font-size: 8pt;" aria-label="firefox (2 itens)">firefox</a>
+<a href="../tag/gerenciador-de-arquivos/index.html" class="tag-cloud-link tag-link-101 tag-link-position-10" style="font-size: 8pt;" aria-label="gerenciador de arquivos (2 itens)">gerenciador de arquivos</a>
+<a href="../tag/gnome/index.html" class="tag-cloud-link tag-link-126 tag-link-position-11" style="font-size: 8pt;" aria-label="gnome (2 itens)">gnome</a>
+<a href="../tag/google/index.html" class="tag-cloud-link tag-link-117 tag-link-position-12" style="font-size: 11.422222222222pt;" aria-label="google (4 itens)">google</a>
+<a href="../tag/grub/index.html" class="tag-cloud-link tag-link-34 tag-link-position-13" style="font-size: 8pt;" aria-label="grub (2 itens)">grub</a>
+<a href="../tag/java/index.html" class="tag-cloud-link tag-link-17 tag-link-position-14" style="font-size: 8pt;" aria-label="java (2 itens)">java</a>
+<a href="../tag/jboss/index.html" class="tag-cloud-link tag-link-19 tag-link-position-15" style="font-size: 8pt;" aria-label="jboss (2 itens)">jboss</a>
+<a href="../tag/joomla/index.html" class="tag-cloud-link tag-link-49 tag-link-position-16" style="font-size: 8pt;" aria-label="joomla (2 itens)">joomla</a>
+<a href="../tag/json/index.html" class="tag-cloud-link tag-link-109 tag-link-position-17" style="font-size: 9.8666666666667pt;" aria-label="json (3 itens)">json</a>
+<a href="../tag/linux/index.html" class="tag-cloud-link tag-link-281 tag-link-position-18" style="font-size: 22pt;" aria-label="Linux (23 itens)">Linux</a>
+<a href="../tag/linux-mint/index.html" class="tag-cloud-link tag-link-30 tag-link-position-19" style="font-size: 8pt;" aria-label="linux mint (2 itens)">linux mint</a>
+<a href="../tag/linux-mint-debian-edition-2/index.html" class="tag-cloud-link tag-link-26 tag-link-position-20" style="font-size: 9.8666666666667pt;" aria-label="linux mint debian edition (3 itens)">linux mint debian edition</a>
+<a href="../tag/lmde/index.html" class="tag-cloud-link tag-link-27 tag-link-position-21" style="font-size: 15.311111111111pt;" aria-label="lmde (8 itens)">lmde</a>
+<a href="../tag/microsoft/index.html" class="tag-cloud-link tag-link-238 tag-link-position-22" style="font-size: 9.8666666666667pt;" aria-label="microsoft (3 itens)">microsoft</a>
+<a href="../tag/mint/index.html" class="tag-cloud-link tag-link-77 tag-link-position-23" style="font-size: 16.711111111111pt;" aria-label="mint (10 itens)">mint</a>
+<a href="../tag/motorola/index.html" class="tag-cloud-link tag-link-193 tag-link-position-24" style="font-size: 9.8666666666667pt;" aria-label="motorola (3 itens)">motorola</a>
+<a href="../tag/mozilla/index.html" class="tag-cloud-link tag-link-97 tag-link-position-25" style="font-size: 9.8666666666667pt;" aria-label="mozilla (3 itens)">mozilla</a>
+<a href="../tag/mysql/index.html" class="tag-cloud-link tag-link-56 tag-link-position-26" style="font-size: 11.422222222222pt;" aria-label="mysql (4 itens)">mysql</a>
+<a href="../tag/nano/index.html" class="tag-cloud-link tag-link-129 tag-link-position-27" style="font-size: 8pt;" aria-label="nano (2 itens)">nano</a>
+<a href="../tag/oracle/index.html" class="tag-cloud-link tag-link-23 tag-link-position-28" style="font-size: 8pt;" aria-label="oracle (2 itens)">oracle</a>
+<a href="../tag/path/index.html" class="tag-cloud-link tag-link-60 tag-link-position-29" style="font-size: 8pt;" aria-label="path (2 itens)">path</a>
+<a href="../tag/php-2/index.html" class="tag-cloud-link tag-link-94 tag-link-position-30" style="font-size: 12.666666666667pt;" aria-label="php (5 itens)">php</a>
+<a href="../tag/razr/index.html" class="tag-cloud-link tag-link-191 tag-link-position-31" style="font-size: 9.8666666666667pt;" aria-label="razr (3 itens)">razr</a>
+<a href="../tag/root/index.html" class="tag-cloud-link tag-link-116 tag-link-position-32" style="font-size: 9.8666666666667pt;" aria-label="root (3 itens)">root</a>
+<a href="../tag/samsung/index.html" class="tag-cloud-link tag-link-71 tag-link-position-33" style="font-size: 8pt;" aria-label="samsung (2 itens)">samsung</a>
+<a href="../tag/script/index.html" class="tag-cloud-link tag-link-138 tag-link-position-34" style="font-size: 8pt;" aria-label="script (2 itens)">script</a>
+<a href="../tag/shell/index.html" class="tag-cloud-link tag-link-115 tag-link-position-35" style="font-size: 9.8666666666667pt;" aria-label="shell (3 itens)">shell</a>
+<a href="../tag/sql/index.html" class="tag-cloud-link tag-link-55 tag-link-position-36" style="font-size: 13.755555555556pt;" aria-label="sql (6 itens)">sql</a>
+<a href="../tag/squeeze/index.html" class="tag-cloud-link tag-link-148 tag-link-position-37" style="font-size: 12.666666666667pt;" aria-label="squeeze (5 itens)">squeeze</a>
+<a href="../tag/ssh/index.html" class="tag-cloud-link tag-link-168 tag-link-position-38" style="font-size: 9.8666666666667pt;" aria-label="ssh (3 itens)">ssh</a>
+<a href="../tag/tabela/index.html" class="tag-cloud-link tag-link-239 tag-link-position-39" style="font-size: 9.8666666666667pt;" aria-label="tabela (3 itens)">tabela</a>
+<a href="../tag/ubuntu/index.html" class="tag-cloud-link tag-link-16 tag-link-position-40" style="font-size: 14.533333333333pt;" aria-label="ubuntu (7 itens)">ubuntu</a>
+<a href="../tag/update/index.html" class="tag-cloud-link tag-link-220 tag-link-position-41" style="font-size: 9.8666666666667pt;" aria-label="update (3 itens)">update</a>
+<a href="../tag/wget/index.html" class="tag-cloud-link tag-link-135 tag-link-position-42" style="font-size: 8pt;" aria-label="wget (2 itens)">wget</a>
+<a href="../tag/wheezy/index.html" class="tag-cloud-link tag-link-146 tag-link-position-43" style="font-size: 11.422222222222pt;" aria-label="wheezy (4 itens)">wheezy</a>
+<a href="../tag/windows/index.html" class="tag-cloud-link tag-link-18 tag-link-position-44" style="font-size: 11.422222222222pt;" aria-label="windows (4 itens)">windows</a>
+<a href="../tag/wordpress-2/index.html" class="tag-cloud-link tag-link-47 tag-link-position-45" style="font-size: 9.8666666666667pt;" aria-label="wordpress (3 itens)">wordpress</a></div>
+</div></div>
+<div class="one-third">
+<div class="widget  widget-mostview-posts"><h3>Posts mais visitados</h3><ul class="thumb-preloader thumb-fade">
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.html" class="preloader" rel="tag" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb61ff.png?src=http://localhost:8080/wp-content/uploads/2014/01/motorola-droid-razr-jelly-bean-update.png&amp;h=50&amp;w=50&amp;zc=1" alt="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html" rel="bookmark" title="Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]">Desbrickar Motorola Razr XT910 [Jelly Bean 4.1.2]</a>
+<p><em>7 de January de 2014</em><em><a href="../desbrickar-motorola-razr-xt910-jelly-bean-4-1-2/index.html#comments">152 Comentários</a></em></p>
+</section>
+</li>
+<li class="fixed">
+<figure class="alignleft"><a href="../wp-content/uploads/2014/01/cm11-kit-kat.html" class="preloader" rel="tag" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">
+<img src="../wp-content/themes/mondeo/framework/plugins/timthumb9457.jpg?src=http://localhost:8080/wp-content/uploads/2014/01/cm11-kit-kat.jpg&amp;h=50&amp;w=50&amp;zc=1" alt="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]" /><div class="fade-hover hide"></div>
+<div class="overlay"></div>
+<div class="shadow"></div>
+</a>
+</figure>
+<section>
+<a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html" rel="bookmark" title="DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]">DualBoot com SafeStrap e CyanogenMod 11 [Android Kitkat 4.4.2 no Motorola Droid Razr XT910]</a>
+<p><em>9 de January de 2014</em><em><a href="../dualboot-com-safestrap-e-cyanogenmod-11-android-kitkat-4-4-2-no-motorola-droid-razr-xt910/index.html#comments">129 Comentários</a></em></p>
+</section>
+</li>
+</ul>
+</div></div>
+<div class="one-third last">
+<div class="widget  widget_media_video"><h3>Canal no Youtube</h3><div style="width:100%;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
+<video class="wp-video-shortcode" id="video-513-1" preload="metadata" controls="controls"><source type="video/youtube" src="https://www.youtube.com/watch?v=iZ9bBGy1-o8&amp;_=1" /><a href="https://www.youtube.com/watch?v=iZ9bBGy1-o8">https://www.youtube.com/watch?v=iZ9bBGy1-o8</a></video></div></div></div>
+</div>
+</div>
+	<div class="footer-copyright layout-width fixed">
+	<div class="one-third"><h3>Contato</h3><div class="info">Rua Xiniquá, 150 - Florianópolis - Santa Catarina</div></div><div class="one-third"></div>	<div class="one-third last">
+	<div class="footer-social-media"><div class="social-wrap social-facebook"><a href="https://www.facebook.com/devhousesoftware" class="social-small social-square-small" rel="external" title="facebook">facebook</a></div></div><div class="clear"></div><p class="text info">Copyright © <a href="https://leonardo-vasconcellos.vercel.app/">Leonardo Lima de Vasconcellos</a><!--, Privacy Statement Terms and Conditions.--></p>	</div>
+	</div><!--#copyright-->
+</div><!--#footer wrap-->
+</footer><!--#footer-->
+</div><!-- #wrap -->
+
+
+
+	<div style="display:none">
+	<div class="grofile-hash-map-99fe9aca45a0ff67168e243fd583ef02">
+	</div>
+	<div class="grofile-hash-map-22d046fdc117658d5b99eaf0f5cdf8e7">
+	</div>
+	<div class="grofile-hash-map-99fe9aca45a0ff67168e243fd583ef02">
+	</div>
+	<div class="grofile-hash-map-f6f81edbdec45361c3bdd0d92c8295af">
+	</div>
+	<div class="grofile-hash-map-b0dccb89e4bbc7915de4d37fa9df6e9b">
+	</div>
+	<div class="grofile-hash-map-4abd5dcf44bec707ce93e539dec7c042">
+	</div>
+	<div class="grofile-hash-map-675acfc949b952e0c4e75a371f55bb15">
+	</div>
+	<div class="grofile-hash-map-9bd59c20f3f3b4b1e482b52023813f00">
+	</div>
+	<div class="grofile-hash-map-fbaf57efe974202dbdbf7be320a24644">
+	</div>
+	<div class="grofile-hash-map-5ff2aefb66e6cf44913ef064dc250219">
+	</div>
+	<div class="grofile-hash-map-074bc811679287ffb859b929712e709f">
+	</div>
+	<div class="grofile-hash-map-891283384a65fc68b60f7666e41983e1">
+	</div>
+	<div class="grofile-hash-map-865094245f13d1839c079e89e5b897de">
+	</div>
+	<div class="grofile-hash-map-6989767b22b91bdee2e58737aabe87f1">
+	</div>
+	<div class="grofile-hash-map-b9d5de4a9dab14653562ad2816f6113a">
+	</div>
+	<div class="grofile-hash-map-48ebacdf0b98ea98c1957464d8dad2cc">
+	</div>
+	<div class="grofile-hash-map-52ae9caa3165bd892aeb343c09e9b0fc">
+	</div>
+	<div class="grofile-hash-map-be6b09cc36219ac4af52846888b45966">
+	</div>
+	<div class="grofile-hash-map-2fd0c7606838fb25c7ecc79c93b2faa3">
+	</div>
+	<div class="grofile-hash-map-01df2f6b731ecf2108078c61ae8c7752">
+	</div>
+	<div class="grofile-hash-map-dd85470bd09b8b8d5ecf3c9835400b17">
+	</div>
+	<div class="grofile-hash-map-fe77e9d782e3d22da14fdc3950afd167">
+	</div>
+	<div class="grofile-hash-map-677a00d06ceb49598f27f3b93531b08c">
+	</div>
+	<div class="grofile-hash-map-f9d9905899e21ac5d4a2a17c63cb6b16">
+	</div>
+	<div class="grofile-hash-map-9ac38bc064beff773f3bb59cb9eeef75">
+	</div>
+	<div class="grofile-hash-map-cda30a20a98d54b084fe1da230136de4">
+	</div>
+	<div class="grofile-hash-map-ca512a7028810cb89ef587870707d7d2">
+	</div>
+	<div class="grofile-hash-map-b789cb59dc891036753190e783f83e70">
+	</div>
+	<div class="grofile-hash-map-53aa0cd0e7f7f6bbe1b8afdd2d7750ef">
+	</div>
+	<div class="grofile-hash-map-883e98ee4dde14d5d88edce999d2a95a">
+	</div>
+	<div class="grofile-hash-map-d4c6401f151b8b430446bfc68518cf42">
+	</div>
+	<div class="grofile-hash-map-5760c1030f6d5128eb775afdd52b350a">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/localhost:8080\/instalando-o-debian-squeeze-no-nas-d-link-dns-320\/":513};
+	</script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore09b1.js?ver=3.0.9b'></script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash09b1.js?ver=3.0.9b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore09b1.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeMidnight09b1.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<link rel='stylesheet' id='mediaelement-css'  href='../wp-includes/js/mediaelement/mediaelementplayer.min51cd.css?ver=2.22.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='../wp-includes/js/mediaelement/wp-mediaelement.min0822.css?ver=4.8.14' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../../s0.wp.com/wp-content/js/devicepx-jetpackc30a.js?ver=202626'></script>
+<script type='text/javascript' src='../../s.gravatar.com/js/gprofilesb9b9.js?ver=2026Junaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/wpgroho0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript' src='../wp-content/plugins/akismet/_inc/formf9b8.js?ver=4.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mejsL10n = {"language":"pt-BR","strings":{"Close":"Fechar","Fullscreen":"Tela inteira","Turn off Fullscreen":"Desativar tela cheia","Go Fullscreen":"Tela cheia","Download File":"Fazer download do arquivo","Download Video":"Fazer download do v\u00eddeo","Play":"Reproduzir","Pause":"Pausar","Captions\/Subtitles":"Transcri\u00e7\u00f5es\/Legendas","None":"Nenhum","Time Slider":"Tempo do slider","Skip back %1 seconds":"Retroceder %1 segundos","Video Player":"Tocador de v\u00eddeo","Audio Player":"Tocador de \u00e1udio","Volume Slider":"Controle de volume","Mute Toggle":"Alternar mudo","Unmute":"Desativar mudo","Mute":"Mudo","Use Up\/Down Arrow keys to increase or decrease volume.":"Use as setas para cima ou para baixo para aumentar ou diminuir o volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use as setas esquerda e direita para avan\u00e7ar um segundo. Acima e abaixo para avan\u00e7ar dez segundos."}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/mediaelement-and-player.min51cd.js?ver=2.22.0'></script>
+<script type='text/javascript' src='../wp-includes/js/mediaelement/wp-mediaelement.min0822.js?ver=4.8.14'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/jetpack/modules/sharedaddy/sharing7923.js?ver=5.3.1'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+</body>
+
+<!-- Mirrored from localhost:8080/instalando-o-debian-squeeze-no-nas-d-link-dns-320/?replytocom=186 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2026 09:56:52 GMT -->
+</html>
