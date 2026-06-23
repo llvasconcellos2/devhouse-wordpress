@@ -42,7 +42,14 @@ get_header();
 	</div><!--#end entry meta-->
 </section>
 <div style="width:604px">
-
+<?php 
+			echo '<figure class="type-image">'."\n";
+			echo '<img src="'; ht_get_thumbnail(227, 600); echo '" alt="'.get_the_title().'" title="'.get_the_title().'" />';
+			echo '<div class="fade-hover"></div>';
+			echo '<div class="overlay"></div>';
+			echo '<div class="shadow"></div>';
+			echo '</figure>'."\n";
+		?>
 </div>
 <div class="post-text"><?php the_content(); ?></div>
 <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'hawktheme' ), 'after' => '</div>' ) ); ?><!--end link page-->
