@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>.desktop &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/desktop/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Arquivos desktop: colocando seu aplicativo nos menus do GNOME</title>
+		<link>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/</link>
+		<comments>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 21:03:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=341</guid>
+		<description><![CDATA[O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome.</p>
+<p>Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.</p>
+<p>A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:</p>
+<p><a title="Gnome Desktop Files" href="http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR" target="_blank">http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR</a></p>
+<p><a title="Free Desktop" href="http://standards.freedesktop.org/menu-spec/latest/apa.html" target="_blank">http://standards.freedesktop.org/menu-spec/latest/apa.html</a></p>
+<p><a title="Nautilus Actions" href="http://www.nautilus-actions.org/?q=node/377" target="_blank">http://www.nautilus-actions.org/?q=node/377</a></p>
+<p>Para essa demonstração vou criar um arquivo .desktop para o Google Chrome. Quero que o Chrome entre no menu Internet igual ao Firefox e por isso vou usá-lo como base.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo cp /usr/share/applications/firefox.desktop /usr/share/applications/google-chrome.desktop
+$ sudo pluma /usr/share/applications/google-chrome.desktop
+</pre>
+<p>O arquivo original estava assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[ar]=متصفح الوِب فَيَرفُكْس
+Name[ca]=Navegador web Firefox
+Name[cs]=Firefox Webový prohlížeč
+Name[es]=Navegador web Firefox
+Name[et]=Firefoxi veebibrauser
+Name[fa]=مرورگر اینترنتی Firefox
+Name[fi]=Firefox-selain
+Name[fr]=Navigateur Web Firefox
+Name[hu]=Firefox webböngésző
+Name[it]=Firefox Browser Web
+Name[ja]=Firefox ウェブ・ブラウザ
+Name[ko]=Firefox 웹 브라우저
+Name[nb]=Firefox Nettleser
+Name[nl]=Firefox webbrowser
+Name[nn]=Firefox Nettlesar
+Name[no]=Firefox Nettleser
+Name=Przeglądarka WWW Firefox
+Name[pt]=Firefox Navegador Web
+Name[pt_BR]=Navegador Web Firefox
+Name[sk]=Firefox - internetový prehliadač
+Name[sv]=Webbläsaren Firefox
+Comment=Browse the World Wide Web
+Comment[ar]=تصفح الشبكة العنكبوتية العالمية
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[es]=Navegue por la web
+Comment[et]=Lehitse veebi
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[ar]=متصفح وب
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+Exec=/opt/firefox/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/firefox/icons/mozicon128.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
+</pre>
+<p>Após a edição ele ficou assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+Name[pt_BR]=Navegador Web Google Chrome
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Exec=/opt/google/chrome %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/google/chrome/product_logo_256.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Chrome
+StartupNotify=true
+</pre>
+<p>As alterações mais importantes são:</p>
+<p>Name => Nome do Aplicativo<br />
+Exec => Path para o executável (o %u é específico para o browser abrir uma url passada como parâmetro).<br />
+Icon => Path para o ícone (pode ser jpg, png, svg ou até o próprio executável do programa).<br />
+Categories = > Menu onde o atalho para o programa vai aparecer.</p>
+<p>Você pode sempre usar outros arquivos .desktop como base para a criação do seu.</p>
+<p>Veja também como colocar seu programa no path neste <a href="/editando-a-variavel-de-ambiente-path-no-linux-mint-debian" title="Editando a variável de ambiente PATH no Linux Mint Debian">artigo</a>.</p>
+<p>Espero ter ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Associação de arquivos no Nautilus &#8211; Associando arquivos .deb ao Instalador de pacotes GDebi</title>
+		<link>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/</link>
+		<comments>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 18:47:19 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.deb]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[canonical]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gdeb]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=329</guid>
+		<description><![CDATA[Essa é para quem é noobie como eu em desktops Linux. Acabei de fazer o download do pacote deb do Google Chrome e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Essa é para quem é noobie como eu em desktops Linux.</p>
+<p>Acabei de fazer o download do pacote deb do <a title="Google Chrome" href="https://www.google.com/chrome" target="_blank">Google Chrome</a> e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em falar nisso o GDebi foi feito pela Canonical (será que tem Ubuntu no meu Debian? :-P).</p>
+<p>Eu prefiro que o arquivos .deb fiquem associados com o GDebi para facilitar a vida e para fazer isso basta clicar com o botão direito do mouse no arquivo e ir para a aba &#8220;Open with&#8221; em inglês, selecione o GDebi Package Installer e clique em Set as Default.</p>
+<div id="attachment_330" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/default_to_deb.jpg"><img data-attachment-id="330" data-permalink="http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/default_to_deb/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg" data-orig-size="1353,759" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title=".deb default para GDeb" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" class="size-large wp-image-330" title=".deb default para GDeb" src="/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" alt="associando arquivos no Nautilus" width="600" height="336" srcset="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg 1353w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">.deb default para GDeb</p></div>
+<p>Obviamente isso serve para qualquer tipo de arquivo. Caso o programa preferido não apareça entre os programas recomendados clique em &#8220;Show other applications&#8221;. E se o seu programa não aparecer em &#8220;Show other applications&#8221;? Você provavelmente vai precisar criar um arquivo .desktop para ele. Veja como fazer aqui.</p>
+<p>Observe que prefiro o meu Linux em inglês, apesar de todas as configurações de localização e teclado estarem para Português/Brasil. Prefiro assim pois facilita na hora de pesquisar por dúvidas, mensagens de erro, nomes de programas, etc.</p>
+<p>Então é isso! A dica é simples mas eu não conhecia&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

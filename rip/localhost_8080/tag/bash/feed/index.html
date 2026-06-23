@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>bash &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/bash/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Um prompt bash colorido com retorno dos comandos em smiles</title>
+		<link>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/</link>
+		<comments>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/#respond</comments>
+		<pubDate>Wed, 05 Sep 2012 19:56:58 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[prompt]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=467</guid>
+		<description><![CDATA[Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc. Achei interessante um prompt colorido que também exibe um smile 😉 verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha 🙁 se o comando retornou 1 (falha). [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc.</p>
+<p>Achei interessante um prompt colorido que também exibe um smile <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /> se o comando retornou 1 (falha).</p>
+<p>Para isso edite o arquivo ~/.bashrc (crie o arquivo caso não exista).</p>
+<pre class="brush: bash; title: ; notranslate">
+nano ~/.bashrc
+</pre>
+<p>Adicione as seguintes linhas ao arquivo:</p>
+<pre class="brush: bash; title: ; notranslate">
+PS1=&quot;\`if [ \$? = 0 ]; then echo -e '\[\e[01;32m\]:)'; else echo -e '\[\e[01;31m\]:('; fi\` \[\e[01;34m\][\[\e[01;32m\]\u@\h \[\e[01;34m\]\w\[\e[01;34m\]] $\[\e[00m\] &quot;
+</pre>
+<p>Para ver o resultado execute:</p>
+<pre class="brush: bash; title: ; notranslate">
+source ~/.bashrc
+</pre>
+<p>Pronto! Veja o resultado:<br />
+<div id="attachment_470" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/09/color_bash_prompt.jpg"><img data-attachment-id="470" data-permalink="http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/color_bash_prompt/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg" data-orig-size="721,527" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Prompt colorido" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" class="size-large wp-image-470" title="Prompt colorido" src="/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" alt="Prompt colorido" width="600" height="438" srcset="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg 600w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg 300w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg 721w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Prompt colorido com smile!</p></div></p>
+<p>Fonte e mais informações:</p>
+<p><a title="Color Bash Prompt" href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt" target="_blank">https://wiki.archlinux.org/index.php/Color_Bash_Prompt</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>wgetmd5 um shell script que verifica o md5 do download com wget</title>
+		<link>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/</link>
+		<comments>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/#comments</comments>
+		<pubDate>Mon, 20 Aug 2012 18:05:45 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[md5]]></category>
+		<category><![CDATA[md5sum]]></category>
+		<category><![CDATA[script]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=377</guid>
+		<description><![CDATA[Quando é necessário fazer download de arquivos grandes, como distribuições linux, é prudente não confiarmos totalmente no browser para estes downloads pois alguns pacotes podem ser perdidos sem dar erro no download e depois temos problemas com o sistema sem saber por que. Então, para treinar a construção de bash scripts e também já automatizar [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Quando é necessário fazer download de arquivos grandes, como distribuições linux, é prudente não confiarmos totalmente no browser para estes downloads pois alguns pacotes podem ser perdidos sem dar erro no download e depois temos problemas com o sistema sem saber por que.</p>
+<p>Então, para treinar a construção de bash scripts e também já automatizar essa pequena tarefa que criei o wgetmd5 que nada mais é a junção do wget com o md5sum para calcular o hash md5 do download e comparar com o arquivo md5 que for indicado como parâmetro.</p>
+<p>O uso é:</p>
+<pre class="brush: bash; title: ; notranslate">$ wgetmd5 url_do_arquivo url_do_arquivo_md5</pre>
+<p>Ex:</p>
+<pre class="brush: bash; title: ; notranslate">$ wgetmd5 ftp://ftp.gimp.org/pub/gimp/v2.8/gimp-2.8.0.tar.bz2 ftp://ftp.gimp.org/pub/gimp/v2.8/gimp-2.8.0.tar.bz2.md5</pre>
+<p><div class="button-wrap"><a href="https://github.com/DevHouse-BR/wgetmd5" class="button-medium button-green button-medium-green" rel="external">Download from github.com</a></div><br />
+<div class="br-40"></div></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Editando a variável de ambiente PATH no Linux Mint Debian</title>
+		<link>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/</link>
+		<comments>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 20:50:47 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[etc]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[path]]></category>
+		<category><![CDATA[profile]]></category>
+		<category><![CDATA[sh]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=346</guid>
+		<description><![CDATA[Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile. Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse: As alterações no /etc/profile são aplicadas a todos os usuários do sistema. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo pluma /etc/profile</pre>
+<p>Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &quot;`id -u`&quot; -eq 0 ]; then
+  PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+else
+  PATH=&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games&quot;
+fi
+PATH=$PATH:/opt/eclipse
+export PATH
+
+if [ &quot;$PS1&quot; ]; then
+  if [ &quot;$BASH&quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ &quot;`id -u`&quot; -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+</pre>
+<p>As alterações no /etc/profile são aplicadas a todos os usuários do sistema. Na pasta home do usuário existe um arquivo .profile que também pode ser editado.</p>
+<p>Uma outra forma de colocar um aplicativo no path é colocar um link simbólico para o aplicativo na pasta /usr/bin. Veja como o instalador do Google Chrome fez:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ls -l /usr/bin/google-chrome 
+lrwxrwxrwx 1 root root 32 Jun  7 03:17 /usr/bin/google-chrome -&gt; /opt/google/chrome/google-chrome
+</pre>
+<p>Você consegue o mesmo efeito usando o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+</pre>
+<p>Por hoje é só pessoal!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

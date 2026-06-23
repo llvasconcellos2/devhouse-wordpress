@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>office365 &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/office365/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>[Resolvido] Error: (state SENT_SECOND_EHLO) code(0) ou [Server response: read error code(0) ] no GMail</title>
+		<link>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/</link>
+		<comments>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/#respond</comments>
+		<pubDate>Mon, 09 Feb 2015 23:11:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Google]]></category>
+		<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[gmail]]></category>
+		<category><![CDATA[imap]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[office]]></category>
+		<category><![CDATA[office365]]></category>
+		<category><![CDATA[outlook]]></category>
+		<category><![CDATA[pop3]]></category>
+		<category><![CDATA[smtp]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=777</guid>
+		<description><![CDATA[Caso você esteja configurando o Gmail para ler as mensagens do Outlook do M$ Office 365 via SMTP e POP3 mas ocorre os seguintes erros: Error: (state SENT_SECOND_EHLO) code(0) Ou Error: [Server response: read error code(0) ] A solução é simples: altere o endereço do servidor SMTP de outlook.office365.com para o servidor específico para a [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Caso você esteja configurando o Gmail para ler as mensagens do Outlook do M$ Office 365 via SMTP e POP3 mas ocorre os seguintes erros:</p>
+<p>Error: (state SENT_SECOND_EHLO) code(0)</p>
+<p>Ou</p>
+<p>Error: [Server response: read error code(0) ]</p>
+<p>A solução é simples: altere o endereço do servidor SMTP de outlook.office365.com para o servidor específico para a sua localização geográfica.</p>
+<ol>
+<li>Abra o prompt de comando e  digite: ping outlook.office365.com</li>
+<li>Anote qual o endereço de retorno como por exemplo: <strong>outlook-namsouth.office365.com</strong>
+<pre class="brush: bash; title: ; notranslate">
+PING outlook-namsouth.office365.com (132.245.16.242): 56 data bytes
+64 bytes from 132.245.16.242: icmp_seq=0 ttl=241 time=172.730 ms
+64 bytes from 132.245.16.242: icmp_seq=1 ttl=241 time=189.141 ms
+64 bytes from 132.245.16.242: icmp_seq=2 ttl=241 time=169.283 ms
+64 bytes from 132.245.16.242: icmp_seq=3 ttl=241 time=168.586 ms
+64 bytes from 132.245.16.242: icmp_seq=4 ttl=241 time=164.661 ms
+^C
+--- outlook-namsouth.office365.com ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 164.661/172.880/189.141/8.525 ms
+MacBookAir:~ leonardo$
+</pre>
+</li>
+<li>Insira outlook-namsouth.office365.com no lugar de outlook.office365.com</li>
+<li>Use seu email completo como usuário.</li>
+<li>Porta 587 e criptografia TLS.</li>
+</ol>
+<p>Pronto!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

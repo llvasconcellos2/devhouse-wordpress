@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gpg &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/gpg/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Como corrigir o GPG error NO_PUBKEY no Linux (Ubuntu / Debian / Mint)</title>
+		<link>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/</link>
+		<comments>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/#comments</comments>
+		<pubDate>Wed, 23 Apr 2014 15:32:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gpg]]></category>
+		<category><![CDATA[key]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[no_pubkey]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[update]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=666</guid>
+		<description><![CDATA[Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update: O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY). Agora pode rodar o apt-get update que deve funcionar normalmente.]]></description>
+				<content:encoded><![CDATA[<div id="attachment_672" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg"><img data-attachment-id="672" data-permalink="http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/ubuntu-update-error/" data-orig-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg" data-orig-size="633,396" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Ubuntu-Update-error" data-image-description="&lt;p&gt;GPG Error NO_PUBKEY&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg" data-large-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" class="size-large wp-image-672" src="/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" alt="GPG Error NO_PUBKEY" width="600" height="375" srcset="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg 600w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg 300w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg 633w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">GPG Error NO_PUBKEY</p></div>
+<p>Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo apt-get update
+W: GPG error: http://ppa.launchpad.net saucy Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2EE5793634EF4A35
+</pre>
+<p>O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY).</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2EE5793634EF4A35
+</pre>
+<p>Agora pode rodar o apt-get update que deve funcionar normalmente.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

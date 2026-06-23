@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>[Dica] Ícone do Skype não aparece no Ubuntu</title>
+		<link>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/</link>
+		<comments>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/#respond</comments>
+		<pubDate>Thu, 27 Aug 2015 18:43:55 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[skype]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=879</guid>
+		<description><![CDATA[Como fazer com que o ícone do skype apareça no painel (systray) do Ubuntu.]]></description>
+				<content:encoded><![CDATA[<p>Para fazer o ícone do Skype aparecer no systray do Unity no Ubuntu adicione o pacote sni-qt com o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get install sni-qt:i386
+</pre>
+<p>Faça log out ou reinicie e pronto!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Configurando HTTPS no Wildfly</title>
+		<link>http://localhost:8080/configurando-https-no-wildfly/</link>
+		<comments>http://localhost:8080/configurando-https-no-wildfly/#comments</comments>
+		<pubDate>Mon, 04 May 2015 15:29:26 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Java]]></category>
+		<category><![CDATA[aplicação]]></category>
+		<category><![CDATA[https]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[servidor]]></category>
+		<category><![CDATA[ssl]]></category>
+		<category><![CDATA[standalone]]></category>
+		<category><![CDATA[undertow]]></category>
+		<category><![CDATA[wildfly]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=790</guid>
+		<description><![CDATA[Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção. Estou usando o Wildfly 8.2.0.Final. A primeira coisa [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção.</p>
+<p>Estou usando o Wildfly 8.2.0.Final.</p>
+<ol>
+<li>A primeira coisa a fazer é entrar no diretório da instalação do Wildfly, na pasta <em><strong>./standalone/configuration/</strong></em>  e executar o seguinte comando:
+<pre class="brush: bash; title: ; notranslate">keytool -genkeypair -alias serverkey -keyalg RSA -keysize 2048 -validity 7360 -keystore localhost.keystore -keypass mypassword -storepass mypassword -dname &quot;cn=Server Administrator,o=Acme,c=GB&quot;</pre>
+</li>
+<li>Edite o arquivo <em><strong>./standalone/configuration/standalone.xml</strong></em> e adicione o seguinte xml dentro de <em><strong>security-realms</strong></em>:
+<pre class="brush: xml; title: ; notranslate">&lt;security-realm name=&quot;UndertowRealm&quot;&gt;
+	&lt;server-identities&gt;
+		&lt;ssl&gt;
+			&lt;keystore path=&quot;localhost.keystore&quot; relative-to=&quot;jboss.server.config.dir&quot; keystore-password=&quot;mypassword&quot;/&gt;
+		&lt;/ssl&gt;
+	&lt;/server-identities&gt;
+&lt;/security-realm&gt;</pre>
+</li>
+<li>Em seguida adicione a linha abaixo dentro de subsystem undertow -&gt; server
+<pre class="brush: xml; title: ; notranslate">&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;</pre>
+<p>Veja como ficou a entrada completa:</p>
+<pre class="brush: xml; title: ; notranslate">&lt;subsystem xmlns=&quot;urn:jboss:domain:undertow:1.2&quot;&gt;
+	&lt;buffer-cache name=&quot;default&quot;/&gt;
+	&lt;server name=&quot;default-server&quot;&gt;
+		&lt;http-listener name=&quot;default&quot; socket-binding=&quot;http&quot;/&gt;
+		&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;
+		&lt;host name=&quot;default-host&quot; alias=&quot;localhost&quot;&gt;
+			&lt;location name=&quot;/&quot; handler=&quot;welcome-content&quot;/&gt;
+			&lt;filter-ref name=&quot;server-header&quot;/&gt;
+			&lt;filter-ref name=&quot;x-powered-by-header&quot;/&gt;
+		&lt;/host&gt;
+	&lt;/server&gt;
+	&lt;servlet-container name=&quot;default&quot;&gt;
+		&lt;jsp-config/&gt;
+		&lt;websockets/&gt;
+	&lt;/servlet-container&gt;
+	&lt;handlers&gt;
+		&lt;file name=&quot;welcome-content&quot; path=&quot;${jboss.home.dir}/welcome-content&quot;/&gt;
+	&lt;/handlers&gt;
+	&lt;filters&gt;
+		&lt;response-header name=&quot;server-header&quot; header-name=&quot;Server&quot; header-value=&quot;WildFly/8&quot;/&gt;
+		&lt;response-header name=&quot;x-powered-by-header&quot; header-name=&quot;X-Powered-By&quot; header-value=&quot;Undertow/1&quot;/&gt;
+	&lt;/filters&gt;
+&lt;/subsystem&gt;</pre>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>Pronto, reinicie o servidor e acesse <a href="https://localhost:8443" target="_blank">https://localhost:8443</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/configurando-https-no-wildfly/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>[Resolvido] Error: (state SENT_SECOND_EHLO) code(0) ou [Server response: read error code(0) ] no GMail</title>
+		<link>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/</link>
+		<comments>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/#respond</comments>
+		<pubDate>Mon, 09 Feb 2015 23:11:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Google]]></category>
+		<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[gmail]]></category>
+		<category><![CDATA[imap]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[office]]></category>
+		<category><![CDATA[office365]]></category>
+		<category><![CDATA[outlook]]></category>
+		<category><![CDATA[pop3]]></category>
+		<category><![CDATA[smtp]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=777</guid>
+		<description><![CDATA[Caso você esteja configurando o Gmail para ler as mensagens do Outlook do M$ Office 365 via SMTP e POP3 mas ocorre os seguintes erros: Error: (state SENT_SECOND_EHLO) code(0) Ou Error: [Server response: read error code(0) ] A solução é simples: altere o endereço do servidor SMTP de outlook.office365.com para o servidor específico para a [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Caso você esteja configurando o Gmail para ler as mensagens do Outlook do M$ Office 365 via SMTP e POP3 mas ocorre os seguintes erros:</p>
+<p>Error: (state SENT_SECOND_EHLO) code(0)</p>
+<p>Ou</p>
+<p>Error: [Server response: read error code(0) ]</p>
+<p>A solução é simples: altere o endereço do servidor SMTP de outlook.office365.com para o servidor específico para a sua localização geográfica.</p>
+<ol>
+<li>Abra o prompt de comando e  digite: ping outlook.office365.com</li>
+<li>Anote qual o endereço de retorno como por exemplo: <strong>outlook-namsouth.office365.com</strong>
+<pre class="brush: bash; title: ; notranslate">
+PING outlook-namsouth.office365.com (132.245.16.242): 56 data bytes
+64 bytes from 132.245.16.242: icmp_seq=0 ttl=241 time=172.730 ms
+64 bytes from 132.245.16.242: icmp_seq=1 ttl=241 time=189.141 ms
+64 bytes from 132.245.16.242: icmp_seq=2 ttl=241 time=169.283 ms
+64 bytes from 132.245.16.242: icmp_seq=3 ttl=241 time=168.586 ms
+64 bytes from 132.245.16.242: icmp_seq=4 ttl=241 time=164.661 ms
+^C
+--- outlook-namsouth.office365.com ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 164.661/172.880/189.141/8.525 ms
+MacBookAir:~ leonardo$
+</pre>
+</li>
+<li>Insira outlook-namsouth.office365.com no lugar de outlook.office365.com</li>
+<li>Use seu email completo como usuário.</li>
+<li>Porta 587 e criptografia TLS.</li>
+</ol>
+<p>Pronto!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/resolvido-error-state-sent_second_ehlo-code0-ou-server-response-read-error-code0/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Copiar / Download de um site inteiro com WGET [ripar]</title>
+		<link>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/</link>
+		<comments>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/#respond</comments>
+		<pubDate>Sat, 11 Oct 2014 08:44:03 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[entire]]></category>
+		<category><![CDATA[rip]]></category>
+		<category><![CDATA[site]]></category>
+		<category><![CDATA[website]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=765</guid>
+		<description><![CDATA[Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando: &#160; o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio. O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com. A explicação [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:</p>
+<p>&nbsp;</p>
+<pre class="brush: bash; title: ; notranslate">$ wget \
+     --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36&quot; \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains exemplo.com \
+     --no-parent \
+     -e robots=off \
+     --load-cookies=cookies.txt \
+         exemplo.com/blog</pre>
+<p>o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio.<br />
+O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com.</p>
+<p>A explicação dos parâmetros segue abaixo. Depois eu traduzo:</p>
+<p>&#8211;recursive: download the entire Web site.</p>
+<p>&#8211;domains website.org: don&#8217;t follow links outside website.org.</p>
+<p>&#8211;no-parent: don&#8217;t follow links outside the directory tutorials/html/.</p>
+<p>&#8211;page-requisites: get all the elements that compose the page (images, CSS and so on).</p>
+<p>&#8211;html-extension: save files with the .html extension.</p>
+<p>&#8211;convert-links: convert links so that they work locally, off-line.</p>
+<p>&#8211;restrict-file-names=windows: modify filenames so that they will work in Windows as well.</p>
+<p>&#8211;no-clobber: don&#8217;t overwrite any existing files (used in case the download is interrupted and<br />
+resumed).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Acessar dbAdapter ou outra resource do bootstrap de qualquer lugar da aplicação [Zend Framework 1]</title>
+		<link>http://localhost:8080/acessar-dbadapter-ou-outra-resource-do-bootstrap-de-qualquer-lugar-da-aplicacao-zend-framework-1/</link>
+		<comments>http://localhost:8080/acessar-dbadapter-ou-outra-resource-do-bootstrap-de-qualquer-lugar-da-aplicacao-zend-framework-1/#respond</comments>
+		<pubDate>Tue, 30 Sep 2014 12:27:24 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Zend Framework 1]]></category>
+		<category><![CDATA[bootstrap]]></category>
+		<category><![CDATA[dbadapter]]></category>
+		<category><![CDATA[framework]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[zend]]></category>
+		<category><![CDATA[zendframework]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=757</guid>
+		<description><![CDATA[&#160;]]></description>
+				<content:encoded><![CDATA[<pre class="brush: php; title: ; notranslate">$bootstrap = Zend_Controller_Front::getInstance()-&gt;getParam('bootstrap');
+$resource = $bootstrap-&gt;getPluginResource('db');
+$adapter = $resource-&gt;getDbAdapter();</pre>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/acessar-dbadapter-ou-outra-resource-do-bootstrap-de-qualquer-lugar-da-aplicacao-zend-framework-1/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Habilitando Syntax Highlighting no Nano</title>
+		<link>http://localhost:8080/habilitando-syntax-highlighting-no-nano/</link>
+		<comments>http://localhost:8080/habilitando-syntax-highlighting-no-nano/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 18:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[highlight]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[putty]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[syntax]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=750</guid>
+		<description><![CDATA[Estou desenvolvendo um software em PHP e testando algumas modificações direto no servidor. Para editar os arquivos php eu uso o nano (não me acostumei ao vi). Então senti falta de cores no código para facilitar a compreensão e tirar um pouco a monotonia do monocromático. E funciona via ssh! Veja se os arquivos de highlight [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Estou desenvolvendo um software em PHP e testando algumas modificações direto no servidor. Para editar os arquivos php eu uso o nano (não me acostumei ao vi). Então senti falta de cores no código para facilitar a compreensão e tirar um pouco a monotonia do monocromático. E funciona via ssh!</p>
+<p>Veja se os arquivos de highlight estão no diretório /usr/share/nano/</p>
+<pre class="brush: bash; title: ; notranslate">$ ls /usr/share/nano/
+asm.nanorc     fortran.nanorc   man.nanorc     ocaml.nanorc   ruby.nanorc
+awk.nanorc     gentoo.nanorc    mgp.nanorc     patch.nanorc   sh.nanorc
+c.nanorc       groff.nanorc     mutt.nanorc    perl.nanorc    tcl.nanorc
+cmake.nanorc   html.nanorc      nano-menu.xpm  php.nanorc     tex.nanorc
+css.nanorc     java.nanorc      nanorc.nanorc  pov.nanorc     xml.nanorc
+debian.nanorc  makefile.nanorc  objc.nanorc    python.nanorc</pre>
+<p>No meu caso todos os arquivos estavam lá exceto o php.nanorc. Justo o que eu precisava. Então peguei da net. Segue ele na íntegra:</p>
+<pre class="brush: bash; title: ; notranslate">## PHP Syntax Highlighting
+syntax &quot;php&quot; &quot;\.php[2345s~]?$&quot;
+color white start=&quot;&lt;\?(php|=)?&quot; end=&quot;\?&gt;&quot;
+# Functions
+color brightblue &quot;([a-zA-Z0-9_-]*)\(&quot;
+# Constructs
+color brightblue &quot;(class|extends|goto) ([a-zA-Z0-9_]*)&quot;
+color green &quot;[^a-z0-9_-]{1}(var|class|function|echo|case|break|default|exit|switch|if|else|elseif|endif|foreach|endforeach|@|while|public|private|protected|return|true|false|null|TRUE|FALSE|NULL|const|static|extends|as|array|require|include|require_once|include_once|define|do|continue|declare|goto|print|in)[^a-z0-9_-]{1}&quot;
+color brightblue &quot;[a-zA-Z0-9]+:&quot;
+# Variables
+color white &quot;\$[a-zA-Z_0-9$]*|[=!&lt;&gt;]&quot;
+color white &quot;\-&gt;[a-zA-Z_0-9$]*|[=!&lt;&gt;]&quot;
+# Special Characters
+color yellow &quot;[.,{}();]&quot;
+color yellow &quot;\[&quot;
+color yellow &quot;\]&quot;
+color yellow &quot;[=][^&gt;]&quot;
+# Numbers
+color magenta &quot;[+-]*([0-9]\.)*[0-9]+([eE][+-]?([0-9]\.)*[0-9])*&quot;
+color magenta &quot;0x[0-9a-zA-Z]*&quot;
+# Special Variables
+color brightblue &quot;(\$this|parent::|self::|\$this-\&gt;)&quot;
+# Bitwise Operations
+color magenta &quot;(\;|\||\^){1}&quot;
+# And/Or/SRO/etc
+color green &quot;(\;\;|\|\||::|=&gt;|-&gt;)&quot;
+# Online Comments
+color brightyellow &quot;(#.*|//.*)$&quot;
+# STRINGS!
+color red &quot;('[^']*?')|(\&quot;[^\&quot;]*?\&quot;)&quot;
+# Inline Variables
+color white &quot;\{\$[^}]*\}&quot;
+# PHP Tags
+color red &quot;(&lt;\?(php)?|\?&gt;)&quot;
+# General HTML
+color red start=&quot;\?&gt;&quot; end=&quot;&lt;\?(php|=)?&quot;
+# trailing whitespace
+color ,green &quot;[^[:space:]]{1}[[:space:]]+$&quot;
+# multi-line comments
+color brightyellow start=&quot;/\*&quot; end=&quot;\*/&quot;
+</pre>
+<p>Gravei o arquivo php.nanorc em uma pasta do meu usuario mesmo. Depois precisei criar um arquivo .nanorc e incluir o caminho para os arquivos de sintaxe:</p>
+<pre class="brush: bash; title: ; notranslate">$ nano ~/.nanorc
+include /usr/share/nano/sh.nanorc
+inclue ~/php.nanorc</pre>
+<p>E pronto, é só editar um arquivo php:</p>
+<div id="attachment_753" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2014/09/nano-syntax-highlight.png"><img data-attachment-id="753" data-permalink="http://localhost:8080/habilitando-syntax-highlighting-no-nano/nano-syntax-highlight/" data-orig-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight.png" data-orig-size="1812,992" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nano-syntax-highlight" data-image-description="&lt;p&gt;Nano com Syntax Highlight&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-300x164.png" data-large-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png" class="wp-image-753 size-large" src="/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png" alt="nano-syntax-highlight" width="600" height="328" srcset="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png 600w, http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-300x164.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Nano com Syntax Highlight</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/habilitando-syntax-highlighting-no-nano/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Impedir que um Script PHP seja executado ao mesmo tempo no Cron</title>
+		<link>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/</link>
+		<comments>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 18:11:53 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[cron]]></category>
+		<category><![CDATA[lock]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[pid]]></category>
+		<category><![CDATA[script]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=748</guid>
+		<description><![CDATA[Estou construindo um script de sincronia de banco de dados que deve rodar de 5 em 5 minutos na cron do linux. O problema é que ele pode acabar durando mais do que cinco minutos então pesquisando uma forma de evitar que o script seja executado novamente antes que o anterior termine encontrei a solução [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Estou construindo um script de sincronia de banco de dados que deve rodar de 5 em 5 minutos na cron do linux. O problema é que ele pode acabar durando mais do que cinco minutos então pesquisando uma forma de evitar que o script seja executado novamente antes que o anterior termine encontrei a solução no link abaixo e coloco aqui com pequenas alterações:</p>
+<p><a href="http://abhinavsingh.com/blog/2009/12/how-to-use-locks-in-php-cron-jobs-to-avoid-cron-overlaps/" target="_blank">http://abhinavsingh.com/blog/2009/12/how-to-use-locks-in-php-cron-jobs-to-avoid-cron-overlaps/</a></p>
+<p>Crie um arquivo chamado CronHelper.php e adicione o código abaixo (eu coloquei na mesma pasta do meu script cron):</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+define('LOCK_DIR', __DIR__ . '/');
+define('LOCK_SUFFIX', '.lock');
+
+class CronHelper {
+    private static $pid;
+
+    function __construct() {
+        
+    }
+
+    function __clone() {
+        
+    }
+
+    private static function isrunning() {
+        $pids = explode(PHP_EOL, `ps -e | awk '{print $1}'`);
+        if (in_array(self::$pid, $pids)) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    public static function lock() {
+        global $argv;
+        
+        $path_parts = pathinfo($argv[0]);
+
+        $lock_file = LOCK_DIR . $path_parts['basename'] . LOCK_SUFFIX;
+
+        if (file_exists($lock_file)) {
+            //return FALSE;
+            // Is running?
+            self::$pid = file_get_contents($lock_file);
+            if (self::isrunning()) {
+                error_log(&quot;==&quot; . self::$pid . &quot;== Já está em progresso...&quot;);
+                return FALSE;
+            } else {
+                error_log(&quot;==&quot; . self::$pid . &quot;== O job anterior foi interrompido abruptamente...&quot;);
+            }
+        }
+
+        self::$pid = getmypid();
+        file_put_contents($lock_file, self::$pid);
+        error_log(&quot;==&quot; . self::$pid . &quot;== Trava adquirida, processando o job...&quot;);
+        return self::$pid;
+    }
+
+    public static function unlock() {
+        global $argv;
+
+        $lock_file = LOCK_DIR . $argv[0] . LOCK_SUFFIX;
+
+        if (file_exists($lock_file)) {
+            unlink($lock_file);
+        }
+
+        error_log(&quot;==&quot; . self::$pid . &quot;== Soltando a trava...&quot;);
+        return TRUE;
+    }
+
+}</pre>
+<p>Para utilizado coloque todo o código do cron dentro do if:</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+require 'CronHelper.php';
+
+if(($pid = cronHelper::lock()) !== FALSE) {
+    /*
+     * O código do seu cron job vai aqui!
+     */
+
+    cronHelper::unlock();
+}
+
+?&gt;</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Enviando via GMail com PHPMailer</title>
+		<link>http://localhost:8080/enviando-via-gmail-com-phpmailer/</link>
+		<comments>http://localhost:8080/enviando-via-gmail-com-phpmailer/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 17:30:08 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[email]]></category>
+		<category><![CDATA[gmail]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[phpmailer]]></category>
+		<category><![CDATA[smtp]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=742</guid>
+		<description><![CDATA[A biblioteca PHPMailer é bem completa e de uso muito comum entre programadores PHP. Então a dica é como configurá-la para enviar emails usando o SMTP do GMail.]]></description>
+				<content:encoded><![CDATA[<p>A biblioteca PHPMailer é bem completa e de uso muito comum entre programadores PHP. Então a dica é como configurá-la para enviar emails usando o SMTP do GMail.</p>
+<pre class="brush: php; title: ; notranslate">require_once 'PHPMailer/PHPMailerAutoload.php';
+    
+$mail = new PHPMailer();
+$mail-&gt;IsSMTP();
+$mail-&gt;SMTPDebug = 0;
+$mail-&gt;SMTPAuth = true;
+$mail-&gt;SMTPSecure = 'tls';
+$mail-&gt;Host = 'smtp.gmail.com';
+$mail-&gt;Port = 587; 
+$mail-&gt;Username = &quot;envio@email.com.br&quot;;  
+$mail-&gt;Password = &quot;********&quot;;           
+$mail-&gt;SetFrom(&quot;envio@email.com.br&quot;, &quot;CronJob&quot;);
+$mail-&gt;Subject = &quot;Uma excecao ocorreu.&quot;;
+$mail-&gt;Body = $text;
+$mail-&gt;AddAddress($to);
+if(!$mail-&gt;Send()) {
+    echo 'Mail error: '.$mail-&gt;ErrorInfo; 
+    return false;
+} else {
+    echo 'Message sent!';
+    return true;
+}</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/enviando-via-gmail-com-phpmailer/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Concatenar várias linhas de um Select em uma única linha e gerar um JSON de uma Query [MySQL]</title>
+		<link>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/</link>
+		<comments>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/#respond</comments>
+		<pubDate>Mon, 22 Sep 2014 20:13:18 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[concat]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[sql]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=732</guid>
+		<description><![CDATA[Para concatenar várias linhas em uma: Sendo assim para gerar um JSON de uma query:]]></description>
+				<content:encoded><![CDATA[<p>Para concatenar várias linhas em uma:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT GROUP_CONCAT(COLUNA1) FROM TABELA;</pre>
+<p>Sendo assim para gerar um JSON de uma query:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT 
+	CONCAT('[', 
+		GROUP_CONCAT(
+			CONCAT('{&quot;coluna1&quot;:&quot;', COLUNA1, '&quot;,'), 
+			CONCAT('&quot;coluna2&quot;:&quot;', COLUNA2, '&quot;}')
+		)
+	,']') AS JSON 
+FROM TABELA;</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Concatenar várias linhas de um Select em uma única linha e gerar um JSON de uma Query [SQL SERVER]</title>
+		<link>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/</link>
+		<comments>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/#respond</comments>
+		<pubDate>Mon, 22 Sep 2014 20:12:12 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[Microsoft SQL Server]]></category>
+		<category><![CDATA[Sem categoria]]></category>
+		<category><![CDATA[concat]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[server]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[sql server]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=731</guid>
+		<description><![CDATA[Para concatenar várias linhas em uma: Sendo assim para gerar um JSON de uma query:]]></description>
+				<content:encoded><![CDATA[<p>Para concatenar várias linhas em uma:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT CAST((
+    SELECT COLUNA1 + ' - ' COLUNA2 FROM TABELA FOR XML PATH('')
+) AS VARCHAR(MAX));</pre>
+<p>Sendo assim para gerar um JSON de uma query:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT '[' + CAST((
+    SELECT '{&quot;coluna1&quot;:' + COLUNA1 + '&quot;,&quot;coluna2&quot;:&quot;' + COLUNA2 + '&quot;},' FROM TABELA FOR XML PATH('')
+) AS VARCHAR(MAX)) + ']';</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

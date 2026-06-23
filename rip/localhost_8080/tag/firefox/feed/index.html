@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>firefox &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/firefox/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Arquivos desktop: colocando seu aplicativo nos menus do GNOME</title>
+		<link>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/</link>
+		<comments>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 21:03:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=341</guid>
+		<description><![CDATA[O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome.</p>
+<p>Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.</p>
+<p>A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:</p>
+<p><a title="Gnome Desktop Files" href="http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR" target="_blank">http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR</a></p>
+<p><a title="Free Desktop" href="http://standards.freedesktop.org/menu-spec/latest/apa.html" target="_blank">http://standards.freedesktop.org/menu-spec/latest/apa.html</a></p>
+<p><a title="Nautilus Actions" href="http://www.nautilus-actions.org/?q=node/377" target="_blank">http://www.nautilus-actions.org/?q=node/377</a></p>
+<p>Para essa demonstração vou criar um arquivo .desktop para o Google Chrome. Quero que o Chrome entre no menu Internet igual ao Firefox e por isso vou usá-lo como base.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo cp /usr/share/applications/firefox.desktop /usr/share/applications/google-chrome.desktop
+$ sudo pluma /usr/share/applications/google-chrome.desktop
+</pre>
+<p>O arquivo original estava assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[ar]=متصفح الوِب فَيَرفُكْس
+Name[ca]=Navegador web Firefox
+Name[cs]=Firefox Webový prohlížeč
+Name[es]=Navegador web Firefox
+Name[et]=Firefoxi veebibrauser
+Name[fa]=مرورگر اینترنتی Firefox
+Name[fi]=Firefox-selain
+Name[fr]=Navigateur Web Firefox
+Name[hu]=Firefox webböngésző
+Name[it]=Firefox Browser Web
+Name[ja]=Firefox ウェブ・ブラウザ
+Name[ko]=Firefox 웹 브라우저
+Name[nb]=Firefox Nettleser
+Name[nl]=Firefox webbrowser
+Name[nn]=Firefox Nettlesar
+Name[no]=Firefox Nettleser
+Name=Przeglądarka WWW Firefox
+Name[pt]=Firefox Navegador Web
+Name[pt_BR]=Navegador Web Firefox
+Name[sk]=Firefox - internetový prehliadač
+Name[sv]=Webbläsaren Firefox
+Comment=Browse the World Wide Web
+Comment[ar]=تصفح الشبكة العنكبوتية العالمية
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[es]=Navegue por la web
+Comment[et]=Lehitse veebi
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[ar]=متصفح وب
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+Exec=/opt/firefox/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/firefox/icons/mozicon128.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
+</pre>
+<p>Após a edição ele ficou assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+Name[pt_BR]=Navegador Web Google Chrome
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Exec=/opt/google/chrome %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/google/chrome/product_logo_256.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Chrome
+StartupNotify=true
+</pre>
+<p>As alterações mais importantes são:</p>
+<p>Name => Nome do Aplicativo<br />
+Exec => Path para o executável (o %u é específico para o browser abrir uma url passada como parâmetro).<br />
+Icon => Path para o ícone (pode ser jpg, png, svg ou até o próprio executável do programa).<br />
+Categories = > Menu onde o atalho para o programa vai aparecer.</p>
+<p>Você pode sempre usar outros arquivos .desktop como base para a criação do seu.</p>
+<p>Veja também como colocar seu programa no path neste <a href="/editando-a-variavel-de-ambiente-path-no-linux-mint-debian" title="Editando a variável de ambiente PATH no Linux Mint Debian">artigo</a>.</p>
+<p>Espero ter ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Adicionando o Google ao Firefox no Linux Mint</title>
+		<link>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/</link>
+		<comments>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 19:41:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[duckduckgo]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+		<category><![CDATA[yahoo]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=334</guid>
+		<description><![CDATA[O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o Firefox. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o Yahoo como busca e o Duck Duck Go como busca padrão para a barra de endereços. Particularmente [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o <a title="Mozilla Firefox" href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a>. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o <a title="Yahoo" href="http://www.yahoo.com" target="_blank">Yahoo</a> como busca e o <a title="Duck Duck Go" href="http://duckduckgo.com" target="_blank">Duck Duck Go</a> como busca padrão para a barra de endereços. Particularmente eu prefiro usar o google. Então vamos as modificações:</p>
+<h2>1 &#8211; Alterar a busca pela barra de endereços.</h2>
+<p>Digite about:config na barra de endereço e confirme no botão &#8220;I&#8217;ll be carefull, I promisse!&#8221; ou em português, &#8220;Eu serei cuidadoso, prometo!&#8221;. O firefox abrirá uma lista de strings de configuração e tweeks. Busque pela string <strong>keyword.URL</strong> e altere o valor para:</p>
+<p><strong>http://www.google.com/search?ie=UTF-8&amp;oe=utf-8&amp;q=</strong></p>
+<p>&nbsp;</p>
+<h2>2 &#8211; Adicionar google à caixa de busca do firefox.</h2>
+<p>A caixa de busca vem como padrão o Yahoo e não vem com opção para o google. Clique no ícone do Yahoo e selecione &#8220;Manage Search Engines&#8221; ou &#8220;Gerenciar Mecanismos de Busca&#8221;. Clique no link <a title="Firefox Search Engines" href="http://www.linuxmint.com/searchengines" target="_blank">Get more search engines&#8230;</a> e em COMMERCIAL ENGINES clique no ícone do google. O google ainda não estará instalado. Clique no ícone do yahoo da barra de busca e escolha &#8220;Install Google&#8221;. Depois escolha &#8220;Manage Search Engines&#8221; novamente e coloque o Google no topo da lista.</p>
+<p>&nbsp;</p>
+<h2>3 &#8211; Alterar a página home</h2>
+<p>Essa é facil. Vá no menu Edit e selecione &#8220;Preferences&#8221; (ou editar -&gt; preferências) e na aba &#8220;General&#8221; em Homepage insira:</p>
+<p><strong>https://www.google.com.br/</strong></p>
+<p>Ou insira qualquer outra URL de sua preferência.</p>
+<p>&nbsp;</p>
+<p>É isso!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

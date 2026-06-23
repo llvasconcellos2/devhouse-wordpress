@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nas &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/nas/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Instalando o Debian Squeeze no NAS D-Link DNS-320</title>
+		<link>http://localhost:8080/instalando-o-debian-squeeze-no-nas-d-link-dns-320/</link>
+		<comments>http://localhost:8080/instalando-o-debian-squeeze-no-nas-d-link-dns-320/#comments</comments>
+		<pubDate>Mon, 22 Oct 2012 00:45:25 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Hardware]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[d-link]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[dlink]]></category>
+		<category><![CDATA[dns-320]]></category>
+		<category><![CDATA[dns320]]></category>
+		<category><![CDATA[fonz]]></category>
+		<category><![CDATA[fun_plug]]></category>
+		<category><![CDATA[nas]]></category>
+		<category><![CDATA[network attached storage]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[telnet]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=513</guid>
+		<description><![CDATA[Esta é a segunda parte do guia de configuração do Debian Linux para o NAS D-Link DNS-320. Estou considerando que você já possui uma instalação funcionando do fonz fun_plug no seu NAS, caso contrário consulte a primeira parte deste guia: Já existe um pacote do Debian Squeeze preparado para o NAS. Faça o download neste [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Esta é a segunda parte do guia de configuração do Debian Linux para o NAS D-Link DNS-320. Estou considerando que você já possui uma instalação funcionando do <em>fonz fun_plug</em> no seu NAS, caso contrário consulte a primeira parte deste guia:</p>
+<p><div class="hr"></div><div class="portfolio-lists post-lists shortcode-portfolio-lists shortcode-blog-lists">
+<ul class="thumb-preloader thumb-fade thumb-move two-column">
+<li><figure class="type-more">
+<a href="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/" class="preloader" rel="bookmark" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS"><img src="http://localhost:8080/wp-content/themes/mondeo/framework/plugins/timthumb.php?src=http://localhost:8080/wp-content/uploads/2012/10/DNS-320_NAS.jpg&amp;h=190&amp;w=430&amp;zc=1" alt="Instalando o fonz fun_plug no D-Link DNS-320 NAS" title="Instalando o fonz fun_plug no D-Link DNS-320 NAS"><div class="fade-hover hide"></div><div class="overlay"></div><div class="shadow"></div></a>
+</figure>
+<h3><a href="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/" rel="bookmark"  title="Instalando o fonz fun_plug no D-Link DNS-320 NAS">Instalando o fonz fun_plug no D-Link DNS-320 NAS</a></h3>
+<p><span>outubro 21. 2012</span><span><a href="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/#comments">96Comment</a></span></p><p>O NAS ou Network Attached Storage DNS-320 da D-Link é um servidor de arquivos muito bom e barato que me ajuda a sincronizar...</p></li>
+<div class="clear"></div></ul></div><!--#end blog lists--><div class="hr"></div></p>
+<p><span class="dropcap radius-5">Primeiro Passo: Download do Debian Squeeze</span><div class="clear"></div></p>
+<p>Já existe um pacote do Debian Squeeze preparado para o NAS. Faça o download neste link:</p>
+<p><a title="Debian Squeeze DNS-320" href="ftp://ftp.dlink.pl/dns/dns-320/driver_software/DNS-320&amp;325_linuxDebian_revA_Squeeze_all_en_20110111.zip" target="_blank">ftp://ftp.dlink.pl/dns/dns-320/driver_software/DNS-320&amp;325_linuxDebian_revA_Squeeze_all_en_20110111.zip</a></p>
+<p>Aproveitei e criei um mirror para o caso deste link sair do ar:</p>
+<p><a href="http://www.4shared.com/zip/NzsLLdDt/DNS-320325_linuxDebian_revA_Sq.html" title="DNS-320 Debian Linux Squeeze" target="_blank">http://www.4shared.com/zip/NzsLLdDt/DNS-320325_linuxDebian_revA_Sq.html</a></p>
+<p>Após o download, descompacte o arquivo. Dentro estão 3 arquivos:</p>
+<pre class="brush: bash; title: ; notranslate">
+total 154324
+-rw-r--r-- 1      2254 Jan 11  2011 DNS-320&amp;325_howto_Linux-Debian-in-chroot.txt
+-rw-r--r-- 1       569 Sep 21  2010 fun_plug.debian
+-rw-r--r-- 1 158011675 Sep 22  2010 squeeze.tar.gz
+</pre>
+<p><span class="dropcap radius-5">Segundo Passo: Instalando o Debian Squeeze</span><div class="clear"></div></p>
+<p>Copie os arquivos <em>fun_plug.debian</em> e <em>squeeze.tar.gz</em> para o Volume_1 no NAS. Renomeie o arquivo <em>fun_plug</em> que já estava no NAS para <em>fun_plug.old</em> e renomeie o arquivo <em>fun_plug.debian</em> para <em>fun_plug</em>.</p>
+<p>Não reinicie o NAS ainda. Vamos precisar do fun_plug que já está rodando para configurar o Linux. Conecte via ssh ao seu NAS.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Substitua 192.168.0.2 pelo IP do seu NAS.
+ssh root@192.168.0.2
+</pre>
+<p>Agora execute os seguintes comandos:</p>
+<pre class="brush: bash; title: ; notranslate">
+cd /mnt/HD/HD_a2
+gunzip squeeze.tar.gz
+tar -xf squeeze.tar
+rm squeeze.tar
+</pre>
+<p>Reinicie o NAS.</p>
+<p><span class="dropcap radius-5">Terceiro Passo: Configurando o Debian</span><div class="clear"></div></p>
+<p>Conecte via ssh ao seu NAS. Usuario <em>root</em> e senha <em>dlink</em>.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Substitua 192.168.0.2 pelo IP do seu NAS.
+ssh root@192.168.0.2
+</pre>
+<p>Caso não consiga se conectar em rasão da chave de criptografia ter mudado apague o arquivo ~/.ssh/known_hosts e tente novamente.</p>
+<p>Edite o arquivo /etc/apt/sources.list.</p>
+<pre class="brush: bash; title: ; notranslate">nano /etc/apt/sources.list</pre>
+<p>Remova o repositório que já se encontra listado e insira os seguintes:</p>
+<pre class="brush: bash; title: ; notranslate">
+deb http://ftp.debian.org/debian/ squeeze main contrib non-free
+deb-src http://ftp.debian.org/debian/ squeeze main contrib non-free
+
+deb http://backports.debian.org/debian-backports squeeze-backports main contrib non-free
+deb-src http://backports.debian.org/debian-backports squeeze-backports main contrib non-free
+
+deb http://security.debian.org/ squeeze/updates main contrib non-free
+deb-src http://security.debian.org/ squeeze/updates main contrib non-free
+</pre>
+<p>Salve o arquivo e execute os comandos:</p>
+<pre class="brush: bash; title: ; notranslate">
+apt-get update
+
+# Instalar sudo
+apt-get install sudo
+
+# Instalar locales
+apt-get install locales
+
+# Selecione a sua locale. Eu uso en_US.UTF-8
+dpkg-reconfigure locales
+
+# Atualizar o sistema
+apt-get upgrade
+
+# Alterar a senha de root
+passwd
+
+# Configure seu Timezone
+dpkg-reconfigure tzdata
+
+# Adicionar um usuário para não usar o root.
+adduser leonardo
+adduser leonardo sudo
+</pre>
+<p>Pronto! Agora vocé tem um Debian completo rodando no seu NAS.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/instalando-o-debian-squeeze-no-nas-d-link-dns-320/feed/</wfw:commentRss>
+		<slash:comments>102</slash:comments>
+		</item>
+		<item>
+		<title>Instalando o fonz fun_plug no D-Link DNS-320 NAS</title>
+		<link>http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/</link>
+		<comments>http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/#comments</comments>
+		<pubDate>Sun, 21 Oct 2012 21:40:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Hardware]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[d-link]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[dlink]]></category>
+		<category><![CDATA[dns-320]]></category>
+		<category><![CDATA[dns320]]></category>
+		<category><![CDATA[fonz]]></category>
+		<category><![CDATA[fun_plug]]></category>
+		<category><![CDATA[nas]]></category>
+		<category><![CDATA[network attached storage]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[telnet]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=486</guid>
+		<description><![CDATA[O NAS ou Network Attached Storage DNS-320 da D-Link é um servidor de arquivos muito bom e barato que me ajuda a sincronizar e compartilhar arquivos entre os diversos dispositivos na minha rede, como celulares, tablets, notebooks e desktops. A característica que mais gosto no DNS-320 é a possibilidade de rodar o Debian Linux Squeeze [&#8230;]]]></description>
+				<content:encoded><![CDATA[<div id="attachment_491" style="width: 310px" class="wp-caption alignleft"><a href="/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1.jpg"><img data-attachment-id="491" data-permalink="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/dns-320_a1_image-lside1/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1.jpg" data-orig-size="1281,1572" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;16&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;Canon EOS 7D&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;1291204464&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;50&quot;,&quot;iso&quot;:&quot;100&quot;,&quot;shutter_speed&quot;:&quot;0.008&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="DNS-320" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1-300x368.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1-600x736.jpg" class=" wp-image-491" title="DNS-320" src="/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1-300x368.jpg" alt="Network Attached Storage" width="300" height="368" srcset="http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1-300x368.jpg 300w, http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1-600x736.jpg 600w, http://localhost:8080/wp-content/uploads/2012/10/DNS-320_A1_Image-LSide1.jpg 1281w" sizes="(max-width: 300px) 100vw, 300px" /></a><p class="wp-caption-text">D-Link DNS-320 NAS</p></div>
+<p>O <strong>NAS</strong> ou <strong>N</strong>etwork <strong>A</strong>ttached <strong>S</strong>torage DNS-320 da D-Link é um servidor de arquivos muito bom e barato que me ajuda a sincronizar e compartilhar arquivos entre os diversos dispositivos na minha rede, como celulares, tablets, notebooks e desktops.</p>
+<p>A característica que mais gosto no DNS-320 é a possibilidade de rodar o Debian Linux Squeeze nele.</p>
+<p>Não vou discutir muito sobre as suas especificações e funcionalidades pois considero que se você encontrou esta página provavelmente é porque já conhece o equipamento. Caso contrário, neste <a title="DNS-320" href="http://www.dlink.com.br/produtos-detalhes/items/dns-320.html" target="_blank">link</a> você encontrará as suas especificações.</p>
+<p>Este tutorial é dividido em duas partes: esta primeira parte abrange a atualização de firmware e a instalação do fonz fun_plug. A segunda parte abrange a instalação e configuração do Debian Linux Squeeze. A intenção é extrair o máximo do hardware. Ter mais controle sobre as configurações e instalar novos software e recursos no seu sistema.</p>
+<p><strong>Então, mãos à obra!</strong></p>
+<p><span class="dropcap radius-5">Primeiro passo: Atualizar firmware.</span><div class="clear"></div><br />
+O firmware mais atual no momento é o <strong>2.03</strong>. Este firmware resolve alguns problemas citados por outros usuários do fórum da D-Link. Comigo não tive problemas com este NAS mas mesmo assim optei por usar a versão mais atual. Faça o download do firmware no link abaixo:</p>
+<p><a title="DNS-320 Firmware Update" href="ftp://ftp.dlink.com/Multimedia/dns320/Firmware/dns320_FW_203" target="_blank">ftp://ftp.dlink.com/Multimedia/dns320/Firmware/dns320_FW_203</a></p>
+<p>Entre na administração do NAS e vá em System Management e Firmware Upgrade. Anexe o arquivo dns320_FW_203 e clique em apply.</p>
+<div id="attachment_499" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300.jpg"><img data-attachment-id="499" data-permalink="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/screenshot-from-2012-10-21-061300/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300.jpg" data-orig-size="1671,963" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Atualizando o Firmware" data-image-description="&lt;p&gt;Atualizando o Firmware&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300-300x172.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300-600x345.jpg" class="wp-image-499 " title="Atualizando o Firmware" src="/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300-600x345.jpg" alt="Atualizando o Firmware" width="600" height="345" srcset="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300-600x345.jpg 600w, http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061300-300x172.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Atualizando o Firmware</p></div>
+<div id="attachment_500" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535.jpg"><img data-attachment-id="500" data-permalink="http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/screenshot-from-2012-10-21-061535/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535.jpg" data-orig-size="1671,966" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Firmware Atualizado" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535-300x173.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535-600x346.jpg" class="size-large wp-image-500" title="Firmware Atualizado" src="/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535-600x346.jpg" alt="Firmware Atualizado" width="600" height="346" srcset="http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535-600x346.jpg 600w, http://localhost:8080/wp-content/uploads/2012/10/Screenshot-from-2012-10-21-061535-300x173.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Firmware Atualizado</p></div>
+<p><span class="dropcap radius-5">Segundo passo: Instalação do Fonz Fun_Plug</span><div class="clear"></div></p>
+<p>Não sei por que diabos se chama <em>fonz fun_plug</em> e nem porque não é algo fornecido pela D-Link apesar de estar mencionado no site, manuais, fórum, etc.<br />
+O fun_plug é um script que o NAS procura na raiz do Volume_1 e executa se encontrar. Com este fun_plug você pode adicionar mais funções ao seu NAS como telnet, ssh, apache, php, etc. Veja a lista de pacotes disponíveis neste link:</p>
+<p><a title="pacotes fonz fun_plug" href="http://www.inreto.de/dns323/fun-plug/0.7/arm/PACKAGES.html" target="_blank">http://www.inreto.de/dns323/fun-plug/0.7/arm/PACKAGES.html</a></p>
+<p>A raiz do site do fonz fun_plug é:<br />
+<a title="fonz fun_plug" href="http://www.inreto.de/dns323/fun-plug/" target="_blank">http://www.inreto.de/dns323/fun-plug/</a></p>
+<p>Apesar de todos os tutoriais encontrados na net apontarem para a versão 0.5 vamos usar a 0.7 pelo motivo óbvio: gosto de versões atualizadas! Baixe os seguintes arquivos:</p>
+<p><a href="http://www.inreto.de/dns323/fun-plug/0.7/arm/fun_plug" target="_blank">http://www.inreto.de/dns323/fun-plug/0.7/arm/fun_plug</a><br />
+<a href="http://www.inreto.de/dns323/fun-plug/0.7/arm/fun_plug.tgz" target="_blank">http://www.inreto.de/dns323/fun-plug/0.7/arm/fun_plug.tgz</a></p>
+<p>Edite o script fun_plug alterando:<br />
+<em>/mnt/HD_a2</em><br />
+para:<br />
+<em>/mnt/HD/HD_a2</em></p>
+<p>Faça uma cópia do script <em>fun_plug</em> com o nome: <em>fun_plug.ffp</em></p>
+<p>e coloque os 3 arquivos em <em>\\DNS-device\Volume_1</em> onde &#8220;DNS-device&#8221; é o IP do seu NAS. <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Reinicie o NAS pela interface de administração WEB: <em>Management &gt; System Management &gt; System Settings &gt; Restart</em></p>
+<p><span class="dropcap radius-5">Terceiro Passo: Conectar via Telnet</span><div class="clear"></div></p>
+<p>Se tudo der certo o arquivo <em>fun_plug.tgz</em> terá sido descompactado na pasta <em>ffp</em> e será possível conectar ao NAS por telnet.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Altere 192.168.0.2 para o IP do seu NAS
+ telnet 192.168.0.2
+</pre>
+<p>Agora que você está conectado ao NAS, vamos alterar a senha de root e configurar seu shell e pasta home.</p>
+<pre class="brush: bash; title: ; notranslate">
+pwconv
+ passwd
+ usermod -s /ffp/bin/sh root
+ mkdir -p /ffp/home/root/
+
+# Ignore o erro
+ usermod -d /ffp/home/root/ root
+
+# Vamos logar como root
+ login
+</pre>
+<p>Se tudo funcionar é hora de configurar o ambiente para guardar as alterações caso contrário tudo volta como antes no próximo reboot.</p>
+<p>Você vai precisar executar um script para isso. Ele está hospedado no link <a href="http://wolf-u.li/u/172/" target="_blank">http://wolf-u.li/u/172/</a>. Caso o link esteja funcionando ainda basta usar o wget para fazer o download:</p>
+<pre class="brush: bash; title: ; notranslate">
+wget http://wolf-u.li/u/172/ -O /ffp/sbin/store-passwd.sh
+</pre>
+<p>Caso o link tenha saido do ar eu copiei o conteúdo do script abaixo:</p>
+<pre class="brush: bash; title: ; notranslate">
+#!/ffp/bin/sh
+
+PATH=/ffp/sbin:/ffp/bin:$PATH
+
+if [[ -d /usr/local/config/ ]]; then
+	echo &quot;Saving Userdata to /usr/local/config/&quot;
+	cp -f /etc/passwd /usr/local/config/
+	cp -f /etc/group /usr/local/config/
+	cp -f /etc/shadow /usr/local/config/
+	cp -f /etc/samba/smbpasswd /usr/local/config/
+else
+	echo &quot;Saving Userdata to flash storage&quot;
+	echo &quot;Mounting flash ...&quot;
+	mount -t minix /dev/mtdblock0 /sys/mtd1
+	mount -t minix /dev/mtdblock1 /sys/mtd2
+	echo &quot;Updating files ...&quot;
+	for d in /usr/local/config /sys/mtd1 /sys/mtd2 /mnt/HD_a4/.systemfile/AccountFile /mnt/HD_b4/.systemfile/AccountFile; do
+		if [ -d &quot;$d&quot; ]; then
+			for f in /etc/passwd /etc/group /etc/shadow /etc/samba/smbpasswd; do
+				b=$(basename $f)
+				if [ -e &quot;$d/$b&quot; ]; then
+					echo &quot;  $d/$b&quot;
+					cp -f $f $d
+				fi
+			done
+		fi
+	done
+	echo &quot;Unmounting flash ...&quot;
+	sync
+	umount /sys/mtd1
+	umount /sys/mtd2
+fi
+</pre>
+<pre class="brush: bash; title: ; notranslate">
+# Crie e cole o conteúdo em /ffp/sbin/store-passwd.sh
+vi /ffp/sbin/store-passwd.sh
+</pre>
+<p>Agora basta executar o script:</p>
+<pre class="brush: bash; title: ; notranslate">store-passwd.sh</pre>
+<p><span class="dropcap radius-5">Quarto Passo: Habilitar o SSH</span><div class="clear"></div></p>
+<pre class="brush: bash; title: ; notranslate">
+chmod a+x /ffp/start/sshd.sh
+sh /ffp/start/sshd.sh start
+</pre>
+<p><span class="dropcap radius-5">Quinto Passo: Desabilitar o Telnet</span><div class="clear"></div></p>
+<p>Saia da sessão do telnet digitando exit duas vezes e faça o login via ssh.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Substitua 192.168.0.2 pelo ip do seu NAS
+ssh root@192.168.0.2
+
+# Desabilite o telnet
+chmod -x /ffp/start/telnetd.sh
+
+# Feche a sessão
+exit
+</pre>
+<p>Agora reinicie o NAS para testar.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/instalando-o-fonz-fun_plug-no-d-link-dns-320-nas/feed/</wfw:commentRss>
+		<slash:comments>96</slash:comments>
+		</item>
+	</channel>
+</rss>

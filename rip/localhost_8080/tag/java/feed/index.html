@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>java &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/java/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Configurando HTTPS no Wildfly</title>
+		<link>http://localhost:8080/configurando-https-no-wildfly/</link>
+		<comments>http://localhost:8080/configurando-https-no-wildfly/#comments</comments>
+		<pubDate>Mon, 04 May 2015 15:29:26 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Java]]></category>
+		<category><![CDATA[aplicação]]></category>
+		<category><![CDATA[https]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[servidor]]></category>
+		<category><![CDATA[ssl]]></category>
+		<category><![CDATA[standalone]]></category>
+		<category><![CDATA[undertow]]></category>
+		<category><![CDATA[wildfly]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=790</guid>
+		<description><![CDATA[Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção. Estou usando o Wildfly 8.2.0.Final. A primeira coisa [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção.</p>
+<p>Estou usando o Wildfly 8.2.0.Final.</p>
+<ol>
+<li>A primeira coisa a fazer é entrar no diretório da instalação do Wildfly, na pasta <em><strong>./standalone/configuration/</strong></em>  e executar o seguinte comando:
+<pre class="brush: bash; title: ; notranslate">keytool -genkeypair -alias serverkey -keyalg RSA -keysize 2048 -validity 7360 -keystore localhost.keystore -keypass mypassword -storepass mypassword -dname &quot;cn=Server Administrator,o=Acme,c=GB&quot;</pre>
+</li>
+<li>Edite o arquivo <em><strong>./standalone/configuration/standalone.xml</strong></em> e adicione o seguinte xml dentro de <em><strong>security-realms</strong></em>:
+<pre class="brush: xml; title: ; notranslate">&lt;security-realm name=&quot;UndertowRealm&quot;&gt;
+	&lt;server-identities&gt;
+		&lt;ssl&gt;
+			&lt;keystore path=&quot;localhost.keystore&quot; relative-to=&quot;jboss.server.config.dir&quot; keystore-password=&quot;mypassword&quot;/&gt;
+		&lt;/ssl&gt;
+	&lt;/server-identities&gt;
+&lt;/security-realm&gt;</pre>
+</li>
+<li>Em seguida adicione a linha abaixo dentro de subsystem undertow -&gt; server
+<pre class="brush: xml; title: ; notranslate">&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;</pre>
+<p>Veja como ficou a entrada completa:</p>
+<pre class="brush: xml; title: ; notranslate">&lt;subsystem xmlns=&quot;urn:jboss:domain:undertow:1.2&quot;&gt;
+	&lt;buffer-cache name=&quot;default&quot;/&gt;
+	&lt;server name=&quot;default-server&quot;&gt;
+		&lt;http-listener name=&quot;default&quot; socket-binding=&quot;http&quot;/&gt;
+		&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;
+		&lt;host name=&quot;default-host&quot; alias=&quot;localhost&quot;&gt;
+			&lt;location name=&quot;/&quot; handler=&quot;welcome-content&quot;/&gt;
+			&lt;filter-ref name=&quot;server-header&quot;/&gt;
+			&lt;filter-ref name=&quot;x-powered-by-header&quot;/&gt;
+		&lt;/host&gt;
+	&lt;/server&gt;
+	&lt;servlet-container name=&quot;default&quot;&gt;
+		&lt;jsp-config/&gt;
+		&lt;websockets/&gt;
+	&lt;/servlet-container&gt;
+	&lt;handlers&gt;
+		&lt;file name=&quot;welcome-content&quot; path=&quot;${jboss.home.dir}/welcome-content&quot;/&gt;
+	&lt;/handlers&gt;
+	&lt;filters&gt;
+		&lt;response-header name=&quot;server-header&quot; header-name=&quot;Server&quot; header-value=&quot;WildFly/8&quot;/&gt;
+		&lt;response-header name=&quot;x-powered-by-header&quot; header-name=&quot;X-Powered-By&quot; header-value=&quot;Undertow/1&quot;/&gt;
+	&lt;/filters&gt;
+&lt;/subsystem&gt;</pre>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>Pronto, reinicie o servidor e acesse <a href="https://localhost:8443" target="_blank">https://localhost:8443</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/configurando-https-no-wildfly/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>O primeiro Post a gente nunca esquece&#8230;</title>
+		<link>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/</link>
+		<comments>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/#comments</comments>
+		<pubDate>Tue, 29 May 2012 02:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[Brain]]></category>
+		<category><![CDATA[centos]]></category>
+		<category><![CDATA[Conectiva]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[Dualline]]></category>
+		<category><![CDATA[glassfish]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[java ee]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[Mandriva]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[redhat]]></category>
+		<category><![CDATA[sctel]]></category>
+		<category><![CDATA[Slackware]]></category>
+		<category><![CDATA[totvs]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=18</guid>
+		<description><![CDATA[Saudações terráqueos! Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! 🙂 Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux. Conheço Linux desde 1999 quando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Saudações terráqueos!</p>
+<p>Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux.</p>
+<p>Conheço Linux desde 1999 quando fiz um curso do Conectiva Linux (hoje <a title="Conectiva / Mandriva Linux" href="https://pt.wikipedia.org/wiki/Mandriva_Linux" target="_blank">Mandriva</a>) na <a title="Dualline" href="http://www.dualline.com.br/" target="_blank">Dualline</a>, onde trabalhei na época. Inclusive meu professor foi o <a title="Augusto Campos" href="https://plus.google.com/105003069076649186723/posts" target="_blank">Augusto Campos</a>, mais conhecido como Brain do site <a title="br-linux.org" href="http://br-linux.org/" target="_blank">br-linux.org</a>. Depois do curso administrei um servidor web com <a title="Slackware" href="http://www.slackware.com" target="_blank">Linux Slackware</a> na SCTEL uma empresa de telecomunicações que trabalhei depois que sai da Dualline e além disso já fiz várias instalações de servidores como prestador de serviços de infra-estrutura de rede. Normalmente eu instalava o RedHat ou o CentOS depois que foi lançado. Apesar de ter contato com Linux durante toda a minha vida profissional até 2011 não tinha usado em minha máquina pessoal. Passei a usar o <a title="Ubuntu" href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> como meu sistema principal em uma máquina dual boot com o Windows 7 quando fui trabalhar com desenvolvimento web Java na <a title="Totvs" href="http://www.totvs.com/" target="_blank">Totvs</a> (sim, eu já trabalhei em quinhentas empresas diferentes e isso é assunto para um outro post). Tomei esta decisão após constatar que os servidores de aplicação Java como <a title="JBoss" href="http://www.jboss.org/" target="_blank">JBoss</a>, da RedHat, ou o <a title="Glassfish" href="http://glassfish.java.net/" target="_blank">GlassFish</a>, da Oracle, se integravam melhor ao Linux do que ao Windows. Aliás é comum um servidor Java Enterprise rodar no Linux.</p>
+<p>Então, minha experiência diária com o Linux foi com o Ubuntu logo após da adoção do Unity como interface gráfica padrão. Não sei se foi culpa minha, do Unity, dos milhões de tweeks que fiz no sistema mas a minha relação com o Ubuntu sempre esteve longe de ser estável. Por isso agora resolvi usar o Linux Mint Debian pois ouvi dizer que é mais estável e um pouco mais amigável do que o Debian mesmo. Então o que me motivou a escrever este blog é que toda a vez que formato minha máquina para instalar uma distro diferente do Linux faço vários ajustes no sistema e instalo vários programas e depois esqueço como se faz :-P. Desta vez resolvi anotar!</p>
+<p>Também posso compartilhar minhas experiências com programação Web e Mobile e algumas notícias sobre assuntos pertinentes ou qualquer outra coisa que vier a cabeça.</p>
+<p>Espero que gostem do blog para ele servir para algo mais do que apenas minhas anotações.</p>
+<p>Abraços,</p>
+<p>Leonardo Lima de Vasconcellos</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

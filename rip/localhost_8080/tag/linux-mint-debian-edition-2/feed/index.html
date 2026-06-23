@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>linux mint debian edition &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/linux-mint-debian-edition-2/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>apt-file search: resolvendo problemas de &#8220;No such file or directory&#8221;</title>
+		<link>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/</link>
+		<comments>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/#respond</comments>
+		<pubDate>Fri, 07 Sep 2012 20:12:05 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[apt-file]]></category>
+		<category><![CDATA[apt-file search]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[build]]></category>
+		<category><![CDATA[compilar]]></category>
+		<category><![CDATA[configure]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[make]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=474</guid>
+		<description><![CDATA[Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make. Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make.</p>
+<p>Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim resolver o problema.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Instale o apt-file.
+sudo apt-get update
+sudo apt-get install apt-file
+
+# Atualize o cache do apt-file.
+sudo apt-file update
+
+# Procure pelo arquivo.
+sudo apt-file search StdSel.h
+    libxmu-headers: /usr/include/X11/Xmu/StdSel.h
+
+# Agora instale o pacote que contém o arquivo.
+sudo apt-get install libxmu-headers
+
+# Opcionalmente apague o cache do apt-file para liberar espaço em disco.
+sudo apt-file purge
+</pre>
+<p>Pronto! Simples mas ajuda muito.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Um prompt bash colorido com retorno dos comandos em smiles</title>
+		<link>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/</link>
+		<comments>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/#respond</comments>
+		<pubDate>Wed, 05 Sep 2012 19:56:58 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[prompt]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=467</guid>
+		<description><![CDATA[Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc. Achei interessante um prompt colorido que também exibe um smile 😉 verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha 🙁 se o comando retornou 1 (falha). [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc.</p>
+<p>Achei interessante um prompt colorido que também exibe um smile <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /> se o comando retornou 1 (falha).</p>
+<p>Para isso edite o arquivo ~/.bashrc (crie o arquivo caso não exista).</p>
+<pre class="brush: bash; title: ; notranslate">
+nano ~/.bashrc
+</pre>
+<p>Adicione as seguintes linhas ao arquivo:</p>
+<pre class="brush: bash; title: ; notranslate">
+PS1=&quot;\`if [ \$? = 0 ]; then echo -e '\[\e[01;32m\]:)'; else echo -e '\[\e[01;31m\]:('; fi\` \[\e[01;34m\][\[\e[01;32m\]\u@\h \[\e[01;34m\]\w\[\e[01;34m\]] $\[\e[00m\] &quot;
+</pre>
+<p>Para ver o resultado execute:</p>
+<pre class="brush: bash; title: ; notranslate">
+source ~/.bashrc
+</pre>
+<p>Pronto! Veja o resultado:<br />
+<div id="attachment_470" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/09/color_bash_prompt.jpg"><img data-attachment-id="470" data-permalink="http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/color_bash_prompt/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg" data-orig-size="721,527" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Prompt colorido" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" class="size-large wp-image-470" title="Prompt colorido" src="/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" alt="Prompt colorido" width="600" height="438" srcset="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg 600w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg 300w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg 721w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Prompt colorido com smile!</p></div></p>
+<p>Fonte e mais informações:</p>
+<p><a title="Color Bash Prompt" href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt" target="_blank">https://wiki.archlinux.org/index.php/Color_Bash_Prompt</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>O primeiro Post a gente nunca esquece&#8230;</title>
+		<link>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/</link>
+		<comments>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/#comments</comments>
+		<pubDate>Tue, 29 May 2012 02:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[Brain]]></category>
+		<category><![CDATA[centos]]></category>
+		<category><![CDATA[Conectiva]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[Dualline]]></category>
+		<category><![CDATA[glassfish]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[java ee]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[Mandriva]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[redhat]]></category>
+		<category><![CDATA[sctel]]></category>
+		<category><![CDATA[Slackware]]></category>
+		<category><![CDATA[totvs]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=18</guid>
+		<description><![CDATA[Saudações terráqueos! Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! 🙂 Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux. Conheço Linux desde 1999 quando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Saudações terráqueos!</p>
+<p>Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux.</p>
+<p>Conheço Linux desde 1999 quando fiz um curso do Conectiva Linux (hoje <a title="Conectiva / Mandriva Linux" href="https://pt.wikipedia.org/wiki/Mandriva_Linux" target="_blank">Mandriva</a>) na <a title="Dualline" href="http://www.dualline.com.br/" target="_blank">Dualline</a>, onde trabalhei na época. Inclusive meu professor foi o <a title="Augusto Campos" href="https://plus.google.com/105003069076649186723/posts" target="_blank">Augusto Campos</a>, mais conhecido como Brain do site <a title="br-linux.org" href="http://br-linux.org/" target="_blank">br-linux.org</a>. Depois do curso administrei um servidor web com <a title="Slackware" href="http://www.slackware.com" target="_blank">Linux Slackware</a> na SCTEL uma empresa de telecomunicações que trabalhei depois que sai da Dualline e além disso já fiz várias instalações de servidores como prestador de serviços de infra-estrutura de rede. Normalmente eu instalava o RedHat ou o CentOS depois que foi lançado. Apesar de ter contato com Linux durante toda a minha vida profissional até 2011 não tinha usado em minha máquina pessoal. Passei a usar o <a title="Ubuntu" href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> como meu sistema principal em uma máquina dual boot com o Windows 7 quando fui trabalhar com desenvolvimento web Java na <a title="Totvs" href="http://www.totvs.com/" target="_blank">Totvs</a> (sim, eu já trabalhei em quinhentas empresas diferentes e isso é assunto para um outro post). Tomei esta decisão após constatar que os servidores de aplicação Java como <a title="JBoss" href="http://www.jboss.org/" target="_blank">JBoss</a>, da RedHat, ou o <a title="Glassfish" href="http://glassfish.java.net/" target="_blank">GlassFish</a>, da Oracle, se integravam melhor ao Linux do que ao Windows. Aliás é comum um servidor Java Enterprise rodar no Linux.</p>
+<p>Então, minha experiência diária com o Linux foi com o Ubuntu logo após da adoção do Unity como interface gráfica padrão. Não sei se foi culpa minha, do Unity, dos milhões de tweeks que fiz no sistema mas a minha relação com o Ubuntu sempre esteve longe de ser estável. Por isso agora resolvi usar o Linux Mint Debian pois ouvi dizer que é mais estável e um pouco mais amigável do que o Debian mesmo. Então o que me motivou a escrever este blog é que toda a vez que formato minha máquina para instalar uma distro diferente do Linux faço vários ajustes no sistema e instalo vários programas e depois esqueço como se faz :-P. Desta vez resolvi anotar!</p>
+<p>Também posso compartilhar minhas experiências com programação Web e Mobile e algumas notícias sobre assuntos pertinentes ou qualquer outra coisa que vier a cabeça.</p>
+<p>Espero que gostem do blog para ele servir para algo mais do que apenas minhas anotações.</p>
+<p>Abraços,</p>
+<p>Leonardo Lima de Vasconcellos</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

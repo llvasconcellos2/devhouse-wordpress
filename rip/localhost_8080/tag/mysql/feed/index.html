@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>mysql &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/mysql/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Concatenar várias linhas de um Select em uma única linha e gerar um JSON de uma Query [MySQL]</title>
+		<link>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/</link>
+		<comments>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/#respond</comments>
+		<pubDate>Mon, 22 Sep 2014 20:13:18 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[concat]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[sql]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=732</guid>
+		<description><![CDATA[Para concatenar várias linhas em uma: Sendo assim para gerar um JSON de uma query:]]></description>
+				<content:encoded><![CDATA[<p>Para concatenar várias linhas em uma:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT GROUP_CONCAT(COLUNA1) FROM TABELA;</pre>
+<p>Sendo assim para gerar um JSON de uma query:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT 
+	CONCAT('[', 
+		GROUP_CONCAT(
+			CONCAT('{&quot;coluna1&quot;:&quot;', COLUNA1, '&quot;,'), 
+			CONCAT('&quot;coluna2&quot;:&quot;', COLUNA2, '&quot;}')
+		)
+	,']') AS JSON 
+FROM TABELA;</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-mysql/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Update com Join no MySQL</title>
+		<link>http://localhost:8080/update-com-join-no-mysql/</link>
+		<comments>http://localhost:8080/update-com-join-no-mysql/#respond</comments>
+		<pubDate>Sat, 20 Sep 2014 23:22:18 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[coluna]]></category>
+		<category><![CDATA[inner]]></category>
+		<category><![CDATA[inner join]]></category>
+		<category><![CDATA[join]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[tabela]]></category>
+		<category><![CDATA[update]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=728</guid>
+		<description><![CDATA[Digamos que você queria atualizar uma coluna de uma tabela inteira com valores de outra tabela. É possível fazer um UPDATE com INNER JOIN Veja abaixo: Simples!]]></description>
+				<content:encoded><![CDATA[<p>Digamos que você queria atualizar uma coluna de uma tabela inteira com valores de outra tabela. É possível fazer um UPDATE com INNER JOIN Veja abaixo:</p>
+<pre class="brush: sql; title: ; notranslate">UPDATE
+    tabela_1
+INNER JOIN
+    tabela_2 ON tabela_2.tabela_1.id = tabela_1.id
+SET
+    tabela_1.nome_do_campo = tabela_2.nome_do_campo</pre>
+<p>Simples!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/update-com-join-no-mysql/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Query para encontrar uma coluna em todo o banco [MySQL]</title>
+		<link>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-mysql/</link>
+		<comments>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-mysql/#respond</comments>
+		<pubDate>Sat, 20 Sep 2014 23:05:48 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[MySQL]]></category>
+		<category><![CDATA[coluna]]></category>
+		<category><![CDATA[encontrar]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[query]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[tabela]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=726</guid>
+		<description><![CDATA[Dica rápida para MySQL:]]></description>
+				<content:encoded><![CDATA[<p>Dica rápida para MySQL:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT DISTINCT 
+    TABLE_NAME AS 'tabela',
+    COLUMN_NAME AS 'coluna'
+FROM 
+    INFORMATION_SCHEMA.COLUMNS
+WHERE 
+    COLUMN_NAME LIKE '%parte_do_nome_da_coluna%'
+AND 
+    TABLE_SCHEMA='NOME_DO_BANCO';</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-mysql/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Trabalhando com absolute path em imagens e links de posts do WordPress</title>
+		<link>http://localhost:8080/trabalhando-com-absolute-path-em-imagens-e-links-de-posts-do-wordpress/</link>
+		<comments>http://localhost:8080/trabalhando-com-absolute-path-em-imagens-e-links-de-posts-do-wordpress/#respond</comments>
+		<pubDate>Wed, 30 May 2012 04:04:12 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[absolute]]></category>
+		<category><![CDATA[mysql]]></category>
+		<category><![CDATA[mysql workbench]]></category>
+		<category><![CDATA[path]]></category>
+		<category><![CDATA[phpmyadmin]]></category>
+		<category><![CDATA[plugin]]></category>
+		<category><![CDATA[search and replace]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=172</guid>
+		<description><![CDATA[Estou iniciando o desenvolvimento deste blog que você lê e no momento uso ele no meu ambiente de desenvolvimento. Tenho apache2, php e mysql instalado no meu Linux Mint Debian e o WordPress está rodando em localhost. A primeira vez que fui testar o site em outra maquina da rede usei o IP da máquina [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Estou iniciando o desenvolvimento deste blog que você lê e no momento uso ele no meu ambiente de desenvolvimento. Tenho apache2, php e mysql instalado no meu Linux Mint Debian e o<br />
+WordPress está rodando em localhost. A primeira vez que fui testar o site em outra maquina da rede usei o IP da máquina servidor, www.devhouse.com.br e percebi que o CSS e nenhuma imagem estava funcionando.<br />
+O CSS foi resolvido editando as configurações do site e alterando de  para  em &#8220;Endereço do WordPress&#8221; nas configurações gerais conforme a figura abaixo:</p>
+<div id="attachment_176" style="width: 579px" class="wp-caption alignleft"><img data-attachment-id="176" data-permalink="http://localhost:8080/trabalhando-com-absolute-path-em-imagens-e-links-de-posts-do-wordpress/config-gerais-wordpress-endereco-site/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site.jpg" data-orig-size="569,282" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Configurações Gerais do WordPress" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site-300x148.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site.jpg" class="size-full wp-image-176" title="Configurações Gerais do WordPress" src="/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site.jpg" alt="Configurações Gerais do WordPress" width="569" height="282" srcset="http://localhost:8080/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site.jpg 569w, http://localhost:8080/wp-content/uploads/2012/05/config-gerais-wordpress-endereco-site-300x148.jpg 300w" sizes="(max-width: 569px) 100vw, 569px" /><p class="wp-caption-text">Configurações Gerais do WordPress.</p></div>
+<p><div class="clear"></div><br />
+<div class="br-10"></div></p>
+<p>Após a alteração o site apareceu corretamente mas as imagens nos posts não. Procurando na internet verifiquei que é uma característica do WordPress para SEO e facilitar a vida de alguns plugins. O problema que veja é imagine se um dia eu resolver mudar de domínio? Imagina o problema que seria depois de anos de publicação ter que alterar todos os posts? Bom é isso mesmo que teremos que fazer mas de uma forma mais facil: rodando um pequeno comando sql no banco do WordPress.</p>
+<p>Você pode abrir o phpMyAdmin, o MySQL Workbench ou via linha de comando. Execute a seguinte sentença SQL:</p>
+<pre class="brush: sql; title: Código SQL; notranslate">update wp_posts set post_content = replace(post_content,'','')</pre>
+<p><div class="clear"></div><br />
+Substitua &#8220;&#8221; pelo seu endereço.<br />
+<div class="clear"></div><br />
+<div class="message-box radius-5 message-box-alert"><p class="icon radius-5">Caso você não tenha acesso ao banco de dados pode instalar o plugin <a href="http://wordpress.org/extend/plugins/search-and-replace/" title="Plugin Search and Replace do WordPress" target="_blank">Search and Replace</a> que tem como função buscar strings em todo o site e fazer a substituição.</p></div><br />
+<div class="clear"></div></p>
+<p>É isso!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/trabalhando-com-absolute-path-em-imagens-e-links-de-posts-do-wordpress/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

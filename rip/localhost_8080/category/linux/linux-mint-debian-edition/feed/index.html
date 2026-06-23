@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux Mint Debian Edition &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/category/linux/linux-mint-debian-edition/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Copiar / Download de um site inteiro com WGET [ripar]</title>
+		<link>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/</link>
+		<comments>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/#respond</comments>
+		<pubDate>Sat, 11 Oct 2014 08:44:03 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[entire]]></category>
+		<category><![CDATA[rip]]></category>
+		<category><![CDATA[site]]></category>
+		<category><![CDATA[website]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=765</guid>
+		<description><![CDATA[Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando: &#160; o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio. O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com. A explicação [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:</p>
+<p>&nbsp;</p>
+<pre class="brush: bash; title: ; notranslate">$ wget \
+     --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36&quot; \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains exemplo.com \
+     --no-parent \
+     -e robots=off \
+     --load-cookies=cookies.txt \
+         exemplo.com/blog</pre>
+<p>o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio.<br />
+O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com.</p>
+<p>A explicação dos parâmetros segue abaixo. Depois eu traduzo:</p>
+<p>&#8211;recursive: download the entire Web site.</p>
+<p>&#8211;domains website.org: don&#8217;t follow links outside website.org.</p>
+<p>&#8211;no-parent: don&#8217;t follow links outside the directory tutorials/html/.</p>
+<p>&#8211;page-requisites: get all the elements that compose the page (images, CSS and so on).</p>
+<p>&#8211;html-extension: save files with the .html extension.</p>
+<p>&#8211;convert-links: convert links so that they work locally, off-line.</p>
+<p>&#8211;restrict-file-names=windows: modify filenames so that they will work in Windows as well.</p>
+<p>&#8211;no-clobber: don&#8217;t overwrite any existing files (used in case the download is interrupted and<br />
+resumed).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Redimensionar Imagens em Lote no Linux [ImageMagick Batch Resize]</title>
+		<link>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/</link>
+		<comments>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/#comments</comments>
+		<pubDate>Mon, 05 May 2014 03:00:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[batch]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[imagemagick]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[resize]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=683</guid>
+		<description><![CDATA[O ImageMagick é um conjunto de ferramentas para manipulação e edição de imagens direto do shell. Nesta dica vamos falar apenas do comando convert que faz parte do ImageMagick. Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank" rel="noopener">ImageMagick</a> é um conjunto de ferramentas para manipulação e edição de imagens direto do shell.</p>
+<p>Nesta dica vamos falar apenas do comando <strong>convert</strong> que faz parte do ImageMagick.</p>
+<p>Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por isso diminui-las economiza tempo no upload.</p>
+<p>Então vamos lá: A primeira coisa é instalar o imagemagick:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install imagemagick
+</pre>
+<p>Com o imagemagick instalado entre na pasta que contém mas imagens e crie uma pasta que chamaremos neste exemplo de &#8220;reduzidas&#8221; e execute o seguinte comando alterando os parâmetros de acordo com suas preferências.</p>
+<pre class="brush: bash; title: ; notranslate">
+mkdir reduzidas
+find . -maxdepth 1 -iname &quot;*.jpg&quot; | xargs -l -i convert -resize 1920x1080 -quality 70% -density 72 {} ./reduzidas/{}
+</pre>
+<ul>
+<li>find . -maxdepth 1 -iname &#8220;*.jpg&#8221;: este comando lista as imagens com extensão jpg apenas no diretório atual, sem entrar nos subdiretórios (-maxdepth 1).</li>
+<li>xargs -l -i executa o comando <strong>convert</strong> fornecendo os nomes de arquivo que o  comando <strong>find</strong> encontrou.</li>
+<li>convert é o comando da imagemagick para conversão de formatos.</li>
+<li>-resize 1920&#215;1080: altere para as dimensões que o arquivo ficará após o redimensionamento.</li>
+<li>-quality 70%: aplicável apenas para JPG. Altere para a qualidade do jpg final. 0% &#8211; 100%.</li>
+<li>-density 72: DPI da imagem. No meu caso eu tenho várias imagens em 300 DPI e quero elas em 72. Você pode omitir a opção caso não precise alterar o dpi.</li>
+<li>./reduzidas/: diretório onde serão salvas as imagens reduzidas.</li>
+</ul>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Desabilitando o ipv6 no Debian</title>
+		<link>http://localhost:8080/desabilitando-o-ipv6-no-debian/</link>
+		<comments>http://localhost:8080/desabilitando-o-ipv6-no-debian/#respond</comments>
+		<pubDate>Mon, 26 Nov 2012 03:13:28 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[ipv6]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[sysctl]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=553</guid>
+		<description><![CDATA[Já tive problemas antes com o vncserver e o ipv6 e como ainda não uso ipv6&#8230; Esse comando vai desabilitar o ipv6 no próximo boot. Será necessário também comentar as entradas ipv6 do arquivo /etc/hosts.]]></description>
+				<content:encoded><![CDATA[<p>Já tive problemas antes com o vncserver e o ipv6 e como ainda não uso ipv6&#8230;</p>
+<pre class="brush: bash; title: ; notranslate">
+echo net.ipv6.conf.all.disable_ipv6=1 &gt; /etc/sysctl.d/disableipv6.conf
+# ou
+sysctl net.ipv6.conf.default.disable_ipv6
+</pre>
+<p>Esse comando vai desabilitar o ipv6 no próximo boot. Será necessário também comentar as entradas ipv6 do arquivo /etc/hosts.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/desabilitando-o-ipv6-no-debian/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>apt-file search: resolvendo problemas de &#8220;No such file or directory&#8221;</title>
+		<link>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/</link>
+		<comments>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/#respond</comments>
+		<pubDate>Fri, 07 Sep 2012 20:12:05 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[apt-file]]></category>
+		<category><![CDATA[apt-file search]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[build]]></category>
+		<category><![CDATA[compilar]]></category>
+		<category><![CDATA[configure]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[make]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=474</guid>
+		<description><![CDATA[Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make. Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make.</p>
+<p>Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim resolver o problema.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Instale o apt-file.
+sudo apt-get update
+sudo apt-get install apt-file
+
+# Atualize o cache do apt-file.
+sudo apt-file update
+
+# Procure pelo arquivo.
+sudo apt-file search StdSel.h
+    libxmu-headers: /usr/include/X11/Xmu/StdSel.h
+
+# Agora instale o pacote que contém o arquivo.
+sudo apt-get install libxmu-headers
+
+# Opcionalmente apague o cache do apt-file para liberar espaço em disco.
+sudo apt-file purge
+</pre>
+<p>Pronto! Simples mas ajuda muito.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Um prompt bash colorido com retorno dos comandos em smiles</title>
+		<link>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/</link>
+		<comments>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/#respond</comments>
+		<pubDate>Wed, 05 Sep 2012 19:56:58 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[prompt]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=467</guid>
+		<description><![CDATA[Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc. Achei interessante um prompt colorido que também exibe um smile 😉 verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha 🙁 se o comando retornou 1 (falha). [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se você gosta de personalizar seu sistema uma dica é alterar o prompt do bash. É possível adicionar cores, informações, data e hora, etc.</p>
+<p>Achei interessante um prompt colorido que também exibe um smile <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> verde se o comando executado retornou 0 (sucesso) ou uma cara triste vermelha <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f641.png" alt="🙁" class="wp-smiley" style="height: 1em; max-height: 1em;" /> se o comando retornou 1 (falha).</p>
+<p>Para isso edite o arquivo ~/.bashrc (crie o arquivo caso não exista).</p>
+<pre class="brush: bash; title: ; notranslate">
+nano ~/.bashrc
+</pre>
+<p>Adicione as seguintes linhas ao arquivo:</p>
+<pre class="brush: bash; title: ; notranslate">
+PS1=&quot;\`if [ \$? = 0 ]; then echo -e '\[\e[01;32m\]:)'; else echo -e '\[\e[01;31m\]:('; fi\` \[\e[01;34m\][\[\e[01;32m\]\u@\h \[\e[01;34m\]\w\[\e[01;34m\]] $\[\e[00m\] &quot;
+</pre>
+<p>Para ver o resultado execute:</p>
+<pre class="brush: bash; title: ; notranslate">
+source ~/.bashrc
+</pre>
+<p>Pronto! Veja o resultado:<br />
+<div id="attachment_470" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/09/color_bash_prompt.jpg"><img data-attachment-id="470" data-permalink="http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/color_bash_prompt/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg" data-orig-size="721,527" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Prompt colorido" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" class="size-large wp-image-470" title="Prompt colorido" src="/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg" alt="Prompt colorido" width="600" height="438" srcset="http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-600x438.jpg 600w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt-300x219.jpg 300w, http://localhost:8080/wp-content/uploads/2012/09/color_bash_prompt.jpg 721w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Prompt colorido com smile!</p></div></p>
+<p>Fonte e mais informações:</p>
+<p><a title="Color Bash Prompt" href="https://wiki.archlinux.org/index.php/Color_Bash_Prompt" target="_blank">https://wiki.archlinux.org/index.php/Color_Bash_Prompt</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/um-prompt-bash-colorido-com-retorno-dos-comandos-em-smiles/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Resolvendo erro update do mint-search-addon 2012.05.11</title>
+		<link>http://localhost:8080/resolvendo-erro-update-do-mint-search-addon-2012-05-11/</link>
+		<comments>http://localhost:8080/resolvendo-erro-update-do-mint-search-addon-2012-05-11/#respond</comments>
+		<pubDate>Wed, 22 Aug 2012 03:03:29 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=387</guid>
+		<description><![CDATA[O update manager está tendo problemas para atualizar o pacote mint-search-addon para a versão 2012.05.11. O mint-search-addon é um plugin de busca customizada para o firefox e no meu ver não é necessário para o sistema e o pior de tudo é ter que perder tempo resolvendo este problema. A mensagem apresentada é: An Error [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O update manager está tendo problemas para atualizar o pacote mint-search-addon para a versão 2012.05.11.<br />
+O mint-search-addon é um plugin de busca customizada para o firefox e no meu ver não é necessário para o sistema e o pior de tudo é ter que perder tempo resolvendo este problema.</p>
+<p>A mensagem apresentada é:</p>
+<pre>An Error ocurred
+The following details are provided:
+E: /var/cache/apt/archives/mint-search-addon_2012.05.11_all.deb: unable to open '/usr/lib/firefox-addons/extensions/mint-search-enhancer@linuxmint.com/install.rdf.dpkg-new': No such file or directory</pre>
+<div id="attachment_421" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/08/mint-search-addon-error.jpg"><img data-attachment-id="421" data-permalink="http://localhost:8080/resolvendo-erro-update-do-mint-search-addon-2012-05-11/mint-search-addon-error/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error.jpg" data-orig-size="783,552" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="mint-search-addon-error" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-300x211.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-600x422.jpg" class="size-large wp-image-421" title="mint-search-addon-error" src="/wp-content/uploads/2012/08/mint-search-addon-error-600x422.jpg" alt="mensagem de erro" width="600" height="422" srcset="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-600x422.jpg 600w, http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-300x211.jpg 300w, http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error.jpg 783w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Mensagem de erro.</p></div>
+<p>Clicando em <em>close</em> outra mensagem é apresentada:</p>
+<pre>Update is complete
+
+Not all changes and updates succeeded. For further details of the failure, please expand the 'Details' panel below.
+
+(Reading database ... 206768 files and directories currently installed.)
+Preparing to replace mint-search-addon 2011.08.15 (using .../mint-search-addon_2012.05.11_all.deb) ...
+Unpacking replacement mint-search-addon ...
+dpkg: error processing /var/cache/apt/archives/mint-search-addon_2012.05.11_all.deb (--unpack):
+unable to open '/usr/lib/firefox-addons/extensions/mint-search-enhancer@linuxmint.com/install.rdf.dpkg-new': No such file or directory
+configured to not write apport reports
+Errors were encountered while processing:
+/var/cache/apt/archives/mint-search-addon_2012.05.11_all.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+A package failed to install. Trying to recover:</pre>
+<div id="attachment_422" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/08/mint-search-addon-error-2.jpg"><img data-attachment-id="422" data-permalink="http://localhost:8080/resolvendo-erro-update-do-mint-search-addon-2012-05-11/mint-search-addon-error-2/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2.jpg" data-orig-size="787,560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="mint-search-addon-error-2" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2-300x213.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2-600x426.jpg" class="size-large wp-image-422" title="mint-search-addon-error-2" src="/wp-content/uploads/2012/08/mint-search-addon-error-2-600x426.jpg" alt="Mensagem de erro" width="600" height="426" srcset="http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2-600x426.jpg 600w, http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2-300x213.jpg 300w, http://localhost:8080/wp-content/uploads/2012/08/mint-search-addon-error-2.jpg 787w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Segunda mensagem de erro.</p></div>
+<div class="br-40"></div>
+<h2>Solução</h2>
+<hr />
+<p>Como eu disse, este pacote não é importante, então a minha solução é simplesmente removê-lo! <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo apt-get purge mint-search-addon
+$ sudo apt-get update
+</pre>
+<p>Espero que tenha ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/resolvendo-erro-update-do-mint-search-addon-2012-05-11/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Como instalar Gimp 2.8 no Debian / Linux Mint Debian Edition</title>
+		<link>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/</link>
+		<comments>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/#comments</comments>
+		<pubDate>Wed, 22 Aug 2012 01:34:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gimp]]></category>
+		<category><![CDATA[gimp 2.8]]></category>
+		<category><![CDATA[linux mint]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=363</guid>
+		<description><![CDATA[O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios do Mint mas já está disponível no Debian Testing e portanto vamos usá-lo.</p>
+<p>Primeiro remova a versão antiga</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get purge gimp*</pre>
+<p>Agora adicione o repositório do Debian Testing.</p>
+<pre class="brush: bash; title: ; notranslate">sudo add-apt-repository &quot;deb http://ftp.debian.org/debian/ testing main contrib non-free&quot;</pre>
+<p>E finalmente instale o Gimp</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get update &amp;&amp; sudo apt-get install gimp</pre>
+<p>Caso apresente problemas de dependências use o aptitude e escolha a opção onde todos os pacotes são atualizados para corrigir o problema. No meu caso foi a terceira opção.</p>
+<pre class="brush: bash; title: ; notranslate">sudo aptitude install gimp</pre>
+<p>O gimp 2.8 é rápido para abrir. Aqui funcionou e ai?</p>
+<div id="attachment_417" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/08/gimp.jpg"><img data-attachment-id="417" data-permalink="http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/gimp/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg" data-orig-size="1328,761" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Gimp 2.8" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg" class="size-large wp-image-417" title="Gimp 2.8" src="/wp-content/uploads/2012/08/gimp-600x343.jpg" alt="about gimp 2.8" width="600" height="343" srcset="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg 600w, http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg 300w, http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg 1328w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Gimp em janela única.</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Arquivos desktop: colocando seu aplicativo nos menus do GNOME</title>
+		<link>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/</link>
+		<comments>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 21:03:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=341</guid>
+		<description><![CDATA[O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome.</p>
+<p>Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.</p>
+<p>A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:</p>
+<p><a title="Gnome Desktop Files" href="http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR" target="_blank">http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR</a></p>
+<p><a title="Free Desktop" href="http://standards.freedesktop.org/menu-spec/latest/apa.html" target="_blank">http://standards.freedesktop.org/menu-spec/latest/apa.html</a></p>
+<p><a title="Nautilus Actions" href="http://www.nautilus-actions.org/?q=node/377" target="_blank">http://www.nautilus-actions.org/?q=node/377</a></p>
+<p>Para essa demonstração vou criar um arquivo .desktop para o Google Chrome. Quero que o Chrome entre no menu Internet igual ao Firefox e por isso vou usá-lo como base.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo cp /usr/share/applications/firefox.desktop /usr/share/applications/google-chrome.desktop
+$ sudo pluma /usr/share/applications/google-chrome.desktop
+</pre>
+<p>O arquivo original estava assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[ar]=متصفح الوِب فَيَرفُكْس
+Name[ca]=Navegador web Firefox
+Name[cs]=Firefox Webový prohlížeč
+Name[es]=Navegador web Firefox
+Name[et]=Firefoxi veebibrauser
+Name[fa]=مرورگر اینترنتی Firefox
+Name[fi]=Firefox-selain
+Name[fr]=Navigateur Web Firefox
+Name[hu]=Firefox webböngésző
+Name[it]=Firefox Browser Web
+Name[ja]=Firefox ウェブ・ブラウザ
+Name[ko]=Firefox 웹 브라우저
+Name[nb]=Firefox Nettleser
+Name[nl]=Firefox webbrowser
+Name[nn]=Firefox Nettlesar
+Name[no]=Firefox Nettleser
+Name=Przeglądarka WWW Firefox
+Name[pt]=Firefox Navegador Web
+Name[pt_BR]=Navegador Web Firefox
+Name[sk]=Firefox - internetový prehliadač
+Name[sv]=Webbläsaren Firefox
+Comment=Browse the World Wide Web
+Comment[ar]=تصفح الشبكة العنكبوتية العالمية
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[es]=Navegue por la web
+Comment[et]=Lehitse veebi
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[ar]=متصفح وب
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+Exec=/opt/firefox/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/firefox/icons/mozicon128.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
+</pre>
+<p>Após a edição ele ficou assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+Name[pt_BR]=Navegador Web Google Chrome
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Exec=/opt/google/chrome %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/google/chrome/product_logo_256.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Chrome
+StartupNotify=true
+</pre>
+<p>As alterações mais importantes são:</p>
+<p>Name => Nome do Aplicativo<br />
+Exec => Path para o executável (o %u é específico para o browser abrir uma url passada como parâmetro).<br />
+Icon => Path para o ícone (pode ser jpg, png, svg ou até o próprio executável do programa).<br />
+Categories = > Menu onde o atalho para o programa vai aparecer.</p>
+<p>Você pode sempre usar outros arquivos .desktop como base para a criação do seu.</p>
+<p>Veja também como colocar seu programa no path neste <a href="/editando-a-variavel-de-ambiente-path-no-linux-mint-debian" title="Editando a variável de ambiente PATH no Linux Mint Debian">artigo</a>.</p>
+<p>Espero ter ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Editando a variável de ambiente PATH no Linux Mint Debian</title>
+		<link>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/</link>
+		<comments>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 20:50:47 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[etc]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[path]]></category>
+		<category><![CDATA[profile]]></category>
+		<category><![CDATA[sh]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=346</guid>
+		<description><![CDATA[Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile. Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse: As alterações no /etc/profile são aplicadas a todos os usuários do sistema. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo pluma /etc/profile</pre>
+<p>Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &quot;`id -u`&quot; -eq 0 ]; then
+  PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+else
+  PATH=&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games&quot;
+fi
+PATH=$PATH:/opt/eclipse
+export PATH
+
+if [ &quot;$PS1&quot; ]; then
+  if [ &quot;$BASH&quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ &quot;`id -u`&quot; -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+</pre>
+<p>As alterações no /etc/profile são aplicadas a todos os usuários do sistema. Na pasta home do usuário existe um arquivo .profile que também pode ser editado.</p>
+<p>Uma outra forma de colocar um aplicativo no path é colocar um link simbólico para o aplicativo na pasta /usr/bin. Veja como o instalador do Google Chrome fez:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ls -l /usr/bin/google-chrome 
+lrwxrwxrwx 1 root root 32 Jun  7 03:17 /usr/bin/google-chrome -&gt; /opt/google/chrome/google-chrome
+</pre>
+<p>Você consegue o mesmo efeito usando o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+</pre>
+<p>Por hoje é só pessoal!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Adicionando o Google ao Firefox no Linux Mint</title>
+		<link>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/</link>
+		<comments>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 19:41:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[duckduckgo]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+		<category><![CDATA[yahoo]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=334</guid>
+		<description><![CDATA[O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o Firefox. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o Yahoo como busca e o Duck Duck Go como busca padrão para a barra de endereços. Particularmente [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o <a title="Mozilla Firefox" href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a>. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o <a title="Yahoo" href="http://www.yahoo.com" target="_blank">Yahoo</a> como busca e o <a title="Duck Duck Go" href="http://duckduckgo.com" target="_blank">Duck Duck Go</a> como busca padrão para a barra de endereços. Particularmente eu prefiro usar o google. Então vamos as modificações:</p>
+<h2>1 &#8211; Alterar a busca pela barra de endereços.</h2>
+<p>Digite about:config na barra de endereço e confirme no botão &#8220;I&#8217;ll be carefull, I promisse!&#8221; ou em português, &#8220;Eu serei cuidadoso, prometo!&#8221;. O firefox abrirá uma lista de strings de configuração e tweeks. Busque pela string <strong>keyword.URL</strong> e altere o valor para:</p>
+<p><strong>http://www.google.com/search?ie=UTF-8&amp;oe=utf-8&amp;q=</strong></p>
+<p>&nbsp;</p>
+<h2>2 &#8211; Adicionar google à caixa de busca do firefox.</h2>
+<p>A caixa de busca vem como padrão o Yahoo e não vem com opção para o google. Clique no ícone do Yahoo e selecione &#8220;Manage Search Engines&#8221; ou &#8220;Gerenciar Mecanismos de Busca&#8221;. Clique no link <a title="Firefox Search Engines" href="http://www.linuxmint.com/searchengines" target="_blank">Get more search engines&#8230;</a> e em COMMERCIAL ENGINES clique no ícone do google. O google ainda não estará instalado. Clique no ícone do yahoo da barra de busca e escolha &#8220;Install Google&#8221;. Depois escolha &#8220;Manage Search Engines&#8221; novamente e coloque o Google no topo da lista.</p>
+<p>&nbsp;</p>
+<h2>3 &#8211; Alterar a página home</h2>
+<p>Essa é facil. Vá no menu Edit e selecione &#8220;Preferences&#8221; (ou editar -&gt; preferências) e na aba &#8220;General&#8221; em Homepage insira:</p>
+<p><strong>https://www.google.com.br/</strong></p>
+<p>Ou insira qualquer outra URL de sua preferência.</p>
+<p>&nbsp;</p>
+<p>É isso!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

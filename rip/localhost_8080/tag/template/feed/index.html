@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>template &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/template/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Como traduzir um template do WordPress</title>
+		<link>http://localhost:8080/como-traduzir-um-template-do-wordpress/</link>
+		<comments>http://localhost:8080/como-traduzir-um-template-do-wordpress/#respond</comments>
+		<pubDate>Wed, 30 May 2012 05:17:03 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[WordPress]]></category>
+		<category><![CDATA[gettext]]></category>
+		<category><![CDATA[gted]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[localização]]></category>
+		<category><![CDATA[mac os x]]></category>
+		<category><![CDATA[poedit]]></category>
+		<category><![CDATA[tema]]></category>
+		<category><![CDATA[template]]></category>
+		<category><![CDATA[tradução]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=201</guid>
+		<description><![CDATA[Se você instalou algum template (tema) para o WordPress e percebeu que algumas palavras estão em inglês ou outra língua, mesmo que o seu WordPress seja em português você precisa fazer a tradução do tema. Os arquivos de localização do WordPress utilizam o GetText, uma biblioteca do projeto GNU para fazer internacionalização de software. Os arquivos [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se você instalou algum template (tema) para o WordPress e percebeu que algumas palavras estão em inglês ou outra língua, mesmo que o seu WordPress seja em português você precisa fazer a tradução do tema.</p>
+<p>Os arquivos de localização do WordPress utilizam o <a title="GetText" href="http://www.gnu.org/software/gettext/" target="_blank">GetText</a>, uma biblioteca do <a title="Projeto GNU" href="http://pt.wikipedia.org/wiki/Projeto_GNU" target="_blank">projeto GNU</a> para fazer internacionalização de software. Os arquivos do GetText tem a extensão <strong>.po</strong> e <strong>.mo</strong>.</p>
+<p>Para editar estes arquivos é necessário um editor especial. Existem alguns editores para este tipo de arquivo. O <a title="GTed" href="http://www.gted.org/" target="_blank">GTed</a> é um plugin do Eclipse e me parece ser muito completo apesar de que não o conheço.</p>
+<p>Para este tutorial vamos usar o <a title="Poedit" href="http://www.poedit.net/" target="_blank">Poedit</a>, um pequeno editor dedicado para este fim. Existem versões para MAC OS X, Windows e Linux. Caso você não use linux faça o download do editor no site: <a href="http://www.poedit.net/">http://www.poedit.net</a>.</p>
+<p>Caso use Linux execute os seguintes comandos no shell:</p>
+<pre class="brush: bash; title: Instalando poedit no Linux; notranslate">
+$ sudo apt-get update
+$ sudo apt-get install poedit
+$ poedit
+</pre>
+<p>O último comando abrirá o poedit:</p>
+<div id="attachment_207" style="width: 610px" class="wp-caption alignleft"><a title="Internacionalização usando o Poedit" href="/wp-content/uploads/2012/05/poedit.jpg"><img data-attachment-id="207" data-permalink="http://localhost:8080/como-traduzir-um-template-do-wordpress/poedit/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/05/poedit.jpg" data-orig-size="1444,896" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Internacionalização usando o Poedit" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/05/poedit-300x186.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/05/poedit-600x372.jpg" class="size-large wp-image-207 " title="Internacionalização usando o Poedit" src="/wp-content/uploads/2012/05/poedit-600x372.jpg" alt="Tela do Poedit" width="600" height="372" srcset="http://localhost:8080/wp-content/uploads/2012/05/poedit-600x372.jpg 600w, http://localhost:8080/wp-content/uploads/2012/05/poedit-300x186.jpg 300w, http://localhost:8080/wp-content/uploads/2012/05/poedit.jpg 1444w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Internacionalização usando o Poedit</p></div>
+<p><div class="clear"></div><br />
+Encontre o arquivo .po original. Neste exemplo o arquivo está em:</p>
+<p><strong>wp-content/themes/twentyeleven/languages/pt_BR.po</strong>.</p>
+<p>Leve em consideração que o twentyeleven é o nome do template que estou usando e que ele já vem em português.</p>
+<p>Após encontrado o arquivo crie uma cópia do mesmo renomeando usando o código da língua e pais da tradução. Para português brasileiro pt_BR, para português de portugual pt_PT, para inglês, en_US.</p>
+<p>Abra o arquivo que você criou com o poedit e agora é só traduzir. A coluna original string está a string na sua versão original que também é exibida na primeira caixa de texto abaixo da tabela. Na segunda coluna da tabela estão as strings traduzidas que você insere na caixa de texto mais abaixo da tela.</p>
+<div class="message-box radius-5 message-box-note"><p class="icon radius-5">Você pode usar as teclas tab e as setas para navegar mais facilmente entre os itens do poedit.</p></div>
+<p>&nbsp;</p>
+<p>Depois é só salvar e pronto!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-traduzir-um-template-do-wordpress/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

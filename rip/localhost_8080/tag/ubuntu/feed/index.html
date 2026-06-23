@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ubuntu &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/ubuntu/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>[Dica] Ícone do Skype não aparece no Ubuntu</title>
+		<link>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/</link>
+		<comments>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/#respond</comments>
+		<pubDate>Thu, 27 Aug 2015 18:43:55 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[skype]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=879</guid>
+		<description><![CDATA[Como fazer com que o ícone do skype apareça no painel (systray) do Ubuntu.]]></description>
+				<content:encoded><![CDATA[<p>Para fazer o ícone do Skype aparecer no systray do Unity no Ubuntu adicione o pacote sni-qt com o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get install sni-qt:i386
+</pre>
+<p>Faça log out ou reinicie e pronto!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/dica-icone-do-skype-nao-aparece-no-ubuntu/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Redimensionar Imagens em Lote no Linux [ImageMagick Batch Resize]</title>
+		<link>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/</link>
+		<comments>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/#comments</comments>
+		<pubDate>Mon, 05 May 2014 03:00:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[batch]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[imagemagick]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[resize]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=683</guid>
+		<description><![CDATA[O ImageMagick é um conjunto de ferramentas para manipulação e edição de imagens direto do shell. Nesta dica vamos falar apenas do comando convert que faz parte do ImageMagick. Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank" rel="noopener">ImageMagick</a> é um conjunto de ferramentas para manipulação e edição de imagens direto do shell.</p>
+<p>Nesta dica vamos falar apenas do comando <strong>convert</strong> que faz parte do ImageMagick.</p>
+<p>Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por isso diminui-las economiza tempo no upload.</p>
+<p>Então vamos lá: A primeira coisa é instalar o imagemagick:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install imagemagick
+</pre>
+<p>Com o imagemagick instalado entre na pasta que contém mas imagens e crie uma pasta que chamaremos neste exemplo de &#8220;reduzidas&#8221; e execute o seguinte comando alterando os parâmetros de acordo com suas preferências.</p>
+<pre class="brush: bash; title: ; notranslate">
+mkdir reduzidas
+find . -maxdepth 1 -iname &quot;*.jpg&quot; | xargs -l -i convert -resize 1920x1080 -quality 70% -density 72 {} ./reduzidas/{}
+</pre>
+<ul>
+<li>find . -maxdepth 1 -iname &#8220;*.jpg&#8221;: este comando lista as imagens com extensão jpg apenas no diretório atual, sem entrar nos subdiretórios (-maxdepth 1).</li>
+<li>xargs -l -i executa o comando <strong>convert</strong> fornecendo os nomes de arquivo que o  comando <strong>find</strong> encontrou.</li>
+<li>convert é o comando da imagemagick para conversão de formatos.</li>
+<li>-resize 1920&#215;1080: altere para as dimensões que o arquivo ficará após o redimensionamento.</li>
+<li>-quality 70%: aplicável apenas para JPG. Altere para a qualidade do jpg final. 0% &#8211; 100%.</li>
+<li>-density 72: DPI da imagem. No meu caso eu tenho várias imagens em 300 DPI e quero elas em 72. Você pode omitir a opção caso não precise alterar o dpi.</li>
+<li>./reduzidas/: diretório onde serão salvas as imagens reduzidas.</li>
+</ul>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Como corrigir o GPG error NO_PUBKEY no Linux (Ubuntu / Debian / Mint)</title>
+		<link>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/</link>
+		<comments>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/#comments</comments>
+		<pubDate>Wed, 23 Apr 2014 15:32:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gpg]]></category>
+		<category><![CDATA[key]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[no_pubkey]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[update]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=666</guid>
+		<description><![CDATA[Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update: O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY). Agora pode rodar o apt-get update que deve funcionar normalmente.]]></description>
+				<content:encoded><![CDATA[<div id="attachment_672" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg"><img data-attachment-id="672" data-permalink="http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/ubuntu-update-error/" data-orig-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg" data-orig-size="633,396" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Ubuntu-Update-error" data-image-description="&lt;p&gt;GPG Error NO_PUBKEY&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg" data-large-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" class="size-large wp-image-672" src="/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" alt="GPG Error NO_PUBKEY" width="600" height="375" srcset="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg 600w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg 300w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg 633w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">GPG Error NO_PUBKEY</p></div>
+<p>Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo apt-get update
+W: GPG error: http://ppa.launchpad.net saucy Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2EE5793634EF4A35
+</pre>
+<p>O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY).</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2EE5793634EF4A35
+</pre>
+<p>Agora pode rodar o apt-get update que deve funcionar normalmente.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Instalação do Debian Linux no Galaxy Tab 10.1</title>
+		<link>http://localhost:8080/instalacao-do-debian-linux-no-galaxy-tab-10-1/</link>
+		<comments>http://localhost:8080/instalacao-do-debian-linux-no-galaxy-tab-10-1/#comments</comments>
+		<pubDate>Mon, 26 Nov 2012 03:26:13 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Android]]></category>
+		<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Galaxy Tab]]></category>
+		<category><![CDATA[Hacks]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[10.1]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[Arch]]></category>
+		<category><![CDATA[Backtrack]]></category>
+		<category><![CDATA[bluetooth]]></category>
+		<category><![CDATA[busybox]]></category>
+		<category><![CDATA[chroot]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[debootstrap]]></category>
+		<category><![CDATA[fedora]]></category>
+		<category><![CDATA[galaxy]]></category>
+		<category><![CDATA[galaxy tab 10.1]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[keyboard dock]]></category>
+		<category><![CDATA[libjpeg-turbo]]></category>
+		<category><![CDATA[lxde]]></category>
+		<category><![CDATA[samsung]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[stable]]></category>
+		<category><![CDATA[tab]]></category>
+		<category><![CDATA[testing]]></category>
+		<category><![CDATA[TurboVNC]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[wheezy]]></category>
+		<category><![CDATA[xfce]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=435</guid>
+		<description><![CDATA[Desde que comprei o Galaxy Tab lí que era possível rodar linux no android. Logo ví que isso poderia ser útil: ter um sistema linux completo na ponta dos dedos. Melhor ainda: até comprei o keyboard dock original samsung e um mouse bluetooth para deixar a brincadeira ainda melhor. Existem dois aplicativos na Play Store [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Desde que comprei o Galaxy Tab lí que era possível rodar linux no android. Logo ví que isso poderia ser útil: ter um sistema linux completo na ponta dos dedos. Melhor ainda: até comprei o keyboard dock original samsung e um mouse bluetooth para deixar a brincadeira ainda melhor.</p>
+<div id="attachment_538" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36.jpg"><img data-attachment-id="538" data-permalink="http://localhost:8080/instalacao-do-debian-linux-no-galaxy-tab-10-1/screenshot_2012-10-24-23-26-36/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36.jpg" data-orig-size="1280,800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Debian Linux no Android" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36-300x187.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36-600x375.jpg" class="size-large wp-image-538" title="Debian Linux no Android" alt="Debian Linux Squeeze LXDE Desktop" src="/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36-600x375.jpg" width="600" height="375" srcset="http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36-600x375.jpg 600w, http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36-300x187.jpg 300w, http://localhost:8080/wp-content/uploads/2012/10/Screenshot_2012-10-24-23-26-36.jpg 1280w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Debian Linux Squeeze rodando no Galaxy Tab 10.1 com Android ICS.</p></div>
+<p>Existem dois aplicativos na Play Store que fazem este &#8220;serviço&#8221; para você.</p>
+<p>O <a title="Linux Installer" href="https://play.google.com/store/apps/details?id=com.galoula.LinuxInstall" target="_blank">Linux Installer Standard</a> foi o primeiro que fiquei sabendo da existência. Ele permite que você instale as distribuições Debian ou Ubuntu e ainda pode selecionar a versão. Tentei fazer a instalação a partir dele pois é o que mais tem recursos para você personalizar seu linux. Não tive sucesso. O processo de debootstrap não concluía. Tentei todas as alternativas possíveis e artimanhas, gambiarras e nada. Só perdi tempo. Talvez seja diferente para você.</p>
+<p>Uma alternativa era o <a title="Complete Linux Installer" href="https://play.google.com/store/apps/details?id=com.zpwebsites.linuxonandroid" target="_blank">Complete Linux Installer</a>. Este é moleza de usar e funcionou bem para mim. Ele permite a instalação das distros Debian, Ubuntu, Arch, Backtrack e Fedora. O problema dele é que você não tem muitas escolhas de personalização da imagem a ser criada, até porque ela já está pronta e ele só faz o download para o seu dispositivo android. Mas o problema principal foi que eu desejava instalar o Debian Wheezy mas o app só possui o Debian 4 com xfce. Não gostei.</p>
+<p>Pelos motivos que descrevi acima decidi criar a minha própria imagem de disco do tamanho que eu queria e com o Linux configurado como eu desejava. Se você quiser pode fazer o download dela no link abaixo. Ela foi testada no Galaxy Tab 10.1 mas deve funcionar em qualquer android com processador arm.</p>
+<p><div class="message-box radius-5 message-box-info"><p class="icon radius-5"><a title="Debian Linux Squeeze Galaxy Tab 10.1" href="http://www.4shared.com/archive/iDICVTs_/squeeze-armel-android-chrootim.html" target="_blank">http://www.4shared.com/archive/iDICVTs_/squeeze-armel-android-chrootim.html</a></p></div><br />
+Fiz um vídeo demonstrando o linux no galaxy tab:</p>
+<div class="video-wrap"><iframe src="http://www.youtube.com/embed/5YtNYYhy56Q" width="600" height="338" frameborder="0"></iframe></div>
+<div class="br-20"></div>
+<h2>Requerimentos:</h2>
+<hr />
+<ul>
+<li>Uma maquina com Debian ou Ubuntu (usei meu Linux Mint Debian Edition).</li>
+<li>Galaxy Tab 10.1 rootado com BusyBox instalado.</li>
+<li>Muita paciência.</li>
+</ul>
+<div class="br-10"></div>
+<h2>Criando a Imagem:</h2>
+<hr />
+<p>Na maquina com o Linux você precisará instalar o debootstrap.</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install debootstrap
+</pre>
+<p>Crie uma imagem em branco, depois formate e monte ela.</p>
+<pre class="brush: bash; title: ; notranslate">
+dd if=/dev/zero of=squeeze.img bs=1M count=2048
+
+sudo mkfs.ext4 -F squeeze.img
+
+sudo mkdir /mnt/squeeze/
+sudo busybox mount -t ext4 -o loop squeeze.img /mnt/squeeze/
+</pre>
+<p><div class="br-10"></div><br />
+<div class="message-box radius-5 message-box-alert"><p class="icon radius-5">Nota: O arquivo de imagem acima é para 2GB. Mude o count para o tamanho que desejar (a instalação do lxde ocupa mais de 800 MB)</p></div></p>
+<p><div class="br-10"></div><br />
+Rode o debootstrap e instale o sistema na imagem.</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo debootstrap --verbose --arch armhf --foreign squeeze /mnt/squeeze/ http://ftp.debian.org/debian
+</pre>
+<p>Desmonte a imagem</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo umount /mnt/squeeze
+</pre>
+<div class="br-10"></div>
+<h2>Instalação da Imagem no Android</h2>
+<hr />
+<p>Crie uma pasta no Android. Eu coloquei em /sdcard/Debian. Copie a imagem para a pasta.</p>
+<p>A instalação resume-se em:</p>
+<ul>
+<li>Criar um ponto de montagem e montar a imagem.</li>
+<li>Chroot para a imagem do Debian.</li>
+<li>Definição de variáveis de ambiente.</li>
+<li>Rodar a segunda parte do debootstrap</li>
+</ul>
+<p>Sugiro a instalação de um emulador de terminal para o android. Eu uso o Better Terminal Emulator. Você pode usar o adb shell também.<br />
+Digite os seguintes comandos no terminal. O código está comentado para facilitar a compreensão.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Torne-se root.
+su
+
+# Crie um ponto de montagem e monte a imagem nele.
+mkdir /data/local/debian
+busybox mount -o loop,noatime -t ext4 /sdcard/Debian/squeeze.img /data/local/debian
+
+# Faça chroot para o Debian
+chroot /data/local/debian/ /bin/sh
+
+# Defina algumas variáveis de ambiente
+export PATH=$bin:/usr/bin:/usr/sbin:/bin:$PATH
+export TERM=linux
+export HOME=/root
+export USER=root
+
+# Defina o prompt do shell
+export PS1='$USER@$HOSTNAME:${PWD-?} # '
+
+# Termine o debootstrap
+/debootstrap/debootstrap --second-stage
+
+# Inicie um shell do bash
+/bin/bash
+</pre>
+<p><div class="br-10"></div><br />
+<div class="message-box radius-5 message-box-alert"><p class="icon radius-5">Não saia do shell antes de mover para a próxima sessão.</p></div><br />
+<div class="br-10"></div></p>
+<h2>Primeiro Boot</h2>
+<hr />
+<p>Tecnicamente o sistema está rodando mas ainda precisamos fazer uma última coisa:</p>
+<pre class="brush: bash; title: ; notranslate">
+# Adicione os repositórios para instalação de pacotes.
+echo &quot;deb http://ftp.debian.org/debian/ squeeze main contrib non-free&quot; &gt;&gt; /etc/apt/sources.list
+echo &quot;deb-src http://ftp.debian.org/debian/ squeeze main contrib non-free&quot; &gt;&gt; /etc/apt/sources.list
+
+# Faça o primeiro update
+apt-get update
+</pre>
+<p>Retorne para o Android executando o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">exit</pre>
+<p>O sistema está pronto para ser usado então precisamos de um script para facilitar a inicialização do Linux. Copie esse script para o diretório onde você colocou a imagem e chame ele de linux.</p>
+<pre class="brush: bash; title: ; notranslate">
+#!/bin/sh
+if [ $EUID -ne 0 ]
+then
+	echo &quot;Tornando-se root!&quot;
+	su -c linux
+	exit 1
+fi
+
+mnt=/data/local/debian
+
+# Soh eh preciso caso use o nautilus. Se usar outro
+# gerenciador de arquivos nao eh necessario.
+echo &quot;Remontando a raiz para escrita para escrita...&quot;
+busybox mount -o rw,remount /
+
+echo &quot;Montando o Debian Squeeze...&quot;
+busybox mount -t ext4 -o loop,noatime squeeze.img $mnt/
+
+echo &quot;Definindo variáveis de ambiente...&quot;
+export PATH=$bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
+export TERM=linux
+export HOME=/root
+export USER=root
+# export PS1='$USER@$HOSTNAME:${PWD-?} # '
+export PS1='\[\e[1;31m\][\u@\h \W] \$\[\e[0m\] '
+
+echo &quot;Montando devpts/proc/sysfs...&quot;
+busybox mount -t devpts devpts $mnt/dev/pts
+busybox mount -t proc proc $mnt/proc
+busybox mount -t sysfs sysfs $mnt/sys
+
+# Voce pode colocar aqui o comando para montar o cartao de
+# memoria externo tambem. No meu caso o galaxy tab nao tem.
+echo &quot;Montando o cartaão de moemória...&quot;
+if [ ! -d $mnt/mnt/sdcard ]; then
+    mkdir $mnt/mnt/sdcard
+fi
+busybox mount --bind /mnt/sdcard $mnt/mnt/sdcard
+
+echo &quot;Entrando no Debian Squeeze...&quot;
+echo &quot; &quot;
+chroot $mnt/ /bin/sh /root/.init.sh
+
+# busybox fuser -m $mnt -k
+
+echo &quot;Desmontando devpts/proc/sysfs...&quot;
+busybox umount $mnt/mnt/sdcard
+busybox umount $mnt/dev/pts
+busybox umount $mnt/proc
+busybox umount $mnt/sys
+
+echo &quot;Desmontando Debian Squeeze...&quot;
+busybox umount $mnt/
+</pre>
+<p>Agora quando quiser rodar o linux abra o emulador de terminal do android e digite os comandos:</p>
+<pre class="brush: bash; title: ; notranslate">
+cd /sdcard/Debian
+su
+sh linux
+</pre>
+<div class="br-20"></div>
+<h2>LXDE ou GNOME e VNC Server</h2>
+<hr />
+<p>O LXDE tem desempenho muito superior ao Gnome em máquinas mais lentas mas é possível instalar os dois como eu fiz.</p>
+<p>LXDE:</p>
+<pre class="brush: bash; title: ; notranslate">apt-get install lxde</pre>
+<p>Gnome:</p>
+<pre class="brush: bash; title: ; notranslate">
+# Não instale o pacote gnome pois é gigante e cheio de dependências.
+# Instale os seguintes pacotes separados:
+apt-get install gnome-session gnome-themes gnome-terminal xserver-xorg-core gdm
+</pre>
+<p>Durante a instalação aparecerão duas janelas de configuração. Deixe as configurações padrão e continue.<br />
+Instale o VNC Server.</p>
+<pre class="brush: bash; title: ; notranslate">apt-get install tightvncserver</pre>
+<p><div class="message-box radius-5 message-box-alert"><p class="icon radius-5">O tightvncserver é o servidor vnc padrão. Para melhor desempenho baixe o código fonte do turbovnc e da libjpegturbo e compile.</p>
+<p><strong>TurboVNC</strong>: <a title="TurboVNC" href="http://www.virtualgl.org/Downloads/TurboVNC" target="_blank">http://www.virtualgl.org/Downloads/TurboVNC</a></p>
+<p><strong>Libjpeg-turbo</strong>: <a title="libjpeg-turbo" href="http://libjpeg-turbo.virtualgl.org/" target="_blank">http://libjpeg-turbo.virtualgl.org/</a></p></div><br />
+<div class="br-10"></div><br />
+Para iniciar e parar o vncserver usando &#8220;service start&#8221; crie o script abaixo em /etc/init.d/vncserver e execute chmod 755 nele.</p>
+<pre class="brush: bash; title: ; notranslate">
+export HOME=&quot;/root&quot;
+export USER=&quot;/root&quot;
+STARTCMD=&quot;vncserver -geometry 1280x752&quot;
+STOPCMD=&quot;vncserver -kill :1&quot;
+
+case $1 in
+    start)
+        if [ -e /tmp/.X1-lock ] ; then
+            echo &quot;VNCServer already running&quot;
+        else
+            $STARTCMD
+        fi
+            ;;
+    stop)
+        $STOPCMD
+        ;;
+    restart)
+        $STOPCMD
+        $STARTCMD
+        ;;
+    *)
+        echo &quot;$0 start|stop|restart&quot;
+        exit 1
+        ;;
+esac
+
+exit 0
+</pre>
+<p>Execute o comando abaixo para iniciar o vncserver automaticamente.</p>
+<pre class="brush: bash; title: ; notranslate">echo &quot;service vncserver start&quot; &gt;&gt; /root/.bashrc</pre>
+<p>A primeira vez que você rodar ele vai pedir para entrar com a senha do vnc.</p>
+<p>Configure o vncviewer do android para conectar com localhost na porta 5901.</p>
+<p>Pronto! Temos o Debian 6 rodando em paralelo com o Android.</p>
+<div class="br-10"></div>
+<h2>Algumas dicas:</h2>
+<hr />
+<p><strong>Caso o script exit não consiga desmontar a imagem do linux experimente executar o seguinte comando:</strong></p>
+<pre class="brush: bash; title: ; notranslate">killall menu-cached</pre>
+<p><strong>Para aumentar o tamanho da imagem depois de criada (substitua 256 para a quantidade de megabytes que deseja adicionar):</strong></p>
+<pre class="brush: bash; title: ; notranslate">
+dd if=/dev/zero bs=1M count=256 &gt;&gt; data.img
+e2fsck -f data.img
+resize2fs data.img
+e2fsck -f data.img
+</pre>
+<p><strong>Para mudar para o gnome:</strong></p>
+<pre class="brush: bash; title: ; notranslate">update-alternatives --config x-session-manager</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/instalacao-do-debian-linux-no-galaxy-tab-10-1/feed/</wfw:commentRss>
+		<slash:comments>28</slash:comments>
+		</item>
+		<item>
+		<title>Associação de arquivos no Nautilus &#8211; Associando arquivos .deb ao Instalador de pacotes GDebi</title>
+		<link>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/</link>
+		<comments>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 18:47:19 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.deb]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[canonical]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gdeb]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=329</guid>
+		<description><![CDATA[Essa é para quem é noobie como eu em desktops Linux. Acabei de fazer o download do pacote deb do Google Chrome e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Essa é para quem é noobie como eu em desktops Linux.</p>
+<p>Acabei de fazer o download do pacote deb do <a title="Google Chrome" href="https://www.google.com/chrome" target="_blank">Google Chrome</a> e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em falar nisso o GDebi foi feito pela Canonical (será que tem Ubuntu no meu Debian? :-P).</p>
+<p>Eu prefiro que o arquivos .deb fiquem associados com o GDebi para facilitar a vida e para fazer isso basta clicar com o botão direito do mouse no arquivo e ir para a aba &#8220;Open with&#8221; em inglês, selecione o GDebi Package Installer e clique em Set as Default.</p>
+<div id="attachment_330" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/default_to_deb.jpg"><img data-attachment-id="330" data-permalink="http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/default_to_deb/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg" data-orig-size="1353,759" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title=".deb default para GDeb" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" class="size-large wp-image-330" title=".deb default para GDeb" src="/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" alt="associando arquivos no Nautilus" width="600" height="336" srcset="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg 1353w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">.deb default para GDeb</p></div>
+<p>Obviamente isso serve para qualquer tipo de arquivo. Caso o programa preferido não apareça entre os programas recomendados clique em &#8220;Show other applications&#8221;. E se o seu programa não aparecer em &#8220;Show other applications&#8221;? Você provavelmente vai precisar criar um arquivo .desktop para ele. Veja como fazer aqui.</p>
+<p>Observe que prefiro o meu Linux em inglês, apesar de todas as configurações de localização e teclado estarem para Português/Brasil. Prefiro assim pois facilita na hora de pesquisar por dúvidas, mensagens de erro, nomes de programas, etc.</p>
+<p>Então é isso! A dica é simples mas eu não conhecia&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Corrigindo o controle de brilho no notebook com Linux</title>
+		<link>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/</link>
+		<comments>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/#comments</comments>
+		<pubDate>Sun, 03 Jun 2012 04:51:44 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[acpi]]></category>
+		<category><![CDATA[bios]]></category>
+		<category><![CDATA[boot]]></category>
+		<category><![CDATA[brilho]]></category>
+		<category><![CDATA[chipset]]></category>
+		<category><![CDATA[controle]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[fedora]]></category>
+		<category><![CDATA[grub]]></category>
+		<category><![CDATA[gs45]]></category>
+		<category><![CDATA[ich9ms]]></category>
+		<category><![CDATA[intel]]></category>
+		<category><![CDATA[kernel]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[samsung]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[x420]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=212</guid>
+		<description><![CDATA[Possuo o ultrabook Samsung X420. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia. As teclas de atalho padrão neste notebook para o funcionamento do controle de brilho [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Possuo o ultrabook <a title="Samguns X420" href="http://www.samsung.com/br/consumer/it-products/notebooks-netbooks/ultra-portable/NP-X420-JA01BR" target="_blank">Samsung X420</a>. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia.</p>
+<p>As teclas de atalho padrão neste notebook para o funcionamento do controle de brilho são fn (function) + seta para cima ou seta para baixo. Logo após a instalação do Linux Mint 12 Debian Edition eu tentei ajustar o brilho e nada. O problema é igual para todas as distribuições que testei: Ubuntu 11.10, Ubuntu 12.04 e Fedora 16. Ao teclar fn + seta para cima aparecia o ícone de brilho na tela mas nada acontecia e ao teclar fn + seta para baixo o brilho era ajustado ao máximo e o ícone mostrava que estava um pouco abaixo do máximo, o que era estranho.</p>
+<p>Pesquisando na net encontrei a solução do problema e parece ser comum entre notebooks com chipset <strong>Intel GS45 + ICH9MS</strong>, por isso se o seu notebook posui este chipset ou se está tendo o mesmo problema tente a correção a seguir:</p>
+<p>A correção consiste em adicionar um parâmetro de configuração do Kernel do Linux no boot. Para testá-lo tecle &#8220;e&#8221; na tela de boot do linux para editar os comandos de boot e insira <strong>acpi_osi= </strong>no final da linha &#8220;linux /boot/&#8230;&#8221;. O do meu computador ficou assim (linha 9):</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">setparams 'LinuxMint GNU/Linux, with Linux 3.3.0-6.dmz.1-liquorix-amd64
+
+insmod gzio
+insmod part_msdos
+insmod ext2
+set root='(/dev/sda, msdos1) '
+search --no-floppy --fs-uuid --set=root 321e9577-ad48-4370-9276-06399e26b6da
+echo 'Loading Linux 3.3.0-6.dmz.1-liquorix-amd64 ... '
+linux /boot/vmlinuz-3.3.0-6.dmz.1-liquoriz-amd64 root=UUID=321e9577-ad48-4370-9276-06399e26b6da ro quiet acpi_osi=
+echo 'Loading initial ramdisk ...'
+initrd /boot/initrd.img-3.3.0-6.dmz.1-liquorix-amd64</pre>
+<p>Segundo informações, o kernel do Linux por padrão se idenditifica como sendo qualquer versão do Windows para a BIOS e o problema é que algumas BIOS tem desvios de código para resolver bugs do Windows Vista e por isso acaba impactando no Linux.</p>
+<p>Outra alternativa é usar o parâmetro abaixo caso a sua BIOS tiver suporte ao Linux:</p>
+<p><strong>acpi_osi=&#8221;Linux&#8221;</strong></p>
+<p>Ou usar o seguinte parâmetro para fazer com que o Linux se identifique como Windows Vista e executar comandos de compatibilidade com o mesmo:</p>
+<p><strong>acpi_osi=&#8221;Windows 2006&#8243;<br />
+</strong></p>
+<p>Para usar o parâmetro de forma permanente</p>
+<p>Conforme dito acima, para testar o parâmetro você pode teclar &#8220;e&#8221; no menu de boot do Grub2 e inserir o parâmetro, mas isso só vai funcionar até o próximo boot. Para deixar o parâmetro de forma permanente você precisa editar um arquivo de configuração do grub conforme asseguir:</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo nano /etc/default/grub</pre>
+<p>O editor nano vai abrir o arquivo e seu conteúdo será parecido com esse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate"># If you change this file, run 'update-grub' afterwards to update
+ # /boot/grub/grub.cfg.
+ # For full documentation of the options in this file, see:
+ #   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM=&quot;0x01234567,0xfefefefe,0x89abcdef,0xefefefef&quot;
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass &quot;root=UUID=xxx&quot; parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY=&quot;true&quot;
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE=&quot;480 440 1&quot;
+</pre>
+<p>Adicione o parâmetro na linha GRUB_CMDLINE_LINUX_DEFAULT conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=&quot;
+</pre>
+<p>Se você precisar usar parâmetros que contém aspas (&#8220;) você precisa fazer o escape das aspas conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=\&quot;Linux\&quot;&quot;
+</pre>
+<p>Salve o arquivo e entre com o comando a seguir para atualizar as configurações do grub:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo update-grub
+</pre>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/feed/</wfw:commentRss>
+		<slash:comments>28</slash:comments>
+		</item>
+		<item>
+		<title>O primeiro Post a gente nunca esquece&#8230;</title>
+		<link>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/</link>
+		<comments>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/#comments</comments>
+		<pubDate>Tue, 29 May 2012 02:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[Brain]]></category>
+		<category><![CDATA[centos]]></category>
+		<category><![CDATA[Conectiva]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[Dualline]]></category>
+		<category><![CDATA[glassfish]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[java ee]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[Mandriva]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[redhat]]></category>
+		<category><![CDATA[sctel]]></category>
+		<category><![CDATA[Slackware]]></category>
+		<category><![CDATA[totvs]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=18</guid>
+		<description><![CDATA[Saudações terráqueos! Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! 🙂 Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux. Conheço Linux desde 1999 quando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Saudações terráqueos!</p>
+<p>Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux.</p>
+<p>Conheço Linux desde 1999 quando fiz um curso do Conectiva Linux (hoje <a title="Conectiva / Mandriva Linux" href="https://pt.wikipedia.org/wiki/Mandriva_Linux" target="_blank">Mandriva</a>) na <a title="Dualline" href="http://www.dualline.com.br/" target="_blank">Dualline</a>, onde trabalhei na época. Inclusive meu professor foi o <a title="Augusto Campos" href="https://plus.google.com/105003069076649186723/posts" target="_blank">Augusto Campos</a>, mais conhecido como Brain do site <a title="br-linux.org" href="http://br-linux.org/" target="_blank">br-linux.org</a>. Depois do curso administrei um servidor web com <a title="Slackware" href="http://www.slackware.com" target="_blank">Linux Slackware</a> na SCTEL uma empresa de telecomunicações que trabalhei depois que sai da Dualline e além disso já fiz várias instalações de servidores como prestador de serviços de infra-estrutura de rede. Normalmente eu instalava o RedHat ou o CentOS depois que foi lançado. Apesar de ter contato com Linux durante toda a minha vida profissional até 2011 não tinha usado em minha máquina pessoal. Passei a usar o <a title="Ubuntu" href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> como meu sistema principal em uma máquina dual boot com o Windows 7 quando fui trabalhar com desenvolvimento web Java na <a title="Totvs" href="http://www.totvs.com/" target="_blank">Totvs</a> (sim, eu já trabalhei em quinhentas empresas diferentes e isso é assunto para um outro post). Tomei esta decisão após constatar que os servidores de aplicação Java como <a title="JBoss" href="http://www.jboss.org/" target="_blank">JBoss</a>, da RedHat, ou o <a title="Glassfish" href="http://glassfish.java.net/" target="_blank">GlassFish</a>, da Oracle, se integravam melhor ao Linux do que ao Windows. Aliás é comum um servidor Java Enterprise rodar no Linux.</p>
+<p>Então, minha experiência diária com o Linux foi com o Ubuntu logo após da adoção do Unity como interface gráfica padrão. Não sei se foi culpa minha, do Unity, dos milhões de tweeks que fiz no sistema mas a minha relação com o Ubuntu sempre esteve longe de ser estável. Por isso agora resolvi usar o Linux Mint Debian pois ouvi dizer que é mais estável e um pouco mais amigável do que o Debian mesmo. Então o que me motivou a escrever este blog é que toda a vez que formato minha máquina para instalar uma distro diferente do Linux faço vários ajustes no sistema e instalo vários programas e depois esqueço como se faz :-P. Desta vez resolvi anotar!</p>
+<p>Também posso compartilhar minhas experiências com programação Web e Mobile e algumas notícias sobre assuntos pertinentes ou qualquer outra coisa que vier a cabeça.</p>
+<p>Espero que gostem do blog para ele servir para algo mais do que apenas minhas anotações.</p>
+<p>Abraços,</p>
+<p>Leonardo Lima de Vasconcellos</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

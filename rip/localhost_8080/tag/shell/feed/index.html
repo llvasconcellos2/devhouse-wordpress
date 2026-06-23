@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>shell &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/shell/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Opções do desenvolvedor no CyanogemMod [Depuração USB / USB Debugging]</title>
+		<link>http://localhost:8080/opcoes-do-desenvolvedor-no-cyanogemmod-depuracao-usb-usb-debugging/</link>
+		<comments>http://localhost:8080/opcoes-do-desenvolvedor-no-cyanogemmod-depuracao-usb-usb-debugging/#comments</comments>
+		<pubDate>Sat, 11 Jan 2014 19:28:31 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Android]]></category>
+		<category><![CDATA[Hacks]]></category>
+		<category><![CDATA[adb]]></category>
+		<category><![CDATA[android]]></category>
+		<category><![CDATA[cyanogenmod]]></category>
+		<category><![CDATA[debugging]]></category>
+		<category><![CDATA[depuração]]></category>
+		<category><![CDATA[kitkat]]></category>
+		<category><![CDATA[opções do desenvolvedor]]></category>
+		<category><![CDATA[root]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[usb]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=648</guid>
+		<description><![CDATA[Uma dica rápida: Depois de instalar o CyanogemMod 11 (CM11) com Android KitKat percebi que não conseguia encontrar as Opções de desenvolvedor nas configurações do Android. Uma breve pesquisa no google revelou o truque. As opções de programador estão escondidas e para liberá-las você deve ir em Configurações &#8211; Sobre o telefone e bater (tap) [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Uma dica rápida:</p>
+<p>Depois de instalar o CyanogemMod 11 (CM11) com Android KitKat percebi que não conseguia encontrar as Opções de desenvolvedor nas configurações do Android. Uma breve pesquisa no google revelou o truque.</p>
+<p>As opções de programador estão escondidas e para liberá-las você deve ir em <strong>Configurações</strong> &#8211; <strong>Sobre o telefone</strong> e bater (tap) 7 vezes em <strong>Numero da versão</strong>. Pronto, as opções de desenvolvedor já estarão disponíveis nas configurações do dispositivo.</p>
+<p>Outra coisa que notei de diferente é que quando tentei usar o adb shell recebi a mensagem: <strong>error: device offline</strong>. Percebi então que o aparelho estava exibindo uma mensagem pedindo permissão para se conectar pelo adb. Concedi permissão e tudo certo. Já entrou até em root direto.</p>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/opcoes-do-desenvolvedor-no-cyanogemmod-depuracao-usb-usb-debugging/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>wgetmd5 um shell script que verifica o md5 do download com wget</title>
+		<link>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/</link>
+		<comments>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/#comments</comments>
+		<pubDate>Mon, 20 Aug 2012 18:05:45 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[github]]></category>
+		<category><![CDATA[md5]]></category>
+		<category><![CDATA[md5sum]]></category>
+		<category><![CDATA[script]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=377</guid>
+		<description><![CDATA[Quando é necessário fazer download de arquivos grandes, como distribuições linux, é prudente não confiarmos totalmente no browser para estes downloads pois alguns pacotes podem ser perdidos sem dar erro no download e depois temos problemas com o sistema sem saber por que. Então, para treinar a construção de bash scripts e também já automatizar [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Quando é necessário fazer download de arquivos grandes, como distribuições linux, é prudente não confiarmos totalmente no browser para estes downloads pois alguns pacotes podem ser perdidos sem dar erro no download e depois temos problemas com o sistema sem saber por que.</p>
+<p>Então, para treinar a construção de bash scripts e também já automatizar essa pequena tarefa que criei o wgetmd5 que nada mais é a junção do wget com o md5sum para calcular o hash md5 do download e comparar com o arquivo md5 que for indicado como parâmetro.</p>
+<p>O uso é:</p>
+<pre class="brush: bash; title: ; notranslate">$ wgetmd5 url_do_arquivo url_do_arquivo_md5</pre>
+<p>Ex:</p>
+<pre class="brush: bash; title: ; notranslate">$ wgetmd5 ftp://ftp.gimp.org/pub/gimp/v2.8/gimp-2.8.0.tar.bz2 ftp://ftp.gimp.org/pub/gimp/v2.8/gimp-2.8.0.tar.bz2.md5</pre>
+<p><div class="button-wrap"><a href="https://github.com/DevHouse-BR/wgetmd5" class="button-medium button-green button-medium-green" rel="external">Download from github.com</a></div><br />
+<div class="br-40"></div></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/wgetmd5-um-shell-script-que-verifica-o-md5-do-download-com-wget/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Sudo sem senha</title>
+		<link>http://localhost:8080/sudo-sem-senha/</link>
+		<comments>http://localhost:8080/sudo-sem-senha/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 18:31:59 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[root]]></category>
+		<category><![CDATA[sem]]></category>
+		<category><![CDATA[senha]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[sudo]]></category>
+		<category><![CDATA[sudo sem senha]]></category>
+		<category><![CDATA[visudo]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=324</guid>
+		<description><![CDATA[Se apenas você usa seu computador, você confia em si mesmo, sua senha é grande e não tem paciência para digitá-la toda vez que usa o sudo aqui vai uma dica. Com o comando visudo você edita o arquivo /etc/sudoers para alterar as configurações do sudo. No final do arquivo insira a seguinte lina, trocando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se apenas você usa seu computador, você confia em si mesmo, sua senha é grande e não tem paciência para digitá-la toda vez que usa o sudo aqui vai uma dica. Com o comando visudo você edita o arquivo /etc/sudoers para alterar as configurações do sudo.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo visudo</pre>
+<p>No <strong>final</strong> do arquivo insira a seguinte lina, trocando leonardo pelo seu nome de usuário:</p>
+<pre class="brush: bash; title: ; notranslate">leonardo ALL=(ALL) NOPASSWD: ALL</pre>
+<p>Salve o arquivo e pronto. Sudo sem senha!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/sudo-sem-senha/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

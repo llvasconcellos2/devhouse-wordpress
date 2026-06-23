@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Java &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/category/java-2/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Configurando HTTPS no Wildfly</title>
+		<link>http://localhost:8080/configurando-https-no-wildfly/</link>
+		<comments>http://localhost:8080/configurando-https-no-wildfly/#comments</comments>
+		<pubDate>Mon, 04 May 2015 15:29:26 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Java]]></category>
+		<category><![CDATA[aplicação]]></category>
+		<category><![CDATA[https]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[servidor]]></category>
+		<category><![CDATA[ssl]]></category>
+		<category><![CDATA[standalone]]></category>
+		<category><![CDATA[undertow]]></category>
+		<category><![CDATA[wildfly]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=790</guid>
+		<description><![CDATA[Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção. Estou usando o Wildfly 8.2.0.Final. A primeira coisa [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Esta configuração é apenas para habilitar o https em uma máquina de desenvolvimento com o Servidor de Aplicação Wildfly. Não fui a fundo na questão de segurança já que não sou eu que administro o servidor onde vai rodar a aplicação. Portanto não use isto em ambiente de produção.</p>
+<p>Estou usando o Wildfly 8.2.0.Final.</p>
+<ol>
+<li>A primeira coisa a fazer é entrar no diretório da instalação do Wildfly, na pasta <em><strong>./standalone/configuration/</strong></em>  e executar o seguinte comando:
+<pre class="brush: bash; title: ; notranslate">keytool -genkeypair -alias serverkey -keyalg RSA -keysize 2048 -validity 7360 -keystore localhost.keystore -keypass mypassword -storepass mypassword -dname &quot;cn=Server Administrator,o=Acme,c=GB&quot;</pre>
+</li>
+<li>Edite o arquivo <em><strong>./standalone/configuration/standalone.xml</strong></em> e adicione o seguinte xml dentro de <em><strong>security-realms</strong></em>:
+<pre class="brush: xml; title: ; notranslate">&lt;security-realm name=&quot;UndertowRealm&quot;&gt;
+	&lt;server-identities&gt;
+		&lt;ssl&gt;
+			&lt;keystore path=&quot;localhost.keystore&quot; relative-to=&quot;jboss.server.config.dir&quot; keystore-password=&quot;mypassword&quot;/&gt;
+		&lt;/ssl&gt;
+	&lt;/server-identities&gt;
+&lt;/security-realm&gt;</pre>
+</li>
+<li>Em seguida adicione a linha abaixo dentro de subsystem undertow -&gt; server
+<pre class="brush: xml; title: ; notranslate">&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;</pre>
+<p>Veja como ficou a entrada completa:</p>
+<pre class="brush: xml; title: ; notranslate">&lt;subsystem xmlns=&quot;urn:jboss:domain:undertow:1.2&quot;&gt;
+	&lt;buffer-cache name=&quot;default&quot;/&gt;
+	&lt;server name=&quot;default-server&quot;&gt;
+		&lt;http-listener name=&quot;default&quot; socket-binding=&quot;http&quot;/&gt;
+		&lt;https-listener name=&quot;https&quot; socket-binding=&quot;https&quot; security-realm=&quot;UndertowRealm&quot;/&gt;
+		&lt;host name=&quot;default-host&quot; alias=&quot;localhost&quot;&gt;
+			&lt;location name=&quot;/&quot; handler=&quot;welcome-content&quot;/&gt;
+			&lt;filter-ref name=&quot;server-header&quot;/&gt;
+			&lt;filter-ref name=&quot;x-powered-by-header&quot;/&gt;
+		&lt;/host&gt;
+	&lt;/server&gt;
+	&lt;servlet-container name=&quot;default&quot;&gt;
+		&lt;jsp-config/&gt;
+		&lt;websockets/&gt;
+	&lt;/servlet-container&gt;
+	&lt;handlers&gt;
+		&lt;file name=&quot;welcome-content&quot; path=&quot;${jboss.home.dir}/welcome-content&quot;/&gt;
+	&lt;/handlers&gt;
+	&lt;filters&gt;
+		&lt;response-header name=&quot;server-header&quot; header-name=&quot;Server&quot; header-value=&quot;WildFly/8&quot;/&gt;
+		&lt;response-header name=&quot;x-powered-by-header&quot; header-name=&quot;X-Powered-By&quot; header-value=&quot;Undertow/1&quot;/&gt;
+	&lt;/filters&gt;
+&lt;/subsystem&gt;</pre>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>Pronto, reinicie o servidor e acesse <a href="https://localhost:8443" target="_blank">https://localhost:8443</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/configurando-https-no-wildfly/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+	</channel>
+</rss>

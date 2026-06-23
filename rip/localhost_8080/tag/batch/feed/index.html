@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>batch &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/batch/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Redimensionar Imagens em Lote no Linux [ImageMagick Batch Resize]</title>
+		<link>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/</link>
+		<comments>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/#comments</comments>
+		<pubDate>Mon, 05 May 2014 03:00:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[batch]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[imagemagick]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[resize]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=683</guid>
+		<description><![CDATA[O ImageMagick é um conjunto de ferramentas para manipulação e edição de imagens direto do shell. Nesta dica vamos falar apenas do comando convert que faz parte do ImageMagick. Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank" rel="noopener">ImageMagick</a> é um conjunto de ferramentas para manipulação e edição de imagens direto do shell.</p>
+<p>Nesta dica vamos falar apenas do comando <strong>convert</strong> que faz parte do ImageMagick.</p>
+<p>Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por isso diminui-las economiza tempo no upload.</p>
+<p>Então vamos lá: A primeira coisa é instalar o imagemagick:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install imagemagick
+</pre>
+<p>Com o imagemagick instalado entre na pasta que contém mas imagens e crie uma pasta que chamaremos neste exemplo de &#8220;reduzidas&#8221; e execute o seguinte comando alterando os parâmetros de acordo com suas preferências.</p>
+<pre class="brush: bash; title: ; notranslate">
+mkdir reduzidas
+find . -maxdepth 1 -iname &quot;*.jpg&quot; | xargs -l -i convert -resize 1920x1080 -quality 70% -density 72 {} ./reduzidas/{}
+</pre>
+<ul>
+<li>find . -maxdepth 1 -iname &#8220;*.jpg&#8221;: este comando lista as imagens com extensão jpg apenas no diretório atual, sem entrar nos subdiretórios (-maxdepth 1).</li>
+<li>xargs -l -i executa o comando <strong>convert</strong> fornecendo os nomes de arquivo que o  comando <strong>find</strong> encontrou.</li>
+<li>convert é o comando da imagemagick para conversão de formatos.</li>
+<li>-resize 1920&#215;1080: altere para as dimensões que o arquivo ficará após o redimensionamento.</li>
+<li>-quality 70%: aplicável apenas para JPG. Altere para a qualidade do jpg final. 0% &#8211; 100%.</li>
+<li>-density 72: DPI da imagem. No meu caso eu tenho várias imagens em 300 DPI e quero elas em 72. Você pode omitir a opção caso não precise alterar o dpi.</li>
+<li>./reduzidas/: diretório onde serão salvas as imagens reduzidas.</li>
+</ul>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>server &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/server/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Concatenar várias linhas de um Select em uma única linha e gerar um JSON de uma Query [SQL SERVER]</title>
+		<link>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/</link>
+		<comments>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/#respond</comments>
+		<pubDate>Mon, 22 Sep 2014 20:12:12 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[Microsoft SQL Server]]></category>
+		<category><![CDATA[Sem categoria]]></category>
+		<category><![CDATA[concat]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[server]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[sql server]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=731</guid>
+		<description><![CDATA[Para concatenar várias linhas em uma: Sendo assim para gerar um JSON de uma query:]]></description>
+				<content:encoded><![CDATA[<p>Para concatenar várias linhas em uma:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT CAST((
+    SELECT COLUNA1 + ' - ' COLUNA2 FROM TABELA FOR XML PATH('')
+) AS VARCHAR(MAX));</pre>
+<p>Sendo assim para gerar um JSON de uma query:</p>
+<pre class="brush: sql; title: ; notranslate">SELECT '[' + CAST((
+    SELECT '{&quot;coluna1&quot;:' + COLUNA1 + '&quot;,&quot;coluna2&quot;:&quot;' + COLUNA2 + '&quot;},' FROM TABELA FOR XML PATH('')
+) AS VARCHAR(MAX)) + ']';</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/concatenar-varias-linhas-de-um-select-em-uma-unica-linha-e-gerar-um-json-de-uma-query-sql-server/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Query para encontrar uma coluna em todo o banco [MS SQL SERVER]</title>
+		<link>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-ms-sql-server/</link>
+		<comments>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-ms-sql-server/#respond</comments>
+		<pubDate>Sat, 20 Sep 2014 22:43:46 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Bando de Dados]]></category>
+		<category><![CDATA[Microsoft SQL Server]]></category>
+		<category><![CDATA[coluna]]></category>
+		<category><![CDATA[encontrar]]></category>
+		<category><![CDATA[microsoft]]></category>
+		<category><![CDATA[query]]></category>
+		<category><![CDATA[server]]></category>
+		<category><![CDATA[sql]]></category>
+		<category><![CDATA[sql server]]></category>
+		<category><![CDATA[tabela]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=720</guid>
+		<description><![CDATA[Dica rápida para M$ SQL Server:]]></description>
+				<content:encoded><![CDATA[<p>Dica rápida para M$ SQL Server:</p>
+<pre class="brush: sql; title: ; notranslate">USE NOME_DO_BANCO;
+
+SELECT 
+    t.name AS 'tabela',
+    SCHEMA_NAME(schema_id) AS 'schema',
+    c.name AS 'coluna'
+FROM 
+    sys.tables AS t
+INNER JOIN 
+    sys.columns c ON t.OBJECT_ID = c.OBJECT_ID
+WHERE 
+    c.name LIKE '%parte_do_nome_da_coluna%'
+ORDER BY 
+    schema_id, t.name;</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/query-para-encontrar-uma-coluna-em-todo-o-banco-ms-sql-server/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

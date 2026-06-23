@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>pid &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/pid/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Impedir que um Script PHP seja executado ao mesmo tempo no Cron</title>
+		<link>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/</link>
+		<comments>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 18:11:53 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[cron]]></category>
+		<category><![CDATA[lock]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[pid]]></category>
+		<category><![CDATA[script]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=748</guid>
+		<description><![CDATA[Estou construindo um script de sincronia de banco de dados que deve rodar de 5 em 5 minutos na cron do linux. O problema é que ele pode acabar durando mais do que cinco minutos então pesquisando uma forma de evitar que o script seja executado novamente antes que o anterior termine encontrei a solução [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Estou construindo um script de sincronia de banco de dados que deve rodar de 5 em 5 minutos na cron do linux. O problema é que ele pode acabar durando mais do que cinco minutos então pesquisando uma forma de evitar que o script seja executado novamente antes que o anterior termine encontrei a solução no link abaixo e coloco aqui com pequenas alterações:</p>
+<p><a href="http://abhinavsingh.com/blog/2009/12/how-to-use-locks-in-php-cron-jobs-to-avoid-cron-overlaps/" target="_blank">http://abhinavsingh.com/blog/2009/12/how-to-use-locks-in-php-cron-jobs-to-avoid-cron-overlaps/</a></p>
+<p>Crie um arquivo chamado CronHelper.php e adicione o código abaixo (eu coloquei na mesma pasta do meu script cron):</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+define('LOCK_DIR', __DIR__ . '/');
+define('LOCK_SUFFIX', '.lock');
+
+class CronHelper {
+    private static $pid;
+
+    function __construct() {
+        
+    }
+
+    function __clone() {
+        
+    }
+
+    private static function isrunning() {
+        $pids = explode(PHP_EOL, `ps -e | awk '{print $1}'`);
+        if (in_array(self::$pid, $pids)) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    public static function lock() {
+        global $argv;
+        
+        $path_parts = pathinfo($argv[0]);
+
+        $lock_file = LOCK_DIR . $path_parts['basename'] . LOCK_SUFFIX;
+
+        if (file_exists($lock_file)) {
+            //return FALSE;
+            // Is running?
+            self::$pid = file_get_contents($lock_file);
+            if (self::isrunning()) {
+                error_log(&quot;==&quot; . self::$pid . &quot;== Já está em progresso...&quot;);
+                return FALSE;
+            } else {
+                error_log(&quot;==&quot; . self::$pid . &quot;== O job anterior foi interrompido abruptamente...&quot;);
+            }
+        }
+
+        self::$pid = getmypid();
+        file_put_contents($lock_file, self::$pid);
+        error_log(&quot;==&quot; . self::$pid . &quot;== Trava adquirida, processando o job...&quot;);
+        return self::$pid;
+    }
+
+    public static function unlock() {
+        global $argv;
+
+        $lock_file = LOCK_DIR . $argv[0] . LOCK_SUFFIX;
+
+        if (file_exists($lock_file)) {
+            unlink($lock_file);
+        }
+
+        error_log(&quot;==&quot; . self::$pid . &quot;== Soltando a trava...&quot;);
+        return TRUE;
+    }
+
+}</pre>
+<p>Para utilizado coloque todo o código do cron dentro do if:</p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+require 'CronHelper.php';
+
+if(($pid = cronHelper::lock()) !== FALSE) {
+    /*
+     * O código do seu cron job vai aqui!
+     */
+
+    cronHelper::unlock();
+}
+
+?&gt;</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/impedir-que-um-script-php-seja-executado-ao-mesmo-tempo-no-cron/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

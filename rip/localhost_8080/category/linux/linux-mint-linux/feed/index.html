@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux Mint &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/category/linux/linux-mint-linux/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Copiar / Download de um site inteiro com WGET [ripar]</title>
+		<link>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/</link>
+		<comments>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/#respond</comments>
+		<pubDate>Sat, 11 Oct 2014 08:44:03 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[entire]]></category>
+		<category><![CDATA[rip]]></category>
+		<category><![CDATA[site]]></category>
+		<category><![CDATA[website]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=765</guid>
+		<description><![CDATA[Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando: &#160; o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio. O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com. A explicação [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:</p>
+<p>&nbsp;</p>
+<pre class="brush: bash; title: ; notranslate">$ wget \
+     --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36&quot; \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains exemplo.com \
+     --no-parent \
+     -e robots=off \
+     --load-cookies=cookies.txt \
+         exemplo.com/blog</pre>
+<p>o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio.<br />
+O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com.</p>
+<p>A explicação dos parâmetros segue abaixo. Depois eu traduzo:</p>
+<p>&#8211;recursive: download the entire Web site.</p>
+<p>&#8211;domains website.org: don&#8217;t follow links outside website.org.</p>
+<p>&#8211;no-parent: don&#8217;t follow links outside the directory tutorials/html/.</p>
+<p>&#8211;page-requisites: get all the elements that compose the page (images, CSS and so on).</p>
+<p>&#8211;html-extension: save files with the .html extension.</p>
+<p>&#8211;convert-links: convert links so that they work locally, off-line.</p>
+<p>&#8211;restrict-file-names=windows: modify filenames so that they will work in Windows as well.</p>
+<p>&#8211;no-clobber: don&#8217;t overwrite any existing files (used in case the download is interrupted and<br />
+resumed).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Redimensionar Imagens em Lote no Linux [ImageMagick Batch Resize]</title>
+		<link>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/</link>
+		<comments>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/#comments</comments>
+		<pubDate>Mon, 05 May 2014 03:00:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[batch]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[imagemagick]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[resize]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=683</guid>
+		<description><![CDATA[O ImageMagick é um conjunto de ferramentas para manipulação e edição de imagens direto do shell. Nesta dica vamos falar apenas do comando convert que faz parte do ImageMagick. Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank" rel="noopener">ImageMagick</a> é um conjunto de ferramentas para manipulação e edição de imagens direto do shell.</p>
+<p>Nesta dica vamos falar apenas do comando <strong>convert</strong> que faz parte do ImageMagick.</p>
+<p>Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por isso diminui-las economiza tempo no upload.</p>
+<p>Então vamos lá: A primeira coisa é instalar o imagemagick:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install imagemagick
+</pre>
+<p>Com o imagemagick instalado entre na pasta que contém mas imagens e crie uma pasta que chamaremos neste exemplo de &#8220;reduzidas&#8221; e execute o seguinte comando alterando os parâmetros de acordo com suas preferências.</p>
+<pre class="brush: bash; title: ; notranslate">
+mkdir reduzidas
+find . -maxdepth 1 -iname &quot;*.jpg&quot; | xargs -l -i convert -resize 1920x1080 -quality 70% -density 72 {} ./reduzidas/{}
+</pre>
+<ul>
+<li>find . -maxdepth 1 -iname &#8220;*.jpg&#8221;: este comando lista as imagens com extensão jpg apenas no diretório atual, sem entrar nos subdiretórios (-maxdepth 1).</li>
+<li>xargs -l -i executa o comando <strong>convert</strong> fornecendo os nomes de arquivo que o  comando <strong>find</strong> encontrou.</li>
+<li>convert é o comando da imagemagick para conversão de formatos.</li>
+<li>-resize 1920&#215;1080: altere para as dimensões que o arquivo ficará após o redimensionamento.</li>
+<li>-quality 70%: aplicável apenas para JPG. Altere para a qualidade do jpg final. 0% &#8211; 100%.</li>
+<li>-density 72: DPI da imagem. No meu caso eu tenho várias imagens em 300 DPI e quero elas em 72. Você pode omitir a opção caso não precise alterar o dpi.</li>
+<li>./reduzidas/: diretório onde serão salvas as imagens reduzidas.</li>
+</ul>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Como corrigir o GPG error NO_PUBKEY no Linux (Ubuntu / Debian / Mint)</title>
+		<link>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/</link>
+		<comments>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/#comments</comments>
+		<pubDate>Wed, 23 Apr 2014 15:32:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gpg]]></category>
+		<category><![CDATA[key]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[no_pubkey]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[update]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=666</guid>
+		<description><![CDATA[Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update: O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY). Agora pode rodar o apt-get update que deve funcionar normalmente.]]></description>
+				<content:encoded><![CDATA[<div id="attachment_672" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg"><img data-attachment-id="672" data-permalink="http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/ubuntu-update-error/" data-orig-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg" data-orig-size="633,396" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Ubuntu-Update-error" data-image-description="&lt;p&gt;GPG Error NO_PUBKEY&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg" data-large-file="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" class="size-large wp-image-672" src="/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg" alt="GPG Error NO_PUBKEY" width="600" height="375" srcset="http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-600x375.jpeg 600w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error-300x187.jpeg 300w, http://localhost:8080/wp-content/uploads/2014/04/Ubuntu-Update-error.jpeg 633w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">GPG Error NO_PUBKEY</p></div>
+<p>Ultimamente eu tenho encontrado um erro GPG ao executar o apt-get update:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo apt-get update
+W: GPG error: http://ppa.launchpad.net saucy Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2EE5793634EF4A35
+</pre>
+<p>O erro acontece porque não foi possível encontrar a chave de criptografia no sistema. Para corrigir basta adicionar a chave (sequencia de caracteres após NO_PUBKEY).</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2EE5793634EF4A35
+</pre>
+<p>Agora pode rodar o apt-get update que deve funcionar normalmente.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-corrigir-o-gpg-error-no_pubkey-no-linux-ubuntu-debian-mint/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

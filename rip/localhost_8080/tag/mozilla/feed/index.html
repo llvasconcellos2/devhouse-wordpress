@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>mozilla &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/mozilla/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Arquivos desktop: colocando seu aplicativo nos menus do GNOME</title>
+		<link>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/</link>
+		<comments>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 21:03:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=341</guid>
+		<description><![CDATA[O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome.</p>
+<p>Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.</p>
+<p>A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:</p>
+<p><a title="Gnome Desktop Files" href="http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR" target="_blank">http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR</a></p>
+<p><a title="Free Desktop" href="http://standards.freedesktop.org/menu-spec/latest/apa.html" target="_blank">http://standards.freedesktop.org/menu-spec/latest/apa.html</a></p>
+<p><a title="Nautilus Actions" href="http://www.nautilus-actions.org/?q=node/377" target="_blank">http://www.nautilus-actions.org/?q=node/377</a></p>
+<p>Para essa demonstração vou criar um arquivo .desktop para o Google Chrome. Quero que o Chrome entre no menu Internet igual ao Firefox e por isso vou usá-lo como base.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo cp /usr/share/applications/firefox.desktop /usr/share/applications/google-chrome.desktop
+$ sudo pluma /usr/share/applications/google-chrome.desktop
+</pre>
+<p>O arquivo original estava assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[ar]=متصفح الوِب فَيَرفُكْس
+Name[ca]=Navegador web Firefox
+Name[cs]=Firefox Webový prohlížeč
+Name[es]=Navegador web Firefox
+Name[et]=Firefoxi veebibrauser
+Name[fa]=مرورگر اینترنتی Firefox
+Name[fi]=Firefox-selain
+Name[fr]=Navigateur Web Firefox
+Name[hu]=Firefox webböngésző
+Name[it]=Firefox Browser Web
+Name[ja]=Firefox ウェブ・ブラウザ
+Name[ko]=Firefox 웹 브라우저
+Name[nb]=Firefox Nettleser
+Name[nl]=Firefox webbrowser
+Name[nn]=Firefox Nettlesar
+Name[no]=Firefox Nettleser
+Name=Przeglądarka WWW Firefox
+Name[pt]=Firefox Navegador Web
+Name[pt_BR]=Navegador Web Firefox
+Name[sk]=Firefox - internetový prehliadač
+Name[sv]=Webbläsaren Firefox
+Comment=Browse the World Wide Web
+Comment[ar]=تصفح الشبكة العنكبوتية العالمية
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[es]=Navegue por la web
+Comment[et]=Lehitse veebi
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[ar]=متصفح وب
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+Exec=/opt/firefox/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/firefox/icons/mozicon128.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
+</pre>
+<p>Após a edição ele ficou assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+Name[pt_BR]=Navegador Web Google Chrome
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Exec=/opt/google/chrome %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/google/chrome/product_logo_256.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Chrome
+StartupNotify=true
+</pre>
+<p>As alterações mais importantes são:</p>
+<p>Name => Nome do Aplicativo<br />
+Exec => Path para o executável (o %u é específico para o browser abrir uma url passada como parâmetro).<br />
+Icon => Path para o ícone (pode ser jpg, png, svg ou até o próprio executável do programa).<br />
+Categories = > Menu onde o atalho para o programa vai aparecer.</p>
+<p>Você pode sempre usar outros arquivos .desktop como base para a criação do seu.</p>
+<p>Veja também como colocar seu programa no path neste <a href="/editando-a-variavel-de-ambiente-path-no-linux-mint-debian" title="Editando a variável de ambiente PATH no Linux Mint Debian">artigo</a>.</p>
+<p>Espero ter ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Adicionando o Google ao Firefox no Linux Mint</title>
+		<link>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/</link>
+		<comments>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 19:41:38 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[duckduckgo]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+		<category><![CDATA[yahoo]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=334</guid>
+		<description><![CDATA[O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o Firefox. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o Yahoo como busca e o Duck Duck Go como busca padrão para a barra de endereços. Particularmente [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O browser padrão do Linux Mint Debian Edition, assim como em muitas distribuições, é o <a title="Mozilla Firefox" href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a>. O detalhe é que o firefox no Linux Mint vem todo personalizado. Usa uma página do linux mint como página inicial, o <a title="Yahoo" href="http://www.yahoo.com" target="_blank">Yahoo</a> como busca e o <a title="Duck Duck Go" href="http://duckduckgo.com" target="_blank">Duck Duck Go</a> como busca padrão para a barra de endereços. Particularmente eu prefiro usar o google. Então vamos as modificações:</p>
+<h2>1 &#8211; Alterar a busca pela barra de endereços.</h2>
+<p>Digite about:config na barra de endereço e confirme no botão &#8220;I&#8217;ll be carefull, I promisse!&#8221; ou em português, &#8220;Eu serei cuidadoso, prometo!&#8221;. O firefox abrirá uma lista de strings de configuração e tweeks. Busque pela string <strong>keyword.URL</strong> e altere o valor para:</p>
+<p><strong>http://www.google.com/search?ie=UTF-8&amp;oe=utf-8&amp;q=</strong></p>
+<p>&nbsp;</p>
+<h2>2 &#8211; Adicionar google à caixa de busca do firefox.</h2>
+<p>A caixa de busca vem como padrão o Yahoo e não vem com opção para o google. Clique no ícone do Yahoo e selecione &#8220;Manage Search Engines&#8221; ou &#8220;Gerenciar Mecanismos de Busca&#8221;. Clique no link <a title="Firefox Search Engines" href="http://www.linuxmint.com/searchengines" target="_blank">Get more search engines&#8230;</a> e em COMMERCIAL ENGINES clique no ícone do google. O google ainda não estará instalado. Clique no ícone do yahoo da barra de busca e escolha &#8220;Install Google&#8221;. Depois escolha &#8220;Manage Search Engines&#8221; novamente e coloque o Google no topo da lista.</p>
+<p>&nbsp;</p>
+<h2>3 &#8211; Alterar a página home</h2>
+<p>Essa é facil. Vá no menu Edit e selecione &#8220;Preferences&#8221; (ou editar -&gt; preferências) e na aba &#8220;General&#8221; em Homepage insira:</p>
+<p><strong>https://www.google.com.br/</strong></p>
+<p>Ou insira qualquer outra URL de sua preferência.</p>
+<p>&nbsp;</p>
+<p>É isso!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/adicionando-o-google-ao-firefox-no-linux-mint/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>eXtplorer, um gerenciador de arquivos em PHP</title>
+		<link>http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/</link>
+		<comments>http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/#comments</comments>
+		<pubDate>Sun, 03 Jun 2012 10:24:04 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[ExtJS]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[RIA com Javascript]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[apache]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[extjs]]></category>
+		<category><![CDATA[extplorer]]></category>
+		<category><![CDATA[gerenciador de arquivos]]></category>
+		<category><![CDATA[gnu]]></category>
+		<category><![CDATA[gpl]]></category>
+		<category><![CDATA[joomla]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[mozilla]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[ria]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=252</guid>
+		<description><![CDATA[Muitas vezes é preciso fazer pequenas alterações em arquivos ou corrigir permissões e ter a possibilidade de fazer isso através do browser, sem ter que instalar e configurar um cliente ftp, é ótimo! O eXtplorer é um ótimo gerenciador de arquivos escrito em PHP com frontend ajax criado usando o EXTJS*. Possui alguns bugs aqui [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p><img data-attachment-id="266" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer-horizontal2/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/eXtplorer-horizontal2.png" data-orig-size="390,91" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="eXtplorer Logo" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/eXtplorer-horizontal2-300x70.png" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/eXtplorer-horizontal2.png" class="alignnone size-full wp-image-266" title="eXtplorer Logo" src="/wp-content/uploads/2012/06/eXtplorer-horizontal2.png" alt="eXtplorer Logo" width="390" height="91" srcset="http://localhost:8080/wp-content/uploads/2012/06/eXtplorer-horizontal2.png 390w, http://localhost:8080/wp-content/uploads/2012/06/eXtplorer-horizontal2-300x70.png 300w" sizes="(max-width: 390px) 100vw, 390px" /><br />
+<div class="clear"></div><br />
+Muitas vezes é preciso fazer pequenas alterações em arquivos ou corrigir permissões e ter a possibilidade de fazer isso através do browser, sem ter que instalar e configurar um cliente ftp, é ótimo!</p>
+<p>O <a title="eXtplorer" href="http://extplorer.sourceforge.net/" target="_blank">eXtplorer</a> é um ótimo gerenciador de arquivos escrito em PHP com frontend ajax criado usando o <a title="EXTJS" href="http://www.sencha.com/products/extjs/" target="_blank">EXTJS</a>*. Possui alguns bugs aqui e ali mas considerando que é gratuito não importa. Em falar nisso sua licensa pode ser tanto <em>Mozilla Public License (MPL 1.1)</em> ou <em>GNU General Public License (GNU/GPL)</em> com um pequeno detalhe: se você escolher distribuir um software, com o extplorer incluso, sob a MPL você não poderá incluir o ExtJS. Ou seja, terá que criar outra interface.</p>
+<p>Deixando o papo chato de licensa de lado, suas principais características são:<br />
+<div class="icon-list icon-tick"><ul>
+<li>Copiar e mover arquivos e diretórios usando Drag &amp; Drop</li>
+<li>Árvore de diretórios dinâmica com carregamento sob demanda de subdiretórios</li>
+<li>Edição de arquivos (com destaque de sintaxe graças ao <a title="EditArea" href="http://www.cdolivet.com/editarea/?page=editArea" target="_blank">EditArea</a>)</li>
+<li>Renomear, apagar ou criar novos arquivos e diretórios</li>
+<li>Acesso de arquivos usando FTP ou diretamente (PHP) para sobrepor problemas de permissão de arquivos</li>
+<li>Upload e Download de arquivos</li>
+<li>Compactação de Descompactação de arquivos (Zip, Tar, Tar/GZ, Tar/BZ)</li>
+<li>Gerenciamento de usuários com diferentes níveis de permissão como &#8220;somente leitura&#8221;, &#8220;edição&#8221; e &#8220;admin&#8221;</li>
+<li>Facil instalação</li>
+<ul>
+<li>Como um componente para o <a title="eXtplorer Joomla Component" href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630" target="_blank">Joomla</a></li>
+<li>Em sistemas Linux usando um <a title="eXtplorer Debian Package" href="http://packages.debian.org/unstable/main/extplorer" target="_blank">pacote Debian</a></li>
+<li>Upload dos <a title="eXtplorer files" href="http://extplorer.net/files" target="_blank">arquivos de instalação</a></li>
+</ul>
+</ul></div><br />
+Eu uso o <a title="eXtplorer" href="http://extplorer.sourceforge.net/" target="_blank">eXtplorer</a> em sites <a title="Joomla" href="http://www.joomla.org/" target="_blank">Joomla</a> a mais de cinco anos e desde então este software tem me ajudado muito em tarefas rápidas em arquivos de sites remotos. Inclusive o eXtplorer tem um plugin para o <a href="http://wordpress.org/" title="WordPress" target="_blank">WordPress</a>, chamado <a href="http://wordpress.org/extend/plugins/wp-extplorer/" title="wp-eXtplorer" target="_blank">wp-eXtplorer</a>, que a princípio serviria como um wrapper para o eXtplorer dentro do WordPress mas o mesmo não instalou na versão 3.3.2. O plugin nem completou a instalação e foi exibida a mensagem:</p>
+<pre>
+Fazendo o download do pacote de instalação de http://downloads.wordpress.org/plugin/wp-extplorer.zip...
+
+Descompactando o pacote...
+
+Instalando o plugin...
+
+O pacote não pôde ser instalado. Nenhum plugin válido foi encontrado.
+
+A instalação do plugin falhou.
+</pre>
+<p>Veja os screenshots abaixo:</p>
+<p><div  style="text-align:center; width:300px; height:200px;"class="shortcode_float_left"><a href="/wp-content/uploads/2012/06/wp-extplorer_01.jpg" title="Instalação do wp-eXtplorer" rel="prettyPhoto[galeria]"><img data-attachment-id="303" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/wp-extplorer_01/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01.jpg" data-orig-size="900,678" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Instalação do wp-eXtplorer" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01-300x226.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01-600x452.jpg" src="/wp-content/uploads/2012/06/wp-extplorer_01-300x226.jpg" alt="Instalação do wp-eXtplorer" title="Instalação do wp-eXtplorer" width="240" class="size-medium wp-image-303" srcset="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01-300x226.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01-600x452.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_01.jpg 900w" sizes="(max-width: 300px) 100vw, 300px" /></a></div><br />
+<div  style="text-align:center; width:300px; height:200px;"class="shortcode_float_left"><a href="/wp-content/uploads/2012/06/wp-extplorer_02.jpg" rel="prettyPhoto[galeria]"><img data-attachment-id="304" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/wp-extplorer_02/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02.jpg" data-orig-size="762,336" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Erro na instalação do wp-eXtplorer" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02-300x132.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02-600x264.jpg" src="/wp-content/uploads/2012/06/wp-extplorer_02-300x132.jpg" alt="Erro na instalação do wp-eXtplorer" title="Erro na instalação do wp-eXtplorer" width="240" class="size-medium wp-image-304" srcset="http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02-300x132.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02-600x264.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/wp-extplorer_02.jpg 762w" sizes="(max-width: 300px) 100vw, 300px" /></a></div></p>
+<p>O plugin para o Joomla funciona bem pois é desenvolvido pelos próprios desenvolvedores do eXtplorer.<br />
+<div class="br-20"></div></p>
+<h2>Alguns screenshots:</h2>
+<p><div class="hr"></div><br />
+<div id="attachment_285" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/extplorer_login.jpg" title="Login do Extplorer"><img data-attachment-id="285" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer_login/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_login.jpg" data-orig-size="1363,765" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Login do Extplorer" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_login-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_login-600x336.jpg" src="/wp-content/uploads/2012/06/extplorer_login-600x336.jpg" alt="Formulario de Login" title="Login do Extplorer" width="600" height="336" class="size-large wp-image-285" srcset="http://localhost:8080/wp-content/uploads/2012/06/extplorer_login-600x336.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_login-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_login.jpg 1363w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Login do Extplorer</p></div><div id="attachment_286" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/extplorer.jpg" title="Extplorer"><img data-attachment-id="286" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer.jpg" data-orig-size="1366,766" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Extplorer" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer-600x336.jpg" src="/wp-content/uploads/2012/06/extplorer-600x336.jpg" alt="Extplorer" title="Extplorer" width="600" height="336" class="size-large wp-image-286" srcset="http://localhost:8080/wp-content/uploads/2012/06/extplorer-600x336.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/extplorer-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/extplorer.jpg 1366w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Extplorer</p></div><div id="attachment_287" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/extplorer_context.jpg" title="Menu de contexto"><img data-attachment-id="287" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer_context/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_context.jpg" data-orig-size="1364,760" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Menu de contexto" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_context-300x167.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_context-600x334.jpg" src="/wp-content/uploads/2012/06/extplorer_context-600x334.jpg" alt="menu de contexto" title="Menu de contexto" width="600" height="334" class="size-large wp-image-287" srcset="http://localhost:8080/wp-content/uploads/2012/06/extplorer_context-600x334.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_context-300x167.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_context.jpg 1364w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Menu de contexto</p></div><div id="attachment_288" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/extplorer_editor.jpg" title="Editor de Texto"><img data-attachment-id="288" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer_editor/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor.jpg" data-orig-size="1364,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Editor de Texto" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor-600x337.jpg" src="/wp-content/uploads/2012/06/extplorer_editor-600x337.jpg" alt="editor de texto" title="Editor de Texto" width="600" height="337" class="size-large wp-image-288" srcset="http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor-600x337.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_editor.jpg 1364w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Editor de Texto</p></div><div id="attachment_289" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/extplorer_compress.jpg" title="Compressão de Arquivo"><img data-attachment-id="289" data-permalink="http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/extplorer_compress/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress.jpg" data-orig-size="1362,766" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Compressão de Arquivo" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress-600x337.jpg" src="/wp-content/uploads/2012/06/extplorer_compress-600x337.jpg" alt="Compressão de Arquivo" title="Compressão de Arquivo" width="600" height="337" class="size-large wp-image-289" srcset="http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress-600x337.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/extplorer_compress.jpg 1362w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Compressão de Arquivo</p></div><br />
+<div class="br-20"></div></p>
+<h2>Instalação:</h2>
+<p><div class="hr"></div><br />
+Conforme mencionado na lista de <em>features</em> do software ele possui 3 tipos de instalação. Vamos cobrir aqui apenas as instalações manual e com pacote Debian. Sendo que não aconselho a utilização do pacote debian pois o mesmo não tem necessidade e vem com o arquivo de usuários zerado. Acredito até que vem zerado pois o eXtplorer vem com o usuário admin e senha admin em hard code no arquivo .htusers.php o que representa uma falha de segurança para o sistema.<br />
+<span class="highlight highlight-yellow">Inclusive é de extrema importância a troca da senha após o primeiro logon no eXtplorer.</span></p>
+<h2>Instalação Manual</h2>
+<div class="hr"></div>
+<ol>
+<li>Faça o download do arquivo compactado neste <a title="Download eXtplorer" href="http://extplorer.net/files" target="_blank">link</a>.</li>
+<li>Descompacte o arquivo no seu computador.</li>
+<li>Envie os arquivos via ftp para o seu servidor web ou copie na pasta /var/www local.</li>
+<li>Ajuste as permissões.</li>
+<ul>
+<li>Caso o servidor seja remoto você precisa dar permissão de leitura e escrita para o usuario do apache na pasta extplorer/ftp_tmp. Por exemplo:
+<pre class="brush: bash; title: ; notranslate">$ chmod 777 ./explorer/ftp_tmp</pre>
+</li>
+<li>Caso a instalação seja no seu servidor local de desenvolvimento você verá a seguinte mensagem ao tentar executar o software:
+<pre class="brush: php; title: ; notranslate">Warning: require_once(/var/www/extplorer/libraries/standalone.php): failed to open stream: Permission denied in /var/www/extplorer/index.php on line 44 Fatal error: require_once(): Failed opening required '/var/www/extplorer/libraries/standalone.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/extplorer/index.php on line 44</pre>
+<p>Para corrigir digite o seguinte comando no shell:</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo chown -R www-data /var/www/extplorer/</pre>
+</li>
+</ul>
+<li>Aponte o browser para http://&lt;SERVIDOR&gt;/extplorer e use <strong>login: admin e senha: admin</strong>.<br />
+<span class="highlight highlight-red">Troque a senha imediatamente!</span></li>
+</ol>
+<div class="br-20"></div>
+<h2>Instalação via pacote Debian</h2>
+<p><div class="hr"></div><br />
+Como disse anteriormente não recomendo esta instalação e estou colocando aqui apenas a título de curiosidade. Este teste foi feito no <strong>Linux Mint Debian Edition</strong>.</p>
+<ol>
+<li>Entre no shell e digite o seguinte comando:
+<pre class="brush: bash; title: ; notranslate">$ sudo apt-get update
+$ sudo apt-get install extplorer</pre>
+</li>
+<li>Após o download e a instalação será preciso recriar o conteúdo do arquivo <em>.htusers.php</em> que se encontra no diretório <em>/etc/extplorer</em>.
+<pre class="brush: bash; title: ; notranslate">$ cd /etc/extplorer
+$ sudo nano .htusers.php</pre>
+<p>O arquivo está vazio, portanto insira o seguinte código que foi extraido da versão 2.1.0 RC 5 em 03/06/2012. </p>
+<pre class="brush: php; title: ; notranslate">&lt;?php
+/** @version $Id: .htusers.php 135 2009-01-27 21:57:15Z ryu_ms $ */
+/** ensure this file is being included by a parent file */
+if( !defined( '_JEXEC' ) &amp;&amp; !defined( '_VALID_MOS' ) ) die( 'Restricted access' );
+
+$GLOBALS[&quot;users&quot;]=array(
+array(&quot;admin&quot;,&quot;21232f297a57a5a743894a0e4a801fc3&quot;,empty($_SERVER['DOCUMENT_ROOT'])?realpath(dirname(__FILE__).'/..'):$_SERVER['DOCUMENT_ROOT'],&quot;&quot;,1,&quot;&quot;,7,1),
+); ?&gt;</pre>
+</li>
+<li>Por último crie um link simbólico para o eXtplorer dentro do diretório do www do apache:
+<pre class="brush: bash; title: ; notranslate">sudo ln -s /usr/share/extplorer/ extplorer</pre>
+</li>
+<li>Aponte o browser para http://&lt;SERVIDOR&gt;/extplorer e use <strong>login: admin e senha: admin</strong>.<br />
+<span class="highlight highlight-red">Troque a senha imediatamente!</span></li>
+</ol>
+<p><div class="br-20"></div><br />
+É isso pessoal!<br />
+<div class="br-10"></div><br />
+<div class="message-box radius-5 message-box-note"><p class="icon radius-5">* <a title="EXTJS" href="http://www.sencha.com/products/extjs/" target="_blank">EXTJS</a> é uma ótima framework para criação de aplicativos ricos para internet (RIA). Uma boa opção de substituição ao Adobe Flex. Já desenvolvi algumas aplicações usando EXTJS e recomendo!</p></div></p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/extplorer-um-gerenciador-de-arquivos-em-php/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+	</channel>
+</rss>

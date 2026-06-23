@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>lmde &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/lmde/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Redimensionar Imagens em Lote no Linux [ImageMagick Batch Resize]</title>
+		<link>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/</link>
+		<comments>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/#comments</comments>
+		<pubDate>Mon, 05 May 2014 03:00:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[batch]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[imagemagick]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[resize]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=683</guid>
+		<description><![CDATA[O ImageMagick é um conjunto de ferramentas para manipulação e edição de imagens direto do shell. Nesta dica vamos falar apenas do comando convert que faz parte do ImageMagick. Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank" rel="noopener">ImageMagick</a> é um conjunto de ferramentas para manipulação e edição de imagens direto do shell.</p>
+<p>Nesta dica vamos falar apenas do comando <strong>convert</strong> que faz parte do ImageMagick.</p>
+<p>Muitas vezes é útil reduzir imagens tiradas da Câmera Digital antes de enviá-las para a internet. Imagens de câmeras digitais podem chegar facilmente a 20 Megabytes por isso diminui-las economiza tempo no upload.</p>
+<p>Então vamos lá: A primeira coisa é instalar o imagemagick:</p>
+<pre class="brush: bash; title: ; notranslate">
+sudo apt-get update
+sudo apt-get install imagemagick
+</pre>
+<p>Com o imagemagick instalado entre na pasta que contém mas imagens e crie uma pasta que chamaremos neste exemplo de &#8220;reduzidas&#8221; e execute o seguinte comando alterando os parâmetros de acordo com suas preferências.</p>
+<pre class="brush: bash; title: ; notranslate">
+mkdir reduzidas
+find . -maxdepth 1 -iname &quot;*.jpg&quot; | xargs -l -i convert -resize 1920x1080 -quality 70% -density 72 {} ./reduzidas/{}
+</pre>
+<ul>
+<li>find . -maxdepth 1 -iname &#8220;*.jpg&#8221;: este comando lista as imagens com extensão jpg apenas no diretório atual, sem entrar nos subdiretórios (-maxdepth 1).</li>
+<li>xargs -l -i executa o comando <strong>convert</strong> fornecendo os nomes de arquivo que o  comando <strong>find</strong> encontrou.</li>
+<li>convert é o comando da imagemagick para conversão de formatos.</li>
+<li>-resize 1920&#215;1080: altere para as dimensões que o arquivo ficará após o redimensionamento.</li>
+<li>-quality 70%: aplicável apenas para JPG. Altere para a qualidade do jpg final. 0% &#8211; 100%.</li>
+<li>-density 72: DPI da imagem. No meu caso eu tenho várias imagens em 300 DPI e quero elas em 72. Você pode omitir a opção caso não precise alterar o dpi.</li>
+<li>./reduzidas/: diretório onde serão salvas as imagens reduzidas.</li>
+</ul>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/redimensionar-imagens-em-lote-no-linux-imagemagick-batch-resize/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>apt-file search: resolvendo problemas de &#8220;No such file or directory&#8221;</title>
+		<link>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/</link>
+		<comments>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/#respond</comments>
+		<pubDate>Fri, 07 Sep 2012 20:12:05 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[apt-file]]></category>
+		<category><![CDATA[apt-file search]]></category>
+		<category><![CDATA[apt-get]]></category>
+		<category><![CDATA[build]]></category>
+		<category><![CDATA[compilar]]></category>
+		<category><![CDATA[configure]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[make]]></category>
+		<category><![CDATA[search]]></category>
+		<category><![CDATA[squeeze]]></category>
+		<category><![CDATA[wheezy]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=474</guid>
+		<description><![CDATA[Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make. Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Você está tentando compilar um programa no linux mas se depara com a mensagem: &#8220;No such file or directory&#8221;. Normalmente quando você executa o configure ou o próprio make.</p>
+<p>Uma dica boa é instalar o apt-file (caso já não tenha instalado) e executar um search pelo pacote que contenha o tal arquivo faltando e assim resolver o problema.</p>
+<pre class="brush: bash; title: ; notranslate">
+# Instale o apt-file.
+sudo apt-get update
+sudo apt-get install apt-file
+
+# Atualize o cache do apt-file.
+sudo apt-file update
+
+# Procure pelo arquivo.
+sudo apt-file search StdSel.h
+    libxmu-headers: /usr/include/X11/Xmu/StdSel.h
+
+# Agora instale o pacote que contém o arquivo.
+sudo apt-get install libxmu-headers
+
+# Opcionalmente apague o cache do apt-file para liberar espaço em disco.
+sudo apt-file purge
+</pre>
+<p>Pronto! Simples mas ajuda muito.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/apt-file-search-resolvendo-problemas-de-no-such-file-or-directory/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Como instalar Gimp 2.8 no Debian / Linux Mint Debian Edition</title>
+		<link>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/</link>
+		<comments>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/#comments</comments>
+		<pubDate>Wed, 22 Aug 2012 01:34:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gimp]]></category>
+		<category><![CDATA[gimp 2.8]]></category>
+		<category><![CDATA[linux mint]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=363</guid>
+		<description><![CDATA[O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios do Mint mas já está disponível no Debian Testing e portanto vamos usá-lo.</p>
+<p>Primeiro remova a versão antiga</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get purge gimp*</pre>
+<p>Agora adicione o repositório do Debian Testing.</p>
+<pre class="brush: bash; title: ; notranslate">sudo add-apt-repository &quot;deb http://ftp.debian.org/debian/ testing main contrib non-free&quot;</pre>
+<p>E finalmente instale o Gimp</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get update &amp;&amp; sudo apt-get install gimp</pre>
+<p>Caso apresente problemas de dependências use o aptitude e escolha a opção onde todos os pacotes são atualizados para corrigir o problema. No meu caso foi a terceira opção.</p>
+<pre class="brush: bash; title: ; notranslate">sudo aptitude install gimp</pre>
+<p>O gimp 2.8 é rápido para abrir. Aqui funcionou e ai?</p>
+<div id="attachment_417" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/08/gimp.jpg"><img data-attachment-id="417" data-permalink="http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/gimp/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg" data-orig-size="1328,761" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Gimp 2.8" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg" class="size-large wp-image-417" title="Gimp 2.8" src="/wp-content/uploads/2012/08/gimp-600x343.jpg" alt="about gimp 2.8" width="600" height="343" srcset="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg 600w, http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg 300w, http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg 1328w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Gimp em janela única.</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Arquivos desktop: colocando seu aplicativo nos menus do GNOME</title>
+		<link>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/</link>
+		<comments>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 21:03:09 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[firefox]]></category>
+		<category><![CDATA[gnome]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[mozilla]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=341</guid>
+		<description><![CDATA[O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Linux Mint Debian Edition vem por padrão com duas interfaces gráficas o Mate, que é um fork do Gnome 2, e o Cinnamon que é um fork do Gnome 3 que o modifica para ficar mais parecido com a versão 2 do Gnome. Portanto, não importa se você usa o Mate ou o Cinnamon você está usando Gnome.</p>
+<p>Caso você instale um programa e o mesmo não apareça nos menus do Gnome você pode criar um arquivo .desktop fazendo com que o sistema o reconheça automaticamente.</p>
+<p>A forma mais simples de criar um arquivo desktop é copiando de outro arquivo e alterando o que interessa mas se você quiser conhecer mais algumas informações sobre o arquivo e parâmetros possíveis eu recomendo estes links:</p>
+<p><a title="Gnome Desktop Files" href="http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR" target="_blank">http://developer.gnome.org/integration-guide/stable/desktop-files.html.pt_BR</a></p>
+<p><a title="Free Desktop" href="http://standards.freedesktop.org/menu-spec/latest/apa.html" target="_blank">http://standards.freedesktop.org/menu-spec/latest/apa.html</a></p>
+<p><a title="Nautilus Actions" href="http://www.nautilus-actions.org/?q=node/377" target="_blank">http://www.nautilus-actions.org/?q=node/377</a></p>
+<p>Para essa demonstração vou criar um arquivo .desktop para o Google Chrome. Quero que o Chrome entre no menu Internet igual ao Firefox e por isso vou usá-lo como base.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo cp /usr/share/applications/firefox.desktop /usr/share/applications/google-chrome.desktop
+$ sudo pluma /usr/share/applications/google-chrome.desktop
+</pre>
+<p>O arquivo original estava assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[ar]=متصفح الوِب فَيَرفُكْس
+Name[ca]=Navegador web Firefox
+Name[cs]=Firefox Webový prohlížeč
+Name[es]=Navegador web Firefox
+Name[et]=Firefoxi veebibrauser
+Name[fa]=مرورگر اینترنتی Firefox
+Name[fi]=Firefox-selain
+Name[fr]=Navigateur Web Firefox
+Name[hu]=Firefox webböngésző
+Name[it]=Firefox Browser Web
+Name[ja]=Firefox ウェブ・ブラウザ
+Name[ko]=Firefox 웹 브라우저
+Name[nb]=Firefox Nettleser
+Name[nl]=Firefox webbrowser
+Name[nn]=Firefox Nettlesar
+Name[no]=Firefox Nettleser
+Name=Przeglądarka WWW Firefox
+Name[pt]=Firefox Navegador Web
+Name[pt_BR]=Navegador Web Firefox
+Name[sk]=Firefox - internetový prehliadač
+Name[sv]=Webbläsaren Firefox
+Comment=Browse the World Wide Web
+Comment[ar]=تصفح الشبكة العنكبوتية العالمية
+Comment[ca]=Navegueu per el web
+Comment[cs]=Prohlížení stránek World Wide Webu
+Comment[de]=Im Internet surfen
+Comment[es]=Navegue por la web
+Comment[et]=Lehitse veebi
+Comment[fa]=صفحات شبکه جهانی اینترنت را مرور نمایید
+Comment[fi]=Selaa Internetin WWW-sivuja
+Comment[fr]=Navigue sur Internet
+Comment[hu]=A világháló böngészése
+Comment[it]=Esplora il web
+Comment[ja]=ウェブを閲覧します
+Comment[ko]=웹을 돌아 다닙니다
+Comment[nb]=Surf på nettet
+Comment[nl]=Verken het internet
+Comment[nn]=Surf på nettet
+Comment[no]=Surf på nettet
+Comment=Przeglądanie stron WWW 
+Comment[pt]=Navegue na Internet
+Comment[pt_BR]=Navegue na Internet
+Comment[sk]=Prehliadanie internetu
+Comment[sv]=Surfa på webben
+GenericName=Web Browser
+GenericName[ar]=متصفح وب
+GenericName[ca]=Navegador web
+GenericName[cs]=Webový prohlížeč
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fa]=مرورگر اینترنتی
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブ・ブラウザ
+GenericName[ko]=웹 브라우저
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[nn]=Nettlesar
+GenericName[no]=Nettleser
+GenericName=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador Web
+GenericName[sk]=Internetový prehliadač
+GenericName[sv]=Webbläsare
+Exec=/opt/firefox/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/firefox/icons/mozicon128.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
+</pre>
+<p>Após a edição ele ficou assim:</p>
+<pre class="brush: bash; title: ; notranslate">
+[Desktop Entry]
+Version=1.0
+Name=Google Chrome
+Name[pt_BR]=Navegador Web Google Chrome
+Comment=Browse the World Wide Web
+Comment[pt_BR]=Navegue na Internet
+GenericName=Web Browser
+GenericName[pt_BR]=Navegador Web
+Exec=/opt/google/chrome %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/google/chrome/product_logo_256.png
+Categories=Application;Internet;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Chrome
+StartupNotify=true
+</pre>
+<p>As alterações mais importantes são:</p>
+<p>Name => Nome do Aplicativo<br />
+Exec => Path para o executável (o %u é específico para o browser abrir uma url passada como parâmetro).<br />
+Icon => Path para o ícone (pode ser jpg, png, svg ou até o próprio executável do programa).<br />
+Categories = > Menu onde o atalho para o programa vai aparecer.</p>
+<p>Você pode sempre usar outros arquivos .desktop como base para a criação do seu.</p>
+<p>Veja também como colocar seu programa no path neste <a href="/editando-a-variavel-de-ambiente-path-no-linux-mint-debian" title="Editando a variável de ambiente PATH no Linux Mint Debian">artigo</a>.</p>
+<p>Espero ter ajudado!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/arquivos-desktop-colocando-seu-aplicativo-nos-menus-do-gnome/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Editando a variável de ambiente PATH no Linux Mint Debian</title>
+		<link>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/</link>
+		<comments>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 20:50:47 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[etc]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[path]]></category>
+		<category><![CDATA[profile]]></category>
+		<category><![CDATA[sh]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=346</guid>
+		<description><![CDATA[Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile. Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse: As alterações no /etc/profile são aplicadas a todos os usuários do sistema. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo pluma /etc/profile</pre>
+<p>Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &quot;`id -u`&quot; -eq 0 ]; then
+  PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+else
+  PATH=&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games&quot;
+fi
+PATH=$PATH:/opt/eclipse
+export PATH
+
+if [ &quot;$PS1&quot; ]; then
+  if [ &quot;$BASH&quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ &quot;`id -u`&quot; -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+</pre>
+<p>As alterações no /etc/profile são aplicadas a todos os usuários do sistema. Na pasta home do usuário existe um arquivo .profile que também pode ser editado.</p>
+<p>Uma outra forma de colocar um aplicativo no path é colocar um link simbólico para o aplicativo na pasta /usr/bin. Veja como o instalador do Google Chrome fez:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ls -l /usr/bin/google-chrome 
+lrwxrwxrwx 1 root root 32 Jun  7 03:17 /usr/bin/google-chrome -&gt; /opt/google/chrome/google-chrome
+</pre>
+<p>Você consegue o mesmo efeito usando o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+</pre>
+<p>Por hoje é só pessoal!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Associação de arquivos no Nautilus &#8211; Associando arquivos .deb ao Instalador de pacotes GDebi</title>
+		<link>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/</link>
+		<comments>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 18:47:19 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[.deb]]></category>
+		<category><![CDATA[.desktop]]></category>
+		<category><![CDATA[canonical]]></category>
+		<category><![CDATA[chrome]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gdeb]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=329</guid>
+		<description><![CDATA[Essa é para quem é noobie como eu em desktops Linux. Acabei de fazer o download do pacote deb do Google Chrome e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Essa é para quem é noobie como eu em desktops Linux.</p>
+<p>Acabei de fazer o download do pacote deb do <a title="Google Chrome" href="https://www.google.com/chrome" target="_blank">Google Chrome</a> e ao clicar duas vezes no arquivo quem abriu o mesmo foi o File Roller e não o GDebi, que é o instalador de pacotes padrão do Linux Mint Debian Edition 12. Em falar nisso o GDebi foi feito pela Canonical (será que tem Ubuntu no meu Debian? :-P).</p>
+<p>Eu prefiro que o arquivos .deb fiquem associados com o GDebi para facilitar a vida e para fazer isso basta clicar com o botão direito do mouse no arquivo e ir para a aba &#8220;Open with&#8221; em inglês, selecione o GDebi Package Installer e clique em Set as Default.</p>
+<div id="attachment_330" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/06/default_to_deb.jpg"><img data-attachment-id="330" data-permalink="http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/default_to_deb/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg" data-orig-size="1353,759" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title=".deb default para GDeb" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" class="size-large wp-image-330" title=".deb default para GDeb" src="/wp-content/uploads/2012/06/default_to_deb-600x336.jpg" alt="associando arquivos no Nautilus" width="600" height="336" srcset="http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-600x336.jpg 600w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb-300x168.jpg 300w, http://localhost:8080/wp-content/uploads/2012/06/default_to_deb.jpg 1353w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">.deb default para GDeb</p></div>
+<p>Obviamente isso serve para qualquer tipo de arquivo. Caso o programa preferido não apareça entre os programas recomendados clique em &#8220;Show other applications&#8221;. E se o seu programa não aparecer em &#8220;Show other applications&#8221;? Você provavelmente vai precisar criar um arquivo .desktop para ele. Veja como fazer aqui.</p>
+<p>Observe que prefiro o meu Linux em inglês, apesar de todas as configurações de localização e teclado estarem para Português/Brasil. Prefiro assim pois facilita na hora de pesquisar por dúvidas, mensagens de erro, nomes de programas, etc.</p>
+<p>Então é isso! A dica é simples mas eu não conhecia&#8230;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/associacao-de-arquivos-no-nautilus-associando-arquivos-deb-ao-instalador-de-pacotes-gdebi/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Sudo sem senha</title>
+		<link>http://localhost:8080/sudo-sem-senha/</link>
+		<comments>http://localhost:8080/sudo-sem-senha/#respond</comments>
+		<pubDate>Fri, 15 Jun 2012 18:31:59 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[root]]></category>
+		<category><![CDATA[sem]]></category>
+		<category><![CDATA[senha]]></category>
+		<category><![CDATA[shell]]></category>
+		<category><![CDATA[sudo]]></category>
+		<category><![CDATA[sudo sem senha]]></category>
+		<category><![CDATA[visudo]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=324</guid>
+		<description><![CDATA[Se apenas você usa seu computador, você confia em si mesmo, sua senha é grande e não tem paciência para digitá-la toda vez que usa o sudo aqui vai uma dica. Com o comando visudo você edita o arquivo /etc/sudoers para alterar as configurações do sudo. No final do arquivo insira a seguinte lina, trocando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Se apenas você usa seu computador, você confia em si mesmo, sua senha é grande e não tem paciência para digitá-la toda vez que usa o sudo aqui vai uma dica. Com o comando visudo você edita o arquivo /etc/sudoers para alterar as configurações do sudo.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo visudo</pre>
+<p>No <strong>final</strong> do arquivo insira a seguinte lina, trocando leonardo pelo seu nome de usuário:</p>
+<pre class="brush: bash; title: ; notranslate">leonardo ALL=(ALL) NOPASSWD: ALL</pre>
+<p>Salve o arquivo e pronto. Sudo sem senha!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/sudo-sem-senha/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>O primeiro Post a gente nunca esquece&#8230;</title>
+		<link>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/</link>
+		<comments>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/#comments</comments>
+		<pubDate>Tue, 29 May 2012 02:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[blog]]></category>
+		<category><![CDATA[Brain]]></category>
+		<category><![CDATA[centos]]></category>
+		<category><![CDATA[Conectiva]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[Dualline]]></category>
+		<category><![CDATA[glassfish]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[java ee]]></category>
+		<category><![CDATA[jboss]]></category>
+		<category><![CDATA[linux mint debian edition]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[Mandriva]]></category>
+		<category><![CDATA[oracle]]></category>
+		<category><![CDATA[redhat]]></category>
+		<category><![CDATA[sctel]]></category>
+		<category><![CDATA[Slackware]]></category>
+		<category><![CDATA[totvs]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=18</guid>
+		<description><![CDATA[Saudações terráqueos! Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! 🙂 Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux. Conheço Linux desde 1999 quando [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Saudações terráqueos!</p>
+<p>Este é o primeiro Post de múitos que devem vir, ou pelo menos assim espero! <img src="https://s.w.org/images/core/emoji/2.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Resolvi escrever este blog para registrar as dificuldades e soluções que encontro no dia a dia envolvendo tecnologia. Para ser preciso, resolvi mesmo escrever para registrar as minhas aventuras no mundo Linux.</p>
+<p>Conheço Linux desde 1999 quando fiz um curso do Conectiva Linux (hoje <a title="Conectiva / Mandriva Linux" href="https://pt.wikipedia.org/wiki/Mandriva_Linux" target="_blank">Mandriva</a>) na <a title="Dualline" href="http://www.dualline.com.br/" target="_blank">Dualline</a>, onde trabalhei na época. Inclusive meu professor foi o <a title="Augusto Campos" href="https://plus.google.com/105003069076649186723/posts" target="_blank">Augusto Campos</a>, mais conhecido como Brain do site <a title="br-linux.org" href="http://br-linux.org/" target="_blank">br-linux.org</a>. Depois do curso administrei um servidor web com <a title="Slackware" href="http://www.slackware.com" target="_blank">Linux Slackware</a> na SCTEL uma empresa de telecomunicações que trabalhei depois que sai da Dualline e além disso já fiz várias instalações de servidores como prestador de serviços de infra-estrutura de rede. Normalmente eu instalava o RedHat ou o CentOS depois que foi lançado. Apesar de ter contato com Linux durante toda a minha vida profissional até 2011 não tinha usado em minha máquina pessoal. Passei a usar o <a title="Ubuntu" href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> como meu sistema principal em uma máquina dual boot com o Windows 7 quando fui trabalhar com desenvolvimento web Java na <a title="Totvs" href="http://www.totvs.com/" target="_blank">Totvs</a> (sim, eu já trabalhei em quinhentas empresas diferentes e isso é assunto para um outro post). Tomei esta decisão após constatar que os servidores de aplicação Java como <a title="JBoss" href="http://www.jboss.org/" target="_blank">JBoss</a>, da RedHat, ou o <a title="Glassfish" href="http://glassfish.java.net/" target="_blank">GlassFish</a>, da Oracle, se integravam melhor ao Linux do que ao Windows. Aliás é comum um servidor Java Enterprise rodar no Linux.</p>
+<p>Então, minha experiência diária com o Linux foi com o Ubuntu logo após da adoção do Unity como interface gráfica padrão. Não sei se foi culpa minha, do Unity, dos milhões de tweeks que fiz no sistema mas a minha relação com o Ubuntu sempre esteve longe de ser estável. Por isso agora resolvi usar o Linux Mint Debian pois ouvi dizer que é mais estável e um pouco mais amigável do que o Debian mesmo. Então o que me motivou a escrever este blog é que toda a vez que formato minha máquina para instalar uma distro diferente do Linux faço vários ajustes no sistema e instalo vários programas e depois esqueço como se faz :-P. Desta vez resolvi anotar!</p>
+<p>Também posso compartilhar minhas experiências com programação Web e Mobile e algumas notícias sobre assuntos pertinentes ou qualquer outra coisa que vier a cabeça.</p>
+<p>Espero que gostem do blog para ele servir para algo mais do que apenas minhas anotações.</p>
+<p>Abraços,</p>
+<p>Leonardo Lima de Vasconcellos</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/o-primeiro-post-a-gente-nunca-esquece/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

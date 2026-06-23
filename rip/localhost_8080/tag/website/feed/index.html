@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>website &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/website/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Copiar / Download de um site inteiro com WGET [ripar]</title>
+		<link>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/</link>
+		<comments>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/#respond</comments>
+		<pubDate>Sat, 11 Oct 2014 08:44:03 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Debian]]></category>
+		<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[Ubuntu]]></category>
+		<category><![CDATA[download]]></category>
+		<category><![CDATA[entire]]></category>
+		<category><![CDATA[rip]]></category>
+		<category><![CDATA[site]]></category>
+		<category><![CDATA[website]]></category>
+		<category><![CDATA[wget]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=765</guid>
+		<description><![CDATA[Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando: &#160; o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio. O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com. A explicação [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para copiar um site inteiro, incluindo fotos, arquivos js e css usando o wget no Linux execute o seguinte comando:</p>
+<p>&nbsp;</p>
+<pre class="brush: bash; title: ; notranslate">$ wget \
+     --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36&quot; \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains exemplo.com \
+     --no-parent \
+     -e robots=off \
+     --load-cookies=cookies.txt \
+         exemplo.com/blog</pre>
+<p>o parâmetro &#8211;domains informa ao wget para só baixar arquivos daquele domínio.<br />
+O último diz de qual raiz copiar. Nesse caso eu só copiaria os arquivos, recursivamente, do /blog do site exemplo.com.</p>
+<p>A explicação dos parâmetros segue abaixo. Depois eu traduzo:</p>
+<p>&#8211;recursive: download the entire Web site.</p>
+<p>&#8211;domains website.org: don&#8217;t follow links outside website.org.</p>
+<p>&#8211;no-parent: don&#8217;t follow links outside the directory tutorials/html/.</p>
+<p>&#8211;page-requisites: get all the elements that compose the page (images, CSS and so on).</p>
+<p>&#8211;html-extension: save files with the .html extension.</p>
+<p>&#8211;convert-links: convert links so that they work locally, off-line.</p>
+<p>&#8211;restrict-file-names=windows: modify filenames so that they will work in Windows as well.</p>
+<p>&#8211;no-clobber: don&#8217;t overwrite any existing files (used in case the download is interrupted and<br />
+resumed).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/copiar-download-de-um-site-inteiro-com-wget-ripar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

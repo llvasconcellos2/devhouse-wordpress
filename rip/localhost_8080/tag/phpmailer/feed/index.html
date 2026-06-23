@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>phpmailer &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/phpmailer/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Enviando via GMail com PHPMailer</title>
+		<link>http://localhost:8080/enviando-via-gmail-com-phpmailer/</link>
+		<comments>http://localhost:8080/enviando-via-gmail-com-phpmailer/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 17:30:08 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[email]]></category>
+		<category><![CDATA[gmail]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[phpmailer]]></category>
+		<category><![CDATA[smtp]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=742</guid>
+		<description><![CDATA[A biblioteca PHPMailer é bem completa e de uso muito comum entre programadores PHP. Então a dica é como configurá-la para enviar emails usando o SMTP do GMail.]]></description>
+				<content:encoded><![CDATA[<p>A biblioteca PHPMailer é bem completa e de uso muito comum entre programadores PHP. Então a dica é como configurá-la para enviar emails usando o SMTP do GMail.</p>
+<pre class="brush: php; title: ; notranslate">require_once 'PHPMailer/PHPMailerAutoload.php';
+    
+$mail = new PHPMailer();
+$mail-&gt;IsSMTP();
+$mail-&gt;SMTPDebug = 0;
+$mail-&gt;SMTPAuth = true;
+$mail-&gt;SMTPSecure = 'tls';
+$mail-&gt;Host = 'smtp.gmail.com';
+$mail-&gt;Port = 587; 
+$mail-&gt;Username = &quot;envio@email.com.br&quot;;  
+$mail-&gt;Password = &quot;********&quot;;           
+$mail-&gt;SetFrom(&quot;envio@email.com.br&quot;, &quot;CronJob&quot;);
+$mail-&gt;Subject = &quot;Uma excecao ocorreu.&quot;;
+$mail-&gt;Body = $text;
+$mail-&gt;AddAddress($to);
+if(!$mail-&gt;Send()) {
+    echo 'Mail error: '.$mail-&gt;ErrorInfo; 
+    return false;
+} else {
+    echo 'Message sent!';
+    return true;
+}</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/enviando-via-gmail-com-phpmailer/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

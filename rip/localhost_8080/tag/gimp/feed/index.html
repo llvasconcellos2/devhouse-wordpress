@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gimp &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/gimp/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Como instalar Gimp 2.8 no Debian / Linux Mint Debian Edition</title>
+		<link>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/</link>
+		<comments>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/#comments</comments>
+		<pubDate>Wed, 22 Aug 2012 01:34:16 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[gimp]]></category>
+		<category><![CDATA[gimp 2.8]]></category>
+		<category><![CDATA[linux mint]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=363</guid>
+		<description><![CDATA[O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>O Gimp 2.8 já saiu a algum tempo, portanto já passou da hora de atualizar o sistema. Como já falei em posts anteriores uso o Linux Mint Debian Edition, que nada mais é do que o Debian Testing com alguns repositórios do Mint e por isso não existe disponível ainda o gimp 2.8 nos repositórios do Mint mas já está disponível no Debian Testing e portanto vamos usá-lo.</p>
+<p>Primeiro remova a versão antiga</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get purge gimp*</pre>
+<p>Agora adicione o repositório do Debian Testing.</p>
+<pre class="brush: bash; title: ; notranslate">sudo add-apt-repository &quot;deb http://ftp.debian.org/debian/ testing main contrib non-free&quot;</pre>
+<p>E finalmente instale o Gimp</p>
+<pre class="brush: bash; title: ; notranslate">sudo apt-get update &amp;&amp; sudo apt-get install gimp</pre>
+<p>Caso apresente problemas de dependências use o aptitude e escolha a opção onde todos os pacotes são atualizados para corrigir o problema. No meu caso foi a terceira opção.</p>
+<pre class="brush: bash; title: ; notranslate">sudo aptitude install gimp</pre>
+<p>O gimp 2.8 é rápido para abrir. Aqui funcionou e ai?</p>
+<div id="attachment_417" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2012/08/gimp.jpg"><img data-attachment-id="417" data-permalink="http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/gimp/" data-orig-file="http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg" data-orig-size="1328,761" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Gimp 2.8" data-image-description="" data-medium-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg" data-large-file="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg" class="size-large wp-image-417" title="Gimp 2.8" src="/wp-content/uploads/2012/08/gimp-600x343.jpg" alt="about gimp 2.8" width="600" height="343" srcset="http://localhost:8080/wp-content/uploads/2012/08/gimp-600x343.jpg 600w, http://localhost:8080/wp-content/uploads/2012/08/gimp-300x171.jpg 300w, http://localhost:8080/wp-content/uploads/2012/08/gimp.jpg 1328w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Gimp em janela única.</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/como-instalar-gimp-2-8-no-debian-linux-mint-debian-edition/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+	</channel>
+</rss>

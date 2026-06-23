@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sh &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/sh/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Editando a variável de ambiente PATH no Linux Mint Debian</title>
+		<link>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/</link>
+		<comments>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/#comments</comments>
+		<pubDate>Fri, 15 Jun 2012 20:50:47 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[etc]]></category>
+		<category><![CDATA[lmde]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[path]]></category>
+		<category><![CDATA[profile]]></category>
+		<category><![CDATA[sh]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=346</guid>
+		<description><![CDATA[Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile. Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse: As alterações no /etc/profile são aplicadas a todos os usuários do sistema. [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Para colocar um aplicativo na variável PATH o Linux Mint Debian, ou qualquer Debian edite o arquivo /etc/profile.</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo pluma /etc/profile</pre>
+<p>Antes da linha &#8220;export PATH&#8221; insira PATH=$PATH:/caminho/para/o/programa. Use o &#8220;:&#8221; como separador de valores. Veja como ficou o meu /etc/profile com path para o eclipse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &quot;`id -u`&quot; -eq 0 ]; then
+  PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+else
+  PATH=&quot;/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games&quot;
+fi
+PATH=$PATH:/opt/eclipse
+export PATH
+
+if [ &quot;$PS1&quot; ]; then
+  if [ &quot;$BASH&quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ &quot;`id -u`&quot; -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+</pre>
+<p>As alterações no /etc/profile são aplicadas a todos os usuários do sistema. Na pasta home do usuário existe um arquivo .profile que também pode ser editado.</p>
+<p>Uma outra forma de colocar um aplicativo no path é colocar um link simbólico para o aplicativo na pasta /usr/bin. Veja como o instalador do Google Chrome fez:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ls -l /usr/bin/google-chrome 
+lrwxrwxrwx 1 root root 32 Jun  7 03:17 /usr/bin/google-chrome -&gt; /opt/google/chrome/google-chrome
+</pre>
+<p>Você consegue o mesmo efeito usando o seguinte comando:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ ln -s /opt/google/chrome/google-chrome /usr/bin/google-chrome
+</pre>
+<p>Por hoje é só pessoal!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/editando-a-variavel-de-ambiente-path-no-linux-mint-debian/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

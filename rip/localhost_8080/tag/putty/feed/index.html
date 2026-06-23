@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>putty &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/putty/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Habilitando Syntax Highlighting no Nano</title>
+		<link>http://localhost:8080/habilitando-syntax-highlighting-no-nano/</link>
+		<comments>http://localhost:8080/habilitando-syntax-highlighting-no-nano/#respond</comments>
+		<pubDate>Mon, 29 Sep 2014 18:29:06 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Desenvolvimento]]></category>
+		<category><![CDATA[Desenvolvimento Web]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[highlight]]></category>
+		<category><![CDATA[nano]]></category>
+		<category><![CDATA[php]]></category>
+		<category><![CDATA[putty]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[syntax]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=750</guid>
+		<description><![CDATA[Estou desenvolvendo um software em PHP e testando algumas modificações direto no servidor. Para editar os arquivos php eu uso o nano (não me acostumei ao vi). Então senti falta de cores no código para facilitar a compreensão e tirar um pouco a monotonia do monocromático. E funciona via ssh! Veja se os arquivos de highlight [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Estou desenvolvendo um software em PHP e testando algumas modificações direto no servidor. Para editar os arquivos php eu uso o nano (não me acostumei ao vi). Então senti falta de cores no código para facilitar a compreensão e tirar um pouco a monotonia do monocromático. E funciona via ssh!</p>
+<p>Veja se os arquivos de highlight estão no diretório /usr/share/nano/</p>
+<pre class="brush: bash; title: ; notranslate">$ ls /usr/share/nano/
+asm.nanorc     fortran.nanorc   man.nanorc     ocaml.nanorc   ruby.nanorc
+awk.nanorc     gentoo.nanorc    mgp.nanorc     patch.nanorc   sh.nanorc
+c.nanorc       groff.nanorc     mutt.nanorc    perl.nanorc    tcl.nanorc
+cmake.nanorc   html.nanorc      nano-menu.xpm  php.nanorc     tex.nanorc
+css.nanorc     java.nanorc      nanorc.nanorc  pov.nanorc     xml.nanorc
+debian.nanorc  makefile.nanorc  objc.nanorc    python.nanorc</pre>
+<p>No meu caso todos os arquivos estavam lá exceto o php.nanorc. Justo o que eu precisava. Então peguei da net. Segue ele na íntegra:</p>
+<pre class="brush: bash; title: ; notranslate">## PHP Syntax Highlighting
+syntax &quot;php&quot; &quot;\.php[2345s~]?$&quot;
+color white start=&quot;&lt;\?(php|=)?&quot; end=&quot;\?&gt;&quot;
+# Functions
+color brightblue &quot;([a-zA-Z0-9_-]*)\(&quot;
+# Constructs
+color brightblue &quot;(class|extends|goto) ([a-zA-Z0-9_]*)&quot;
+color green &quot;[^a-z0-9_-]{1}(var|class|function|echo|case|break|default|exit|switch|if|else|elseif|endif|foreach|endforeach|@|while|public|private|protected|return|true|false|null|TRUE|FALSE|NULL|const|static|extends|as|array|require|include|require_once|include_once|define|do|continue|declare|goto|print|in)[^a-z0-9_-]{1}&quot;
+color brightblue &quot;[a-zA-Z0-9]+:&quot;
+# Variables
+color white &quot;\$[a-zA-Z_0-9$]*|[=!&lt;&gt;]&quot;
+color white &quot;\-&gt;[a-zA-Z_0-9$]*|[=!&lt;&gt;]&quot;
+# Special Characters
+color yellow &quot;[.,{}();]&quot;
+color yellow &quot;\[&quot;
+color yellow &quot;\]&quot;
+color yellow &quot;[=][^&gt;]&quot;
+# Numbers
+color magenta &quot;[+-]*([0-9]\.)*[0-9]+([eE][+-]?([0-9]\.)*[0-9])*&quot;
+color magenta &quot;0x[0-9a-zA-Z]*&quot;
+# Special Variables
+color brightblue &quot;(\$this|parent::|self::|\$this-\&gt;)&quot;
+# Bitwise Operations
+color magenta &quot;(\;|\||\^){1}&quot;
+# And/Or/SRO/etc
+color green &quot;(\;\;|\|\||::|=&gt;|-&gt;)&quot;
+# Online Comments
+color brightyellow &quot;(#.*|//.*)$&quot;
+# STRINGS!
+color red &quot;('[^']*?')|(\&quot;[^\&quot;]*?\&quot;)&quot;
+# Inline Variables
+color white &quot;\{\$[^}]*\}&quot;
+# PHP Tags
+color red &quot;(&lt;\?(php)?|\?&gt;)&quot;
+# General HTML
+color red start=&quot;\?&gt;&quot; end=&quot;&lt;\?(php|=)?&quot;
+# trailing whitespace
+color ,green &quot;[^[:space:]]{1}[[:space:]]+$&quot;
+# multi-line comments
+color brightyellow start=&quot;/\*&quot; end=&quot;\*/&quot;
+</pre>
+<p>Gravei o arquivo php.nanorc em uma pasta do meu usuario mesmo. Depois precisei criar um arquivo .nanorc e incluir o caminho para os arquivos de sintaxe:</p>
+<pre class="brush: bash; title: ; notranslate">$ nano ~/.nanorc
+include /usr/share/nano/sh.nanorc
+inclue ~/php.nanorc</pre>
+<p>E pronto, é só editar um arquivo php:</p>
+<div id="attachment_753" style="width: 610px" class="wp-caption alignnone"><a href="/wp-content/uploads/2014/09/nano-syntax-highlight.png"><img data-attachment-id="753" data-permalink="http://localhost:8080/habilitando-syntax-highlighting-no-nano/nano-syntax-highlight/" data-orig-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight.png" data-orig-size="1812,992" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nano-syntax-highlight" data-image-description="&lt;p&gt;Nano com Syntax Highlight&lt;/p&gt;
+" data-medium-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-300x164.png" data-large-file="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png" class="wp-image-753 size-large" src="/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png" alt="nano-syntax-highlight" width="600" height="328" srcset="http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-600x328.png 600w, http://localhost:8080/wp-content/uploads/2014/09/nano-syntax-highlight-300x164.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><p class="wp-caption-text">Nano com Syntax Highlight</p></div>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/habilitando-syntax-highlighting-no-nano/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

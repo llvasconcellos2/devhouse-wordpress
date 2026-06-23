@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>boot &#8211; DevHouse Internet Software Development House</title>
+	<atom:link href="http://localhost/tag/boot/feed/" rel="self" type="application/rss+xml" />
+	<link>http://localhost:8080</link>
+	<description>Desenvolvimento de Sistemas para Internet e Mobile</description>
+	<lastBuildDate>Tue, 23 Jun 2026 08:58:43 +0000</lastBuildDate>
+	<language>pt-BR</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.8.14</generator>
+	<item>
+		<title>Corrigindo o controle de brilho no notebook com Linux</title>
+		<link>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/</link>
+		<comments>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/#comments</comments>
+		<pubDate>Sun, 03 Jun 2012 04:51:44 +0000</pubDate>
+		<dc:creator><![CDATA[Leonardo Lima de Vasconcellos]]></dc:creator>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Linux Mint Debian Edition]]></category>
+		<category><![CDATA[acpi]]></category>
+		<category><![CDATA[bios]]></category>
+		<category><![CDATA[boot]]></category>
+		<category><![CDATA[brilho]]></category>
+		<category><![CDATA[chipset]]></category>
+		<category><![CDATA[controle]]></category>
+		<category><![CDATA[debian]]></category>
+		<category><![CDATA[fedora]]></category>
+		<category><![CDATA[grub]]></category>
+		<category><![CDATA[gs45]]></category>
+		<category><![CDATA[ich9ms]]></category>
+		<category><![CDATA[intel]]></category>
+		<category><![CDATA[kernel]]></category>
+		<category><![CDATA[mint]]></category>
+		<category><![CDATA[samsung]]></category>
+		<category><![CDATA[ubuntu]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[x420]]></category>
+
+		<guid isPermaLink="false">http://www.devhouse.com.br/?p=212</guid>
+		<description><![CDATA[Possuo o ultrabook Samsung X420. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia. As teclas de atalho padrão neste notebook para o funcionamento do controle de brilho [&#8230;]]]></description>
+				<content:encoded><![CDATA[<p>Possuo o ultrabook <a title="Samguns X420" href="http://www.samsung.com/br/consumer/it-products/notebooks-netbooks/ultra-portable/NP-X420-JA01BR" target="_blank">Samsung X420</a>. Um notebook feito para ser leve, portátil e com bateria durável. E ele realmente é. No geral é um notebook bom considerando o seu processador Core 2 Duo de 1,3 GHz de baixo consumo de energia.</p>
+<p>As teclas de atalho padrão neste notebook para o funcionamento do controle de brilho são fn (function) + seta para cima ou seta para baixo. Logo após a instalação do Linux Mint 12 Debian Edition eu tentei ajustar o brilho e nada. O problema é igual para todas as distribuições que testei: Ubuntu 11.10, Ubuntu 12.04 e Fedora 16. Ao teclar fn + seta para cima aparecia o ícone de brilho na tela mas nada acontecia e ao teclar fn + seta para baixo o brilho era ajustado ao máximo e o ícone mostrava que estava um pouco abaixo do máximo, o que era estranho.</p>
+<p>Pesquisando na net encontrei a solução do problema e parece ser comum entre notebooks com chipset <strong>Intel GS45 + ICH9MS</strong>, por isso se o seu notebook posui este chipset ou se está tendo o mesmo problema tente a correção a seguir:</p>
+<p>A correção consiste em adicionar um parâmetro de configuração do Kernel do Linux no boot. Para testá-lo tecle &#8220;e&#8221; na tela de boot do linux para editar os comandos de boot e insira <strong>acpi_osi= </strong>no final da linha &#8220;linux /boot/&#8230;&#8221;. O do meu computador ficou assim (linha 9):</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate">setparams 'LinuxMint GNU/Linux, with Linux 3.3.0-6.dmz.1-liquorix-amd64
+
+insmod gzio
+insmod part_msdos
+insmod ext2
+set root='(/dev/sda, msdos1) '
+search --no-floppy --fs-uuid --set=root 321e9577-ad48-4370-9276-06399e26b6da
+echo 'Loading Linux 3.3.0-6.dmz.1-liquorix-amd64 ... '
+linux /boot/vmlinuz-3.3.0-6.dmz.1-liquoriz-amd64 root=UUID=321e9577-ad48-4370-9276-06399e26b6da ro quiet acpi_osi=
+echo 'Loading initial ramdisk ...'
+initrd /boot/initrd.img-3.3.0-6.dmz.1-liquorix-amd64</pre>
+<p>Segundo informações, o kernel do Linux por padrão se idenditifica como sendo qualquer versão do Windows para a BIOS e o problema é que algumas BIOS tem desvios de código para resolver bugs do Windows Vista e por isso acaba impactando no Linux.</p>
+<p>Outra alternativa é usar o parâmetro abaixo caso a sua BIOS tiver suporte ao Linux:</p>
+<p><strong>acpi_osi=&#8221;Linux&#8221;</strong></p>
+<p>Ou usar o seguinte parâmetro para fazer com que o Linux se identifique como Windows Vista e executar comandos de compatibilidade com o mesmo:</p>
+<p><strong>acpi_osi=&#8221;Windows 2006&#8243;<br />
+</strong></p>
+<p>Para usar o parâmetro de forma permanente</p>
+<p>Conforme dito acima, para testar o parâmetro você pode teclar &#8220;e&#8221; no menu de boot do Grub2 e inserir o parâmetro, mas isso só vai funcionar até o próximo boot. Para deixar o parâmetro de forma permanente você precisa editar um arquivo de configuração do grub conforme asseguir:</p>
+<pre class="brush: bash; title: ; notranslate">$ sudo nano /etc/default/grub</pre>
+<p>O editor nano vai abrir o arquivo e seu conteúdo será parecido com esse:</p>
+<pre class="brush: bash; highlight: [9]; title: ; notranslate"># If you change this file, run 'update-grub' afterwards to update
+ # /boot/grub/grub.cfg.
+ # For full documentation of the options in this file, see:
+ #   info -f grub -n 'Simple configuration'
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM=&quot;0x01234567,0xfefefefe,0x89abcdef,0xefefefef&quot;
+
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+
+# Uncomment if you don't want GRUB to pass &quot;root=UUID=xxx&quot; parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY=&quot;true&quot;
+
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE=&quot;480 440 1&quot;
+</pre>
+<p>Adicione o parâmetro na linha GRUB_CMDLINE_LINUX_DEFAULT conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=&quot;
+</pre>
+<p>Se você precisar usar parâmetros que contém aspas (&#8220;) você precisa fazer o escape das aspas conforme abaixo:</p>
+<pre class="brush: bash; title: ; notranslate">
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet acpi_osi=\&quot;Linux\&quot;&quot;
+</pre>
+<p>Salve o arquivo e entre com o comando a seguir para atualizar as configurações do grub:</p>
+<pre class="brush: bash; title: ; notranslate">
+$ sudo update-grub
+</pre>
+<p>That&#8217;s all folks!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://localhost:8080/corrigindo-o-controle-de-brilho-no-notebook-com-linux/feed/</wfw:commentRss>
+		<slash:comments>28</slash:comments>
+		</item>
+	</channel>
+</rss>

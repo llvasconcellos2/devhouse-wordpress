@@ -1,0 +1,194 @@
+/*******************************************************************************
+ * 01. Wrap & Controls
+ *
+*******************************************************************************/
+.gallery-wrap {
+	display: block;
+	float:left;
+	width: 600px;
+	position: relative; 
+}
+
+.caption-container {
+	position: absolute;
+	bottom: 90px;
+	left: 190px;
+	z-index: 30;
+	height: 22px;
+	line-height: 22px;
+	color: #FFFFFF;
+}
+
+.gallery-wrap .overlay {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 2;
+	width: 580px;
+	height: 410px; 
+	background: url(../images/imgbg/overlay.html) no-repeat 0 0;
+}
+
+.controls {
+	position: absolute;
+	bottom: 90px;
+	left: 170px;
+	z-index: 30;
+	width: 240px;
+	height: 22px;
+	line-height: 22px;
+	background: url(../images/imgbg/gallery-controls.png) no-repeat;
+}
+
+.controls a {
+	padding: 5px;
+	color: #FFFFFF;
+}
+
+.controls a:hover {
+	color: #E5E5E5;
+}
+
+.ss-controls {
+	padding-right: 20px;
+}
+
+.ss-controls,
+.nav-controls {
+	float: right;
+}
+
+
+/*******************************************************************************
+ * 02. Slideshow container
+ *
+*******************************************************************************/
+
+.slideshow-container {
+	position: relative;
+	width: 600px;
+	height: 450px;
+	background: url(../images/imgbg/gallery-wrap.png) no-repeat;
+	margin-bottom: 30px;
+	z-index: 20;
+}
+
+.loader {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: url(../images/loading-big.html) no-repeat 50% 50%;
+	width: 580px;
+	height: 410px; 
+}
+
+.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 430px;
+}
+
+.slideshow a.advance-link {
+	display: block;
+	width: 580px;
+	height: 410px; 
+	line-height: 410px;
+}
+
+.slideshow img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+
+
+/*******************************************************************************
+ * 03. thumbs Lists
+ *
+*******************************************************************************/
+.gallery-navigation {
+	width: 280px;
+	float: right;
+}
+
+.thumbs {
+	height: 400px;
+	overflow: hidden;
+}
+
+.thumbs li {
+	float: left;
+	width: 60px;
+	height: 66px;
+	padding: 10px;
+	margin: 0 20px 15px 0;
+	background: url(../images/imgbg/gallery-thumb.png) no-repeat;
+	position: relative;
+}
+
+.thumbs li .overlay {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10px;
+	width: 60px;
+	height: 60px;
+	background: url(../images/imgbg/overlay.html) no-repeat 0 0;
+}
+
+.thumbs li.last {
+	margin-right: 0;
+}
+
+.thumbs li.selected a.thumb {
+	
+}
+
+
+
+/*******************************************************************************
+ * 04. pagination
+ *
+*******************************************************************************/
+.pagination {
+	clear: both;
+}
+
+/*.gallery-navigation .top {
+	margin-bottom: 12px;
+}*/
+
+.gallery-navigation .bottom {
+	margin-top: 8px;
+}
+
+.pagination a, 
+.pagination span.current, 
+.pagination span.ellipsis {
+	display: block;
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 8px;
+	margin-right: 5px;
+	border: 1px solid #C2C2C2;
+	background: url(../images/pagination.html) repeat-x 0 0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.pagination a:hover,
+.pagination span.current {
+	color: #FFFFFF; 
+	background: url(../images/pagination.html) repeat-x 0 100%;
+	border: 1px solid #5C5C5C;
+}
+
+.pagination span.ellipsis {
+	border: none;
+}
